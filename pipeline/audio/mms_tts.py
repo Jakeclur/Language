@@ -71,15 +71,46 @@ def similarity(expected: str, heard: str) -> float:
     return 1 - lev(a, b) / max(len(a), len(b), 1)
 
 
+def find_model() -> str:
+    """Find an Afrikaans MMS/VITS TTS model on Hugging Face (names have changed over time)."""
+    from huggingface_hub import HfApi, model_info
+    preferred = os.environ.get("TTS_MODEL") or "facebook/mms-tts-afr"
+    try:
+        model_info(preferred)
+        return preferred
+    except Exception as e:
+        print(f"{preferred} not available ({type(e).__name__}); searching…", flush=True)
+    api = HfApi()
+    found = []
+    for q in ("mms-tts-afr", "mms-tts afr", "afrikaans tts", "vits afrikaans", "tts-afr"):
+        try:
+            for m in api.list_models(search=q, limit=30):
+                found.append(m.id)
+        except Exception as e:
+            print("search failed:", q, e)
+    found = list(dict.fromkeys(found))
+    print("Candidates:", found, flush=True)
+    for mid in found:
+        if "afr" in mid.lower() or "afrikaans" in mid.lower():
+            try:
+                VitsModel.from_pretrained(mid)
+                return mid
+            except Exception as e:
+                print(f"  {mid}: not a usable VITS model ({type(e).__name__})")
+    sys.exit("No usable Afrikaans VITS/MMS model found on Hugging Face.")
+
+
 def main():
     items = json.load(open(LIST))
     if LIMIT:
         items = items[:LIMIT]
     manifest = json.load(open(MANIFEST)) if os.path.exists(MANIFEST) else {"voices": [], "items": {}}
 
-    print("Loading facebook/mms-tts-afr …", flush=True)
-    tok = AutoTokenizer.from_pretrained("facebook/mms-tts-afr")
-    model = VitsModel.from_pretrained("facebook/mms-tts-afr").eval()
+    model_id = find_model()
+    print(f"Loading {model_id} …", flush=True)
+    tok = AutoTokenizer.from_pretrained(model_id)
+    model = VitsModel.from_pretrained(model_id).eval()
+    VOICE["source"] = model_id
     rate = model.config.sampling_rate
 
     whisper = None
