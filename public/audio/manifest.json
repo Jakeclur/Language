@@ -1,1 +1,29 @@
-{"voices": [], "items": {}}
+{
+ "voices": [
+  {
+   "id": "simba",
+   "name": "Simba-TTS-afr (neural)",
+   "engine": "vits",
+   "gender": "male",
+   "licence": "cc-by-4.0",
+   "source": "UBC-NLP/Simba-TTS-afr"
+  }
+ ],
+ "items": {
+  "die water is koud": {
+   "simba": "simba/43146b2e1cf3a83b.mp3"
+  },
+  "ja dit is groot": {
+   "simba": "simba/db3ff2cd118f11c7.mp3"
+  },
+  "totsiens": {
+   "simba": "simba/298df953a31e2c58.mp3"
+  },
+  "hallo hoe gaan dit": {
+   "simba": "simba/4023ce24e6c638a4.mp3"
+  },
+  "dit gaan goed dankie en met jou": {
+   "simba": "simba/866feaae1bc9d6bc.mp3"
+  }
+ }
+}
