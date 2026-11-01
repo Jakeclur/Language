@@ -1,1 +1,32 @@
-{"voices":[],"items":{}}
+{
+ "voices": [
+  {
+   "id": "mms",
+   "name": "Simba-TTS-afr (neural)",
+   "engine": "mms-tts",
+   "gender": "male",
+   "licence": "cc-by-4.0",
+   "source": "UBC-NLP/Simba-TTS-afr"
+  }
+ ],
+ "items": {
+  "ja dit is groot": {
+   "mms": "mms/db3ff2cd118f11c7.mp3"
+  },
+  "klein": {
+   "mms": "mms/ac1ad65ace4fd028.mp3"
+  },
+  "sien": {
+   "mms": "mms/814cc8cc296be10e.mp3"
+  },
+  "hallo": {
+   "mms": "mms/fd4cef7a4e607f1f.mp3"
+  },
+  "dankie": {
+   "mms": "mms/54f7f7da68d7b1ad.mp3"
+  },
+  "hallo hoe gaan dit": {
+   "mms": "mms/4023ce24e6c638a4.mp3"
+  }
+ }
+}
