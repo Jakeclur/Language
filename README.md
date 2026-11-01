@@ -51,6 +51,10 @@ The latest report is in the app under **About**, and in `public/data/report.json
 
 ## Audio (human-sounding, never robotic)
 
+Free open-source Afrikaans voices were tested and rejected: the best available open model
+(UBC-NLP Simba-TTS) produced clips that Whisper large-v3 understood only 5 times out of 40.
+Human-sounding audio needs a neural voice service. Azure's af-ZA voices have a free tier.
+
 **Easiest: generate it on GitHub (no setup on your computer).**
 1. Repository → *Settings → Secrets and variables → Actions → New repository secret*. Add
    `AZURE_SPEECH_KEY` and `AZURE_SPEECH_REGION` (e.g. `southafricanorth`), and/or `ELEVENLABS_API_KEY`,

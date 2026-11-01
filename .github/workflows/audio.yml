@@ -2,7 +2,8 @@ name: Generate audio
 
 # Run from the Actions tab: "Generate audio" -> "Run workflow".
 # mode "free": open neural Afrikaans voice (UBC-NLP Simba-TTS, CC BY 4.0) + Whisper quality check.
-#              No keys needed.
+#              No keys needed, BUT in testing (Nov 2026) only 5 of 40 clips were intelligible to
+#              Whisper large-v3, so it is not good enough for the app. Kept for future open models.
 # modes "all" / "bakeoff" need repository secrets (Settings -> Secrets and variables -> Actions):
 #   AZURE_SPEECH_KEY + AZURE_SPEECH_REGION          (Microsoft Azure AI Speech, af-ZA neural voices)
 #   and/or ELEVENLABS_API_KEY + ELEVENLABS_VOICE_FEMALE + ELEVENLABS_VOICE_MALE
@@ -13,8 +14,8 @@ on:
       mode:
         description: "free = no keys (Simba-TTS); all = Azure/ElevenLabs with your secrets; bakeoff = compare paid voices"
         type: choice
-        options: [free, all, bakeoff]
-        default: free
+        options: [all, bakeoff, free]
+        default: all
       limit:
         description: "Only the first N texts (0 = all). Handy for a quick test."
         default: "0"
