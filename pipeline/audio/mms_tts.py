@@ -137,7 +137,9 @@ def main():
     if QA:
         from faster_whisper import WhisperModel
         print("Loading Whisper (small) for quality checks …", flush=True)
-        whisper = WhisperModel("small", device="cpu", compute_type="int8")
+        qa_model = os.environ.get("QA_MODEL", "small")
+        print(f"Quality-check model: whisper {qa_model}", flush=True)
+        whisper = WhisperModel(qa_model, device="cpu", compute_type="int8")
 
     stats = {"made": 0, "skipped": 0, "passed": 0, "failed": 0, "errors": 0}
     failures = []
@@ -162,7 +164,7 @@ def main():
 
             ok, heard, score = True, None, None
             if whisper is not None:
-                segs, _ = whisper.transcribe(path, language="af", beam_size=1, vad_filter=False, condition_on_previous_text=False)
+                segs, _ = whisper.transcribe(path, language="af", beam_size=5, vad_filter=False, condition_on_previous_text=False)
                 heard = " ".join(s.text for s in segs).strip()
                 score = similarity(it["key"], heard)
                 # single words get a looser threshold: recognisers often mishear isolated words
@@ -186,7 +188,9 @@ def main():
     json.dump(manifest, open(MANIFEST, "w"), ensure_ascii=False, indent=1)
     json.dump({"stats": stats, "failures": failures}, open(os.path.join(ROOT, "pipeline", ".cache", "mms-report.json"), "w"), ensure_ascii=False, indent=1)
     print("Done:", stats)
-    for f in failures[:40]:
+    passed_examples = [k for k, v in manifest["items"].items() if "mms" in v][:20]
+    print("Passed examples:", passed_examples)
+    for f in failures[:60]:
         print("  ✗", f)
     if stats["passed"] == 0:
         sys.exit("No clips passed the quality check.")
