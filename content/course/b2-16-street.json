@@ -1,0 +1,140 @@
+{
+  "id": "b2-16",
+  "level": "B2",
+  "number": 16,
+  "title": "Street Afrikaans (18+)",
+  "titleAf": "Straat-Afrikaans",
+  "icon": "🔞",
+  "street": true,
+  "lessons": [
+    {
+      "id": "b2-16-1",
+      "title": "Rude but common",
+      "explanation": [
+        "⚠️ **18+ content.** You need to *understand* these words, because you'll hear them constantly. Know when **not** to use them.",
+        "**Severity scale:** 0 clean · 1 mild · 2 rude · 3 strong · 4 extremely offensive.",
+        "**gatvol** (2) — fed up. Literally \"arse-full\". Super common, but not with teachers or grandparents. Safer: **moeg vir**, **sat vir**.",
+        "**kak** (2) — crap. Very common in casual speech. **Dis kak!** Safer: **sleg**, **nonsens**.",
+        "**bliksem** (2) — to hit; also \"damn!\". **Ek sal jou bliksem!** is a threat.",
+        "**voetsek** (2) — get lost. Originally for chasing dogs away; very rude to a person."
+      ],
+      "examples": [
+        {
+          "af": "Ek is gatvol vir die reën.",
+          "en": "I'm fed up with the rain."
+        },
+        {
+          "af": "Die fliek was kak.",
+          "en": "The movie was crap."
+        },
+        {
+          "af": "Ek is moeg vir die reën.",
+          "en": "I'm tired of the rain. (polite)"
+        }
+      ],
+      "vocab": [
+        "gatvol",
+        "kak",
+        "bliksem",
+        "sat",
+        "moeg vir"
+      ],
+      "exercises": [
+        {
+          "type": "rude",
+          "af": "Ek is gatvol vir die reën.",
+          "en": "I'm fed up with the rain.",
+          "answer": 2
+        },
+        {
+          "type": "rude",
+          "af": "Ek is moeg vir die reën.",
+          "en": "I'm tired of the rain.",
+          "answer": 0
+        },
+        {
+          "type": "rude",
+          "af": "Dis kak!",
+          "en": "That's crap!",
+          "answer": 2
+        },
+        {
+          "type": "choice",
+          "question": "You're talking to your friend's grandmother. Which is safe?",
+          "options": [
+            "Ek is gatvol.",
+            "Ek is moeg vir dit.",
+            "Dis kak."
+          ],
+          "answer": "Ek is moeg vir dit."
+        },
+        {
+          "type": "choice",
+          "question": "\"Voetsek\" was originally said to…",
+          "options": [
+            "chase away dogs",
+            "greet friends",
+            "order food"
+          ],
+          "answer": "chase away dogs"
+        }
+      ]
+    },
+    {
+      "id": "b2-16-2",
+      "title": "Strong swearing — recognise, don't repeat",
+      "explanation": [
+        "**fok / fokken** (3) — the f-word and its intensifier. Very strong.",
+        "**befok** (3) — crazy, or (positively) awesome. **Is jy befok?** = Are you f***ing crazy?",
+        "**doos** (3) — standard meaning *box*; as an insult it's strong and vulgar (\"idiot\").",
+        "**poes** (4) — one of the most offensive words in the language. Shocking in almost any setting.",
+        "Mild alternatives that won't get you in trouble: **jislaaik!**, **sies!**, **ag nee!**",
+        "⛔ **Slurs**: Afrikaans also has racial and homophobic slurs from the apartheid era. They're in the dictionary (18+) only so you can recognise them. Some have led to criminal convictions in South Africa. Never use them."
+      ],
+      "examples": [
+        {
+          "af": "Jislaaik, dit was naby!",
+          "en": "Wow, that was close! (clean)"
+        }
+      ],
+      "vocab": [
+        "doos",
+        "sies"
+      ],
+      "exercises": [
+        {
+          "type": "rude",
+          "af": "Jislaaik, dit was naby!",
+          "en": "Wow, that was close!",
+          "answer": 0
+        },
+        {
+          "type": "rude",
+          "af": "Is jy befok?",
+          "en": "Are you f***ing crazy?",
+          "answer": 3
+        },
+        {
+          "type": "choice",
+          "question": "\"Doos\" in standard Afrikaans means…",
+          "options": [
+            "box",
+            "door",
+            "dog"
+          ],
+          "answer": "box"
+        },
+        {
+          "type": "choice",
+          "question": "Something shocking happens at a family dinner. A safe exclamation is…",
+          "options": [
+            "Fok!",
+            "Jislaaik!",
+            "Poes!"
+          ],
+          "answer": "Jislaaik!"
+        }
+      ]
+    }
+  ]
+}

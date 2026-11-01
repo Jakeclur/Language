@@ -1,0 +1,33 @@
+{
+  "id": "a1-10",
+  "level": "A1",
+  "number": 10,
+  "title": "My, your & Jan se kar",
+  "titleAf": "Besitlike voornaamwoorde",
+  "icon": "🔑",
+  "lessons": [
+    {
+      "id": "a1-10-1",
+      "title": "Possessives",
+      "explanation": [
+        "**my** (my), **jou** (your), **u** (your, polite), **sy** (his), **haar** (her), **ons** (our), **julle** (your, plural), **hulle** (their).",
+        "Notice: **sy** means both *she* and *his*: **Sy is my suster** / **Dit is sy kar**.",
+        "For names, use **se**: **Jan se kar** = Jan's car. **my ma se huis** = my mom's house."
+      ],
+      "examples": [
+        { "af": "Dit is my boek.", "en": "It is my book." },
+        { "af": "Jan se kar is rooi.", "en": "Jan's car is red." },
+        { "af": "Waar is jou sleutels?", "en": "Where are your keys?" },
+        { "af": "Hulle huis is naby.", "en": "Their house is nearby." }
+      ],
+      "vocab": ["my", "jou", "sy", "haar", "ons", "hulle", "se", "kar", "sleutel", "ma", "pa"],
+      "exercises": [
+        { "type": "translate", "from": "en", "prompt": "Jan's car is red.", "answers": ["Jan se kar is rooi."] },
+        { "type": "translate", "from": "en", "prompt": "It is my book.", "answers": ["Dit is my boek.", "Dis my boek."] },
+        { "type": "fill", "af": "Dit is ___ kar. (his)", "en": "It is his car.", "answers": ["sy"], "options": ["sy", "hy", "hom"] },
+        { "type": "order", "en": "My mom's house is big.", "af": "My ma se huis is groot." },
+        { "type": "translate", "from": "af", "prompt": "Waar is jou sleutels?", "answers": ["Where are your keys?"] }
+      ]
+    }
+  ]
+}

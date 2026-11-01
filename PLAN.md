@@ -3,7 +3,7 @@
 **Working title:** *Leer Afrikaans* (rename before launch; check the name is free to use)
 **Audience:** English speakers starting from zero: school students, travellers, people moving to South Africa or Namibia, and people with Afrikaans family
 **Goal:** A published app that takes learners from no Afrikaans to near-native understanding, including real everyday, slang, rude and formal Afrikaans
-**Status:** Planning
+**Status:** Phases 0–2 built (MVP built). See "Build status" below and README.md
 
 ### Decisions made so far
 | Question | Decision |
@@ -338,11 +338,11 @@ With no human checker, accuracy has to be **built into the pipeline**: content i
 | 8 | **Consistency checks:** every word used in a lesson exists in the dictionary; every exercise has a valid answer; no slur appears in an exercise | Broken content |
 
 ### 5.2 Confidence badges (shown to learners)
-| Badge | Rule | Used in course? |
+| Badge | Rule (as implemented in `pipeline/build-content.mjs`) | Used in course? |
 |---|---|---|
-| ✅ **Verified** | ≥3 sources agree + corpus attested + all checks pass | Yes |
-| ☑️ **Checked** | 2 sources agree + checks pass | Yes |
-| ⚠️ **Unverified** | 1 source, or a check failed | Dictionary only, with a warning |
+| ✅ **Verified** | 2+ independent dictionaries agree on the meaning + word found in real text or the pronunciation lexicon + passes the spellchecker | Yes |
+| ☑️ **Checked** | 2+ independent dictionaries agree, or 1 dictionary + the word is confirmed by 2+ independent word lists (corpus, lexicon, spellchecker) | Yes |
+| ⚠️ **Unverified** | Anything else | Dictionary only, with a warning |
 | 👥 **Community** | Added or corrected by users and upvoted | Dictionary only, until it reaches "Checked" |
 
 **Course content may only use Verified or Checked words and sentences.**
@@ -553,6 +553,21 @@ For every generated file:
 | **Costs** | Generate audio once; free hosting tiers; Pro tier later |
 
 ---
+
+## Build status (November 2026)
+
+| Phase | Status |
+|---|---|
+| 0 Foundations | ✅ Vite + React + TypeScript PWA, schemas, validation, licence register (`data/sources/SOURCES.md`) |
+| 1 Data & audio pipeline | ✅ Importers (FreeDict, Apertium, FrequencyWords, Hunspell, NWU pronunciation lexicon, optional Wiktionary); verification checks 1–4 and 8; audio generation + QA scripts. ⏳ Bake-off and audio generation need API keys |
+| 2 MVP app | ✅ Dictionary (8,684 headwords, inflection lookup, compound splitter, badges), goal picker, A1 + A2 core + B1 slang + 18+ street unit (30 lessons), 9 exercise types, FSRS review, progress, phrasebook, grammar, pronunciation guide |
+| 3 Intermediate + accounts | ⏳ Next: B1 grammar units, back-translation / AI cross-review checks (5–6), accounts & sync |
+| 4 Launch prep | 🟡 Partly done: 18+ gate, report-a-mistake (GitHub issues), credits page, Pages deploy workflow. Still needed: privacy policy, store builds |
+
+Gaps compared with the targets in §1, stated plainly:
+- The dictionary has **8,684** headwords, not 80,000. Wiktionary, Tatoeba and SADiLaR were blocked in the build environment. Running `npm run import` with open internet adds Wiktionary.
+- **No audio yet.** The pipeline is written and dry-run tested, but it needs ElevenLabs/Azure keys. Until then the app shows 🔈 and never uses robotic TTS.
+- Course content currently covers A1–A2 plus selected B1/B2 topics. C1–C2 are still to be written.
 
 ## 11. Next steps
 1. Set up the project skeleton and content schemas (Phase 0)

@@ -1,0 +1,444 @@
+# ===== Greetings & basics =====
+hallo | interj | hello; hi | neutral | | A1 | greetings | | Hallo, hoe gaan dit? | Hello, how are you? |
+goeie môre | phrase | good morning | neutral | | A1 | greetings | | Goeie môre, meneer! | Good morning, sir! |
+goeie middag | phrase | good afternoon | neutral | | A1 | greetings | | | |
+goeie naand | phrase | good evening | neutral | | A1 | greetings | | | | Often written "goeienaand".
+totsiens | interj | goodbye | neutral | | A1 | greetings | | Totsiens, sien jou môre! | Goodbye, see you tomorrow! |
+tot later | phrase | see you later | informal | | A1 | greetings | | | |
+baie dankie | phrase | thank you very much; thanks a lot | neutral | | A1 | greetings | | | |
+dankie | interj | thanks; thank you | neutral | | A1 | greetings | | Dankie vir die kos. | Thanks for the food. |
+asseblief | adv | please | neutral | | A1 | greetings | | Koffie, asseblief. | Coffee, please. |
+ja | interj | yes | neutral | | A1 | greetings | | | |
+nee | interj | no | neutral | | A1 | greetings | | | |
+jammer | adj | sorry | neutral | | A1 | greetings,emotions | | Ek is jammer. | I'm sorry. |
+verskoon my | phrase | excuse me | neutral | | A1 | greetings | | | |
+welkom | adj | welcome | neutral | | A1 | greetings | | Welkom in Suid-Afrika! | Welcome to South Africa! |
+plesier | noun | pleasure; you're welcome | neutral | | A1 | greetings | | | | Reply to "dankie": "Plesier!"
+hoe gaan dit | phrase | how are you; how is it going | neutral | | A1 | greetings | | Hoe gaan dit met jou? | How are you? |
+goed | adj | good; fine; well | neutral | | A1 | greetings,emotions | cmp=beter;sup=beste | Dit gaan goed, dankie. | I'm fine, thanks. |
+meneer | noun | sir; mister; Mr | formal | | A1 | greetings,people | pl=menere | | |
+mevrou | noun | madam; Mrs | formal | | A1 | greetings,people | pl=mevroue | | |
+juffrou | noun | miss; teacher (female) | neutral | | A1 | greetings,school | pl=juffrouens | | | Schoolchildren call a female teacher "Juffrou".
+naam | noun | name | neutral | | A1 | greetings | pl=name | My naam is Sarah. | My name is Sarah. |
+# ===== Pronouns =====
+ek | pron | I | neutral | | A1 | pronouns | | Ek is moeg. | I am tired. |
+jy | pron | you (singular, informal) | informal | | A1 | pronouns | | Jy is my vriend. | You are my friend. | Use with friends, family, children and peers.
+u | pron | you (polite, formal) | formal | | A1 | pronouns | | Kan ek u help? | Can I help you? | Use with elders, strangers, customers and in formal writing.
+hy | pron | he | neutral | | A1 | pronouns | | | |
+sy | pron | she; his; her (possessive of hy) | neutral | | A1 | pronouns | | Sy lees 'n boek. | She is reading a book. | "sy" means both "she" and "his".
+dit | pron | it; this; that | neutral | | A1 | pronouns | | Dit is warm. | It is hot. |
+ons | pron | we; us; our | neutral | | A1 | pronouns | | Ons woon in Kaapstad. | We live in Cape Town. |
+julle | pron | you (plural); your (plural) | neutral | | A1 | pronouns | | Waar is julle? | Where are you (all)? |
+hulle | pron | they; them; their | neutral | | A1 | pronouns | | Hulle speel sokker. | They play soccer. |
+my | pron | my; me | neutral | | A1 | pronouns | | Dis my boek. | It's my book. |
+jou | pron | your; you (object, informal) | neutral | | A1 | pronouns | | Ek sien jou. | I see you. |
+hom | pron | him; it | neutral | | A1 | pronouns | | | |
+haar | pron | her; hair | neutral | | A1 | pronouns | | | | Also the noun "hair".
+iemand | pron | someone; somebody | neutral | | A1 | pronouns | | | |
+niemand | pron | nobody; no one | neutral | | A2 | pronouns,negation | | Niemand is hier nie. | Nobody is here. |
+iets | pron | something | neutral | | A1 | pronouns | | | |
+niks | pron | nothing | neutral | | A2 | pronouns,negation | | Ek het niks gesien nie. | I saw nothing. |
+alles | pron | everything | neutral | | A1 | pronouns | | | |
+almal | pron | everybody; everyone | neutral | | A1 | pronouns | | | |
+# ===== Core verbs =====
+wees | verb | to be | neutral | | A1 | verbs | pp=gewees;past=was | Ek wil gelukkig wees. | I want to be happy. | Present tense is always "is": ek is, jy is, hulle is.
+is | verb | am; is; are | neutral | | A1 | verbs | | Ek is 'n student. | I am a student. |
+was | verb | was; were | neutral | | A1 | verbs | | Ek was moeg. | I was tired. | Also: to wash.
+hê | verb | to have | neutral | | A1 | verbs | pp=gehad | | | Present tense is "het": ek het, jy het.
+het | verb | have; has; (past tense helper) | neutral | | A1 | verbs | | Ek het 'n hond. | I have a dog. |
+gaan | verb | to go; going to (future) | neutral | | A1 | verbs | pp=gegaan | Ek gaan huis toe. | I'm going home. |
+kom | verb | to come | neutral | | A1 | verbs | pp=gekom | Kom hier! | Come here! |
+doen | verb | to do | neutral | | A1 | verbs | pp=gedoen | Wat doen jy? | What are you doing? |
+maak | verb | to make; to do | neutral | | A1 | verbs | pp=gemaak | Ek maak kos. | I'm making food. |
+sê | verb | to say; to tell | neutral | | A1 | verbs | pp=gesê | Wat sê jy? | What are you saying? |
+praat | verb | to speak; to talk | neutral | | A1 | verbs | pp=gepraat | Praat jy Afrikaans? | Do you speak Afrikaans? |
+verstaan | verb | to understand | neutral | | A1 | verbs | pp=verstaan | Ek verstaan nie. | I don't understand. | No ge- in the past: "Ek het verstaan."
+weet | verb | to know (a fact) | neutral | | A1 | verbs | pp=geweet | Ek weet nie. | I don't know. |
+ken | verb | to know (a person or place) | neutral | | A1 | verbs | pp=geken | Ken jy vir Pieter? | Do you know Pieter? |
+sien | verb | to see | neutral | | A1 | verbs | pp=gesien | Ek sien die see. | I see the sea. |
+kyk | verb | to look; to watch | neutral | | A1 | verbs | pp=gekyk | Ons kyk TV. | We're watching TV. |
+hoor | verb | to hear | neutral | | A1 | verbs | pp=gehoor | | |
+luister | verb | to listen | neutral | | A1 | verbs | pp=geluister | Luister na my! | Listen to me! |
+eet | verb | to eat | neutral | | A1 | verbs,food | pp=geëet | Ek eet 'n appel. | I'm eating an apple. |
+drink | verb | to drink | neutral | | A1 | verbs,food | pp=gedrink | Sy drink koffie. | She drinks coffee. |
+slaap | verb | to sleep | neutral | | A1 | verbs | pp=geslaap | Die baba slaap. | The baby is sleeping. |
+werk | verb | to work | neutral | | A1 | verbs,work | pp=gewerk | Hy werk in Pretoria. | He works in Pretoria. | Also the noun "work".
+speel | verb | to play | neutral | | A1 | verbs,sport | pp=gespeel | Die kinders speel buite. | The children are playing outside. |
+loop | verb | to walk; to go | neutral | | A1 | verbs | pp=geloop | Ons loop skool toe. | We walk to school. |
+hardloop | verb | to run | neutral | | A1 | verbs,sport | pp=gehardloop | | |
+ry | verb | to drive; to ride | neutral | | A1 | verbs,transport | pp=gery | Ek ry met die bus. | I go by bus. |
+woon | verb | to live (reside) | neutral | | A1 | verbs,home | pp=gewoon | Waar woon jy? | Where do you live? |
+bly | verb | to stay; to live; to remain | neutral | | A1 | verbs | pp=gebly | | |
+lees | verb | to read | neutral | | A1 | verbs,school | pp=gelees | | |
+skryf | verb | to write | neutral | | A1 | verbs,school | pp=geskryf | Skryf jou naam. | Write your name. |
+leer | verb | to learn; to teach | neutral | | A1 | verbs,school | pp=geleer | Ek leer Afrikaans. | I'm learning Afrikaans. |
+koop | verb | to buy | neutral | | A1 | verbs,shopping | pp=gekoop | | |
+betaal | verb | to pay | neutral | | A1 | verbs,shopping | pp=betaal | | | No ge- in the past: "Ek het betaal."
+gee | verb | to give | neutral | | A1 | verbs | pp=gegee | | |
+neem | verb | to take | neutral | | A1 | verbs | pp=geneem | | |
+kry | verb | to get; to receive | neutral | | A1 | verbs | pp=gekry | | |
+soek | verb | to look for; to search | neutral | | A1 | verbs | pp=gesoek | Ek soek my sleutels. | I'm looking for my keys. |
+vind | verb | to find | neutral | | A1 | verbs | pp=gevind | | |
+dink | verb | to think | neutral | | A1 | verbs | pp=gedink | Ek dink so. | I think so. |
+voel | verb | to feel | neutral | | A1 | verbs,emotions | pp=gevoel | Hoe voel jy? | How do you feel? |
+hou van | phrase | to like | neutral | | A1 | verbs,emotions | | Ek hou van musiek. | I like music. |
+liefhê | verb | to love | neutral | | A1 | verbs,emotions | pp=liefgehad | Ek het jou lief. | I love you. |
+help | verb | to help | neutral | | A1 | verbs | pp=gehelp | Kan jy my help? | Can you help me? |
+vra | verb | to ask | neutral | | A1 | verbs | pp=gevra | | |
+antwoord | verb | to answer | neutral | | A1 | verbs,school | pp=geantwoord | | | Also the noun "answer".
+sit | verb | to sit; to put | neutral | | A1 | verbs | pp=gesit | Sit hier. | Sit here. |
+staan | verb | to stand | neutral | | A1 | verbs | pp=gestaan | | |
+lê | verb | to lie (down); to lay | neutral | | A1 | verbs | pp=gelê | | |
+wag | verb | to wait | neutral | | A1 | verbs | pp=gewag | Wag vir my! | Wait for me! |
+bel | verb | to call; to phone | neutral | | A1 | verbs,technology | pp=gebel | Ek bel jou later. | I'll call you later. |
+kook | verb | to cook; to boil | neutral | | A1 | verbs,food | pp=gekook | | |
+was | verb | to wash | neutral | | A1 | verbs,home | pp=gewas | | | Same spelling as "was" (was/were).
+oopmaak | verb | to open | neutral | | A1 | verbs | pp=oopgemaak | Maak die deur oop. | Open the door. | Separable: "Ek maak die deur oop."
+toemaak | verb | to close | neutral | | A1 | verbs | pp=toegemaak | | | Separable.
+begin | verb | to begin; to start | neutral | | A1 | verbs | pp=begin | | |
+stop | verb | to stop | neutral | | A1 | verbs | pp=gestop | | |
+lag | verb | to laugh | neutral | | A1 | verbs,emotions | pp=gelag | | |
+huil | verb | to cry | neutral | | A1 | verbs,emotions | pp=gehuil | | |
+sing | verb | to sing | neutral | | A1 | verbs,music | pp=gesing | | |
+dans | verb | to dance | neutral | | A1 | verbs,music | pp=gedans | | |
+swem | verb | to swim | neutral | | A1 | verbs,sport | pp=geswem | | |
+# ===== Modal verbs =====
+kan | verb | can; to be able to | neutral | | A2 | verbs,modals | past=kon | Ek kan swem. | I can swim. |
+moet | verb | must; have to; should | neutral | | A2 | verbs,modals | past=moes | Jy moet nou gaan. | You must go now. |
+wil | verb | to want to | neutral | | A2 | verbs,modals | past=wou | Ek wil huis toe gaan. | I want to go home. |
+mag | verb | may; to be allowed to | neutral | | A2 | verbs,modals | past=mog | Mag ek ingaan? | May I go in? |
+sal | verb | will; shall | neutral | | A2 | verbs,modals | past=sou | Ek sal jou help. | I will help you. |
+# ===== Question words =====
+wie | pron | who | neutral | | A1 | questions | | Wie is dit? | Who is it? |
+wat | pron | what; which; that (relative) | neutral | | A1 | questions | | Wat is jou naam? | What is your name? |
+waar | adv | where; true | neutral | | A1 | questions | | Waar is die badkamer? | Where is the bathroom? | Also the adjective "true".
+wanneer | adv | when | neutral | | A1 | questions | | Wanneer begin die skool? | When does school start? |
+hoekom | adv | why | neutral | | A1 | questions | | Hoekom huil jy? | Why are you crying? |
+waarom | adv | why | formal | | A1 | questions | | | | More formal than "hoekom".
+hoe | adv | how | neutral | | A1 | questions | | Hoe oud is jy? | How old are you? |
+hoeveel | adv | how much; how many | neutral | | A1 | questions,shopping | | Hoeveel kos dit? | How much does it cost? |
+watter | det | which | neutral | | A1 | questions | | Watter een? | Which one? |
+waarheen | adv | where to | neutral | | A2 | questions | | | |
+# ===== Function words =====
+die | det | the | neutral | | A1 | grammar | | | | One word for "the", with no gender!
+'n | det | a; an | neutral | | A1 | grammar | | 'n Hond en 'n kat. | A dog and a cat. | Pronounced like the "a" in "about".
+en | conj | and | neutral | | A1 | grammar | | | |
+maar | conj | but | neutral | | A1 | grammar | | | |
+of | conj | or; whether | neutral | | A1 | grammar | | | |
+want | conj | because; for | neutral | | A2 | grammar | | | | Normal word order follows "want".
+omdat | conj | because | neutral | | B1 | grammar | | Ek bly tuis omdat ek siek is. | I'm staying home because I'm sick. | Sends the verb to the end of the clause.
+as | conj | if; when; than; as | neutral | | A2 | grammar | | | |
+dat | conj | that | neutral | | B1 | grammar | | | | Sends the verb to the end of the clause.
+nie | particle | not | neutral | | A1 | grammar,negation | | Ek weet nie. | I don't know. | Negative sentences usually need a second "nie" at the end.
+ook | adv | also; too | neutral | | A1 | grammar | | Ek ook! | Me too! |
+baie | adv | very; many; a lot | neutral | | A1 | grammar | | Ek is baie moeg. | I am very tired. |
+net | adv | only; just | neutral | | A1 | grammar | | | |
+nog | adv | still; yet; more | neutral | | A1 | grammar | | Nog koffie? | More coffee? |
+al | adv | already; all | neutral | | A2 | grammar | | | |
+nou | adv | now | neutral | | A1 | time | | Kom nou! | Come now! |
+hier | adv | here | neutral | | A1 | places | | | |
+daar | adv | there | neutral | | A1 | places | | | |
+in | prep | in; into | neutral | | A1 | prepositions | | | |
+op | prep | on; at; up | neutral | | A1 | prepositions | | | |
+onder | prep | under; below | neutral | | A1 | prepositions | | | |
+langs | prep | next to; beside | neutral | | A1 | prepositions | | | |
+agter | prep | behind | neutral | | A1 | prepositions | | | |
+voor | prep | in front of; before | neutral | | A1 | prepositions | | | |
+met | prep | with; by (transport) | neutral | | A1 | prepositions | | | |
+sonder | prep | without | neutral | | A1 | prepositions | | | |
+vir | prep | for; to | neutral | | A1 | prepositions | | | | Also marks a person as object: "Ek sien vir Jan."
+van | prep | of; from; about | neutral | | A1 | prepositions | | | |
+na | prep | to; after | neutral | | A1 | prepositions | | | |
+toe | adv | to (a place, after the noun); then; closed | neutral | | A1 | prepositions | | Ek gaan skool toe. | I'm going to school. |
+by | prep | at; by; with | neutral | | A1 | prepositions | | | |
+uit | prep | out; out of; from | neutral | | A1 | prepositions | | | |
+se | particle | 's (possessive) | neutral | | A1 | grammar | | Jan se kar | Jan's car |
+# ===== Numbers =====
+een | num | one | neutral | | A1 | numbers | | | |
+twee | num | two | neutral | | A1 | numbers | | | |
+drie | num | three | neutral | | A1 | numbers | | | |
+vier | num | four | neutral | | A1 | numbers | | | |
+vyf | num | five | neutral | | A1 | numbers | | | |
+ses | num | six | neutral | | A1 | numbers | | | |
+sewe | num | seven | neutral | | A1 | numbers | | | |
+agt | num | eight | neutral | | A1 | numbers | | | |
+nege | num | nine | neutral | | A1 | numbers | | | |
+tien | num | ten | neutral | | A1 | numbers | | | |
+elf | num | eleven | neutral | | A1 | numbers | | | |
+twaalf | num | twelve | neutral | | A1 | numbers | | | |
+dertien | num | thirteen | neutral | | A1 | numbers | | | |
+veertien | num | fourteen | neutral | | A1 | numbers | | | |
+vyftien | num | fifteen | neutral | | A1 | numbers | | | |
+sestien | num | sixteen | neutral | | A1 | numbers | | | |
+sewentien | num | seventeen | neutral | | A1 | numbers | | | |
+agtien | num | eighteen | neutral | | A1 | numbers | | | |
+negentien | num | nineteen | neutral | | A1 | numbers | | | |
+twintig | num | twenty | neutral | | A1 | numbers | | | |
+een-en-twintig | num | twenty-one | neutral | | A1 | numbers | | | | Units come first: "one-and-twenty".
+dertig | num | thirty | neutral | | A1 | numbers | | | |
+veertig | num | forty | neutral | | A1 | numbers | | | |
+vyftig | num | fifty | neutral | | A1 | numbers | | | |
+sestig | num | sixty | neutral | | A1 | numbers | | | |
+sewentig | num | seventy | neutral | | A1 | numbers | | | |
+tagtig | num | eighty | neutral | | A1 | numbers | | | |
+negentig | num | ninety | neutral | | A1 | numbers | | | |
+honderd | num | hundred | neutral | | A1 | numbers | | | |
+duisend | num | thousand | neutral | | A1 | numbers | | | |
+miljoen | num | million | neutral | | A2 | numbers | | | |
+eerste | num | first | neutral | | A1 | numbers | | | |
+tweede | num | second | neutral | | A1 | numbers | | | |
+derde | num | third | neutral | | A1 | numbers | | | |
+# ===== Time =====
+dag | noun | day | neutral | | A1 | time | pl=dae;dim=daggie | | |
+week | noun | week | neutral | | A1 | time | pl=weke | | |
+maand | noun | month | neutral | | A1 | time | pl=maande | | |
+jaar | noun | year | neutral | | A1 | time | pl=jare | | |
+uur | noun | hour; o'clock | neutral | | A1 | time | pl=ure | Dit is drie-uur. | It is three o'clock. |
+minuut | noun | minute | neutral | | A1 | time | pl=minute | | |
+tyd | noun | time | neutral | | A1 | time | pl=tye | | |
+vandag | adv | today | neutral | | A1 | time | | Vandag is dit warm. | Today it is hot. |
+môre | adv | tomorrow; morning | neutral | | A1 | time | | Môre gaan ons strand toe. | Tomorrow we're going to the beach. |
+gister | adv | yesterday | neutral | | A1 | time | | | |
+oggend | noun | morning | neutral | | A1 | time | pl=oggende | | |
+middag | noun | afternoon; midday | neutral | | A1 | time | pl=middae | | |
+aand | noun | evening | neutral | | A1 | time | pl=aande | | |
+nag | noun | night | neutral | | A1 | time | pl=nagte | | |
+vanaand | adv | tonight; this evening | neutral | | A1 | time | | | |
+altyd | adv | always | neutral | | A1 | time | | | |
+nooit | adv | never | neutral | | A2 | time,negation | | Ek rook nooit nie. | I never smoke. |
+soms | adv | sometimes | neutral | | A1 | time | | | |
+gewoonlik | adv | usually | neutral | | A2 | time | | | |
+later | adv | later | neutral | | A1 | time | | | |
+vroeg | adj | early | neutral | | A1 | time | cmp=vroeër;sup=vroegste | | |
+laat | adj | late | neutral | | A1 | time | cmp=later;sup=laaste | | | Also the verb "to let".
+Maandag | noun | Monday | neutral | | A1 | time | | | | Days are capitalised.
+Dinsdag | noun | Tuesday | neutral | | A1 | time | | | |
+Woensdag | noun | Wednesday | neutral | | A1 | time | | | |
+Donderdag | noun | Thursday | neutral | | A1 | time | | | |
+Vrydag | noun | Friday | neutral | | A1 | time | | | |
+Saterdag | noun | Saturday | neutral | | A1 | time | | | |
+Sondag | noun | Sunday | neutral | | A1 | time | | | |
+Januarie | noun | January | neutral | | A1 | time | | | |
+Februarie | noun | February | neutral | | A1 | time | | | |
+Maart | noun | March | neutral | | A1 | time | | | |
+April | noun | April | neutral | | A1 | time | | | |
+Mei | noun | May | neutral | | A1 | time | | | |
+Junie | noun | June | neutral | | A1 | time | | | |
+Julie | noun | July | neutral | | A1 | time | | | |
+Augustus | noun | August | neutral | | A1 | time | | | |
+September | noun | September | neutral | | A1 | time | | | |
+Oktober | noun | October | neutral | | A1 | time | | | |
+November | noun | November | neutral | | A1 | time | | | |
+Desember | noun | December | neutral | | A1 | time | | | |
+somer | noun | summer | neutral | | A1 | time,weather | pl=somers | | |
+winter | noun | winter | neutral | | A1 | time,weather | pl=winters | | |
+lente | noun | spring | neutral | | A1 | time,weather | | | |
+herfs | noun | autumn | neutral | | A1 | time,weather | | | |
+# ===== Family & people =====
+familie | noun | family; relatives | neutral | | A1 | family | pl=families | | |
+gesin | noun | family (household) | neutral | | A1 | family | pl=gesinne | | | Your immediate household; "familie" is wider.
+ma | noun | mom; mother | informal | | A1 | family | pl=ma's | | |
+moeder | noun | mother | formal | | A1 | family | pl=moeders | | |
+pa | noun | dad; father | informal | | A1 | family | pl=pa's | | |
+vader | noun | father | formal | | A1 | family | pl=vaders | | |
+ouers | noun | parents | neutral | | A1 | family | | | |
+broer | noun | brother | neutral | | A1 | family | pl=broers;dim=broertjie | | |
+suster | noun | sister | neutral | | A1 | family | pl=susters;dim=sussie | | |
+seun | noun | son; boy | neutral | | A1 | family | pl=seuns | | |
+dogter | noun | daughter | neutral | | A1 | family | pl=dogters | | |
+kind | noun | child | neutral | | A1 | family | pl=kinders;dim=kindjie | | |
+baba | noun | baby | neutral | | A1 | family | pl=babas | | |
+ouma | noun | grandmother; granny | neutral | | A1 | family | pl=oumas | | |
+oupa | noun | grandfather; grandpa | neutral | | A1 | family | pl=oupas | | |
+oom | noun | uncle; (polite) older man | neutral | | A1 | family | pl=ooms | Goeie môre, Oom! | Good morning, sir! | Used respectfully for any older man.
+tannie | noun | aunt; (polite) older woman | neutral | | A1 | family | pl=tannies | Dankie, Tannie. | Thank you, ma'am. | Used respectfully for any older woman.
+neef | noun | cousin (male); nephew | neutral | | A2 | family | pl=neefs | | |
+niggie | noun | cousin (female); niece | neutral | | A2 | family | pl=niggies | | |
+man | noun | man; husband | neutral | | A1 | family,people | pl=mans | | |
+vrou | noun | woman; wife | neutral | | A1 | family,people | pl=vroue | | |
+mens | noun | person; human; one (you) | neutral | | A1 | people | pl=mense | | |
+vriend | noun | friend (male) | neutral | | A1 | people | pl=vriende | | |
+vriendin | noun | friend (female); girlfriend | neutral | | A1 | people | pl=vriendinne | | |
+meisie | noun | girl | neutral | | A1 | people | pl=meisies | | |
+# ===== Home =====
+huis | noun | house; home | neutral | | A1 | home | pl=huise;dim=huisie | Ons huis is groot. | Our house is big. |
+kamer | noun | room | neutral | | A1 | home | pl=kamers | | |
+slaapkamer | noun | bedroom | neutral | | A1 | home | pl=slaapkamers | | |
+badkamer | noun | bathroom | neutral | | A1 | home | pl=badkamers | | |
+kombuis | noun | kitchen | neutral | | A1 | home | pl=kombuise | | |
+sitkamer | noun | lounge; living room | neutral | | A1 | home | pl=sitkamers | | |
+tuin | noun | garden; yard | neutral | | A1 | home | pl=tuine | | |
+deur | noun | door; through; by | neutral | | A1 | home | pl=deure | | |
+venster | noun | window | neutral | | A1 | home | pl=vensters | | |
+tafel | noun | table | neutral | | A1 | home | pl=tafels | | |
+stoel | noun | chair | neutral | | A1 | home | pl=stoele | | |
+bed | noun | bed | neutral | | A1 | home | pl=beddens | | |
+yskas | noun | fridge | neutral | | A1 | home,food | pl=yskaste | | |
+sleutel | noun | key | neutral | | A1 | home | pl=sleutels | | |
+# ===== Food & drink =====
+kos | noun | food; to cost | neutral | | A1 | food | | Die kos is lekker. | The food is tasty. | Also the verb "to cost".
+water | noun | water | neutral | | A1 | food | | | |
+koffie | noun | coffee | neutral | | A1 | food | | | |
+tee | noun | tea | neutral | | A1 | food | | | |
+melk | noun | milk | neutral | | A1 | food | | | |
+sap | noun | juice | neutral | | A1 | food | | | |
+bier | noun | beer | neutral | | A1 | food | | | |
+wyn | noun | wine | neutral | | A1 | food | | | |
+brood | noun | bread | neutral | | A1 | food | pl=brode | | |
+botter | noun | butter | neutral | | A1 | food | | | |
+kaas | noun | cheese | neutral | | A1 | food | | | |
+eier | noun | egg | neutral | | A1 | food | pl=eiers | | |
+vleis | noun | meat | neutral | | A1 | food | | | |
+hoender | noun | chicken | neutral | | A1 | food,animals | pl=hoenders | | |
+vis | noun | fish | neutral | | A1 | food,animals | pl=visse | | |
+groente | noun | vegetables | neutral | | A1 | food | | | |
+vrugte | noun | fruit | neutral | | A1 | food | | | |
+appel | noun | apple | neutral | | A1 | food | pl=appels | | |
+piesang | noun | banana | neutral | | A1 | food | pl=piesangs | | |
+lemoen | noun | orange (fruit) | neutral | | A1 | food | pl=lemoene | | |
+aartappel | noun | potato | neutral | | A1 | food | pl=aartappels | | |
+rys | noun | rice | neutral | | A1 | food | | | |
+suiker | noun | sugar | neutral | | A1 | food | | | |
+sout | noun | salt | neutral | | A1 | food | | | |
+ontbyt | noun | breakfast | neutral | | A1 | food | | | |
+middagete | noun | lunch | neutral | | A1 | food | | | |
+aandete | noun | dinner; supper | neutral | | A1 | food | | | |
+honger | adj | hungry | neutral | | A1 | food,emotions | | Ek is honger. | I'm hungry. |
+dors | adj | thirsty | neutral | | A1 | food | | | |
+braai | noun | barbecue (South African) | neutral | | A1 | food,culture | pl=braaie | Ons hou 'n braai. | We're having a braai. | A central part of South African social life. Also the verb "to grill".
+boerewors | noun | farmer's sausage (spiced SA sausage) | neutral | | A2 | food,culture | | | |
+biltong | noun | biltong (dried cured meat) | neutral | | A2 | food,culture | | | |
+melktert | noun | milk tart | neutral | | A2 | food,culture | pl=melkterte | | |
+koeksister | noun | koeksister (syrupy plaited doughnut) | neutral | | A2 | food,culture | pl=koeksisters | | |
+pap | noun | maize porridge; pap | neutral | | A2 | food,culture | | | | Also the adjective "flat; soft" (e.g. a flat tyre).
+lekker | adj | nice; tasty; great; pleasant | informal | | A1 | food,emotions | cmp=lekkerder;sup=lekkerste | Die kos is baie lekker! | The food is really tasty! | The most-used positive word in Afrikaans: food, weather, people, experiences.
+# ===== Adjectives =====
+groot | adj | big; large; great | neutral | | A1 | adjectives | cmp=groter;sup=grootste | | |
+klein | adj | small; little | neutral | | A1 | adjectives | cmp=kleiner;sup=kleinste | | |
+mooi | adj | beautiful; pretty; nice | neutral | | A1 | adjectives | cmp=mooier;sup=mooiste | | |
+lelik | adj | ugly | neutral | | A1 | adjectives | attr=lelike | | |
+oud | adj | old | neutral | | A1 | adjectives | cmp=ouer;sup=oudste;attr=ou | Hoe oud is jy? | How old are you? | Before a noun it becomes "ou": "die ou man".
+jonk | adj | young | neutral | | A1 | adjectives | cmp=jonger;sup=jongste;attr=jong | | |
+nuut | adj | new | neutral | | A1 | adjectives | cmp=nuwer;sup=nuutste;attr=nuwe | | |
+warm | adj | warm; hot | neutral | | A1 | adjectives,weather | | | |
+koud | adj | cold | neutral | | A1 | adjectives,weather | attr=koue | | |
+lank | adj | long; tall | neutral | | A1 | adjectives | cmp=langer;sup=langste;attr=lang | | |
+kort | adj | short | neutral | | A1 | adjectives | | | |
+vinnig | adj | fast; quick | neutral | | A1 | adjectives | | | |
+stadig | adj | slow | neutral | | A1 | adjectives | | Praat stadig, asseblief. | Please speak slowly. |
+gelukkig | adj | happy; lucky; luckily | neutral | | A1 | adjectives,emotions | | | |
+hartseer | adj | sad | neutral | | A1 | adjectives,emotions | | | |
+moeg | adj | tired | neutral | | A1 | adjectives,emotions | | | |
+siek | adj | sick; ill | neutral | | A1 | adjectives,health | | | |
+kwaad | adj | angry | neutral | | A1 | adjectives,emotions | | | |
+bang | adj | afraid; scared | neutral | | A1 | adjectives,emotions | | | |
+duur | adj | expensive | neutral | | A1 | adjectives,shopping | cmp=duurder;sup=duurste | | |
+goedkoop | adj | cheap | neutral | | A1 | adjectives,shopping | | | |
+maklik | adj | easy | neutral | | A1 | adjectives | | | |
+moeilik | adj | difficult; hard | neutral | | A1 | adjectives | | | |
+reg | adj | right; correct; ready | neutral | | A1 | adjectives | | | |
+verkeerd | adj | wrong | neutral | | A1 | adjectives | | | |
+besig | adj | busy | neutral | | A1 | adjectives | | | |
+vol | adj | full | neutral | | A1 | adjectives | | | |
+leeg | adj | empty | neutral | | A1 | adjectives | attr=leë | | |
+# ===== Colours =====
+kleur | noun | colour | neutral | | A1 | colours | pl=kleure | | |
+rooi | adj | red | neutral | | A1 | colours | | | |
+blou | adj | blue | neutral | | A1 | colours | | | |
+groen | adj | green | neutral | | A1 | colours | | | |
+geel | adj | yellow | neutral | | A1 | colours | | | |
+swart | adj | black | neutral | | A1 | colours | | | |
+wit | adj | white | neutral | | A1 | colours | | | |
+bruin | adj | brown | neutral | | A1 | colours | | | |
+pienk | adj | pink | neutral | | A1 | colours | | | |
+pers | adj | purple | neutral | | A1 | colours | | | |
+grys | adj | grey | neutral | | A1 | colours | | | |
+oranje | adj | orange | neutral | | A1 | colours | | | |
+# ===== Weather & nature =====
+weer | noun | weather; again | neutral | | A1 | weather | | Die weer is mooi. | The weather is nice. |
+son | noun | sun | neutral | | A1 | weather,nature | | | |
+reën | noun | rain | neutral | | A1 | weather | | Dit reën. | It's raining. | Also the verb "to rain".
+wind | noun | wind | neutral | | A1 | weather | | | |
+wolk | noun | cloud | neutral | | A1 | weather | pl=wolke | | |
+see | noun | sea | neutral | | A1 | nature | pl=seë | | |
+strand | noun | beach | neutral | | A1 | nature,travel | pl=strande | | |
+berg | noun | mountain | neutral | | A1 | nature | pl=berge | | |
+boom | noun | tree | neutral | | A1 | nature | pl=bome | | |
+blom | noun | flower | neutral | | A1 | nature | pl=blomme | | |
+# ===== Animals =====
+dier | noun | animal | neutral | | A1 | animals | pl=diere | | |
+hond | noun | dog | neutral | | A1 | animals | pl=honde;dim=hondjie | Die hond blaf. | The dog barks. |
+kat | noun | cat | neutral | | A1 | animals | pl=katte;dim=katjie | | |
+perd | noun | horse | neutral | | A1 | animals | pl=perde | | |
+koei | noun | cow | neutral | | A1 | animals | pl=koeie | | |
+skaap | noun | sheep | neutral | | A1 | animals | pl=skape | | |
+voël | noun | bird | neutral | | A1 | animals | pl=voëls | | |
+leeu | noun | lion | neutral | | A1 | animals | pl=leeus | | |
+olifant | noun | elephant | neutral | | A1 | animals | pl=olifante | | |
+# ===== Body & health =====
+kop | noun | head | neutral | | A1 | body | pl=koppe | My kop is seer. | My head hurts. |
+oog | noun | eye | neutral | | A1 | body | pl=oë | | |
+oor | noun | ear; over; about | neutral | | A1 | body | pl=ore | | |
+neus | noun | nose | neutral | | A1 | body | pl=neuse | | |
+mond | noun | mouth | neutral | | A1 | body | pl=monde | | |
+hand | noun | hand | neutral | | A1 | body | pl=hande | | |
+voet | noun | foot | neutral | | A1 | body | pl=voete | | |
+been | noun | leg; bone | neutral | | A1 | body | pl=bene | | |
+arm | noun | arm; poor | neutral | | A1 | body | pl=arms | | | Also the adjective "poor".
+maag | noun | stomach | neutral | | A1 | body | pl=mae | | |
+hart | noun | heart | neutral | | A1 | body | pl=harte | | |
+seer | adj | sore; hurting | neutral | | A1 | body,health | | | |
+dokter | noun | doctor | neutral | | A1 | health,work | pl=dokters | | |
+# ===== Clothes =====
+klere | noun | clothes | neutral | | A1 | clothes | | | |
+hemp | noun | shirt | neutral | | A1 | clothes | pl=hemde | | |
+broek | noun | trousers; pants | neutral | | A1 | clothes | pl=broeke | | |
+rok | noun | dress | neutral | | A1 | clothes | pl=rokke | | |
+skoen | noun | shoe | neutral | | A1 | clothes | pl=skoene | | |
+hoed | noun | hat | neutral | | A1 | clothes | pl=hoede | | |
+baadjie | noun | jacket | neutral | | A1 | clothes | pl=baadjies | | |
+# ===== School =====
+skool | noun | school | neutral | | A1 | school | pl=skole | | |
+onderwyser | noun | teacher | neutral | | A1 | school,work | pl=onderwysers | | |
+leerder | noun | learner; pupil | neutral | | A1 | school | pl=leerders | | |
+klas | noun | class | neutral | | A1 | school | pl=klasse | | |
+boek | noun | book | neutral | | A1 | school | pl=boeke;dim=boekie | | |
+pen | noun | pen | neutral | | A1 | school | pl=penne | | |
+potlood | noun | pencil | neutral | | A1 | school | pl=potlode | | |
+vraag | noun | question | neutral | | A1 | school | pl=vrae | | |
+huiswerk | noun | homework | neutral | | A1 | school | | | |
+toets | noun | test | neutral | | A1 | school | pl=toetse | | |
+taal | noun | language | neutral | | A1 | school | pl=tale | | |
+woord | noun | word | neutral | | A1 | school | pl=woorde | | |
+# ===== Places & travel =====
+stad | noun | city; town | neutral | | A1 | places | pl=stede | | |
+dorp | noun | town; village | neutral | | A1 | places | pl=dorpe | | |
+plaas | noun | farm; place | neutral | | A1 | places | pl=plase | | |
+land | noun | country; land | neutral | | A1 | places | pl=lande | | |
+straat | noun | street | neutral | | A1 | places | pl=strate | | |
+winkel | noun | shop; store | neutral | | A1 | places,shopping | pl=winkels | | |
+kerk | noun | church | neutral | | A1 | places | pl=kerke | | |
+hospitaal | noun | hospital | neutral | | A1 | places,health | pl=hospitale | | |
+kar | noun | car | informal | | A1 | transport | pl=karre | | |
+motor | noun | car; motor car | formal | | A1 | transport | pl=motors | | |
+bus | noun | bus | neutral | | A1 | transport | pl=busse | | |
+trein | noun | train | neutral | | A1 | transport | pl=treine | | |
+vliegtuig | noun | aeroplane | neutral | | A1 | transport | pl=vliegtuie | | |
+fiets | noun | bicycle | neutral | | A1 | transport | pl=fietse | | |
+robot | noun | traffic light | neutral | | A1 | transport | pl=robotte | Draai links by die robot. | Turn left at the traffic light. | South African usage.
+links | adv | left | neutral | | A1 | directions | | | |
+regs | adv | right | neutral | | A1 | directions | | | |
+reguit | adv | straight (ahead) | neutral | | A1 | directions | | | |
+ver | adj | far | neutral | | A1 | directions | | | |
+naby | adj | near; close by | neutral | | A1 | directions | | | |
+# ===== Shopping & money =====
+geld | noun | money | neutral | | A1 | shopping | | | |
+rand | noun | rand (SA currency) | neutral | | A1 | shopping | | | |
+prys | noun | price; prize | neutral | | A1 | shopping | pl=pryse | | |
+# ===== Sport & hobbies =====
+sport | noun | sport | neutral | | A1 | sport | | | |
+sokker | noun | soccer; football | neutral | | A1 | sport | | | |
+rugby | noun | rugby | neutral | | A1 | sport | | | |
+krieket | noun | cricket | neutral | | A1 | sport | | | |
+musiek | noun | music | neutral | | A1 | music | | | |
+liedjie | noun | song | neutral | | A1 | music | pl=liedjies | | |

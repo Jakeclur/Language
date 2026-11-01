@@ -1,0 +1,236 @@
+{
+  "id": "b1-15",
+  "level": "B1",
+  "number": 15,
+  "title": "Slang & culture: talk like a local",
+  "titleAf": "Sleng en kultuur",
+  "icon": "😎",
+  "lessons": [
+    {
+      "id": "b1-15-1",
+      "title": "Everyday slang",
+      "explanation": [
+        "These words are everywhere in casual South African speech — and many are used in South African English too.",
+        "**lekker** — great, nice. **Dit was lekker!**",
+        "**kuier** — to visit/hang out (a core cultural word: relaxed time together). **Kom kuier by ons!**",
+        "**ou** — guy (**die ouens** = the guys). **'n Goeie ou** = a good guy.",
+        "**howzit** — hi, how's it going.",
+        "**babbelas** — hangover. **dop** — a drink, or to fail a test.",
+        "**bakkie** — pickup truck. **robot** — traffic light!"
+      ],
+      "examples": [
+        {
+          "af": "Kom kuier Saterdag by ons!",
+          "en": "Come hang out with us on Saturday!"
+        },
+        {
+          "af": "Hy het die toets gedop.",
+          "en": "He failed the test."
+        },
+        {
+          "af": "Ek het 'n babbelas.",
+          "en": "I've got a hangover."
+        },
+        {
+          "af": "Draai links by die robot.",
+          "en": "Turn left at the traffic light."
+        }
+      ],
+      "vocab": [
+        "lekker",
+        "kuier",
+        "ou",
+        "babbelas",
+        "dop",
+        "bakkie",
+        "robot",
+        "lus"
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "question": "In South Africa, a \"robot\" on the road is…",
+          "options": [
+            "a traffic light",
+            "a speed camera",
+            "a police officer"
+          ],
+          "answer": "a traffic light"
+        },
+        {
+          "type": "choice",
+          "question": "\"Hy het die toets gedop\" means…",
+          "options": [
+            "He passed the test",
+            "He failed the test",
+            "He drank at the test"
+          ],
+          "answer": "He failed the test"
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Come visit us!",
+          "answers": [
+            "Kom kuier by ons!",
+            "Kom kuier!"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek is lus vir 'n koffie.",
+          "answers": [
+            "I feel like a coffee.",
+            "I feel like coffee.",
+            "I'm in the mood for a coffee."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Ek het 'n ___ (hangover).",
+          "en": "I've got a hangover.",
+          "answers": [
+            "babbelas"
+          ],
+          "options": [
+            "babbelas",
+            "bakkie",
+            "braai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-15-2",
+      "title": "Little words with big flavour",
+      "explanation": [
+        "These small words are hard to translate but make you sound natural:",
+        "**nou-nou** — in a moment (NOT \"right now\"!). **Ek kom nou-nou.**",
+        "**sommer** — just, for no particular reason. **Ek het sommer gekom.**",
+        "**mos** — you know, after all. **Ek het mos gesê!** (I told you so!)",
+        "**darem** — at least, really. **Dit is darem mooi!**",
+        "**ja-nee** — yes indeed (literally yes-no!).",
+        "**foeitog** — aww, shame (sympathy). **eina** — ouch. **ag** — oh."
+      ],
+      "examples": [
+        {
+          "af": "Ek kom nou-nou.",
+          "en": "I'll be there in a moment."
+        },
+        {
+          "af": "Ek het mos gesê!",
+          "en": "I told you so!"
+        },
+        {
+          "af": "Ja-nee, dit is warm vandag.",
+          "en": "Yes indeed, it's hot today."
+        },
+        {
+          "af": "Foeitog, die arme hondjie!",
+          "en": "Aww, the poor little dog!"
+        }
+      ],
+      "vocab": [
+        "nou-nou",
+        "sommer",
+        "mos",
+        "darem",
+        "ja-nee",
+        "eina",
+        "ag"
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "question": "Your friend says \"Ek kom nou-nou.\" When will they arrive?",
+          "options": [
+            "Immediately",
+            "In a little while",
+            "Never"
+          ],
+          "answer": "In a little while"
+        },
+        {
+          "type": "choice",
+          "question": "You stub your toe. You say…",
+          "options": [
+            "Eina!",
+            "Foeitog!",
+            "Ja-nee!"
+          ],
+          "answer": "Eina!"
+        },
+        {
+          "type": "choice",
+          "question": "\"Ja-nee\" means…",
+          "options": [
+            "maybe",
+            "yes indeed",
+            "no"
+          ],
+          "answer": "yes indeed"
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek het mos gesê!",
+          "answers": [
+            "I told you so!",
+            "I did tell you!",
+            "I said so!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-15-3",
+      "title": "Terms of endearment & respect",
+      "explanation": [
+        "**skat**, **liefie**, **bokkie** — darling, sweetheart (partners, children).",
+        "**Oom** and **Tannie** — respectful for any older man/woman. Using **jy** with an older stranger can sound rude; use **u** or Oom/Tannie.",
+        "**boer maak 'n plan** — \"a farmer makes a plan\": the famous South African can-do attitude."
+      ],
+      "examples": [
+        {
+          "af": "Dankie, Tannie!",
+          "en": "Thank you, ma'am!"
+        },
+        {
+          "af": "Moenie jou bekommer nie, boer maak 'n plan.",
+          "en": "Don't worry, we'll find a way."
+        }
+      ],
+      "vocab": [
+        "skat",
+        "liefie",
+        "bokkie",
+        "oom",
+        "tannie",
+        "boer maak 'n plan"
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "question": "You're thanking an older woman at a shop. Most respectful:",
+          "options": [
+            "Dankie, bokkie!",
+            "Dankie, Tannie!",
+            "Dankie, bru!"
+          ],
+          "answer": "Dankie, Tannie!"
+        },
+        {
+          "type": "choice",
+          "question": "\"Boer maak 'n plan\" means…",
+          "options": [
+            "Farmers plan their crops",
+            "We'll find a way",
+            "Make a farm plan"
+          ],
+          "answer": "We'll find a way"
+        }
+      ]
+    }
+  ]
+}

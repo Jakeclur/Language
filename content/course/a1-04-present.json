@@ -1,0 +1,55 @@
+{
+  "id": "a1-04",
+  "level": "A1",
+  "number": 4,
+  "title": "Present tense: easier than English",
+  "titleAf": "Die teenwoordige tyd",
+  "icon": "⏱️",
+  "lessons": [
+    {
+      "id": "a1-04-1",
+      "title": "One verb form for everyone",
+      "explanation": [
+        "Afrikaans verbs **never change** for the person: **ek loop, jy loop, hy loop, hulle loop**.",
+        "There's also no difference between \"I eat\" and \"I am eating\": **Ek eet** means both.",
+        "Only two verbs are irregular in the present: **wees → is** (be) and **hê → het** (have)."
+      ],
+      "examples": [
+        { "af": "Ek eet 'n appel.", "en": "I'm eating an apple." },
+        { "af": "Sy drink koffie.", "en": "She drinks coffee." },
+        { "af": "Ons speel sokker.", "en": "We play soccer." },
+        { "af": "Hulle het 'n kat.", "en": "They have a cat." }
+      ],
+      "vocab": ["eet", "drink", "speel", "loop", "werk", "slaap", "lees", "het", "appel", "koffie", "sokker", "kat"],
+      "exercises": [
+        { "type": "fill", "af": "Hy ___ koffie.", "en": "He drinks coffee.", "answers": ["drink"], "options": ["drink", "drinks", "drinking"] },
+        { "type": "translate", "from": "en", "prompt": "I am eating an apple.", "answers": ["Ek eet 'n appel."] },
+        { "type": "translate", "from": "en", "prompt": "They play soccer.", "answers": ["Hulle speel sokker."] },
+        { "type": "choice", "question": "\"Ek lees\" can mean…", "options": ["only \"I read\"", "only \"I am reading\"", "both \"I read\" and \"I am reading\""], "answer": "both \"I read\" and \"I am reading\"" },
+        { "type": "fill", "af": "Ons ___ 'n hond.", "en": "We have a dog.", "answers": ["het"], "options": ["het", "is", "hê"] },
+        { "type": "order", "en": "She works in the city.", "af": "Sy werk in die stad." }
+      ]
+    },
+    {
+      "id": "a1-04-2",
+      "title": "Everyday actions",
+      "explanation": [
+        "More useful verbs. Remember: just use the basic form after any pronoun.",
+        "**Praat jy Afrikaans?** = Do you speak Afrikaans? (Questions just swap the verb to the front.)"
+      ],
+      "examples": [
+        { "af": "Ek leer Afrikaans.", "en": "I'm learning Afrikaans." },
+        { "af": "Praat jy Engels?", "en": "Do you speak English?" },
+        { "af": "Ons woon in Kaapstad.", "en": "We live in Cape Town." }
+      ],
+      "vocab": ["leer", "praat", "woon", "verstaan", "weet", "skryf", "kyk", "luister", "koop", "hou van"],
+      "exercises": [
+        { "type": "translate", "from": "en", "prompt": "I am learning Afrikaans.", "answers": ["Ek leer Afrikaans."] },
+        { "type": "translate", "from": "en", "prompt": "Do you speak Afrikaans?", "answers": ["Praat jy Afrikaans?", "Praat u Afrikaans?"] },
+        { "type": "order", "en": "We live in Cape Town.", "af": "Ons woon in Kaapstad." },
+        { "type": "translate", "from": "af", "prompt": "Ek hou van musiek.", "answers": ["I like music.", "I love music."] },
+        { "type": "fill", "af": "Hulle ___ TV.", "en": "They are watching TV.", "answers": ["kyk"], "options": ["kyk", "sien", "lees"] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "a1-06",
+  "level": "A1",
+  "number": 6,
+  "title": "Numbers, time & days",
+  "titleAf": "Getalle, tyd en dae",
+  "icon": "🔢",
+  "lessons": [
+    {
+      "id": "a1-06-1",
+      "title": "Counting",
+      "explanation": [
+        "**een, twee, drie, vier, vyf, ses, sewe, agt, nege, tien**",
+        "11–19: **elf, twaalf, dertien, veertien, vyftien, sestien, sewentien, agtien, negentien**.",
+        "Like German and Dutch, units come **first** from 21 on: **een-en-twintig** (one-and-twenty = 21), **vyf-en-dertig** (35).",
+        "**honderd** (100), **duisend** (1,000). Money: **R50** = **vyftig rand**."
+      ],
+      "examples": [
+        { "af": "Ek is sestien jaar oud.", "en": "I am sixteen years old." },
+        { "af": "Dit kos vyftig rand.", "en": "It costs fifty rand." },
+        { "af": "Hoeveel kos dit?", "en": "How much does it cost?" }
+      ],
+      "vocab": ["een", "twee", "drie", "vier", "vyf", "ses", "sewe", "agt", "nege", "tien", "twintig", "honderd", "hoeveel", "rand"],
+      "exercises": [
+        { "type": "choice", "question": "What is \"vyf-en-twintig\"?", "options": ["52", "25", "75"], "answer": "25" },
+        { "type": "choice", "question": "How do you say 7?", "options": ["sewe", "ses", "agt"], "answer": "sewe" },
+        { "type": "translate", "from": "en", "prompt": "How much does it cost?", "answers": ["Hoeveel kos dit?"] },
+        { "type": "translate", "from": "af", "prompt": "Dit kos twintig rand.", "answers": ["It costs twenty rand.", "It costs R20."] },
+        { "type": "fill", "af": "Ek is ___ (16) jaar oud.", "en": "I am sixteen years old.", "answers": ["sestien"], "options": ["sestien", "sestig", "sewentien"] }
+      ]
+    },
+    {
+      "id": "a1-06-2",
+      "title": "Days, months and telling time",
+      "explanation": [
+        "Days: **Maandag, Dinsdag, Woensdag, Donderdag, Vrydag, Saterdag, Sondag** (written with a capital).",
+        "**vandag** (today), **môre** (tomorrow), **gister** (yesterday).",
+        "Time: **Hoe laat is dit?** = What time is it? **Dit is drie-uur** = It's three o'clock. **half vier** = half past three (literally \"half four\")!"
+      ],
+      "examples": [
+        { "af": "Vandag is Maandag.", "en": "Today is Monday." },
+        { "af": "Hoe laat is dit?", "en": "What time is it?" },
+        { "af": "Die skool begin om agtuur.", "en": "School starts at eight o'clock." }
+      ],
+      "vocab": ["vandag", "môre", "gister", "Maandag", "Vrydag", "Saterdag", "Sondag", "week", "maand", "jaar", "uur", "tyd"],
+      "exercises": [
+        { "type": "translate", "from": "en", "prompt": "Today is Friday.", "answers": ["Vandag is Vrydag.", "Dit is vandag Vrydag."] },
+        { "type": "translate", "from": "en", "prompt": "What time is it?", "answers": ["Hoe laat is dit?"] },
+        { "type": "choice", "question": "\"half drie\" means…", "options": ["3:30", "2:30", "3:15"], "answer": "2:30" },
+        { "type": "choice", "question": "\"gister\" means…", "options": ["tomorrow", "yesterday", "today"], "answer": "yesterday" },
+        { "type": "order", "en": "Today is Monday.", "af": "Vandag is Maandag." }
+      ]
+    }
+  ]
+}

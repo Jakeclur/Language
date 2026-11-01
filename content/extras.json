@@ -1,0 +1,127 @@
+{
+  "phrasebook": [
+    {
+      "id": "basics", "title": "Survival basics", "icon": "🆘", "goals": ["all"],
+      "phrases": [
+        { "af": "Hallo!", "en": "Hello!" },
+        { "af": "Dankie.", "en": "Thank you." },
+        { "af": "Asseblief.", "en": "Please." },
+        { "af": "Verskoon my.", "en": "Excuse me." },
+        { "af": "Ek is jammer.", "en": "I'm sorry." },
+        { "af": "Ek verstaan nie.", "en": "I don't understand." },
+        { "af": "Praat jy Engels?", "en": "Do you speak English?" },
+        { "af": "Praat stadig, asseblief.", "en": "Please speak slowly." },
+        { "af": "Wat beteken dit?", "en": "What does that mean?" },
+        { "af": "Hoe sê 'n mens dit in Afrikaans?", "en": "How do you say that in Afrikaans?" },
+        { "af": "Ek leer Afrikaans.", "en": "I'm learning Afrikaans." }
+      ]
+    },
+    {
+      "id": "shops", "title": "Shops & restaurants", "icon": "🛒", "goals": ["travel", "moving", "all"],
+      "phrases": [
+        { "af": "Hoeveel kos dit?", "en": "How much does it cost?" },
+        { "af": "Ek wil graag bestel.", "en": "I'd like to order." },
+        { "af": "Kan ek met 'n kaart betaal?", "en": "Can I pay by card?" },
+        { "af": "Die rekening, asseblief.", "en": "The bill, please." },
+        { "af": "Die kos was baie lekker!", "en": "The food was delicious!" },
+        { "af": "Het julle 'n spyskaart in Engels?", "en": "Do you have an English menu?" },
+        { "af": "Ek is vegetariër.", "en": "I'm vegetarian." },
+        { "af": "Waar is die badkamer?", "en": "Where is the bathroom?" }
+      ]
+    },
+    {
+      "id": "directions", "title": "Getting around", "icon": "🧭", "goals": ["travel", "moving"],
+      "phrases": [
+        { "af": "Waar is die stasie?", "en": "Where is the station?" },
+        { "af": "Draai links by die robot.", "en": "Turn left at the traffic light." },
+        { "af": "Gaan reguit aan.", "en": "Go straight on." },
+        { "af": "Is dit ver?", "en": "Is it far?" },
+        { "af": "Dit is naby.", "en": "It's nearby." },
+        { "af": "Ek is verdwaal.", "en": "I'm lost." },
+        { "af": "Een kaartjie na Kaapstad, asseblief.", "en": "One ticket to Cape Town, please." }
+      ]
+    },
+    {
+      "id": "social", "title": "Making friends & a braai", "icon": "🔥", "goals": ["all", "culture", "family"],
+      "phrases": [
+        { "af": "Aangename kennis!", "en": "Pleased to meet you!" },
+        { "af": "Waar kom jy vandaan?", "en": "Where are you from?" },
+        { "af": "Ek kom van Australië.", "en": "I'm from Australia." },
+        { "af": "Kom kuier by ons!", "en": "Come and visit us!" },
+        { "af": "Kan ek iets bring?", "en": "Can I bring something?" },
+        { "af": "Die vleis is perfek.", "en": "The meat is perfect." },
+        { "af": "Gesondheid!", "en": "Cheers! (to your health)" },
+        { "af": "Baie dankie vir die lekker kuier!", "en": "Thanks so much for a lovely time!" }
+      ]
+    },
+    {
+      "id": "school", "title": "At school", "icon": "🎒", "goals": ["school"],
+      "phrases": [
+        { "af": "Goeie môre, Juffrou.", "en": "Good morning, Miss." },
+        { "af": "Mag ek toilet toe gaan?", "en": "May I go to the toilet?" },
+        { "af": "Ek het my huiswerk vergeet.", "en": "I forgot my homework." },
+        { "af": "Kan Meneer dit asseblief herhaal?", "en": "Could you please repeat that, sir?" },
+        { "af": "Ek verstaan nie die vraag nie.", "en": "I don't understand the question." },
+        { "af": "Wanneer is die toets?", "en": "When is the test?" }
+      ]
+    },
+    {
+      "id": "moving", "title": "Work, home & admin", "icon": "🏢", "goals": ["moving"],
+      "phrases": [
+        { "af": "Ek soek 'n woonstel om te huur.", "en": "I'm looking for a flat to rent." },
+        { "af": "Ek wil 'n bankrekening oopmaak.", "en": "I'd like to open a bank account." },
+        { "af": "Ek het 'n afspraak om tienuur.", "en": "I have an appointment at ten." },
+        { "af": "Kan u my asseblief help?", "en": "Could you please help me? (formal)" },
+        { "af": "Ek begin volgende week by my nuwe werk.", "en": "I start my new job next week." },
+        { "af": "Wat is u e-posadres?", "en": "What is your email address? (formal)" }
+      ]
+    },
+    {
+      "id": "family", "title": "Family & heritage", "icon": "👵", "goals": ["family"],
+      "phrases": [
+        { "af": "Hoe gaan dit met Ouma?", "en": "How are you, Granny? (respectful)" },
+        { "af": "Ek is lief vir julle.", "en": "I love you all." },
+        { "af": "Vertel my van die ou dae.", "en": "Tell me about the old days." },
+        { "af": "Ek mis jou baie.", "en": "I miss you a lot." },
+        { "af": "Wat is Ouma se resep vir melktert?", "en": "What is Granny's recipe for milk tart?" },
+        { "af": "Geseënde Kersfees!", "en": "Merry Christmas! (lit. Blessed Christmas)" }
+      ]
+    },
+    {
+      "id": "health", "title": "Health & emergencies", "icon": "🚑", "goals": ["all", "travel", "moving"],
+      "phrases": [
+        { "af": "Help!", "en": "Help!" },
+        { "af": "Bel die polisie!", "en": "Call the police!" },
+        { "af": "Ek het 'n dokter nodig.", "en": "I need a doctor." },
+        { "af": "My kop is seer.", "en": "I have a headache." },
+        { "af": "Waar is die naaste apteek?", "en": "Where is the nearest pharmacy?" },
+        { "af": "Dit is 'n noodgeval.", "en": "It's an emergency." }
+      ]
+    }
+  ],
+  "pronunciation": [
+    { "spelling": "g", "ipa": "x", "example": "goed", "tip": "Throaty, like Scottish \"loch\" or German \"Bach\". Never like English \"go\" (except in a few loanwords)." },
+    { "spelling": "r", "ipa": "r", "example": "rooi", "tip": "Rolled or tapped with the tip of the tongue." },
+    { "spelling": "w", "ipa": "v / w", "example": "water", "tip": "Like English v, but softer. After a consonant (twee) it's closer to English w." },
+    { "spelling": "v", "ipa": "f", "example": "vis", "tip": "Usually like English f." },
+    { "spelling": "j", "ipa": "j", "example": "ja", "tip": "Like English y in \"yes\"." },
+    { "spelling": "tj", "ipa": "c / tʃ", "example": "baadjie", "tip": "Like the ch in \"church\", or a soft k-y sound." },
+    { "spelling": "a / aa", "ipa": "a / ɑː", "example": "man / maan", "tip": "Short a like \"cut\"; long aa like \"father\"." },
+    { "spelling": "e", "ipa": "ɛ / æ / ə", "example": "ek / lekker / die", "tip": "Short e is like \"bed\" (often more open, like \"bad\"); unstressed e is a quick \"uh\"." },
+    { "spelling": "ee", "ipa": "iə", "example": "een", "tip": "Glides: \"ee-uh\"." },
+    { "spelling": "ê", "ipa": "ɛː", "example": "sê", "tip": "Long, open e, like \"air\" without the r." },
+    { "spelling": "ë", "ipa": "(new syllable)", "example": "geëet", "tip": "The dots show a new syllable starts: ge-eet." },
+    { "spelling": "i", "ipa": "ə", "example": "dit", "tip": "Usually a short \"uh\", NOT like English \"it\"." },
+    { "spelling": "ie", "ipa": "i", "example": "sien", "tip": "Like \"see\"." },
+    { "spelling": "o / oo", "ipa": "ɔ / uə", "example": "kop / groot", "tip": "Short o like \"pot\"; long oo glides \"oo-uh\"." },
+    { "spelling": "ô", "ipa": "ɔː", "example": "môre", "tip": "Long o, like \"saw\"." },
+    { "spelling": "oe", "ipa": "u", "example": "boek", "tip": "Like \"book\" or \"food\"." },
+    { "spelling": "u / uu", "ipa": "œ / y", "example": "bus / uur", "tip": "Rounded front vowels: say \"ee\" with rounded lips for uu." },
+    { "spelling": "ei / y", "ipa": "əi", "example": "klein / vyf", "tip": "Both spellings sound the same, like \"ay\" in \"say\"." },
+    { "spelling": "ui", "ipa": "œy", "example": "huis", "tip": "Start with rounded lips, glide to \"ee\". Like \"ay\" with pursed lips." },
+    { "spelling": "ou", "ipa": "əu", "example": "koud", "tip": "Like \"oh\" in British English." },
+    { "spelling": "eu", "ipa": "øː", "example": "seun", "tip": "Like French \"peu\": say \"ay\" with rounded lips." },
+    { "spelling": "'n", "ipa": "ə", "example": "'n hond", "tip": "A quick \"uh\", like the a in \"about\"." },
+    { "spelling": "-ig / -ige", "ipa": "əx", "example": "gelukkig", "tip": "The g at the end is the throaty g too." }
+  ]
+}

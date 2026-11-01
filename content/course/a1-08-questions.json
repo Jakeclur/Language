@@ -1,0 +1,34 @@
+{
+  "id": "a1-08",
+  "level": "A1",
+  "number": 8,
+  "title": "Asking questions",
+  "titleAf": "Vrae vra",
+  "icon": "❓",
+  "lessons": [
+    {
+      "id": "a1-08-1",
+      "title": "Yes/no questions and question words",
+      "explanation": [
+        "**Yes/no questions:** put the verb first. **Jy praat Afrikaans** → **Praat jy Afrikaans?**",
+        "**Question words** go first, then the verb: **wie** (who), **wat** (what), **waar** (where), **wanneer** (when), **hoekom** (why), **hoe** (how), **hoeveel** (how much/many), **watter** (which).",
+        "**Waar is die badkamer?** = Where is the bathroom?"
+      ],
+      "examples": [
+        { "af": "Woon jy in Johannesburg?", "en": "Do you live in Johannesburg?" },
+        { "af": "Waar is die badkamer?", "en": "Where is the bathroom?" },
+        { "af": "Hoekom huil die baba?", "en": "Why is the baby crying?" },
+        { "af": "Wanneer begin die fliek?", "en": "When does the movie start?" }
+      ],
+      "vocab": ["wie", "wat", "waar", "wanneer", "hoekom", "hoe", "hoeveel", "watter", "badkamer"],
+      "exercises": [
+        { "type": "transform", "instruction": "Turn it into a yes/no question", "from": "Jy praat Afrikaans.", "answers": ["Praat jy Afrikaans?"] },
+        { "type": "translate", "from": "en", "prompt": "Where is the bathroom?", "answers": ["Waar is die badkamer?"] },
+        { "type": "fill", "af": "___ is jou naam?", "en": "What is your name?", "answers": ["Wat"], "options": ["Wat", "Wie", "Waar"] },
+        { "type": "fill", "af": "___ huil jy?", "en": "Why are you crying?", "answers": ["Hoekom", "Waarom"], "options": ["Hoekom", "Hoe", "Wanneer"] },
+        { "type": "order", "en": "When does school start?", "af": "Wanneer begin die skool?" },
+        { "type": "translate", "from": "en", "prompt": "Who is that?", "answers": ["Wie is dit?"] }
+      ]
+    }
+  ]
+}

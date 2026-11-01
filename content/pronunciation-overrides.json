@@ -1,0 +1,4 @@
+{
+  "_comment": "Words a TTS engine mispronounces -> IPA used in SSML <phoneme>. Add entries after the audio QA flags them.",
+  "rugby": "ˈraɡbi"
+}

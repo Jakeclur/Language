@@ -1,0 +1,140 @@
+# ===== A2: Everyday life =====
+oggendete | noun | breakfast | dated | | A2 | food | | | | "ontbyt" is the usual word.
+bestel | verb | to order | neutral | | A2 | food,shopping | pp=bestel | Ek wil graag bestel. | I'd like to order. |
+graag | adv | gladly; would like to | neutral | | A2 | grammar | | Ek wil graag 'n koffie hê. | I would like a coffee. | Softens a request: "Ek wil graag…" = "I'd like to…"
+rekening | noun | bill; account | neutral | | A2 | food,shopping,finance | pl=rekeninge | Die rekening, asseblief. | The bill, please. |
+kelner | noun | waiter | neutral | | A2 | food,work | pl=kelners | | |
+restaurant | noun | restaurant | neutral | | A2 | food,places | pl=restaurante | | |
+spyskaart | noun | menu | neutral | | A2 | food | pl=spyskaarte | | |
+bord | noun | plate; sign; board | neutral | | A2 | food,home | pl=borde | | |
+koppie | noun | cup; small hill | neutral | | A2 | food,home | pl=koppies | 'n Koppie tee, asseblief. | A cup of tea, please. |
+glas | noun | glass | neutral | | A2 | food,home | pl=glase | | |
+mes | noun | knife | neutral | | A2 | food,home | pl=messe | | |
+vurk | noun | fork | neutral | | A2 | food,home | pl=vurke | | |
+lepel | noun | spoon | neutral | | A2 | food,home | pl=lepels | | |
+soet | adj | sweet | neutral | | A2 | food | | | |
+suur | adj | sour | neutral | | A2 | food | attr=suur | | |
+sterk | adj | strong | neutral | | A2 | adjectives | | | |
+swak | adj | weak; poor (quality) | neutral | | A2 | adjectives | | | |
+skoon | adj | clean | neutral | | A2 | adjectives,home | | | |
+vuil | adj | dirty | neutral | | A2 | adjectives,home | | | |
+gevaarlik | adj | dangerous | neutral | | A2 | adjectives,safety | | | |
+veilig | adj | safe | neutral | | A2 | adjectives,safety | | | |
+belangrik | adj | important | neutral | | A2 | adjectives | | | |
+interessant | adj | interesting | neutral | | A2 | adjectives | | | |
+vervelig | adj | boring | neutral | | A2 | adjectives | | Die fliek is vervelig. | The movie is boring. |
+snaaks | adj | funny; strange | neutral | | A2 | adjectives,emotions | | | |
+slim | adj | clever; smart | neutral | | A2 | adjectives,personality | | | |
+dom | adj | stupid; dumb | informal | 1 | A2 | adjectives,personality | | | | Can be rude when said about a person.
+vriendelik | adj | friendly | neutral | | A2 | adjectives,personality | | | |
+gaaf | adj | nice; kind; pleasant | neutral | | A2 | adjectives,personality | attr=gawe | Hy is 'n gawe ou. | He's a nice guy. |
+skaam | adj | shy; ashamed | neutral | | A2 | adjectives,emotions | | | |
+trots | adj | proud | neutral | | A2 | adjectives,emotions | | | |
+opgewonde | adj | excited | neutral | | A2 | adjectives,emotions | | | |
+bekommerd | adj | worried | neutral | | A2 | adjectives,emotions | | | |
+verlief | adj | in love | neutral | | A2 | adjectives,emotions | | | |
+alleen | adj | alone | neutral | | A2 | adjectives | | | |
+# ===== A2: Verbs =====
+onthou | verb | to remember | neutral | | A2 | verbs | pp=onthou | | |
+vergeet | verb | to forget | neutral | | A2 | verbs | pp=vergeet | | |
+probeer | verb | to try | neutral | | A2 | verbs | pp=probeer | | |
+glo | verb | to believe | neutral | | A2 | verbs | pp=geglo | | |
+hoop | verb | to hope | neutral | | A2 | verbs | pp=gehoop | | |
+wens | verb | to wish | neutral | | A2 | verbs | pp=gewens | | |
+reis | verb | to travel | neutral | | A2 | verbs,travel | pp=gereis | | | Also the noun "journey; trip".
+besoek | verb | to visit | neutral | | A2 | verbs,travel | pp=besoek | | |
+kuier | verb | to visit; to socialise; to hang out | neutral | | A2 | verbs,culture | pp=gekuier | Kom kuier by ons! | Come visit us! | A core SA cultural word: spending relaxed time together.
+bring | verb | to bring | neutral | | A2 | verbs | pp=gebring | | |
+stuur | verb | to send; to steer | neutral | | A2 | verbs,technology | pp=gestuur | | |
+verkoop | verb | to sell | neutral | | A2 | verbs,shopping | pp=verkoop | | |
+huur | verb | to rent; to hire | neutral | | A2 | verbs,home | pp=gehuur | | |
+verloor | verb | to lose | neutral | | A2 | verbs | pp=verloor | | |
+wen | verb | to win | neutral | | A2 | verbs,sport | pp=gewen | | |
+dra | verb | to carry; to wear | neutral | | A2 | verbs,clothes | pp=gedra | | |
+trek | verb | to pull; to move (house) | neutral | | A2 | verbs | pp=getrek | | |
+draai | verb | to turn | neutral | | A2 | verbs,directions | pp=gedraai | | |
+klim | verb | to climb | neutral | | A2 | verbs | pp=geklim | | |
+val | verb | to fall | neutral | | A2 | verbs | pp=geval | | |
+breek | verb | to break | neutral | | A2 | verbs | pp=gebreek | | |
+skoonmaak | verb | to clean | neutral | | A2 | verbs,home | pp=skoongemaak | | |
+opstaan | verb | to get up; to stand up | neutral | | A2 | verbs | pp=opgestaan | Ek staan vroeg op. | I get up early. | Separable verb.
+aantrek | verb | to get dressed; to put on | neutral | | A2 | verbs,clothes | pp=aangetrek | | | Separable verb.
+uitgaan | verb | to go out | neutral | | A2 | verbs | pp=uitgegaan | | | Separable verb.
+terugkom | verb | to come back; to return | neutral | | A2 | verbs | pp=teruggekom | | | Separable verb.
+afskakel | verb | to switch off | neutral | | A2 | verbs,technology | pp=afgeskakel | | | Separable verb.
+aanskakel | verb | to switch on | neutral | | A2 | verbs,technology | pp=aangeskakel | | | Separable verb.
+rook | verb | to smoke | neutral | | A2 | verbs,health | pp=gerook | | |
+# ===== A2: Work & money =====
+werk | noun | work; job | neutral | | A2 | work | | | |
+kantoor | noun | office | neutral | | A2 | work | pl=kantore | | |
+baas | noun | boss | neutral | | A2 | work | pl=base | | |
+salaris | noun | salary | neutral | | A2 | work,finance | pl=salarisse | | |
+bank | noun | bank; bench; couch | neutral | | A2 | finance,home | pl=banke | | |
+afspraak | noun | appointment | neutral | | A2 | work,health | pl=afsprake | | |
+vergadering | noun | meeting | neutral | | A2 | work | pl=vergaderings | | |
+werkloos | adj | unemployed | neutral | | A2 | work | | | |
+boer | noun | farmer | neutral | | A2 | work,farm | pl=boere | | |
+polisie | noun | police | neutral | | A2 | safety,work | | | |
+prokureur | noun | lawyer; attorney | neutral | | B1 | work,law | pl=prokureurs | | |
+verpleegster | noun | nurse (female) | neutral | | A2 | work,health | pl=verpleegsters | | |
+# ===== A2: Travel =====
+lughawe | noun | airport | neutral | | A2 | travel | pl=lughawens | | |
+stasie | noun | station | neutral | | A2 | travel | pl=stasies | | |
+kaartjie | noun | ticket | neutral | | A2 | travel | pl=kaartjies | | |
+paspoort | noun | passport | neutral | | A2 | travel | pl=paspoorte | | |
+hotel | noun | hotel | neutral | | A2 | travel | pl=hotelle | | |
+kaart | noun | map; card | neutral | | A2 | travel | pl=kaarte | | |
+pad | noun | road; path | neutral | | A2 | travel,transport | pl=paaie | | |
+hoek | noun | corner | neutral | | A2 | directions | pl=hoeke | | |
+vakansie | noun | holiday; vacation | neutral | | A2 | travel | pl=vakansies | | |
+bakkie | noun | pickup truck; small container | neutral | | A2 | transport,culture | pl=bakkies | Hy ry 'n wit bakkie. | He drives a white bakkie. | South African word, also used in SA English.
+petrol | noun | petrol; fuel | neutral | | A2 | transport | | | |
+# ===== A2: Health =====
+medisyne | noun | medicine | neutral | | A2 | health | | | |
+apteek | noun | pharmacy | neutral | | A2 | health,places | pl=apteke | | |
+pyn | noun | pain | neutral | | A2 | health | | | |
+koors | noun | fever | neutral | | A2 | health | | | |
+verkoue | noun | cold (illness) | neutral | | A2 | health | | | |
+noodgeval | noun | emergency | neutral | | A2 | health,safety | pl=noodgevalle | | |
+help | interj | help! | neutral | | A2 | safety | | Help! | Help! |
+# ===== A2: Technology & media =====
+foon | noun | phone | neutral | | A2 | technology | pl=fone | | |
+selfoon | noun | cellphone; mobile phone | neutral | | A2 | technology | pl=selfone | | |
+rekenaar | noun | computer | neutral | | A2 | technology | pl=rekenaars | | |
+skootrekenaar | noun | laptop | neutral | | A2 | technology | pl=skootrekenaars | | |
+internet | noun | internet | neutral | | A2 | technology | | | |
+boodskap | noun | message | neutral | | A2 | technology | pl=boodskappe | | |
+koerant | noun | newspaper | neutral | | A2 | media | pl=koerante | | |
+nuus | noun | news | neutral | | A2 | media | | | |
+fliek | noun | movie; film | neutral | | A2 | media | pl=flieks | | |
+# ===== A2: Feelings & social =====
+liefde | noun | love | neutral | | A2 | emotions | | | |
+vreugde | noun | joy | neutral | | B1 | emotions | | | |
+woede | noun | anger; rage | neutral | | B1 | emotions | | | |
+vrede | noun | peace | neutral | | B1 | society | | | |
+partytjie | noun | party | neutral | | A2 | celebrations | pl=partytjies | | |
+verjaarsdag | noun | birthday | neutral | | A2 | celebrations | pl=verjaarsdae | Veels geluk met jou verjaarsdag! | Happy birthday! |
+geskenk | noun | gift; present | neutral | | A2 | celebrations | pl=geskenke | | |
+Kersfees | noun | Christmas | neutral | | A2 | celebrations | | Geseënde Kersfees! | Merry Christmas! |
+geluk | noun | luck; happiness | neutral | | A2 | celebrations,emotions | | Baie geluk! | Congratulations! |
+troue | noun | wedding | neutral | | A2 | celebrations | pl=troues | | |
+# ===== Negation & time (A2) =====
+geen | det | no; not any | neutral | | A2 | negation | | Ek het geen geld nie. | I have no money. |
+nêrens | adv | nowhere | neutral | | A2 | negation | | Ek kan dit nêrens kry nie. | I can't find it anywhere. |
+ooit | adv | ever | neutral | | A2 | time | | | |
+reeds | adv | already | formal | | B1 | time | | | | Formal alternative to "al".
+dadelik | adv | immediately | neutral | | A2 | time | | | |
+binnekort | adv | soon | neutral | | A2 | time | | | |
+netnou | adv | in a while; a moment ago | informal | | A2 | time | | | | Can mean a little later OR a little earlier, depending on context.
+# ===== Word formation (B1) =====
+onmoontlik | adj | impossible | neutral | | B1 | word-formation | | | | on- + moontlik (possible).
+ongelukkig | adj | unhappy; unfortunately | neutral | | B1 | word-formation | | | | on- + gelukkig.
+moontlik | adj | possible; possibly | neutral | | B1 | adjectives | | | |
+vryheid | noun | freedom | neutral | | B1 | word-formation,society | | | | vry (free) + -heid.
+skoonheid | noun | beauty | neutral | | B1 | word-formation | | | | skoon + -heid.
+werker | noun | worker | neutral | | B1 | word-formation,work | pl=werkers | | | werk + -er.
+regering | noun | government | neutral | | B1 | society,law | pl=regerings | | | regeer + -ing.
+verkiesing | noun | election | neutral | | B1 | society | pl=verkiesings | | |
+omgewing | noun | environment; surroundings | neutral | | B1 | society,nature | | | |
+gesondheid | noun | health | neutral | | B1 | health,word-formation | | | | gesond + -heid.
+gesond | adj | healthy | neutral | | A2 | health | | | |

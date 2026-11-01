@@ -1,0 +1,52 @@
+{
+  "id": "a2-13",
+  "level": "A2",
+  "number": 13,
+  "title": "Future & modal verbs",
+  "titleAf": "Toekoms en modale werkwoorde",
+  "icon": "🔮",
+  "lessons": [
+    {
+      "id": "a2-13-1",
+      "title": "sal and gaan",
+      "explanation": [
+        "Future: **sal** (will) or **gaan** (going to) + the main verb **at the end**.",
+        "**Ek sal jou help.** (I will help you.) **Ons gaan môre swem.** (We're going to swim tomorrow.)"
+      ],
+      "examples": [
+        { "af": "Ek sal jou môre bel.", "en": "I will call you tomorrow." },
+        { "af": "Ons gaan vanaand braai.", "en": "We're going to braai tonight." }
+      ],
+      "vocab": ["sal", "gaan", "bel", "swem", "vanaand", "help"],
+      "exercises": [
+        { "type": "order", "en": "I will call you tomorrow.", "af": "Ek sal jou môre bel." },
+        { "type": "transform", "instruction": "Put it in the future with \"sal\"", "from": "Ek help jou.", "answers": ["Ek sal jou help."] },
+        { "type": "translate", "from": "en", "prompt": "We are going to swim tomorrow.", "answers": ["Ons gaan môre swem.", "Môre gaan ons swem."] }
+      ]
+    },
+    {
+      "id": "a2-13-2",
+      "title": "can, must, want, may",
+      "explanation": [
+        "**kan** (can), **moet** (must), **wil** (want to), **mag** (may). The main verb goes to the **end**.",
+        "**Ek kan swem.** **Jy moet nou gaan.** **Ek wil huis toe gaan.** **Mag ek ingaan?**",
+        "Past forms: **kon, moes, wou, mog**. **Ek kon nie kom nie.** (I couldn't come.)",
+        "Polite requests: **Ek wil graag…** (I'd like to…)."
+      ],
+      "examples": [
+        { "af": "Kan jy my help?", "en": "Can you help me?" },
+        { "af": "Ek moet huiswerk doen.", "en": "I have to do homework." },
+        { "af": "Ek wil graag 'n koffie hê.", "en": "I'd like a coffee." },
+        { "af": "Ek kon nie kom nie.", "en": "I couldn't come." }
+      ],
+      "vocab": ["kan", "moet", "wil", "mag", "graag", "huiswerk", "doen", "kom"],
+      "exercises": [
+        { "type": "order", "en": "Can you help me?", "af": "Kan jy my help?" },
+        { "type": "order", "en": "I have to do homework.", "af": "Ek moet huiswerk doen." },
+        { "type": "translate", "from": "en", "prompt": "I want to go home.", "answers": ["Ek wil huis toe gaan."] },
+        { "type": "translate", "from": "en", "prompt": "I'd like a coffee, please.", "answers": ["Ek wil graag 'n koffie hê, asseblief.", "Ek wil graag koffie hê, asseblief.", "Mag ek 'n koffie kry, asseblief?"] },
+        { "type": "fill", "af": "Ek ___ nie kom nie. (couldn't)", "en": "I couldn't come.", "answers": ["kon"], "options": ["kon", "kan", "kom"] }
+      ]
+    }
+  ]
+}

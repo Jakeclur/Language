@@ -1,0 +1,64 @@
+{
+  "id": "a1-01",
+  "level": "A1",
+  "number": 1,
+  "title": "Sounds & spelling",
+  "titleAf": "Klanke en spelling",
+  "icon": "🔤",
+  "lessons": [
+    {
+      "id": "a1-01-1",
+      "title": "Vowels and the famous g",
+      "explanation": [
+        "Afrikaans is spelled almost exactly as it sounds. Learn the sounds once and you can read anything aloud.",
+        "**g** is a throaty sound like Scottish *lo**ch*** or German *Ba**ch***: **goed** (good), **groot** (big).",
+        "**r** is rolled or tapped: **rooi** (red).",
+        "**w** sounds like English *v* (lips soft): **water**, **wat**.",
+        "**v** usually sounds like English *f*: **vis** (fish), **vier** (four).",
+        "**j** sounds like English *y*: **ja** (yes), **jy** (you).",
+        "Long vowels are doubled: **aa** in **maak**, **ee** in **een**, **oo** in **groot**, **uu** in **uur**."
+      ],
+      "examples": [
+        { "af": "Goeie môre!", "en": "Good morning!" },
+        { "af": "Die water is koud.", "en": "The water is cold." },
+        { "af": "Ja, dit is groot.", "en": "Yes, it is big." }
+      ],
+      "vocab": ["goed", "groot", "rooi", "water", "vis", "vier", "ja", "jy", "een"],
+      "exercises": [
+        { "type": "choice", "question": "The g in \"goed\" sounds like…", "options": ["the g in \"go\"", "the ch in Scottish \"loch\"", "the j in \"jam\""], "answer": "the ch in Scottish \"loch\"" },
+        { "type": "choice", "question": "The w in \"water\" sounds most like English…", "options": ["w", "v", "f"], "answer": "v" },
+        { "type": "choice", "question": "The v in \"vis\" (fish) sounds like English…", "options": ["v", "f", "w"], "answer": "f" },
+        { "type": "choice", "question": "The j in \"ja\" sounds like English…", "options": ["j as in \"jam\"", "y as in \"yes\"", "h as in \"hat\""], "answer": "y as in \"yes\"" },
+        { "type": "translate", "from": "af", "prompt": "Die water is koud.", "answers": ["The water is cold.", "The water's cold."] }
+      ]
+    },
+    {
+      "id": "a1-01-2",
+      "title": "Diphthongs, accents and 'n",
+      "explanation": [
+        "**ui** sounds a bit like *ay* in *say* said with rounded lips: **huis** (house), **uit** (out).",
+        "**ei** and **y** sound the same, like *ay* in *day*: **klein** (small), **vyf** (five).",
+        "**oe** sounds like *oo* in *book*: **boek** (book), **goed**.",
+        "**ie** sounds like *ee* in *see*: **sien** (see), **drie** (three).",
+        "Accents change the vowel: **ê** in **sê** (say) is like *e* in *bed* but longer; **ô** in **môre** is like *aw* in *saw*.",
+        "**ë** (two dots) shows a new syllable starts: **geëet** = ge-eet (eaten).",
+        "**'n** (a/an) is pronounced like the *a* in *about*, a quick *uh*. It's always written with an apostrophe."
+      ],
+      "examples": [
+        { "af": "My huis is klein.", "en": "My house is small." },
+        { "af": "Ek sien drie boeke.", "en": "I see three books." },
+        { "af": "Wat sê jy?", "en": "What are you saying?" },
+        { "af": "Ek het 'n hond.", "en": "I have a dog." }
+      ],
+      "vocab": ["huis", "uit", "klein", "vyf", "boek", "sien", "drie", "sê", "môre", "'n"],
+      "exercises": [
+        { "type": "choice", "question": "Which two spellings make the same sound?", "options": ["ei and y", "ui and oe", "ie and ê"], "answer": "ei and y" },
+        { "type": "choice", "question": "How is 'n (a/an) pronounced?", "options": ["Like \"en\"", "Like the a in \"about\"", "Like \"nah\""], "answer": "Like the a in \"about\"" },
+        { "type": "choice", "question": "What do the two dots in \"geëet\" tell you?", "options": ["Say the e longer", "A new syllable starts: ge-eet", "The word is a question"], "answer": "A new syllable starts: ge-eet" },
+        { "type": "fill", "af": "Ek het ___ hond.", "en": "I have a dog.", "answers": ["'n"], "options": ["'n", "die", "n"] },
+        { "type": "translate", "from": "af", "prompt": "My huis is klein.", "answers": ["My house is small.", "My home is small."] },
+        { "type": "translate", "from": "en", "prompt": "I see three books.", "answers": ["Ek sien drie boeke."] }
+      ]
+    }
+  ]
+}

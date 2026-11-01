@@ -1,0 +1,92 @@
+# Leer Afrikaans 🇿🇦
+
+Learn Afrikaans from English: a structured course, many kinds of exercises, spaced repetition, and a
+dictionary that labels every word as formal, informal, slang, rude or vulgar.
+
+It's a Progressive Web App: it runs in any browser, can be installed on a phone, and works offline.
+The full plan is in [PLAN.md](PLAN.md).
+
+## What's in it
+
+| Feature | Status |
+|---|---|
+| Course | 16 units, 30 lessons, 146 hand-written exercises (A1 → A2, plus B1 slang & culture and an 18+ B2 Street Afrikaans unit) |
+| Exercise types | Multiple choice, typed translation (with typo/accent tolerance and targeted feedback), word-order tiles, fill in the blank, sentence transformation, matching pairs, "type the word", "How rude is this?" |
+| Spaced repetition | FSRS scheduling (`ts-fsrs`); lesson words are added to your deck automatically |
+| Dictionary | 8,684 headwords in both directions, IPA for most words, plurals, diminutives and past forms; inflected-form lookup (`geëet` → `eet`) and a compound splitter (`kombuisdeur` = kitchen + door) |
+| Registers | formal · neutral · informal · slang · rude · vulgar · offensive slur · dated · literary, plus a 0–4 severity scale |
+| Verification | Every entry gets ✅ Verified / ☑️ Checked / ⚠️ Unverified from automatic checks (no human reviewer needed); see below |
+| Goals | School, travel, moving to SA/Namibia, family/heritage, culture: tailors the phrasebook and topics |
+| Mature content | Off by default, behind an 18+ confirmation. Slurs are recognition-only and never appear in exercises |
+| Extras | Grammar reference, pronunciation guide, phrasebook, progress dashboard, shadowing recorder, "Report a mistake" on every word and lesson (opens a GitHub issue) |
+| Audio | Pipeline ready (ElevenLabs + Azure af-ZA neural voices, automatic speech-recognition QA). Needs API keys to run; until then the app shows 🔈 "coming soon" and **never** plays robotic TTS |
+
+## Quick start
+
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm test           # unit tests (answer checking, morphology, grammar rules, audio keys)
+npm run verify     # rebuild all content; fails on any verification error
+npm run build      # production build in dist/
+```
+
+## How content is checked without a fluent reviewer
+
+`pipeline/build-content.mjs` merges every source and checks every word and sentence:
+
+1. **Multi-source agreement**: translations are compared across *independent* dictionaries (editorial list, FreeDict, Apertium, and Wiktionary when available).
+2. **Existence**: the word must appear in real text (OpenSubtitles frequency list), the NWU pronunciation lexicon, or the LibreOffice spellchecker.
+3. **Spelling**: every Afrikaans word in every sentence is spell-checked (Hunspell af_ZA, expanded with its affix rules).
+4. **Grammar rules engine** (`pipeline/lib/grammar.mjs`): double *nie*, verb-second word order, verb-final after *omdat/dat/as…*, and *'n* spelling.
+5. **Consistency**: lesson words must exist and be ✅/☑️; slurs can never appear in the course; severity 2–4 words only in the 18+ unit.
+
+| Badge | Rule |
+|---|---|
+| ✅ Verified | 2+ independent dictionaries agree, **and** the word is in real text or the lexicon, **and** it passes the spellchecker |
+| ☑️ Checked | 2+ dictionaries agree, **or** 1 dictionary + 2+ independent word lists confirm the word |
+| ⚠️ Unverified | Anything else. Shown in the dictionary with a warning, never used for flashcards |
+
+The latest report is in the app under **About**, and in `public/data/report.json` after a build.
+
+## Audio (human-sounding, never robotic)
+
+```bash
+cp .env.example .env    # add your Azure / ElevenLabs / OpenAI keys
+npm run audio:bakeoff   # 22 tricky test items in every candidate voice: listen and pick
+npm run audio -- --dry-run   # shows how many clips will be made (~183k characters for everything)
+npm run audio           # generates normal + slow clips into public/audio/ and updates the manifest
+npm run audio:qa -- --prune  # speech recognition checks each clip; failures are removed
+```
+
+Words the engine mispronounces go in `content/pronunciation-overrides.json` (IPA), which is applied with SSML `<phoneme>` tags.
+
+## Bigger dictionary
+
+The build environment couldn't reach Wiktionary, Tatoeba or SADiLaR. On a machine with open internet:
+
+```bash
+npm run import    # also downloads the Wiktionary (kaikki.org) extract if reachable
+npm run verify
+```
+
+The Wiktionary importer keeps Wiktionary's own register tags (vulgar, slang, derogatory…) and counts it as an
+extra independent source, which also upgrades many existing entries from ⚠️ to ☑️/✅.
+
+## Adding content
+
+- **Vocabulary:** `content/curated/*.txt` (format in `content/curated/README.md`)
+- **Lessons:** `content/course/*.json`, one file per unit
+- **Phrasebook & pronunciation guide:** `content/extras.json`
+
+Run `npm run verify` after every change.
+
+## Publishing
+
+`.github/workflows/deploy.yml` verifies, tests, builds and deploys to **GitHub Pages** on every push.
+To turn it on once: *Repository → Settings → Pages → Source: GitHub Actions*.
+
+## Licences
+
+Code: MIT. Dictionary data combines GPL-2.0+ (FreeDict, Apertium), CC BY-SA (FrequencyWords, NWU lexicon,
+Wiktionary, editorial content) and LGPL-2.1+ (Hunspell) sources. See [data/sources/SOURCES.md](data/sources/SOURCES.md).

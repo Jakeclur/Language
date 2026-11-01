@@ -1,0 +1,132 @@
+# ===== Severity 0: clean slang & informal =====
+lekker | adj | nice; great; tasty; enjoyable | informal | 0 | A1 | slang,food,emotions | cmp=lekkerder;sup=lekkerste | Dit was 'n lekker jol! | That was a great party! |
+kief | adj | cool; great | slang | 0 | B1 | slang | | Jou nuwe kar is kief! | Your new car is cool! | Also spelled "kif".
+kwaai | adj | cool; awesome; (standard) strict; fierce | slang | 0 | B1 | slang | | Daai liedjie is kwaai! | That song is awesome! | In standard Afrikaans "kwaai" means strict or fierce (a "kwaai hond" is a vicious dog).
+jol | noun | party; fun time | slang | 0 | B1 | slang,celebrations | pl=jols | Ons gaan vanaand jol. | We're going partying tonight. | Also a verb: "to party; to have fun". Can also mean "to date, fool around".
+bru | noun | bro; mate | slang | 0 | B1 | slang,people | | Howzit, bru! | How's it going, bro! | From "broer". Also "bra", "brah".
+bra | noun | bro; mate | slang | 0 | B1 | slang,people | | | |
+tjommie | noun | friend; buddy; chum | slang | 0 | B1 | slang,people | pl=tjommies | Hy is my tjommie. | He's my buddy. | From English "chum".
+pel | noun | pal; friend | informal | 0 | B1 | slang,people | pl=pelle | | |
+ou | noun | guy; bloke; person | informal | 0 | A2 | slang,people | pl=ouens;dim=outjie | Hy's 'n goeie ou. | He's a good guy. | "Die ouens" = the guys.
+ballie | noun | old man; dad | slang | 0 | B1 | slang,family | pl=ballies | | |
+bokkie | noun | sweetheart; darling (lit. little buck) | informal | 0 | A2 | slang,endearment | pl=bokkies | | |
+skat | noun | darling; treasure | informal | 0 | A2 | endearment | pl=skatte | | | Very common term of endearment.
+liefie | noun | sweetie; love | informal | 0 | A2 | endearment | pl=liefies | | |
+skattie | noun | sweetie; darling | informal | 0 | A2 | endearment | | | |
+howzit | interj | hi; how's it going | slang | 0 | A2 | slang,greetings | | | | Shared with South African English. Also "hoesit".
+hoesit | interj | hi; how's it going | slang | 0 | A2 | slang,greetings | | | |
+lank laas | phrase | long time no see | informal | 0 | A2 | slang,greetings | | Haai, lank laas gesien! | Hey, long time no see! |
+haai | interj | hey; oh my | informal | 0 | A2 | slang | | | | Not to be confused with "haai" (shark).
+ja-nee | phrase | yes indeed; that's for sure | informal | 0 | B1 | slang | | Ja-nee, dit is warm vandag. | Yes indeed, it's hot today. | Literally "yes-no" but means agreement.
+nee-ja | phrase | well, yes (hesitant) | informal | 0 | B2 | slang | | | |
+nou-nou | adv | in a moment; just now | informal | 0 | A2 | slang,time | | Ek kom nou-nou. | I'm coming in a moment. | Does NOT mean "right now". "Nou" = now.
+sommer | adv | just (for no reason); simply | informal | 0 | B1 | slang,particles | | Ek het sommer gekom. | I just came (for no special reason). |
+mos | particle | after all; you know | informal | 0 | B1 | particles | | Ek het mos gesê! | I told you so, you know! |
+darem | adv | at least; really; after all | neutral | 0 | B1 | particles | | Dit is darem mooi. | It really is beautiful. |
+nogal | adv | rather; quite; of all things | neutral | 0 | B1 | particles | | | |
+tog | adv | still; yet; after all; please (emphatic) | neutral | 0 | B1 | particles | | Kom tog! | Do come! |
+eish | interj | expression of dismay or surprise | informal | 0 | A2 | slang | | Eish, dis duur! | Eish, that's expensive! | Borrowed into SA English and Afrikaans from Bantu languages.
+eina | interj | ouch | neutral | 0 | A1 | slang,body | | | | From Khoekhoe; also used in SA English.
+yoh | interj | wow; whoa | slang | 0 | A2 | slang | | | |
+jislaaik | interj | wow; gosh; my goodness | informal | 0 | A2 | slang | | | |
+foeitog | interj | shame; aww; poor thing | informal | 0 | A2 | slang,emotions | | Foeitog, die arme hondjie! | Aww, the poor little dog! | Used for sympathy, also for something cute.
+ag | interj | oh; ah | neutral | 0 | A2 | slang | | Ag nee! | Oh no! |
+oukei | interj | okay | informal | 0 | A1 | slang | | | |
+baie dankie, hoor | phrase | thanks a lot, okay | informal | 0 | A2 | slang | | | | "hoor" at the end adds friendly emphasis.
+yslik | adj | huge; enormous | informal | 0 | B1 | slang | | | |
+babbelas | noun | hangover | informal | 0 | B1 | slang,health | | Ek het 'n babbelas. | I've got a hangover. |
+dop | noun | (alcoholic) drink; shell; peel | informal | 0 | B1 | slang,food | pl=doppe | Kom ons gaan drink 'n dop. | Let's go have a drink. | As a verb "dop" means to fail (an exam) or to drink.
+dop | verb | to fail (a test); to drink alcohol | informal | 0 | B1 | slang,school | pp=gedop | Hy het die toets gedop. | He failed the test. |
+lus | adj | in the mood; feeling like | informal | 0 | A2 | slang,emotions | | Ek is lus vir pizza. | I feel like pizza. |
+moeg vir | phrase | sick of; tired of | informal | 0 | A2 | slang,emotions | | | |
+skinder | verb | to gossip | neutral | 0 | B1 | slang,social | pp=geskinder | Moenie skinder nie! | Don't gossip! |
+bakgat | adj | great; excellent | slang | 0 | B1 | slang | | | |
+stukkend | adj | broken; (slang) very drunk or exhausted | informal | 0 | B1 | slang | | | |
+gesuip | adj | drunk | informal | 1 | B1 | slang | | | | From "suip" (to drink like an animal), somewhat crude.
+suip | verb | to booze; to drink heavily | informal | 1 | B1 | slang | pp=gesuip | | | Used for animals drinking; for people it's crude.
+vreet | verb | to eat greedily; to stuff your face | informal | 1 | B1 | slang,food | pp=gevreet | | | For people it's rude; for animals it's neutral.
+bek | noun | mouth (of an animal); (rude) gob | informal | 1 | B1 | slang,body | pl=bekke | Hou jou bek! | Shut your trap! | "Hou jou bek" is rude. "Mond" is the polite word for a person's mouth.
+klap | verb | to slap; to hit | informal | 0 | B1 | slang | pp=geklap | | |
+gooi | verb | to throw; (slang) to do something | informal | 0 | B1 | slang | pp=gegooi | | |
+smaak | verb | to like; to fancy (someone) | informal | 0 | B1 | slang,emotions | pp=gesmaak | Ek smaak jou! | I fancy you! | Standard meaning: to taste.
+mal | adj | crazy; mad; (slang) mad about | informal | 0 | A2 | slang,emotions | | Ek is mal oor sjokolade. | I'm crazy about chocolate. |
+kwaai | adj | angry; strict | neutral | 0 | A2 | personality | | Ons onderwyser is kwaai. | Our teacher is strict. |
+gatkruiper | noun | suck-up; teacher's pet | rude | 2 | B2 | slang,insults | pl=gatkruipers | | | Literally "arse-crawler".
+skelm | noun | crook; rascal; sneaky person | informal | 0 | B1 | slang,people | pl=skelms | | | Also an adjective: sneaky.
+moffie | noun | (offensive) slur for a gay man | offensive-slur | 4 | C1 | slurs | | | | Homophobic slur. Some people in LGBTQ+ communities have reclaimed it, but from others it is hurtful. Do not use.
+nooi | noun | girlfriend; young woman; madam | informal | 0 | B1 | slang,people | pl=nooiens | | |
+kêrel | noun | boyfriend; guy | informal | 0 | B1 | slang,people | pl=kêrels | | |
+cherrie | noun | girl; girlfriend | slang | 0 | B1 | slang,people | pl=cherries | | | Also spelled "tjerrie".
+laaitie | noun | kid; youngster | slang | 0 | B1 | slang,people | pl=laaities | | | Also "lightie"; common across South Africa.
+tjop | noun | (lamb) chop | informal | 0 | A2 | food,culture | pl=tjops | | |
+dorpenaar | noun | small-town person | neutral | 0 | B2 | people | | | |
+platteland | noun | countryside; rural areas | neutral | 0 | B1 | places,culture | | | |
+rof | adj | rough | neutral | 0 | B1 | adjectives | | | |
+kroeg | noun | pub; bar | neutral | 0 | A2 | places,food | pl=kroeë | | |
+shebeen | noun | informal tavern (township bar) | neutral | 0 | B1 | places,culture | | | | Shared with SA English.
+wors | noun | sausage | neutral | 0 | A2 | food | | | |
+potjie | noun | three-legged iron pot; stew cooked in one | neutral | 0 | B1 | food,culture | pl=potjies | | | "Potjiekos" is the stew cooked in it.
+vetkoek | noun | deep-fried dough bread | neutral | 0 | B1 | food,culture | pl=vetkoeke | | |
+sosatie | noun | kebab | neutral | 0 | B1 | food,culture | pl=sosaties | | | From Malay influence.
+bobotie | noun | bobotie (spiced minced meat bake) | neutral | 0 | B1 | food,culture | | | | Cape Malay origin.
+blatjang | noun | chutney | neutral | 0 | B1 | food,culture | | | |
+lekker slaap | phrase | sleep well | informal | 0 | A1 | slang,greetings | | | |
+mooi loop | phrase | go well; take care | informal | 0 | A2 | slang,greetings | | | | Said when someone leaves.
+sterkte | interj | strength; good luck; be strong | neutral | 0 | A2 | slang,greetings | | | | Said to someone facing something difficult.
+voetsek | interj | go away; get lost | rude | 2 | B1 | slang,insults | | | | Originally said to chase dogs away. Very rude to a person.
+siestog | interj | shame; aww | informal | 0 | B1 | slang,emotions | | | | Variant of "foeitog"; also "sies tog".
+# ===== Regional: Kaaps (Cape Afrikaans) =====
+awê | interj | hi; hello; hey | slang | 0 | B2 | slang,greetings,regional | | | | [region: Kaaps]
+mang | noun | man; guy | slang | 0 | B2 | slang,regional | | | | [region: Kaaps]
+lanie | noun | rich or posh person; boss | slang | 0 | B2 | slang,regional | pl=lanies | | | [region: Kaaps]
+tjirre | noun | girl | slang | 0 | B2 | slang,regional | | | | [region: Kaaps]
+gesuip | adj | drunk | slang | 1 | B2 | slang,regional | | | | [region: Kaaps]
+# ===== Severity 1: mild =====
+sies | interj | yuck; gross; shame on you | informal | 1 | A2 | slang,emotions | | Sies, dit stink! | Yuck, that stinks! |
+jissis | interj | geez; Jesus (exclamation) | informal | 1 | B1 | swearing | | | | Mildly blasphemous; avoid with religious people.
+here | interj | Lord!; good heavens | informal | 1 | B1 | swearing | | Here, dit was naby! | Lord, that was close! | Exclamation from "Here" (the Lord).
+vrek | verb | to die (of animals); (rude) to die (of people) | informal | 1 | B1 | slang | pp=gevrek | | | As an adverb, "vrek" also means "extremely": "vrek koud" (freezing cold).
+moerse | adj | huge; massive; extremely | slang | 1 | B1 | slang | | 'n Moerse groot huis | A massive house | From "moer"; mildly rude.
+blerrie | adj | bloody | slang | 1 | B1 | swearing | | | | A softened form of "bloody".
+dêm | adj | damn | informal | 1 | B1 | swearing | | | | From English "damn".
+dom | adj | stupid | informal | 1 | A2 | insults | | | |
+dwaas | noun | fool | neutral | 1 | B1 | insults | pl=dwase | | |
+idioot | noun | idiot | neutral | 1 | B1 | insults | pl=idiote | | |
+domkop | noun | idiot; dumbhead | informal | 1 | B1 | insults | pl=domkoppe | | |
+# ===== Severity 2: rude =====
+gatvol | adj | fed up; sick and tired | rude | 2 | B1 | swearing | | Ek is gatvol vir die reën. | I'm fed up with the rain. | Literally "arse-full". Very common, but avoid in formal settings.
+kak | noun | crap; shit | vulgar | 2 | B1 | swearing | | Dis kak! | That's crap! | Very common in casual speech (also in SA English). Safer alternative: "nonsens", "sleg".
+kak | adj | bad; crappy; (intensifier) very | vulgar | 2 | B1 | swearing | | Die fliek was kak. | The movie was crap. | As an intensifier: "kak lekker" = really good.
+gat | noun | arse; bum; hole | rude | 2 | B1 | swearing,body | pl=gate | | | "Gat" also simply means "hole"; context decides.
+bliksem | verb | to hit; to beat up | rude | 2 | B1 | swearing | pp=gebliksem | Ek sal jou bliksem! | I'll smack you! | Literally "lightning". Also an exclamation: "Bliksem!" = damn!
+donner | verb | to beat up; to thrash | rude | 2 | B1 | swearing | pp=gedonner | | | Literally "thunder". "Donner!" is also used as "damn!".
+drol | noun | turd; jerk | rude | 2 | B1 | swearing,insults | pl=drolle | | |
+moer | verb | to beat up | rude | 2 | B1 | swearing | pp=gemoer | | | "Moer toe" = broken, wrecked.
+moer | noun | (rude) mother; nut (bolt) | rude | 3 | B2 | swearing,insults | | | | "Jou moer!" is a strong insult. "Moer" is also a standard word for a nut (for a bolt).
+pis | verb | to piss; to pee | rude | 2 | B1 | swearing,body | pp=gepis | | | Polite: "urineer" or "toilet toe gaan".
+pis | noun | piss; pee | rude | 2 | B1 | swearing,body | | | |
+fokkol | noun | (vulgar) nothing; f*** all | vulgar | 3 | B2 | swearing | | Ek het fokkol gekry. | I got f*** all. | Also spelled "fokol".
+helse | adj | hellish; tremendous | rude | 1 | B1 | swearing | | 'n Helse lawaai | A hell of a noise |
+hel | noun | hell | neutral | 1 | B1 | swearing,religion | | | |
+duiwel | noun | devil | neutral | 1 | B1 | swearing,religion | pl=duiwels | | |
+sat | adj | fed up; sick (of) | informal | 1 | B1 | swearing | | Ek is sat vir jou. | I'm sick of you. |
+vark | noun | pig; (insult) pig | neutral | 2 | A2 | animals,insults | pl=varke | | | Neutral for the animal; an insult for a person.
+koei | noun | cow; (insult for a woman) cow | neutral | 2 | A1 | animals,insults | | | | Neutral for the animal; insulting for a person.
+bobbejaan | noun | baboon; (insult) idiot | neutral | 2 | B1 | animals,insults | pl=bobbejane | | | Neutral for the animal. As an insult it can be racially loaded; avoid.
+# ===== Severity 3: strong swearing =====
+fok | verb | (vulgar) to fuck | vulgar | 3 | B2 | swearing | pp=gefok | | | Very strong. Used as an exclamation "Fok!" too. Safer: "Dêmmit!", "Jislaaik!"
+fokken | adj | (vulgar) fucking | vulgar | 3 | B2 | swearing | | | | Intensifier. Also spelled "fokkin".
+befok | adj | (vulgar) crazy; insane; awesome | vulgar | 3 | B2 | swearing | | Is jy befok? | Are you f***ing crazy? | Can be negative (crazy) or positive (awesome) depending on tone.
+opgefok | adj | (vulgar) messed up; f***ed up | vulgar | 3 | B2 | swearing | | | |
+fokof | interj | (vulgar) f*** off | vulgar | 3 | B2 | swearing,insults | | | | Also written "fok af".
+doos | noun | (vulgar) idiot; jerk | vulgar | 3 | B2 | swearing,insults | pl=dose | | | Standard meaning: box. As an insult it is strong and vulgar.
+bliksemse | adj | damned; bloody | rude | 2 | B2 | swearing | | | |
+naai | verb | (vulgar) to have sex; to screw (over); (standard) to sew | vulgar | 3 | B2 | swearing | pp=genaai | | | Standard meaning: to sew. Slang: to have sex, or to cheat someone ("Hy het my genaai" = he screwed me over).
+piel | noun | (vulgar) penis; dick; (insult) idiot | vulgar | 3 | B2 | swearing,body,insults | pl=piele | | |
+tiete | noun | (vulgar) tits; boobs | vulgar | 3 | B2 | swearing,body | | | |
+# ===== Severity 4: extremely offensive =====
+poes | noun | (extremely vulgar) female genitals; worst insult | vulgar | 4 | C1 | swearing,insults | | | | One of the most offensive words in Afrikaans. As an insult it is shocking in almost any setting.
+jou ma se | phrase | (extremely vulgar) "your mother's…" insult | vulgar | 4 | C1 | swearing,insults | | | | The start of a set of very offensive insults about someone's mother. Recognising it matters: it often starts fights.
+# ===== Offensive slurs (recognition only, never taught for use) =====
+kaffer | noun | (extremely offensive racial slur) used against Black people | offensive-slur | 4 | C1 | slurs | | | | The most offensive racial slur in South Africa, tied to apartheid-era racism. Using it has led to criminal convictions (crimen injuria) and hate-speech rulings. Never use it.
+hotnot | noun | (offensive racial slur) used against Coloured and Khoekhoe people | offensive-slur | 4 | C1 | slurs | | | | Highly offensive racial slur. Never use it.
