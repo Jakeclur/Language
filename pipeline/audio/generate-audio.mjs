@@ -24,6 +24,9 @@ const opt = (n, d) => (args.includes(`--${n}`) ? args[args.indexOf(`--${n}`) + 1
 const dryRun = flag("dry-run");
 const limit = Number(opt("limit", "0")) || Infinity;
 const kinds = opt("kinds", "word,sentence,expressive").split(",");
+// Keep the repo and site small: course content gets two voices; dictionary-only words get one
+// voice each (alternating female/male) and only the most common N words.
+const maxDictionary = Number(opt("max-dictionary", "2500"));
 const outDir = join(root, "public", "audio");
 const manifestPath = join(outDir, "manifest.json");
 
@@ -39,9 +42,9 @@ const BAKEOFF = [
   "Hoekom het jy my nie gister gebel nie?", "Ek sou dit kon gedoen het as ek tyd gehad het.",
 ];
 
-function voicesFor(kind) {
-  if (kind === "expressive" && hasEleven) return ["eleven-f", "eleven-m"];
-  return ["azure-adri", "azure-willem"];
+function voicesFor(item, index) {
+  const pair = item.kind === "expressive" && hasEleven ? ["eleven-f", "eleven-m"] : hasAzure || dryRun ? ["azure-adri", "azure-willem"] : ["eleven-f", "eleven-m"];
+  return item.scope === "dictionary" ? [pair[index % 2]] : pair;
 }
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -61,7 +64,7 @@ async function azure(text, voice, slow) {
     headers: {
       "Ocp-Apim-Subscription-Key": process.env.AZURE_SPEECH_KEY,
       "Content-Type": "application/ssml+xml",
-      "X-Microsoft-OutputFormat": "audio-24khz-96kbitrate-mono-mp3",
+      "X-Microsoft-OutputFormat": "audio-24khz-48kbitrate-mono-mp3",
       "User-Agent": "leer-afrikaans-audio",
     },
     body: ssml(text, voice, slow),
@@ -71,7 +74,7 @@ async function azure(text, voice, slow) {
 }
 
 async function elevenlabs(text, voiceId, slow) {
-  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`, {
+  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_22050_32`, {
     method: "POST",
     headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY, "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -91,13 +94,14 @@ async function synth(voiceKey, text, slow) {
 }
 
 async function main() {
-  let items = flag("bakeoff") ? BAKEOFF.map((text) => ({ text, kind: "expressive", bake: true })) : collectTexts(root).filter((i) => kinds.includes(i.kind));
-  items = items.slice(0, limit);
+  let items = flag("bakeoff") ? BAKEOFF.map((text) => ({ text, kind: "expressive", scope: "course" })) : collectTexts(root).filter((i) => kinds.includes(i.kind));
+  let dictCount = 0;
+  items = items.filter((i) => i.scope !== "dictionary" || ++dictCount <= maxDictionary).slice(0, limit);
   const manifest = existsSync(manifestPath) ? JSON.parse(await readFile(manifestPath, "utf8")) : { voices: [], items: {} };
 
   const jobs = [];
-  for (const it of items) {
-    const voiceKeys = flag("bakeoff") ? Object.keys(VOICES).filter((k) => dryRun || (VOICES[k].engine === "azure" ? hasAzure : hasEleven)) : voicesFor(it.kind);
+  for (const [index, it] of items.entries()) {
+    const voiceKeys = flag("bakeoff") ? Object.keys(VOICES).filter((k) => dryRun || (VOICES[k].engine === "azure" ? hasAzure : hasEleven)) : voicesFor(it, index);
     for (const vk of voiceKeys) {
       const file = `${vk}/${fileId(it.text)}.mp3`;
       if (existsSync(join(outDir, file))) continue;
@@ -106,7 +110,7 @@ async function main() {
   }
   const chars = jobs.reduce((n, j) => n + j.text.length * 2, 0); // normal + slow
   console.log(`${items.length} texts, ${jobs.length} clips to generate (normal + slow), ~${chars.toLocaleString()} characters.`);
-  const byKind = items.reduce((m, i) => ((m[i.kind] = (m[i.kind] ?? 0) + 1), m), {});
+  const byKind = items.reduce((m, i) => ((m[`${i.scope}:${i.kind}`] = (m[`${i.scope}:${i.kind}`] ?? 0) + 1), m), {});
   console.log("By kind:", byKind);
   if (dryRun) return console.log("Dry run: nothing generated.");
   if (!hasAzure && !hasEleven) {

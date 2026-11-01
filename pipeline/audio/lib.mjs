@@ -29,11 +29,11 @@ export const VOICES = {
 export function collectTexts(root) {
   const read = (p) => JSON.parse(readFileSync(join(root, p), "utf8"));
   const items = new Map(); // key -> { text, kind }
-  const add = (text, kind) => {
+  const add = (text, kind, scope = "course") => {
     if (!text) return;
     const k = audioKey(text);
     if (!k || items.has(k)) return;
-    items.set(k, { text: text.replace(/\s*\([^)]*\)\s*/g, " ").trim(), kind });
+    items.set(k, { text: text.replace(/\s*\([^)]*\)\s*/g, " ").trim(), kind, scope });
   };
   const course = read("public/data/course.json");
   const dict = read("public/data/dictionary.json");
@@ -56,8 +56,8 @@ export function collectTexts(root) {
   for (const e of ranked) {
     if (e.senses.every((s) => s.register === "offensive-slur")) continue; // never auto-play slurs
     if (e.verification.confidence === "unverified" && !e.verification.sources.includes("editorial")) continue;
-    add(e.headword, "word");
-    for (const s of e.senses) for (const ex of s.examples ?? []) add(ex.af, "sentence");
+    add(e.headword, "word", "dictionary");
+    for (const s of e.senses) for (const ex of s.examples ?? []) add(ex.af, "sentence", "dictionary");
   }
   void byHead;
   return [...items.values()];

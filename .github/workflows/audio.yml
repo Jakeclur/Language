@@ -1,0 +1,61 @@
+name: Generate audio
+
+# Run from the Actions tab: "Generate audio" -> "Run workflow".
+# Needs repository secrets (Settings -> Secrets and variables -> Actions):
+#   AZURE_SPEECH_KEY + AZURE_SPEECH_REGION          (Microsoft Azure AI Speech, af-ZA neural voices)
+#   and/or ELEVENLABS_API_KEY + ELEVENLABS_VOICE_FEMALE + ELEVENLABS_VOICE_MALE
+#   optional: OPENAI_API_KEY (speech-recognition quality check of every clip)
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "all = everything, bakeoff = 22 test clips in every voice to compare"
+        type: choice
+        options: [all, bakeoff]
+        default: all
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: audio
+  cancel-in-progress: false
+
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+      AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      ELEVENLABS_VOICE_FEMALE: ${{ secrets.ELEVENLABS_VOICE_FEMALE }}
+      ELEVENLABS_VOICE_MALE: ${{ secrets.ELEVENLABS_VOICE_MALE }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run content
+      - name: Generate clips
+        run: |
+          if [ "${{ inputs.mode }}" = "bakeoff" ]; then npm run audio:bakeoff; else npm run audio; fi
+      - name: Quality check (speech recognition)
+        if: env.OPENAI_API_KEY != ''
+        run: npm run audio:qa -- --prune
+      - name: Commit audio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/audio
+          if git diff --cached --quiet; then echo "No new audio"; exit 0; fi
+          git commit -m "Add generated audio (${{ inputs.mode }})"
+          git push
+      - name: Redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref "${{ github.ref_name }}"

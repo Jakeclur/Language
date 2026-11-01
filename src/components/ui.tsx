@@ -3,7 +3,7 @@ import type { Confidence, Register } from "../types";
 import { REGISTER_LABEL, REGISTER_STYLE, SEVERITY_LABEL } from "../lib/register";
 
 export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`bg-white rounded-2xl shadow-sm border border-stone-200 ${className}`}>{children}</div>;
+  return <div className={`bg-white rounded-3xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] ${className}`}>{children}</div>;
 }
 
 export function Button({
@@ -12,53 +12,49 @@ export function Button({
   children: ReactNode; onClick?: () => void; variant?: "primary" | "secondary" | "ghost" | "danger"; disabled?: boolean; className?: string; type?: "button" | "submit";
 }) {
   const styles = {
-    primary: "bg-emerald-700 text-white hover:bg-emerald-800 disabled:bg-stone-300",
-    secondary: "bg-white text-emerald-800 border-2 border-emerald-700 hover:bg-emerald-50 disabled:opacity-50",
-    ghost: "text-emerald-800 hover:bg-emerald-50 disabled:opacity-50",
-    danger: "bg-red-600 text-white hover:bg-red-700",
+    primary: "bg-emerald-600 text-white hover:bg-emerald-700 disabled:bg-stone-200 disabled:text-stone-400",
+    secondary: "bg-stone-100 text-stone-800 hover:bg-stone-200 disabled:opacity-50",
+    ghost: "text-emerald-700 hover:bg-emerald-50 disabled:opacity-50",
+    danger: "bg-rose-600 text-white hover:bg-rose-700",
   }[variant];
   return (
-    <button type={type} onClick={onClick} disabled={disabled} className={`rounded-xl px-4 py-2.5 font-semibold transition ${styles} ${className}`}>
+    <button type={type} onClick={onClick} disabled={disabled} className={`rounded-2xl px-5 py-3 font-semibold transition active:scale-[0.98] ${styles} ${className}`}>
       {children}
     </button>
   );
 }
 
-const CONF: Record<Confidence, { icon: string; label: string; style: string; tip: string }> = {
-  verified: { icon: "✅", label: "Verified", style: "bg-emerald-100 text-emerald-800", tip: "2+ independent dictionaries agree, the word appears in real text or the pronunciation lexicon, and it passes the spellchecker." },
-  checked: { icon: "☑️", label: "Checked", style: "bg-sky-100 text-sky-800", tip: "2+ independent dictionaries agree, or one dictionary plus 2+ independent word lists confirm the word." },
-  unverified: { icon: "⚠️", label: "Unverified", style: "bg-amber-100 text-amber-800", tip: "Only one source so far. Treat with care, and report mistakes." },
-  community: { icon: "👥", label: "Community", style: "bg-violet-100 text-violet-800", tip: "Added or corrected by learners." },
+const CONF: Record<Confidence, { label: string; style: string; tip: string }> = {
+  verified: { label: "Verified", style: "text-emerald-700", tip: "Independent dictionaries agree, and the word is confirmed in real text and by the spellchecker." },
+  checked: { label: "Checked", style: "text-sky-700", tip: "Confirmed by at least two independent sources." },
+  unverified: { label: "Not yet verified", style: "text-amber-700", tip: "Only one source so far. Treat with care, and report mistakes." },
+  community: { label: "Community", style: "text-violet-700", tip: "Added or corrected by learners." },
 };
 
-export function ConfidenceBadge({ c, compact }: { c: Confidence; compact?: boolean }) {
+export function ConfidenceBadge({ c }: { c: Confidence }) {
   const x = CONF[c];
   return (
-    <span title={x.tip} className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${x.style}`}>
-      {x.icon}
-      {!compact && x.label}
+    <span title={x.tip} className={`inline-flex items-center gap-1 text-xs font-medium ${x.style}`}>
+      {c === "unverified" ? "⚠" : "✓"} {x.label}
     </span>
   );
 }
 
+/** Register label, shown only when it tells the learner something (not for plain neutral words). */
 export function RegisterTag({ r, severity }: { r: Register; severity?: number }) {
   if (r === "neutral" && !severity) return null;
   return (
-    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${REGISTER_STYLE[r]}`}>
+    <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${REGISTER_STYLE[r]}`}>
       {REGISTER_LABEL[r]}
-      {severity ? ` · ${severity}/4 ${SEVERITY_LABEL[severity]}` : ""}
+      {severity && r !== "offensive-slur" ? ` · ${SEVERITY_LABEL[severity]}` : ""}
     </span>
   );
-}
-
-export function Pill({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <span className={`inline-flex items-center rounded-full bg-stone-100 px-2 py-0.5 text-xs text-stone-700 ${className}`}>{children}</span>;
 }
 
 export function ProgressBar({ value, className = "" }: { value: number; className?: string }) {
   return (
-    <div className={`h-2.5 rounded-full bg-stone-200 overflow-hidden ${className}`}>
-      <div className="h-full bg-emerald-600 transition-all" style={{ width: `${Math.round(Math.min(1, Math.max(0, value)) * 100)}%` }} />
+    <div className={`h-3 rounded-full bg-stone-200 overflow-hidden ${className}`}>
+      <div className="h-full rounded-full bg-emerald-500 transition-all duration-500" style={{ width: `${Math.round(Math.min(1, Math.max(0, value)) * 100)}%` }} />
     </div>
   );
 }
@@ -67,7 +63,7 @@ export function Dialog({ open, title, children, onClose }: { open: boolean; titl
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50 bg-black/40 flex items-end sm:items-center justify-center p-4" onClick={onClose}>
-      <div role="dialog" aria-modal="true" aria-label={title} className="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl" onClick={(e) => e.stopPropagation()}>
+      <div role="dialog" aria-modal="true" aria-label={title} className="bg-white rounded-3xl max-w-md w-full p-6 shadow-xl" onClick={(e) => e.stopPropagation()}>
         <h2 className="text-xl font-bold mb-3">{title}</h2>
         {children}
       </div>
@@ -77,9 +73,13 @@ export function Dialog({ open, title, children, onClose }: { open: boolean; titl
 
 export function PageTitle({ children, sub }: { children: ReactNode; sub?: ReactNode }) {
   return (
-    <div className="mb-5">
-      <h1 className="text-2xl sm:text-3xl font-bold text-emerald-900">{children}</h1>
-      {sub && <p className="text-stone-600 mt-1">{sub}</p>}
+    <div className="mb-6">
+      <h1 className="text-3xl font-bold tracking-tight text-stone-900">{children}</h1>
+      {sub && <p className="text-stone-500 mt-1">{sub}</p>}
     </div>
   );
+}
+
+export function BackLink({ href, children }: { href: string; children: ReactNode }) {
+  return <a href={href} className="inline-flex items-center gap-1 text-stone-500 hover:text-stone-800 font-medium mb-4">‹ {children}</a>;
 }

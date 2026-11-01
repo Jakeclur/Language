@@ -2,56 +2,45 @@ import type { Entry } from "../types";
 import { useStore } from "../lib/store";
 import { visibleSenses } from "../lib/register";
 import { AudioButton, Recorder } from "../components/Audio";
-import { ConfidenceBadge, Pill, RegisterTag } from "../components/ui";
+import { ConfidenceBadge, RegisterTag } from "../components/ui";
 import { reportUrl } from "../lib/report";
 
 const FORM_LABEL: Record<string, string> = {
-  plural: "plural", diminutive: "diminutive", pastParticiple: "past", comparative: "comparative", superlative: "superlative", attributive: "before a noun", past: "past form",
+  plural: "Plural", diminutive: "Small", pastParticiple: "Past", comparative: "More", superlative: "Most", attributive: "Before a noun", past: "Past",
 };
 
 export function WordCard({ entry, full = false }: { entry: Entry; full?: boolean }) {
   const { settings, progress, addCard, removeCard } = useStore();
   const senses = visibleSenses(entry, settings);
+  const main = senses.filter((s) => s.source === "editorial" || s.source === "wiktionary");
+  const primary = main.length ? main : senses.slice(0, 1);
+  const extra = senses.filter((s) => !primary.includes(s));
   const hidden = entry.senses.length - senses.length;
   const inDeck = !!progress.cards[entry.id];
+
   return (
     <div>
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-3 flex-wrap">
-            <h2 className="text-3xl font-bold text-emerald-900" lang="af">{entry.headword}</h2>
-            <AudioButton text={entry.headword} />
-          </div>
-          <div className="flex items-center gap-2 mt-1 flex-wrap text-stone-600">
-            {entry.ipa && <span className="font-mono">/{entry.ipa}/</span>}
-            {entry.pos.map((p) => <Pill key={p}>{p}</Pill>)}
-            {entry.cefr && <Pill className="bg-amber-100 text-amber-800">{entry.cefr}</Pill>}
-            <ConfidenceBadge c={entry.verification.confidence} />
-          </div>
-        </div>
+      <div className="flex items-center gap-4">
+        <h2 className="text-4xl font-bold tracking-tight" lang="af">{entry.headword}</h2>
+        <AudioButton text={entry.headword} size="lg" slow={full} />
+      </div>
+      <div className="flex items-center gap-3 mt-2 text-stone-400">
+        {entry.ipa && <span className="font-mono">/{entry.ipa}/</span>}
+        {entry.pos[0] && <span>{entry.pos[0]}</span>}
       </div>
 
-      {entry.forms && (
-        <div className="mt-3 flex flex-wrap gap-2 text-sm">
-          {Object.entries(entry.forms).map(([k, v]) => (
-            <span key={k} className="rounded-lg bg-stone-50 border border-stone-200 px-2 py-1"><span className="text-stone-500">{FORM_LABEL[k] ?? k}:</span> <b lang="af">{v}</b></span>
-          ))}
-        </div>
-      )}
-
-      <ol className="mt-4 space-y-3">
-        {senses.map((s, i) => (
-          <li key={i} className={`rounded-xl p-3 ${s.register === "offensive-slur" ? "bg-red-50 border border-red-300" : "bg-stone-50"}`}>
+      <div className="mt-6 space-y-5">
+        {primary.map((s, i) => (
+          <div key={i} className={s.register === "offensive-slur" ? "rounded-2xl bg-rose-50 p-4" : ""}>
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-lg font-medium">{s.translations.join("; ")}</span>
-              <RegisterTag r={s.register} severity={s.register === "offensive-slur" ? undefined : s.severity} />
-              {s.regions?.map((r) => <Pill key={r} className="bg-teal-100 text-teal-800">{r}</Pill>)}
-              {s.source !== "editorial" && <span className="text-xs text-stone-400">from {s.source}</span>}
+              <span className="text-2xl font-semibold text-stone-800">{s.translations.join(", ")}</span>
+              <RegisterTag r={s.register} severity={s.severity} />
             </div>
-            {s.register === "offensive-slur" && <p className="text-sm text-red-800 mt-1 font-medium">⛔ Offensive slur. Shown so you can recognise it, never to use.</p>}
-            {s.note && <p className="text-sm text-stone-600 mt-1">{s.note}</p>}
+            {s.register === "offensive-slur" && <p className="text-rose-800 mt-2 font-medium">Offensive slur. Shown so you can recognise it, never to use.</p>}
+            {s.note && <p className="text-stone-500 mt-1.5">{s.note}</p>}
+            {s.regions && <p className="text-sm text-teal-700 mt-1">Used in: {s.regions.join(", ")}</p>}
             {s.examples?.map((ex, j) => (
-              <div key={j} className="mt-2 flex items-start gap-2">
+              <div key={j} className="mt-3 flex items-center gap-3 rounded-2xl bg-stone-50 px-4 py-3">
                 <AudioButton text={ex.af} size="sm" />
                 <div>
                   <div lang="af" className="font-medium">{ex.af}</div>
@@ -59,34 +48,47 @@ export function WordCard({ entry, full = false }: { entry: Entry; full?: boolean
                 </div>
               </div>
             ))}
-          </li>
+          </div>
         ))}
-      </ol>
-      {hidden > 0 && <p className="text-sm text-stone-500 mt-2">🔞 {hidden} more meaning{hidden > 1 ? "s" : ""} hidden by your content settings.</p>}
+        {extra.length > 0 && (
+          <div className="text-stone-500">
+            <span className="text-sm font-medium text-stone-400">Also: </span>
+            {extra.flatMap((s) => s.translations).slice(0, 10).join(", ")}
+          </div>
+        )}
+      </div>
+
+      {full && entry.forms && (
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {Object.entries(entry.forms).map(([k, v]) => (
+            <div key={k} className="rounded-2xl bg-stone-50 px-4 py-2.5">
+              <div className="text-xs text-stone-400">{FORM_LABEL[k] ?? k}</div>
+              <div className="font-semibold" lang="af">{v}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      {hidden > 0 && full && <p className="text-sm text-stone-400 mt-4">{hidden} mature meaning{hidden > 1 ? "s" : ""} hidden. Change this in Settings.</p>}
 
       {full && (
-        <div className="mt-5 space-y-4">
-          <div className="flex flex-wrap gap-2">
+        <>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             {inDeck ? (
-              <button onClick={() => removeCard(entry.id)} className="rounded-xl px-4 py-2 bg-stone-100 font-medium">✓ In my deck (remove)</button>
+              <button onClick={() => removeCard(entry.id)} className="rounded-2xl px-5 py-3 bg-emerald-50 text-emerald-800 font-semibold">✓ In your review deck</button>
             ) : (
-              <button onClick={() => addCard(entry.id)} className="rounded-xl px-4 py-2 bg-emerald-700 text-white font-medium">＋ Add to my deck</button>
+              <button onClick={() => addCard(entry.id)} className="rounded-2xl px-5 py-3 bg-emerald-600 text-white font-semibold hover:bg-emerald-700">+ Add to review deck</button>
             )}
-            <a href={reportUrl(entry.headword, `Dictionary entry: **${entry.headword}** (id \`${entry.id}\`)\nConfidence: ${entry.verification.confidence}`)} target="_blank" rel="noreferrer" className="rounded-xl px-4 py-2 bg-white border border-stone-300 font-medium">🚩 Report a mistake</a>
-          </div>
-          <div>
-            <div className="text-sm font-semibold text-stone-700 mb-1">Practise saying it</div>
             <Recorder />
           </div>
-          <details className="text-sm text-stone-600">
-            <summary className="cursor-pointer font-medium">How was this checked?</summary>
-            <ul className="list-disc ml-5 mt-2">
-              <li>Sources: {entry.verification.sources.join(", ")}</li>
-              <li>Checks passed: {entry.verification.checks.join(", ") || "none"}</li>
-              {entry.frequencyRank && <li>Frequency rank: #{entry.frequencyRank} in the subtitles corpus</li>}
-            </ul>
-          </details>
-        </div>
+          <div className="mt-8 pt-5 border-t border-stone-100 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <ConfidenceBadge c={entry.verification.confidence} />
+            <details className="text-stone-400">
+              <summary className="cursor-pointer hover:text-stone-600">Sources</summary>
+              <p className="mt-1">{entry.verification.sources.join(", ")}{entry.frequencyRank ? ` · common word #${entry.frequencyRank}` : ""}</p>
+            </details>
+            <a href={reportUrl(entry.headword, `Dictionary entry: **${entry.headword}** (id \`${entry.id}\`)\nConfidence: ${entry.verification.confidence}`)} target="_blank" rel="noreferrer" className="text-stone-400 hover:text-stone-600">Report a mistake</a>
+          </div>
+        </>
       )}
     </div>
   );

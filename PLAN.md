@@ -359,7 +359,7 @@ With no human checker, accuracy has to be **built into the pipeline**: content i
 
 ## 6. Audio: natural, human-sounding pronunciation
 
-**Rule: no robotic audio, ever.** Browser built-in text-to-speech is not used. Afrikaans voices are often missing from devices, and the ones that exist sound robotic. Instead, all audio is **generated in advance** with the best neural voices, quality-checked, and stored as audio files. If an item has no audio yet, the app shows "audio coming soon" instead of falling back to a robotic voice.
+**Rule: no robotic audio, ever.** Classic browser text-to-speech is not used. The one exception: devices that offer a *natural/neural* Afrikaans voice through the browser (e.g. Microsoft Edge's "Adri Online (Natural)"); the app uses those live until recorded clips exist, and shows no speaker button otherwise. Afrikaans voices are often missing from devices, and the ones that exist sound robotic. Instead, all audio is **generated in advance** with the best neural voices, quality-checked, and stored as audio files. If an item has no audio yet, the app shows "audio coming soon" instead of falling back to a robotic voice.
 
 ### 6.1 Voice engines (as of late 2026; re-check before building)
 | Engine | Afrikaans voices | Notes | Use for |
