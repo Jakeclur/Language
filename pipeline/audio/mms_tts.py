@@ -71,33 +71,51 @@ def similarity(expected: str, heard: str) -> float:
     return 1 - lev(a, b) / max(len(a), len(b), 1)
 
 
+AFRIKAANS = re.compile(r"(^|[-_/.])afr($|[-_.])|afrikaans", re.I)
+# Licences that allow publishing in a free app (NC = non-commercial only, noted in the app credits)
+OK_LICENCES = {"cc-by-4.0", "cc-by-sa-4.0", "mit", "apache-2.0", "cc0-1.0", "cc-by-nc-4.0", "cc-by-nc-sa-4.0", "openrail", "bsd-3-clause"}
+
+
+def licence_of(mid: str) -> str:
+    from huggingface_hub import model_info
+    info = model_info(mid)
+    lic = (getattr(info, "card_data", None) or {}).get("license") if getattr(info, "card_data", None) else None
+    if not lic:
+        lic = next((t.split(":", 1)[1] for t in (info.tags or []) if t.startswith("license:")), "unknown")
+    return str(lic).lower()
+
+
 def find_model() -> str:
-    """Find an Afrikaans MMS/VITS TTS model on Hugging Face (names have changed over time)."""
-    from huggingface_hub import HfApi, model_info
-    preferred = os.environ.get("TTS_MODEL") or "facebook/mms-tts-afr"
-    try:
-        model_info(preferred)
-        return preferred
-    except Exception as e:
-        print(f"{preferred} not available ({type(e).__name__}); searching…", flush=True)
+    """Find an Afrikaans VITS/MMS TTS model on Hugging Face with a licence that allows publishing."""
+    from huggingface_hub import HfApi
+    if os.environ.get("TTS_MODEL"):
+        return os.environ["TTS_MODEL"]
     api = HfApi()
-    found = []
-    for q in ("mms-tts-afr", "mms-tts afr", "afrikaans tts", "vits afrikaans", "tts-afr"):
+    found = ["facebook/mms-tts-afr"]
+    for q in ("mms-tts-afr", "tts-afr", "afrikaans tts", "vits afr", "afrikaans vits", "simba-tts"):
         try:
-            for m in api.list_models(search=q, limit=30):
-                found.append(m.id)
+            found += [m.id for m in api.list_models(search=q, limit=50)]
         except Exception as e:
             print("search failed:", q, e)
-    found = list(dict.fromkeys(found))
-    print("Candidates:", found, flush=True)
+    found = [m for m in dict.fromkeys(found) if AFRIKAANS.search(m)]
+    print("Afrikaans candidates:", found, flush=True)
     for mid in found:
-        if "afr" in mid.lower() or "afrikaans" in mid.lower():
-            try:
-                VitsModel.from_pretrained(mid)
-                return mid
-            except Exception as e:
-                print(f"  {mid}: not a usable VITS model ({type(e).__name__})")
-    sys.exit("No usable Afrikaans VITS/MMS model found on Hugging Face.")
+        try:
+            lic = licence_of(mid)
+        except Exception as e:
+            print(f"  {mid}: unavailable ({type(e).__name__})")
+            continue
+        print(f"  {mid}: licence={lic}", flush=True)
+        if lic not in OK_LICENCES:
+            print("    skipped: licence unknown or not allowed for publishing")
+            continue
+        try:
+            VitsModel.from_pretrained(mid)
+            VOICE["licence"] = lic
+            return mid
+        except Exception as e:
+            print(f"    not a usable VITS model ({type(e).__name__}: {str(e)[:120]})")
+    sys.exit("No usable, properly licensed Afrikaans VITS model found on Hugging Face.")
 
 
 def main():
@@ -111,6 +129,8 @@ def main():
     tok = AutoTokenizer.from_pretrained(model_id)
     model = VitsModel.from_pretrained(model_id).eval()
     VOICE["source"] = model_id
+    VOICE["name"] = f"{model_id.split('/')[-1]} (neural)"
+    print("Licence:", VOICE.get("licence"), flush=True)
     rate = model.config.sampling_rate
 
     whisper = None
