@@ -15,7 +15,7 @@ verskoon my | phrase | excuse me | neutral | | A1 | greetings | | | |
 welkom | adj | welcome | neutral | | A1 | greetings | | Welkom in Suid-Afrika! | Welcome to South Africa! |
 plesier | noun | pleasure; you're welcome | neutral | | A1 | greetings | | | | Reply to "dankie": "Plesier!"
 hoe gaan dit | phrase | how are you; how is it going | neutral | | A1 | greetings | | Hoe gaan dit met jou? | How are you? |
-goed | adj | good; fine; well | neutral | | A1 | greetings,emotions | cmp=beter;sup=beste | Dit gaan goed, dankie. | I'm fine, thanks. |
+goed | adj | good; fine; well | neutral | | A1 | greetings,emotions | cmp=beter;sup=beste;attr=goeie | Dit gaan goed, dankie. | I'm fine, thanks. |
 meneer | noun | sir; mister; Mr | formal | | A1 | greetings,people | pl=menere | | |
 mevrou | noun | madam; Mrs | formal | | A1 | greetings,people | pl=mevroue | | |
 juffrou | noun | miss; teacher (female) | neutral | | A1 | greetings,school | pl=juffrouens | | | Schoolchildren call a female teacher "Juffrou".
@@ -25,7 +25,7 @@ ek | pron | I | neutral | | A1 | pronouns | | Ek is moeg. | I am tired. |
 jy | pron | you (singular, informal) | informal | | A1 | pronouns | | Jy is my vriend. | You are my friend. | Use with friends, family, children and peers.
 u | pron | you (polite, formal) | formal | | A1 | pronouns | | Kan ek u help? | Can I help you? | Use with elders, strangers, customers and in formal writing.
 hy | pron | he | neutral | | A1 | pronouns | | | |
-sy | pron | she; his; her (possessive of hy) | neutral | | A1 | pronouns | | Sy lees 'n boek. | She is reading a book. | "sy" means both "she" and "his".
+sy | pron | she; his | neutral | | A1 | pronouns | | Sy lees 'n boek. | She is reading a book. | "sy" means both "she" and "his".
 dit | pron | it; this; that | neutral | | A1 | pronouns | | Dit is warm. | It is hot. |
 ons | pron | we; us; our | neutral | | A1 | pronouns | | Ons woon in Kaapstad. | We live in Cape Town. |
 julle | pron | you (plural); your (plural) | neutral | | A1 | pronouns | | Waar is julle? | Where are you (all)? |

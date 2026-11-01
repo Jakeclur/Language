@@ -22,7 +22,7 @@
         { "type": "translate", "from": "en", "prompt": "I have two brothers.", "answers": ["Ek het twee broers."] },
         { "type": "translate", "from": "af", "prompt": "My ouma woon op 'n plaas.", "answers": ["My granny lives on a farm.", "My grandmother lives on a farm.", "My gran lives on a farm."] },
         { "type": "choice", "question": "\"gesin\" means…", "options": ["your household family", "your cousins", "your friends"], "answer": "your household family" },
-        { "type": "order", "en": "My parents are at home.", "af": "My ouers is by die huis." }
+        { "type": "order", "en": "My parents are at home.", "af": "My ouers is tuis." }
       ]
     },
     {

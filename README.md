@@ -11,7 +11,7 @@ The full plan is in [PLAN.md](PLAN.md).
 | Feature | Status |
 |---|---|
 | Course | 16 units, 30 lessons, 146 hand-written exercises (A1 → A2, plus B1 slang & culture and an 18+ B2 Street Afrikaans unit) |
-| Exercise types | Multiple choice, typed translation (with typo/accent tolerance and targeted feedback), word-order tiles, fill in the blank, sentence transformation, matching pairs, "type the word", "How rude is this?" |
+| Exercise types | Multiple choice, typed translation (with typo/accent tolerance and targeted feedback), word-order tiles, fill in the blank, sentence transformation, matching pairs, "type the word", "How rude is this?", plus listening and dictation when natural audio is available. A test (`src/features/content.test.ts`) checks every exercise is answerable and that no quiz has two correct options |
 | Spaced repetition | FSRS scheduling (`ts-fsrs`); lesson words are added to your deck automatically |
 | Dictionary | 8,684 headwords in both directions, IPA for most words, plurals, diminutives and past forms; inflected-form lookup (`geëet` → `eet`) and a compound splitter (`kombuisdeur` = kitchen + door) |
 | Registers | formal · neutral · informal · slang · rude · vulgar · offensive slur · dated · literary, plus a 0–4 severity scale |

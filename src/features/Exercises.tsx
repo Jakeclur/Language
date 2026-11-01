@@ -85,7 +85,7 @@ export function McEx({ ex, onResult, locked }: Props<Extract<Generated, { type: 
   return (
     <>
       <Prompt label={ex.promptLang === "af" ? "What does this mean?" : "How do you say this in Afrikaans?"}>
-        <span className="flex items-center gap-3" lang={ex.promptLang}>{ex.prompt}{ex.promptLang === "af" && <AudioButton text={ex.prompt} />}</span>
+        <span className="flex items-center gap-3" lang={ex.promptLang}>{ex.prompt}{ex.promptLang === "af" && <AudioButton text={ex.prompt} autoPlay />}</span>
       </Prompt>
       <Options options={ex.options} answer={ex.answer} onResult={onResult} locked={locked} lang={ex.promptLang === "af" ? "en" : "af"} />
     </>
@@ -97,7 +97,7 @@ export function TranslateEx({ ex, onResult, locked }: Props<Extract<Exercise, { 
   return (
     <>
       <Prompt label={ex.from === "en" ? "Translate into Afrikaans" : "Translate into English"}>
-        <span className="flex items-center gap-3" lang={ex.from}>{ex.prompt}{ex.from === "af" && <AudioButton text={ex.prompt} />}</span>
+        <span className="flex items-center gap-3" lang={ex.from}>{ex.prompt}{ex.from === "af" && <AudioButton text={ex.prompt} autoPlay />}</span>
       </Prompt>
       <TextAnswer lang={target} locked={locked} placeholder={target === "af" ? "Tik in Afrikaans…" : "Type in English…"}
         onSubmit={(v) => { const r = checkAnswer(v, ex.answers, target); onResult(r.status === "correct" ? { correct: true, note: r.note, expected: r.matched } : { correct: false, hint: r.hint, expected: r.expected }); }} />
@@ -250,6 +250,29 @@ export function MatchEx({ ex, onResult, locked }: Props<Extract<Generated, { typ
   );
 }
 
+export function ListenEx({ ex, onResult, locked }: Props<Extract<Generated, { type: "listen" }>>) {
+  return (
+    <>
+      <Prompt label="Listen. What does it mean?">
+        <div className="flex items-center gap-4"><AudioButton text={ex.text} size="lg" slow autoPlay /></div>
+      </Prompt>
+      <Options options={ex.options} answer={ex.answer} onResult={(r) => onResult({ ...r, note: `You heard: **${ex.text}**` })} locked={locked} />
+    </>
+  );
+}
+
+export function DictationEx({ ex, onResult, locked }: Props<Extract<Generated, { type: "dictation" }>>) {
+  return (
+    <>
+      <Prompt label="Listen and type what you hear">
+        <div className="flex items-center gap-4"><AudioButton text={ex.text} size="lg" slow autoPlay /></div>
+      </Prompt>
+      <TextAnswer lang="af" locked={locked} placeholder="Tik wat jy hoor…"
+        onSubmit={(v) => { const r = checkAnswer(v, [ex.text], "af"); onResult(r.status === "correct" ? { correct: true, note: r.note ?? `It means: ${ex.en}` } : { correct: false, hint: r.hint, expected: `${ex.text} (${ex.en})` }); }} />
+    </>
+  );
+}
+
 export function ExerciseView({ ex, onResult, locked }: Props<Exercise | Generated>) {
   switch (ex.type) {
     case "choice": return <ChoiceEx ex={ex} onResult={onResult} locked={locked} />;
@@ -261,5 +284,7 @@ export function ExerciseView({ ex, onResult, locked }: Props<Exercise | Generate
     case "order": return <OrderEx ex={ex} onResult={onResult} locked={locked} />;
     case "rude": return <RudeEx ex={ex} onResult={onResult} locked={locked} />;
     case "match": return <MatchEx ex={ex} onResult={onResult} locked={locked} />;
+    case "listen": return <ListenEx ex={ex} onResult={onResult} locked={locked} />;
+    case "dictation": return <DictationEx ex={ex} onResult={onResult} locked={locked} />;
   }
 }

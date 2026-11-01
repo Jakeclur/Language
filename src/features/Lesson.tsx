@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useData } from "../lib/dataContext";
 import { useStore } from "../lib/store";
 import { go } from "../lib/router";
@@ -10,6 +10,7 @@ import { Inline, Md } from "../components/Md";
 import { AudioButton } from "../components/Audio";
 import { BottomBar, bigButton } from "../components/BottomBar";
 import { reportUrl } from "../lib/report";
+import { useDeviceVoices } from "../lib/audio";
 import type { Lesson } from "../types";
 
 export function LessonPage({ id }: { id: string }) {
@@ -118,8 +119,12 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: () => void }
   const data = useData();
   const store = useStore();
   const ref = lessonList(data.units, store.settings).find((r) => r.lesson.id === lessonId)!;
-  const initial = useMemo(() => buildSession(ref.lesson, data, store.settings, store.progress), [lessonId]); // eslint-disable-line react-hooks/exhaustive-deps
+  const voices = useDeviceVoices();
+  const canListen = voices.length > 0 || Object.keys(data.audio.items).length > 0;
+  const initial = useMemo(() => buildSession(ref.lesson, data, store.settings, store.progress, canListen), [lessonId, canListen]); // eslint-disable-line react-hooks/exhaustive-deps
   const [steps, setSteps] = useState<Step[]>(initial);
+  // voices load a moment after the page; add listening practice once they're known (before starting)
+  useEffect(() => { if (i === 0 && !result) setSteps(initial); }, [initial]); // eslint-disable-line react-hooks/exhaustive-deps
   const [i, setI] = useState(0);
   const [result, setResult] = useState<Result>();
   const [score, setScore] = useState({ right: 0, total: 0 });

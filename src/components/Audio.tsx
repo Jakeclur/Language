@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useData } from "../lib/dataContext";
 import { audioFor, playClip, speak, useDeviceVoices } from "../lib/audio";
 
@@ -8,7 +8,8 @@ export function useAudio(text: string) {
   const clips = audioFor(data.audio, text);
   const voices = useDeviceVoices();
   const [n, setN] = useState(0);
-  const available = clips.length > 0 || voices.length > 0;
+  // the bare article 'n can't be pronounced well on its own; its example sentences have audio
+  const available = text.trim() !== "'n" && (clips.length > 0 || voices.length > 0);
   const play = (slow = false) => {
     if (clips.length) {
       const c = clips[n % clips.length];
@@ -19,9 +20,18 @@ export function useAudio(text: string) {
   return { available, play };
 }
 
-/** Speaker button. Renders nothing when no natural audio exists, so there are no dead buttons. */
-export function AudioButton({ text, size = "md", slow = false }: { text: string; size?: "sm" | "md" | "lg"; slow?: boolean }) {
+/** Speaker button. Renders nothing when no natural audio exists, so there are no dead buttons.
+ *  `autoPlay` speaks once when it appears (used for new words and listening prompts). */
+export function AudioButton({ text, size = "md", slow = false, autoPlay = false }: { text: string; size?: "sm" | "md" | "lg"; slow?: boolean; autoPlay?: boolean }) {
   const { available, play } = useAudio(text);
+  const played = useRef(false);
+  useEffect(() => {
+    if (autoPlay && available && !played.current) {
+      played.current = true;
+      const t = setTimeout(() => play(), 250);
+      return () => clearTimeout(t);
+    }
+  }, [autoPlay, available]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!available) return null;
   const cls = { sm: "w-8 h-8 text-base", md: "w-11 h-11 text-xl", lg: "w-14 h-14 text-2xl" }[size];
   return (

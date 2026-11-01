@@ -54,10 +54,16 @@ export function checkAnswer(input: string, answers: string[], lang: "af" | "en")
   // missing diacritics: correct, but point it out
   for (const a of answers)
     if (fold(normalise(a, lang)) === fold(given)) return { status: "correct", matched: a, note: `Watch the accents: **${a}**` };
-  // one typo in a longer answer
+  // small typos: 1 in answers of 6+ letters, 2 in answers of 20+ letters
   for (const a of answers) {
     const n = fold(normalise(a, lang));
-    if (n.length >= 6 && levenshtein(n, fold(given)) <= 1) return { status: "correct", matched: a, note: `Small typo. The answer is **${a}**` };
+    const allowed = n.length >= 20 ? 2 : n.length >= 6 ? 1 : 0;
+    if (allowed && levenshtein(n, fold(given)) <= allowed) return { status: "correct", matched: a, note: `Small typo. The answer is **${a}**` };
+  }
+  // English answers: a/an/the and "very/really" are often added or dropped, which is fine
+  if (lang === "en") {
+    const loose = (s: string) => normalise(s, "en").replace(/\b(a|an|the|very|really|so)\b/g, " ").replace(/\s+/g, " ").trim();
+    for (const a of answers) if (loose(a) === loose(input)) return { status: "correct", matched: a, note: `Also correct: **${a}**` };
   }
   // targeted Afrikaans feedback
   if (lang === "af") {

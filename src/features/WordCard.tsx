@@ -22,7 +22,7 @@ export function WordCard({ entry, full = false }: { entry: Entry; full?: boolean
     <div>
       <div className="flex items-center gap-4">
         <h2 className="text-4xl font-bold tracking-tight" lang="af">{entry.headword}</h2>
-        <AudioButton text={entry.headword} size="lg" slow={full} />
+        <AudioButton text={entry.headword} size="lg" slow={full} autoPlay={!full} />
       </div>
       <div className="flex items-center gap-3 mt-2 text-stone-400">
         {entry.ipa && <span className="font-mono">/{entry.ipa}/</span>}

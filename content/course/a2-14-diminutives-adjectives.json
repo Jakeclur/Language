@@ -10,44 +10,208 @@
       "id": "a2-14-1",
       "title": "Diminutives: -tjie, -ie, -jie",
       "explanation": [
-        "Afrikaans speakers love making words \"little\" — for size, cuteness, or friendliness.",
-        "**-ie** after most consonants: boek → **boekie**, kop → **koppie** (also: cup).",
-        "**-jie** after -d and -t: hond → **hondjie**, kat → **katjie**.",
-        "**-tjie** after a long vowel and after -l, -n, -r: tafel → **tafeltjie**, deur → **deurtjie**. After a short vowel the consonant doubles: man → **mannetjie**.",
-        "**-pie** after -m: boom → **boompie**."
+        "Afrikaans speakers love making words \"little\": for size, cuteness, or friendliness. The ending depends on how the word ends:",
+        "| ending of the word | add | examples |\n|---|---|---|\n| -d, -t | **-jie** | hond → **hondjie**, kat → **katjie** |\n| -m | **-pie** | boom → **boompie**, arm → **armpie** |\n| -k, -g, -p, -f, -s | **-ie** | boek → **boekie**, dag → **daggie**, kop → **koppie** |\n| a vowel, or -l, -n, -r, -w | **-tjie** | tafel → **tafeltjie**, deur → **deurtjie**, vrou → **vroutjie** |\n| short vowel + -l, -m, -n, -r | double + **-etjie** | man → **mannetjie**, bal → **balletjie** |",
+        "After a short vowel the consonant often doubles: kop → **koppie**, vis → **vissie**.",
+        "Plurals of diminutives just add **-s**: hondjie → **hondjies**."
       ],
       "examples": [
-        { "af": "Kyk die klein hondjie!", "en": "Look at the little dog!" },
-        { "af": "Ek het 'n boompie geplant.", "en": "I planted a little tree." }
+        {
+          "af": "Kyk die klein hondjie!",
+          "en": "Look at the little dog!"
+        },
+        {
+          "af": "Ek het 'n boompie geplant.",
+          "en": "I planted a little tree."
+        },
+        {
+          "af": "Die kinders speel met die katjies.",
+          "en": "The children are playing with the kittens."
+        }
       ],
-      "vocab": ["hond", "kat", "boek", "boom", "tafel", "huis"],
+      "vocab": [
+        "hond",
+        "kat",
+        "boek",
+        "boom",
+        "tafel",
+        "huis"
+      ],
       "exercises": [
-        { "type": "fill", "af": "'n Klein hond is 'n ___.", "en": "A small dog is a little dog.", "answers": ["hondjie"], "options": ["hondjie", "hondie", "hondtjie"] },
-        { "type": "fill", "af": "'n Klein boom is 'n ___.", "en": "A small tree is a little tree.", "answers": ["boompie"], "options": ["boompie", "boomtjie", "boomie"] },
-        { "type": "fill", "af": "'n Klein tafel is 'n ___.", "en": "A small table is a little table.", "answers": ["tafeltjie"], "options": ["tafeltjie", "tafelie", "tafeljie"] }
+        {
+          "type": "fill",
+          "af": "'n Klein hond is 'n ___.",
+          "en": "A small dog is a little dog.",
+          "answers": [
+            "hondjie"
+          ],
+          "options": [
+            "hondjie",
+            "hondie",
+            "hondtjie"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "'n Klein boom is 'n ___.",
+          "en": "A small tree is a little tree.",
+          "answers": [
+            "boompie"
+          ],
+          "options": [
+            "boompie",
+            "boomtjie",
+            "boomie"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "'n Klein tafel is 'n ___.",
+          "en": "A small table is a little table.",
+          "answers": [
+            "tafeltjie"
+          ],
+          "options": [
+            "tafeltjie",
+            "tafelie",
+            "tafeljie"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "'n Klein kop is 'n ___.",
+          "en": "A small head is a little head (also: a cup).",
+          "answers": [
+            "koppie"
+          ],
+          "options": [
+            "koppie",
+            "koptjie",
+            "kopie"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "'n Klein man is 'n ___.",
+          "en": "A small man is a little man.",
+          "answers": [
+            "mannetjie"
+          ],
+          "options": [
+            "mannetjie",
+            "mantjie",
+            "mannie"
+          ]
+        }
       ]
     },
     {
       "id": "a2-14-2",
       "title": "Adjectives before nouns",
       "explanation": [
-        "Some adjectives add **-e** before a noun: **Die huis is groot** but **'n groot huis** (no change), while **Die man is vriendelik** → **'n vriendelike man**.",
-        "Long adjectives (-ig, -lik) usually add -e: **'n lelike hond**. Short common ones often don't: **'n groot huis**, **'n mooi meisie**, **'n klein kind**.",
-        "Some change shape: **oud → ou** (die ou man), **nuut → nuwe** (die nuwe kar), **jonk → jong**, **lank → lang**.",
-        "Comparing: **groot → groter → grootste**, **mooi → mooier → mooiste**, **goed → beter → beste**."
+        "When an adjective comes **after** the noun (\"the man is friendly\"), it never changes: **Die man is vriendelik.**",
+        "When it comes **before** the noun, longer adjectives usually add **-e**: **'n vriendelike man**, **'n lelike hond**, **'n gelukkige kind**.",
+        "Short, common adjectives often stay the same: **'n groot huis**, **'n mooi meisie**, **'n klein kind**, **'n rooi kar**.",
+        "Some change shape before a noun: **oud → ou** (die ou man), **nuut → nuwe** (die nuwe kar), **goed → goeie** (goeie môre!), **jonk → jong**, **lank → lang**.",
+        "Comparing: **groot → groter → grootste**, **mooi → mooier → mooiste**, and the irregular **goed → beter → beste**."
       ],
       "examples": [
-        { "af": "Ek het 'n nuwe kar.", "en": "I have a new car." },
-        { "af": "Die ou man is baie vriendelik.", "en": "The old man is very friendly." },
-        { "af": "My broer is groter as ek.", "en": "My brother is bigger than me." }
+        {
+          "af": "Ek het 'n nuwe kar.",
+          "en": "I have a new car."
+        },
+        {
+          "af": "Die ou man is baie vriendelik.",
+          "en": "The old man is very friendly."
+        },
+        {
+          "af": "My broer is groter as ek.",
+          "en": "My brother is bigger than me."
+        }
       ],
-      "vocab": ["oud", "nuut", "groot", "mooi", "vriendelik", "goed", "lelik"],
+      "vocab": [
+        "oud",
+        "nuut",
+        "groot",
+        "mooi",
+        "vriendelik",
+        "goed",
+        "lelik"
+      ],
       "exercises": [
-        { "type": "fill", "af": "Ek het 'n ___ kar. (new)", "en": "I have a new car.", "answers": ["nuwe"], "options": ["nuwe", "nuut", "nuute"] },
-        { "type": "fill", "af": "Die ___ man is my oupa. (old)", "en": "The old man is my grandpa.", "answers": ["ou"], "options": ["ou", "oud", "oude"] },
-        { "type": "fill", "af": "My broer is ___ as ek. (bigger)", "en": "My brother is bigger than me.", "answers": ["groter"], "options": ["groter", "grootste", "meer groot"] },
-        { "type": "fill", "af": "Sy is my ___ vriendin. (best)", "en": "She is my best friend.", "answers": ["beste"], "options": ["beste", "goedste", "beter"] },
-        { "type": "translate", "from": "en", "prompt": "a friendly man", "answers": ["'n vriendelike man"] }
+        {
+          "type": "fill",
+          "af": "Ek het 'n ___ kar. (new)",
+          "en": "I have a new car.",
+          "answers": [
+            "nuwe"
+          ],
+          "options": [
+            "nuwe",
+            "nuut",
+            "nuute"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Die ___ man is my oupa. (old)",
+          "en": "The old man is my grandpa.",
+          "answers": [
+            "ou"
+          ],
+          "options": [
+            "ou",
+            "oud",
+            "oude"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "My broer is ___ as ek. (bigger)",
+          "en": "My brother is bigger than me.",
+          "answers": [
+            "groter"
+          ],
+          "options": [
+            "groter",
+            "grootste",
+            "meer groot"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Sy is my ___ vriendin. (best)",
+          "en": "She is my best friend.",
+          "answers": [
+            "beste"
+          ],
+          "options": [
+            "beste",
+            "goedste",
+            "beter"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "a friendly man",
+          "answers": [
+            "'n vriendelike man"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "___ môre! (good)",
+          "en": "Good morning!",
+          "answers": [
+            "Goeie"
+          ],
+          "options": [
+            "Goeie",
+            "Goed",
+            "Goede"
+          ]
+        }
       ]
     }
   ]

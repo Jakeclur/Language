@@ -14,7 +14,7 @@
     "import": "node pipeline/import/fetch-sources.mjs",
     "audio": "node pipeline/audio/generate-audio.mjs",
     "audio:qa": "node pipeline/audio/qa-audio.mjs",
-    "test": "vitest run",
+    "test": "npm run content -- --quiet && vitest run",
     "lint": "tsc -b --noEmit"
   },
   "dependencies": {

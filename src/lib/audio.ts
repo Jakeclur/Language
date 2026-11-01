@@ -43,13 +43,27 @@ export function useDeviceVoices(): SpeechSynthesisVoice[] {
   return voices;
 }
 
+const QUESTION_WORDS = /^(wie|wat|waar|wanneer|hoekom|waarom|hoe|hoeveel|watter|waarheen|praat|is|het|kan|mag|wil|moet|sal)\b/i;
+
+/** Make text sound natural when read aloud: speech engines give lower-case fragments with no
+ *  punctuation a flat or rising, "list-like" intonation. A capital and a full stop (or question
+ *  mark) give normal sentence intonation. 'n at the start stays lower-case, as Afrikaans requires. */
+export function speakable(text: string): string {
+  let t = text.replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+  if (!t) return t;
+  if (!/[.!?…]$/.test(t)) t += QUESTION_WORDS.test(t) && t.split(" ").length > 1 ? "?" : ".";
+  if (t.startsWith("'n ")) return "'n " + t.charAt(3).toUpperCase() + t.slice(4);
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
 export function speak(text: string, voice: SpeechSynthesisVoice, slow = false) {
   try {
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
+    const u = new SpeechSynthesisUtterance(speakable(text));
     u.voice = voice;
     u.lang = voice.lang;
-    u.rate = slow ? 0.7 : 0.95;
+    // Natural neural voices sound best at their own pace; slow mode is clearly slower.
+    u.rate = slow ? 0.72 : 1;
     window.speechSynthesis.speak(u);
   } catch {
     /* not available */

@@ -3,7 +3,7 @@ import { useData } from "../lib/dataContext";
 import { useStore } from "../lib/store";
 import { isDue, preview, Rating } from "../lib/srs";
 import { checkAnswer, shuffle } from "../lib/text";
-import { meaning } from "./course";
+import { meaning, overlaps } from "./course";
 import { Button, Card, ProgressBar } from "../components/ui";
 import { AudioButton } from "../components/Audio";
 import { Inline } from "../components/Md";
@@ -49,7 +49,9 @@ export function Review() {
   const afFirst = dir[i] === "af-en";
   const check = () => {
     if (typed.trim()) {
-      const r = checkAnswer(typed, [entry.headword], "af");
+      // synonyms count: any word in your deck with the same meaning is also right
+      const syn = Object.keys(store.progress.cards).map((cid) => data.byId.get(cid)).filter((x): x is NonNullable<typeof x> => !!x && x.id !== entry.id && overlaps(x, entry, store.settings)).map((x) => x.headword);
+      const r = checkAnswer(typed, [entry.headword, ...syn], "af");
       setVerdict(r.status === "correct" ? "✓ Correct" + (r.note ? ". " + r.note : "") : "✗ Not quite");
     }
     setRevealed(true);
