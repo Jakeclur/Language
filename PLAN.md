@@ -1,367 +1,561 @@
 # Afrikaans Learning App: Project Plan
 
-**Working title:** *Leer Afrikaans* (rename later)
-**Audience:** English speakers starting from zero, aiming for confident everyday and formal Afrikaans
+**Working title:** *Leer Afrikaans* (rename before launch; check the name is free to use)
+**Audience:** English speakers starting from zero: school students, travellers, people moving to South Africa or Namibia, and people with Afrikaans family
+**Goal:** A published app that takes learners from no Afrikaans to near-native understanding, including real everyday, slang, rude and formal Afrikaans
 **Status:** Planning
+
+### Decisions made so far
+| Question | Decision |
+|---|---|
+| Who is it for? | **Everyone listed above**, with a goal picker that tailors topics (see §2.1) |
+| Who checks the Afrikaans? | **No reliance on a fluent reviewer.** Accuracy comes from an automated multi-source verification pipeline (see §5) |
+| Rude/vulgar slang? | **Included**, fully labelled by severity, behind an opt-in age gate (see §4.4) |
+| Personal or published? | **Published**, so licensing, privacy, age ratings and store requirements are part of the plan (see §9) |
+| Vocabulary size | **Expanded:** 10,000+ words taught, 80,000+ dictionary headwords (see §4) |
+| Audio | **Human-sounding neural voices only**, generated in advance and quality-checked. No robotic fallback, ever (see §6) |
 
 ---
 
 ## 1. Goals and scope
 
-### What "all of Afrikaans" means in practice
-No app can teach every word and expression, so the target is defined as:
-
 | Goal | Measurable target |
 |---|---|
-| Course | Structured path from **CEFR A1 to C1** (beginner to advanced) |
+| Course | Structured path from **CEFR A1 to C2** (complete beginner to near-native) |
 | Grammar | Every major grammar point in a standard Afrikaans grammar, each with a lesson and drills |
-| Vocabulary | ~5,000 high-frequency words taught actively. That covers most everyday text and speech |
-| Dictionary | 30,000+ entries searchable both ways (EN→AF and AF→EN), each tagged by register |
-| Real-world Afrikaans | Slang, informal speech, regional varieties (e.g. Kaaps), idioms, and cultural notes |
+| Vocabulary taught | **10,000+ words** taught actively with spaced repetition |
+| Dictionary | **80,000+ headwords** both directions, plus inflected-form lookup and a compound-word splitter that handles words not in the list |
+| Idioms & sayings | **2,000+** idioms, proverbs and fixed expressions |
+| Slang & informal | **1,500+** slang/informal entries, **300+** rude/vulgar entries, each with a severity rating |
+| Audio | Natural, human-sounding audio for **every** word, example sentence, dialogue and story |
 | Four skills | Reading, writing, listening, speaking |
 
 ### Non-goals (for v1)
-- Live tutors or chat with other learners
-- Teaching other South African languages
-- Native mobile apps (a web app that installs on phones comes first; see §6)
+- Live human tutors
+- Teaching other South African languages (loanwords from them *are* covered)
 
 ---
 
 ## 2. Core features
 
-### 2.1 The course (learning path)
-- **Units → Lessons → Exercises**, unlocked in order, with a placement test so experienced learners can skip ahead.
-- Each lesson has: a short explanation (in English), example sentences with audio, new vocabulary, then 8–15 exercises.
-- Each unit ends with a **checkpoint** that mixes everything in the unit.
-- **Review** sessions are generated each day from the spaced-repetition queue (§2.3).
+### 2.1 Goal picker (one app for all audiences)
+At sign-up the learner picks one or more goals. **Grammar is the same for everyone**, but the topics, example sentences and extra units are reordered to match:
 
-### 2.2 The dictionary
-- Search in **either direction**, with fuzzy matching (handles missing accents: `se` finds `sê`, `ne` finds `nè`).
+| Goal | Extra emphasis |
+|---|---|
+| 🎒 **School** | School subjects, classroom language, essays and comprehension, exam-style exercises, set-work style reading |
+| ✈️ **Travel** | Survival phrases early, transport, food, accommodation, directions, money, emergencies |
+| 🏠 **Moving to SA / Namibia** | Work, banking, renting, doctors, officialdom, formal letters, workplace slang, small talk with neighbours |
+| 👪 **Family / heritage** | Family words, terms of endearment, recipes, traditions, religion, childhood songs and rhymes, talking with older relatives (formal *u*) |
+| 🗣️ **Just for fun / culture** | Music, sport, braai culture, humour, slang early |
+
+### 2.2 The course (learning path)
+- **Units → Lessons → Exercises**, unlocked in order, with a **placement test** so experienced learners can skip ahead.
+- Each lesson has a short explanation in English, example sentences with audio, new vocabulary, then 8–15 exercises.
+- Each unit ends with a **checkpoint** that mixes everything in it.
+- A **daily review** is generated from the spaced-repetition queue (§2.4).
+
+### 2.3 The dictionary
+- Search **both directions** with fuzzy matching. Missing accents are fine: `se` finds `sê`.
+- **Inflected-form lookup:** typing `geëet`, `honde` or `mooier` finds `eet`, `hond` and `mooi`.
+- **Compound splitter:** Afrikaans joins words together (`kombuistafel` = `kombuis` + `tafel`, "kitchen table"). Unknown compounds are broken into known parts, so the dictionary can handle words that aren't in it.
 - Each entry shows:
-  - Headword, part of speech, pronunciation (IPA + audio)
-  - Forms: plural, diminutive, past participle, comparative/superlative
-  - English translations, ordered by how common they are
-  - **Register label:** `formal` · `neutral` · `informal` · `slang` · `vulgar` · `dated`
-  - **Region label** where relevant: `Kaaps`, `Northern Cape`, `Namibia`, etc.
-  - Example sentences (AF + EN)
-  - Related words, synonyms, idioms that use the word
-  - Usage notes, e.g. "*u* is the polite 'you'; use it with elders and in formal letters"
-- Filters: register, part of speech, CEFR level, topic (food, family, work…).
-- **"Add to my deck"** button on every entry, which feeds it into spaced repetition.
-- A setting to **hide vulgar entries** (on by default for younger users).
+  - Headword, part of speech, IPA, and **natural human-sounding audio**
+  - Forms: plural, diminutive, past participle, comparative/superlative, attributive form
+  - English translations, most common first
+  - **Register:** `formal` · `neutral` · `informal` · `slang` · `rude` · `vulgar` · `offensive slur` · `dated` · `literary`
+  - **Severity** for rude words (0–4, see §4.4)
+  - **Region:** `Kaaps`, `Namibia`, `Northern Cape`, `Orange River`, etc.
+  - Example sentences (AF + EN) with audio
+  - Word family (e.g. `werk → werker, werkloos, werkswinkel, gewerk`), synonyms, antonyms, idioms that use the word
+  - Usage notes ("*u* is polite 'you'; use it with elders, strangers and in formal letters")
+  - **Confidence badge:** how well the entry is verified (see §5)
+- Filters: register, severity, part of speech, CEFR level, topic, region.
+- **"Add to my deck"** on every entry.
+- **"Report a mistake"** on every entry, which feeds the correction queue (§5.3).
 
-### 2.3 Spaced repetition (SRS)
-- Every word and grammar pattern the learner meets becomes a card.
-- Scheduling algorithm: **FSRS** (open-source, better than the older SM-2 used by early Anki). A free JS library, `ts-fsrs`, implements it.
-- Cards are tested in several directions: AF→EN, EN→AF, audio→meaning, and typing the word from memory.
+### 2.4 Spaced repetition (SRS)
+- Every word, phrase and grammar pattern the learner meets becomes a card.
+- Scheduling uses **FSRS**, a modern open-source algorithm (`ts-fsrs` library).
+- Cards are tested in several directions: AF→EN, EN→AF, audio→meaning, typed from memory, and used in a sentence.
 
-### 2.4 Exercise types
+### 2.5 Exercise types
 
 | Type | What the learner does | Best for |
 |---|---|---|
 | Flashcard | Flip and self-rate | Vocabulary |
 | Multiple choice | Pick the correct translation/word | Early vocab, comprehension |
-| Type the translation | Free typing, with typo tolerance and accepted alternatives | Production, spelling |
-| Word-order builder | Drag word tiles into the correct order | Afrikaans word order (verb-second, verb-final, double *nie*) |
-| Fill in the blank | Complete the sentence (with or without a word bank) | Grammar points |
+| Type the translation | Free typing with typo tolerance and alternatives | Production, spelling |
+| Word-order builder | Drag word tiles into order | Verb-second, verb-final, double *nie* |
+| Fill in the blank | Complete the sentence | Grammar points |
 | Matching pairs | Connect AF and EN items | Fast vocab review |
-| Listening dictation | Hear audio, type what was said | Listening + spelling |
-| Listen and choose | Hear audio, pick meaning or picture | Listening |
-| Speaking | Say the sentence; speech recognition checks it | Pronunciation (see risks, §9) |
-| Transform the sentence | Turn present → past, positive → negative, active → passive | Grammar mastery |
-| Register switch | Rewrite a slang sentence formally (or the reverse) | Formal / informal / slang |
-| Reading + questions | Short story or dialogue with tap-to-translate words, then questions | Reading, context |
-| Dialogue role-play | Choose or type replies in a scripted conversation | Real-life situations |
+| Listening dictation | Hear audio, type it | Listening + spelling |
+| Listen and choose | Hear audio, pick meaning/picture | Listening |
+| **Shadowing** | Hear a sentence, record yourself, play both back side by side | Pronunciation |
+| Speaking | Say the sentence; speech recognition checks it | Speaking |
+| Transform the sentence | Present → past, positive → negative, active → passive | Grammar mastery |
+| Register switch | Rewrite slang formally or the reverse | Formal / informal / slang |
+| **"How rude is this?"** | Rate a sentence's rudeness, or pick when it would be OK to say | Understanding vulgar language safely |
+| **Word building** | Combine prefixes, roots and suffixes (`on- + gelukkig`) | Growing vocabulary fast |
+| Reading + questions | Story/dialogue with tap-to-translate words | Reading |
+| Dialogue role-play | Choose or type replies in a conversation | Real-life situations |
 
-### 2.5 Other learning tools
-- **Grammar reference:** every grammar explanation from the course collected in one searchable place.
-- **Pronunciation guide:** each sound with audio and English comparisons (*g* like Scottish "loch", *ui*, *eu*, *ê*, *ô*, *'n*).
-- **Phrasebook:** survival phrases grouped by situation (greetings, shops, braai, sport, school, emergencies).
-- **Slang & culture corner:** short notes on how words like *lekker*, *jol*, *ja-nee*, *now-now*, *sommer* and *eish* are really used.
+### 2.6 Other learning tools
+- **Grammar reference:** all explanations in one searchable place.
+- **Pronunciation guide:** every sound, with audio from several voices and English comparisons (*g* like Scottish "lo**ch**", *r* rolled, *ui*, *eu*, *ê*, *ô*, *'n*).
+- **Phrasebook:** survival phrases by situation, adapted to the learner's goal.
+- **Slang & culture corner:** how words like *lekker*, *kuier*, *jol*, *ja-nee*, *sommer*, *mos* and *eish* are really used.
+- **Street Afrikaans (18+):** the rude and vulgar module (§4.4).
 - **Progress dashboard:** streak, words learned, CEFR progress, weak areas.
 
 ---
 
 ## 3. Curriculum outline
 
-Grammar is taught in this order because each step builds on the one before it.
-
-### A1: Beginner
-1. **Sounds & spelling:** alphabet, vowels, diphthongs, diacritics (ê ë ô û), *'n*
+### A1: Beginner (~700 words)
+1. **Sounds & spelling:** alphabet, vowels, diphthongs, diacritics (ê ë ô û î), *'n*
 2. **Greetings & introductions:** *Hallo, Goeie môre, Hoe gaan dit?, Ek is…*
-3. **Pronouns & *wees*:** *ek, jy/u, hy, sy, ons, julle, hulle*; *is* for everything
-4. **Present tense:** verbs don't change for the subject (*ek loop, hy loop*), which is easier than English
-5. **Articles & plurals:** *die*, *'n*; plurals with *-e* and *-s*, and the irregular ones
-6. **Numbers, time, days, months**
-7. **Basic word order:** verb in second position (V2): *Vandag gaan ek…*
-8. **Questions:** *wie, wat, waar, wanneer, hoekom, hoe*; yes/no questions by inversion
-9. **Negation part 1:** the double *nie*: *Ek praat nie Afrikaans nie.*
-10. **Possession:** *my, jou, sy, haar, ons, julle, hulle*; *se* (*Jan se kar*)
-11. **Topics:** family, food, home, school, weather, colours
+3. **Pronouns & *wees*:** *ek, jy/u, hy, sy, ons, julle, hulle*; *is* for every person
+4. **Present tense:** verbs don't change for the subject (*ek loop, hy loop*)
+5. **Articles & plurals:** *die*, *'n*; *-e*, *-s*, and irregular plurals
+6. **Numbers, time, dates, days, months, money**
+7. **Basic word order:** verb second (V2): *Vandag gaan ek…*
+8. **Questions:** *wie, wat, waar, wanneer, hoekom, hoe, hoeveel*
+9. **Negation part 1:** the double *nie*
+10. **Possession:** possessive pronouns; *se* (*Jan se kar*)
+11. **Topics:** family, food, home, school, weather, colours, body, clothes
 
-### A2: Elementary
-12. **Past tense:** *het + ge-*: *Ek het geëet.* (only one past tense to learn)
+### A2: Elementary (~1,500 words cumulative)
+12. **Past tense:** *het + ge-*: *Ek het geëet.*
 13. **Future:** *sal* and *gaan*
-14. **Modal verbs:** *kan, moet, wil, mag*, and their past forms *kon, moes, wou, mog*
-15. **Diminutives:** *-tjie, -ie, -jie, -pie, -kie* (*hond → hondjie*) and their emotional uses
-16. **Adjectives:** attributive *-e* inflection (*'n groot huis* vs *'n mooi huis*, *die ou man*)
-17. **Comparatives & superlatives:** *groter, grootste; meer, mees*
-18. **Prepositions** and separable verbs (*opstaan → Ek staan op*)
-19. **Negation part 2:** *niks, niemand, nooit, geen* (+ *nie*)
-20. **Topics:** shopping, travel, health, hobbies, sport, directions
+14. **Modal verbs:** *kan, moet, wil, mag* and *kon, moes, wou, mog*
+15. **Diminutives:** *-tjie, -ie, -jie, -pie, -kie*, and their emotional uses
+16. **Adjective inflection:** *'n groot huis*, *'n mooi huis*, *die ou man*
+17. **Comparatives & superlatives**
+18. **Prepositions & separable verbs:** *opstaan → Ek staan op*
+19. **Negation part 2:** *niks, niemand, nooit, geen, nêrens*
+20. **Topics:** shopping, travel, health, hobbies, sport, directions, animals, jobs
 
-### B1: Intermediate
-21. **Subordinate clauses:** verb goes to the end: *…omdat ek moeg **is***
-22. **Conjunctions** and which word order each one triggers (*en/maar/want* vs *omdat/as/wanneer/dat*)
-23. **Relative clauses:** *wat, waarmee, waarvan…*
+### B1: Intermediate (~3,000 words)
+21. **Subordinate clauses:** verb to the end: *…omdat ek moeg **is***
+22. **Conjunctions** and the word order each one triggers
+23. **Relative clauses:** *wat, waarmee, waarvan, waarin…*
 24. **Conditional:** *sou*, *as… dan…*
-25. **Passive voice:** *word* (present) / *is ge-* (past)
-26. **Reflexive verbs:** *Ek was my*, *hulle verbeel hulle*
-27. **Infinitive constructions:** *om te*
-28. **Formal vs informal register:** *u* vs *jy*, formal letters and emails
-29. **Topics:** work, news, opinions, telling stories, feelings
+25. **Passive voice:** *word* / *is ge-*
+26. **Reflexive verbs:** *Ek was my*, *Hy skaam hom*
+27. **Infinitives:** *om te*, *te*
+28. **Word formation:** prefixes (*on-, ver-, be-, ont-, her-*) and suffixes (*-heid, -lik, -ing, -er, -loos, -baar*). This lets learners work out thousands of new words
+29. **Formal vs informal:** *u* vs *jy*, formal emails and letters
+30. **Topics:** work, news, opinions, storytelling, feelings, technology, environment
 
-### B2: Upper intermediate
-30. Complex word order (several verbs at the end, *te* + modals)
-31. Indirect speech
-32. **Idioms and expressions:** *nou-nou, sommer, darem, mos, tog, nogal* (the little "flavour" words)
-33. **Slang and colloquial Afrikaans**, plus English–Afrikaans code-switching
-34. **Regional varieties:** Kaaps, Namibian Afrikaans, Orange River Afrikaans
-35. Reading authentic texts: news, song lyrics, short stories
+### B2: Upper intermediate (~5,500 words)
+31. Complex verb clusters (*Ek sou dit kon gedoen het*)
+32. Indirect speech
+33. **"Flavour" words:** *nou-nou, sommer, darem, mos, tog, nogal, maar, al*
+34. **Idioms and proverbs**
+35. **Slang and colloquial Afrikaans**, English–Afrikaans code-switching
+36. **Street Afrikaans (18+, opt-in):** rude words, insults, swearing, and when (not) to use them
+37. **Regional varieties:** Kaaps, Namibian, Orange River, Eastern Cape
+38. Authentic texts: news, song lyrics, social media, short stories
 
-### C1: Advanced
-36. Formal writing: essays, reports, official letters
-37. Literary Afrikaans and figurative language
-38. History of the language (Dutch roots, Malay, Portuguese, Khoekhoe and Bantu-language influence)
-39. Debate and argument, nuance and tone
+### C1: Advanced (~8,000 words)
+39. Formal writing: essays, reports, official and business letters
+40. Literary Afrikaans and figurative language
+41. Language history: Dutch roots and Malay, Portuguese, Khoekhoe, Bantu-language and English influence
+42. Debate, argument, nuance, tone, sarcasm and humour
+
+### C2: Mastery (10,000+ words)
+43. Specialist vocabulary packs: law, medicine, business, farming, science, religion
+44. Poetry and classic literature excerpts
+45. Spotting regional accents and social registers by ear
+46. Fine distinctions between near-synonyms
 
 ---
 
-## 4. The dictionary in detail
+## 4. Vocabulary and dictionary
 
-### 4.1 Entry data model
+### 4.1 Vocabulary targets by level
+| Level | Taught words (cumulative) | Idioms/phrases | Roughly what you can do |
+|---|---|---|---|
+| A1 | 700 | 50 | Introduce yourself, basic survival |
+| A2 | 1,500 | 150 | Everyday conversations on familiar topics |
+| B1 | 3,000 | 400 | Handle most travel and social situations, simple news |
+| B2 | 5,500 | 800 | Follow TV, chat naturally, understand slang |
+| C1 | 8,000 | 1,400 | Work and study in Afrikaans |
+| C2 | 10,000+ | 2,000+ | Near-native comprehension, literature |
+
+Words are chosen by **frequency** (from corpus counts) first, then by **topic need** for the learner's goal.
+
+### 4.2 Topic packs (45 packs, ~100–400 words each)
+**Everyday:** greetings · family & relationships · body & health · food & cooking · drinks · clothes · home & furniture · kitchen · colours & shapes · numbers & maths · time & calendar · weather & seasons · emotions & personality · hobbies · sport (rugby, cricket, soccer) · music & dance · shopping & money
+
+**Places & travel:** town & directions · transport & driving (incl. *robot* = traffic light) · accommodation · nature & landscape · animals (incl. SA wildlife) · plants · farm life · beach & sea
+
+**School & work:** school & subjects · university · jobs & workplace · office & computers · technology & internet · business & finance · law & government · medicine & hospital · science · media & news
+
+**Culture & society:** braai & food culture · celebrations & holidays · religion · history · politics · environment · crime & safety · social media & texting abbreviations · humour & insults · terms of endearment
+
+### 4.3 Entry data model
 ```ts
 interface DictionaryEntry {
   id: string;
-  headword: string;            // "lekker"
-  partOfSpeech: PartOfSpeech;  // "adjective"
-  ipa?: string;                // "/ˈlɛkər/"
-  audioUrl?: string;
+  headword: string;             // "lekker"
+  partOfSpeech: PartOfSpeech;
+  ipa?: string;                 // "/ˈlɛkər/"
+  audio: AudioRef[];            // several voices (see §6)
   forms?: {
     plural?: string;
     diminutive?: string;
     pastParticiple?: string;
     comparative?: string;
     superlative?: string;
-    attributive?: string;      // "lekker" → "lekker" / "groot" → "groot", "oud" → "ou"
+    attributive?: string;       // "oud" → "ou"
   };
-  senses: Sense[];             // one word can have several meanings
+  senses: Sense[];
   cefrLevel?: "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
-  frequencyRank?: number;      // 1 = most common
-  topics: string[];            // ["food", "emotions"]
-  related: string[];           // ids of synonyms/antonyms/derived words
-  source: string;              // where the data came from (needed for licensing)
+  frequencyRank?: number;       // 1 = most common
+  topics: string[];
+  wordFamily: string[];         // derived/related entry ids
+  compoundParts?: string[];     // ["kombuis", "tafel"]
+  verification: Verification;   // see §5
 }
 
 interface Sense {
-  translations: string[];      // ["nice", "tasty", "great", "pleasant"]
-  register: "formal" | "neutral" | "informal" | "slang" | "vulgar" | "dated";
-  regions?: string[];          // ["Kaaps"]
-  definition?: string;         // English explanation when no single word fits
+  translations: string[];
+  register: "formal" | "neutral" | "informal" | "slang" | "rude"
+          | "vulgar" | "offensive-slur" | "dated" | "literary";
+  severity?: 0 | 1 | 2 | 3 | 4; // rude/vulgar words only
+  regions?: string[];
+  definition?: string;
   usageNote?: string;
-  examples: { af: string; en: string; audioUrl?: string }[];
+  examples: { af: string; en: string; audio?: AudioRef[]; source: string }[];
+}
+
+interface Verification {
+  sources: { name: string; licence: string; url?: string }[];
+  corpusHits?: number;          // times the word/sense appears in real text
+  checks: string[];             // which automated checks passed
+  confidence: "verified" | "checked" | "unverified" | "community";
+  reports: number;              // open "report a mistake" count
 }
 ```
 
-### 4.2 Where the data comes from
-Building 30,000 entries by hand isn't realistic, so the dictionary is built in layers:
+### 4.4 Slang, rude and vulgar language
+Real Afrikaans is full of slang and swearing, and learners need to *understand* it even if they never say it. All of it is included and **clearly labelled**.
 
-1. **Open data import (bulk):** check each source's licence before using it.
-   - **Wiktionary** (Afrikaans entries; CC BY-SA, so we must credit it and share alike)
-   - **Apertium** Afrikaans–English/Dutch translation data (GPL; useful word pairs)
-   - Frequency lists from open corpora (e.g. Leipzig Corpora Collection) to rank words
-2. **Curated core (hand-checked):** the ~5,000 words used in the course get full entries: register, examples, audio, notes.
-3. **Slang & informal layer (hand-written):** standard dictionaries miss a lot of slang, so this layer is collected and reviewed by native speakers. Examples:
-
-| Word | Meaning | Register |
+**Severity scale**
+| Level | Meaning | Examples |
 |---|---|---|
-| *lekker* | nice, great, tasty | informal (very common) |
-| *jol* | party / have fun | slang |
-| *kief / kif* | cool | slang |
-| *bru, bra* | mate, bro | slang |
-| *tjommie* | friend | slang |
-| *ou* | guy, person | informal |
-| *bakkie* | pickup truck | neutral (SA) |
-| *dop* | alcoholic drink / fail an exam | informal |
-| *skinder* | gossip | neutral |
-| *eish* | expression of dismay | informal (borrowed) |
-| *ja-nee* | "yes, indeed" | informal |
-| *moerse* | huge, very | slang (mildly rude) |
+| 0 | Clean slang, fine anywhere casual | *lekker, kief, bru, tjommie, kuier* |
+| 1 | Mild, a bit cheeky | *jissis, vrek* (of people), *sies* |
+| 2 | Rude: not with grandparents or teachers | *kak, gat, gatvol, bliksem, donner, drol* |
+| 3 | Strong swearing | *fok, fokken, fokol, befok, doos* |
+| 4 | Extremely offensive | *poes* (as an insult) |
+| ⛔ | **Offensive slur** (racial, ethnic, homophobic) | Defined and explained, never taught for use |
 
-4. **Community suggestions (later):** users can suggest corrections and new slang. Suggestions go into a review queue before they appear.
+**Rules**
+- Levels 0–1 appear in the normal course.
+- Levels 2–4 appear only in the **Street Afrikaans** module and dictionary, which need an **18+ confirmation** and are switched off by default.
+- **Slurs** have dictionary entries only, so learners can recognise them and understand why they are hurtful. They come with a warning and historical context, are never used in exercises or flashcards, and have no auto-play audio. Some slurs have legal consequences in South Africa (hate speech and *crimen injuria* cases), and the entry says so.
+- Every rude entry has a **"When would people say this?"** note and a **"Safer alternative"** (e.g. *kak* → *nonsens / sleg*).
 
-> ⚠️ **Accuracy rule:** No AI-generated or community content goes live without review by a fluent speaker. Wrong slang or wrong register labels would teach people to embarrass themselves.
+**Sample slang and informal entries** (the full list targets 1,500+)
+| Word | Meaning | Register | Sev. |
+|---|---|---|---|
+| *lekker* | nice, great, tasty | informal | 0 |
+| *kuier* | visit, hang out socially | neutral | 0 |
+| *jol* | party; have fun | slang | 0 |
+| *kief / kif* | cool | slang | 0 |
+| *kwaai* | cool, awesome (also standard: strict, angry) | slang | 0 |
+| *bru / bra / broer* | bro, mate | slang | 0 |
+| *tjommie / pel* | friend | slang | 0 |
+| *ou / outjie* | guy | informal | 0 |
+| *ballie* | old man, dad | slang | 0 |
+| *bokkie* | sweetheart | informal | 0 |
+| *howzit / hoesit* | how's it going | slang | 0 |
+| *lank laas* | long time no see | informal | 0 |
+| *dop* | alcoholic drink; fail an exam | informal | 0 |
+| *babbelas* | hangover | informal | 0 |
+| *lus* | to feel like (*Ek is lus vir pizza*) | informal | 0 |
+| *sommer* | just (for no reason) | informal | 0 |
+| *mos* | after all, you know | informal | 0 |
+| *nou-nou* | in a moment (not "right now") | informal | 0 |
+| *ja-nee* | yes, indeed | informal | 0 |
+| *yslik* | huge | informal | 0 |
+| *foeitog* | shame, aww | informal | 0 |
+| *eish* | expression of dismay | informal | 0 |
+| *jislaaik* | wow, gosh | informal | 0 |
+| *sies* | yuck, gross | informal | 1 |
+| *jissis* | geez (from "Jesus") | informal | 1 |
+| *vrek* | to die (animals; rude of people); very (*vrek koud*) | informal | 1 |
+| *moerse* | massive, very | slang | 1 |
+| *gatvol* | fed up | rude | 2 |
+| *kak* | crap, shit | vulgar | 2 |
+| *bliksem* | to hit; damn | rude | 2 |
+| *donner* | to beat up; damn | rude | 2 |
+| *drol* | turd; jerk | rude | 2 |
+| *fok / fokken* | fuck / fucking | vulgar | 3 |
+| *fokol* | fuck all, nothing | vulgar | 3 |
+| *befok* | crazy; awesome | vulgar | 3 |
+| *doos* | idiot (vulgar) | vulgar | 3 |
+| *poes* | extremely vulgar insult | vulgar | 4 |
+
+> These meanings and severities are a starting draft. They go through the same verification pipeline as everything else (§5) before launch.
+
+### 4.5 Where the data comes from
+Building this by hand isn't realistic, so the dictionary is built in layers. **Every entry records its source and licence.**
+
+1. **Open data (bulk import)**
+   - **Wiktionary**, Afrikaans entries (CC BY-SA: credit required, and the dictionary data must stay share-alike)
+   - **Tatoeba**, Afrikaans–English example sentence pairs (CC BY)
+   - **Apertium**, Afrikaans word pairs (GPL; used as a cross-checking source)
+   - **SADiLaR** (South African Centre for Digital Language Resources): NCHLT Afrikaans text and speech corpora, several under CC BY
+   - **Leipzig Corpora Collection**, word frequency
+   - **Hunspell af_ZA** spell-check word list, for spelling validation
+2. **Generated layer:** inflected forms, diminutives, plurals and compounds generated by rules, then validated against corpora (§5).
+3. **Curated core:** the 10,000 course words get full entries with notes, examples and audio.
+4. **Slang layer:** collected from multiple sources (slang dictionaries and glossaries, song lyrics, social media and forums, Wiktionary slang categories) and cross-checked.
+5. **Community layer (after launch):** user suggestions and corrections (§5.3).
+
+> ⚖️ Check the licence of each source before importing. Avoid anything marked **NC (non-commercial)** or "all rights reserved", because the app is going to be published.
 
 ---
 
-## 5. How a learner's day works (example)
-1. Open the app → "15 reviews due, Lesson 12 next"
-2. Do 5 minutes of SRS review (mixed exercise types)
-3. Do the next lesson: explanation, then exercises
-4. Read a short dialogue and tap unknown words to look them up and add them to the deck
-5. See the streak and progress update
+## 5. Accuracy without a fluent reviewer
+
+With no human checker, accuracy has to be **built into the pipeline**: content is only trusted when independent sources agree.
+
+### 5.1 Verification pipeline (runs automatically on every content change)
+| # | Check | What it catches |
+|---|---|---|
+| 1 | **Multi-source agreement:** each translation must match in ≥2 independent sources | Wrong translations |
+| 2 | **Corpus attestation:** the word, and ideally the sense, appears in real Afrikaans text (SADiLaR, Leipzig, Tatoeba) | Made-up words, wrong forms |
+| 3 | **Spell check:** every Afrikaans word passes Hunspell af_ZA or is a known slang/regional entry | Typos, wrong diacritics |
+| 4 | **Grammar rules engine** (written by us): double *nie* present, verb in 2nd position in main clauses, verb-final after *omdat/dat/as…*, *het + ge-* past participles, adjective inflection | Grammatically wrong example sentences |
+| 5 | **Back-translation:** translate each Afrikaans sentence back to English with two different machine-translation engines and compare the meaning to the intended English | Sentences that say something other than intended |
+| 6 | **AI cross-review:** any AI-drafted content is reviewed by a *second, independent* model prompted to find errors; disagreements are flagged | Unnatural phrasing, register mistakes |
+| 7 | **Audio round-trip:** speech recognition transcribes every audio file and compares it to the text (§6.4) | Mispronounced or garbled audio |
+| 8 | **Consistency checks:** every word used in a lesson exists in the dictionary; every exercise has a valid answer; no slur appears in an exercise | Broken content |
+
+### 5.2 Confidence badges (shown to learners)
+| Badge | Rule | Used in course? |
+|---|---|---|
+| ✅ **Verified** | ≥3 sources agree + corpus attested + all checks pass | Yes |
+| ☑️ **Checked** | 2 sources agree + checks pass | Yes |
+| ⚠️ **Unverified** | 1 source, or a check failed | Dictionary only, with a warning |
+| 👥 **Community** | Added or corrected by users and upvoted | Dictionary only, until it reaches "Checked" |
+
+**Course content may only use Verified or Checked words and sentences.**
+
+### 5.3 Self-correcting after launch
+- **"Report a mistake"** button on every entry, sentence and exercise.
+- Reports, upvotes and downvotes go into a public correction queue.
+- Users who show they are fluent (e.g. they pass the C2 placement test, or have a long accurate reporting history) earn **trusted reviewer** status, so the native-speaking user base gradually becomes the reviewer pool without anyone being relied on up front.
+- Entries with many reports are automatically demoted to ⚠️ until fixed.
+
+> Honest limit: this greatly reduces errors but can't remove all of them. Slang in particular changes fast. The badges and report button exist so learners know how much to trust each item.
 
 ---
 
-## 6. Technical plan
+## 6. Audio: natural, human-sounding pronunciation
 
-### 6.1 Recommended stack
+**Rule: no robotic audio, ever.** Browser built-in text-to-speech is not used. Afrikaans voices are often missing from devices, and the ones that exist sound robotic. Instead, all audio is **generated in advance** with the best neural voices, quality-checked, and stored as audio files. If an item has no audio yet, the app shows "audio coming soon" instead of falling back to a robotic voice.
+
+### 6.1 Voice engines (as of late 2026; re-check before building)
+| Engine | Afrikaans voices | Notes | Use for |
+|---|---|---|---|
+| **ElevenLabs** (v3 or newer model) | Afrikaans supported; many voice styles | Most expressive and human-like; emotion and natural rhythm; costs more | **Dialogues, stories, slang, emotional speech** |
+| **Microsoft Azure AI Speech** | `af-ZA-AdriNeural` (female), `af-ZA-WillemNeural` (male) | Natural neural voices; full SSML control (speed, pauses, exact phonemes); cheaper | **Dictionary words, example sentences, slow-speed audio** |
+| Google Cloud TTS | Only a "Standard" af-ZA voice found | Older, more robotic voice type | ❌ Not used |
+| Browser `speechSynthesis` | Often unavailable | Robotic | ❌ Not used |
+| Open models with **non-commercial** licences | Some have Afrikaans | Can't be used in a published app | ❌ Not used |
+
+**Step 1 of audio work is a "voice bake-off":** generate the same 50 test items (single words, tricky sounds like *g*, *ui*, *ê*, *'n*, long sentences, questions, slang, swearing, a dialogue) with each candidate engine and voice. Score each on:
+1. **Automatic accuracy:** speech-recognition word error rate (§6.4)
+2. **Naturalness:** blind listening: does it sound like a real person? (You don't need to speak Afrikaans to judge this.)
+3. **Content policy:** confirm the engine will actually say vulgar words, since some services filter them
+4. **Cost and commercial licence terms**
+
+### 6.2 Making it sound human
+- **Speak in full sentences.** Never stitch single-word clips together; that is what sounds robotic.
+- **Several voices:** at least 2 female and 2 male, of different ages, so dialogues sound like real conversations and learners hear variety.
+- **Speaking style matches register:** relaxed, casual delivery for slang and street language; clear and careful for formal content.
+- **Natural pauses and intonation** via SSML or engine settings: questions rise, lists pause, emotion where the text has it.
+- **Two speeds:** normal speed, plus a slow version **generated by the voice engine** (not stretched audio, which sounds distorted).
+- **Pronunciation dictionary:** when an engine says a word wrong, an override (IPA phoneme or respelling) is saved and reused everywhere.
+- **Audio polish:** loudness normalisation, trimmed silence, consistent volume across voices, compressed to small files (Opus/MP3).
+
+### 6.3 Optional upgrade: real voice recordings
+Once the app earns money, hire paid voice actors to record the **top ~2,000 words and core dialogues**. That means recording, not checking content. Recorded audio replaces the AI audio for those items.
+
+### 6.4 Automatic audio quality check
+For every generated file:
+1. Transcribe it with a speech-recognition model that supports Afrikaans (e.g. Whisper, or Azure Speech-to-Text `af-ZA`)
+2. Compare the transcript with the intended text
+3. **Pass** → publish. **Fail** → regenerate with different settings or voice, then flag for a pronunciation-dictionary fix if it still fails
+4. Also check for clipping, long silences, and wrong duration (too short or long for the text)
+
+### 6.5 Learner pronunciation practice
+- **Shadowing:** play the model audio, record yourself, play both back-to-back with a pitch/waveform visual.
+- **Speaking check:** speech recognition (`af-ZA`) transcribes the learner and highlights words it couldn't recognise.
+- The SADiLaR NCHLT Afrikaans speech corpus (CC BY) can be used to **test** how well the speech recogniser handles different South African accents.
+
+### 6.6 Cost estimate (rough; check current prices)
+- Dictionary + sentences: a few million characters in total. On Azure neural voices that is roughly tens of US dollars for a full generation pass.
+- Dialogues/stories on ElevenLabs: a paid plan with commercial rights; budget roughly the cost of a monthly subscription during generation months.
+- Audio is generated **once** and stored, so the ongoing cost is just hosting the files.
+
+---
+
+## 7. Technical plan
+
+### 7.1 Recommended stack
 | Layer | Choice | Why |
 |---|---|---|
-| App type | **Progressive Web App (PWA)** | One codebase runs in the browser and installs on phones, and it works offline |
-| Front end | **React + TypeScript + Vite** | Popular, well documented, fast to develop |
+| App type | **Progressive Web App (PWA)** first; wrapped with **Capacitor** for iOS/Android app stores | One codebase everywhere, works offline |
+| Front end | **React + TypeScript + Vite** | Popular, well documented |
 | Styling | Tailwind CSS | Quick, consistent UI |
-| Local storage | **IndexedDB** (via Dexie.js) | Stores the dictionary and progress on the device, so it works offline |
-| Search | MiniSearch or FlexSearch | Fast fuzzy search in the browser, no server needed |
-| SRS | `ts-fsrs` | Ready-made FSRS scheduling |
-| Audio | Pre-recorded native-speaker audio for core content, text-to-speech (af-ZA voice) as fallback | Real voices are best; TTS fills gaps |
-| Speech recognition | Web Speech API / cloud speech service (af-ZA) | For speaking exercises; support varies by browser |
-| Accounts & sync (Phase 3) | Supabase or Firebase | Login, sync progress across devices |
-| Testing | Vitest + Playwright | Unit tests + end-to-end tests |
-| Hosting | Netlify / Vercel / GitHub Pages | Free tier is enough to start |
+| On-device storage | IndexedDB via Dexie.js | Offline dictionary and progress |
+| Search | MiniSearch / FlexSearch | Fast fuzzy search, no server needed |
+| SRS | `ts-fsrs` | FSRS scheduling |
+| Backend | Supabase (Postgres + auth + storage) | Accounts, sync, community reports, moderation queue |
+| Audio hosting | Object storage + CDN (e.g. Cloudflare R2) | Cheap, fast delivery of thousands of audio files |
+| Content pipeline | Node/Python scripts in `/scripts` | Import, generate, verify, synthesise audio |
+| Testing | Vitest + Playwright | Unit + end-to-end tests |
+| Hosting | Vercel / Netlify / Cloudflare Pages | Free tier to start |
 
-**Why no server at first:** all content is static JSON files, and progress is saved on the device. That keeps v1 simple and free to host. Accounts are added once sync across devices is needed.
-
-### 6.2 Project structure
+### 7.2 Project structure
 ```
 /
-├── content/                 # all learning content as data, not code
+├── content/
 │   ├── dictionary/          # entries (JSON), split by letter
-│   ├── course/
-│   │   ├── a1/unit-01-sounds/lesson-01.json
-│   │   └── ...
+│   ├── course/a1 … c2/      # units and lessons
+│   ├── topics/              # topic pack definitions
 │   ├── phrasebook/
-│   └── audio/
-├── scripts/                 # import/convert open dictionary data, validate content
+│   ├── slang/               # slang + street Afrikaans source data
+│   └── pronunciation-overrides.json
+├── pipeline/
+│   ├── import/              # Wiktionary, Tatoeba, SADiLaR, Apertium importers
+│   ├── generate/            # inflections, compounds, word families
+│   ├── verify/              # the checks in §5.1
+│   └── audio/               # TTS generation + speech-recognition QA (§6)
 ├── src/
 │   ├── features/
-│   │   ├── course/          # learning path, lesson player
+│   │   ├── onboarding/      # goal picker, placement test, age gate
+│   │   ├── course/
 │   │   ├── exercises/       # one component per exercise type
-│   │   ├── dictionary/      # search, entry page, filters
-│   │   ├── srs/             # review queue, FSRS wrapper
-│   │   ├── grammar/         # grammar reference
-│   │   └── progress/        # stats, streaks
-│   ├── lib/                 # answer checking, text normalisation, storage
-│   └── app/                 # routing, layout, PWA setup
+│   │   ├── dictionary/
+│   │   ├── srs/
+│   │   ├── grammar/
+│   │   ├── pronunciation/   # shadowing, speaking checks
+│   │   ├── community/       # report-a-mistake, reviewer queue
+│   │   └── progress/
+│   ├── lib/                 # answer checking, normalisation, storage
+│   └── app/
 └── tests/
 ```
 
-### 6.3 Content format (example lesson)
+### 7.3 Example lesson file
 ```json
 {
   "id": "a1-u09-l01",
   "title": "Saying no: the double nie",
+  "goals": ["all"],
   "explanation": "Afrikaans usually puts **nie** twice in a negative sentence...",
   "examples": [
-    { "af": "Ek praat nie Afrikaans nie.", "en": "I don't speak Afrikaans." }
+    { "af": "Ek praat nie Afrikaans nie.", "en": "I don't speak Afrikaans.",
+      "audio": ["adri/a1-u09-001.opus", "willem/a1-u09-001.opus"] }
   ],
   "vocabulary": ["praat", "verstaan", "weet"],
   "exercises": [
-    {
-      "type": "word-order",
-      "prompt": "I don't understand.",
-      "tiles": ["Ek", "verstaan", "nie", "nie"],
-      "answer": "Ek verstaan nie."
-    },
-    {
-      "type": "translate",
-      "prompt": "She doesn't know.",
-      "accepted": ["Sy weet nie.", "Sy weet dit nie."]
-    }
+    { "type": "word-order", "prompt": "I don't understand.",
+      "tiles": ["Ek", "verstaan", "nie", "nie"], "answer": "Ek verstaan nie." },
+    { "type": "translate", "prompt": "She doesn't know.",
+      "accepted": ["Sy weet nie.", "Sy weet dit nie."] }
   ]
 }
 ```
-Keeping content as data means non-programmers (teachers, native speakers) can write lessons, and a validation script checks every file before it ships.
 
-### 6.4 Answer checking
-Answer checking makes or breaks typing exercises:
-- Normalise case, punctuation and extra spaces
-- Accept answers with missing diacritics, but point out the mistake (*"Correct, but remember: **sê**"*)
-- Typo tolerance (Levenshtein distance ≤ 1 for longer words)
-- Multiple accepted answers per prompt
-- Targeted feedback for common errors, e.g. forgetting the second *nie*, wrong verb position
+### 7.4 Answer checking
+- Normalise case, punctuation and spaces
+- Accept missing diacritics but point them out ("Correct, but remember: **sê**")
+- Typo tolerance (edit distance ≤ 1 on longer words)
+- Several accepted answers per prompt
+- Targeted feedback for common mistakes: missing second *nie*, wrong verb position, missing *ge-*
 
 ---
 
-## 7. Build phases
+## 8. Build phases
 
-### Phase 0: Setup (week 1)
-- Create the project (Vite + React + TS), linting, tests, PWA setup
-- Define content schemas and a validation script
+### Phase 0: Foundations (weeks 1–2)
+- Project setup (Vite + React + TS, PWA, tests, linting)
+- Content schemas and validation script
+- Licence register (a spreadsheet listing every data source and its licence)
 
-### Phase 1: MVP (weeks 2–6)
-- Dictionary: import ~5,000 words with search both ways and register labels
-- Course: A1 Units 1–5 with 5 exercise types (flashcard, multiple choice, translate, word order, fill-in-blank)
-- SRS review queue
-- Progress saved on the device
-- ✅ *Done when someone can learn to introduce themselves and use basic present-tense sentences*
+### Phase 1: Data and audio pipeline (weeks 3–8)
+- Importers for Wiktionary, Tatoeba, SADiLaR, frequency lists
+- Verification checks 1–4 and 8 (§5.1)
+- **Voice bake-off**, then pick engines and voices (§6.1)
+- Audio generation and speech-recognition QA for the first 2,000 words
 
-### Phase 2: Full beginner course (weeks 7–12)
-- All of A1 + A2
-- Audio for all course content
-- Listening, matching, and transformation exercises
-- Grammar reference and pronunciation guide
-- Slang & culture corner (first 200 slang entries)
-- Phrasebook
+### Phase 2: MVP app (weeks 9–14)
+- Dictionary with search, inflection lookup, compound splitter, register labels and badges
+- Goal picker, A1 course (all units), 6 exercise types, SRS, offline progress
+- ✅ *Done when a learner can complete A1 with natural audio throughout*
 
-### Phase 3: Intermediate + accounts (weeks 13–20)
-- B1 content, reading passages with tap-to-translate
-- Dialogue role-play, register-switch exercises
-- Accounts and cloud sync
-- Dictionary grows to 30,000+ entries
-- Placement test
+### Phase 3: Beginner → intermediate (weeks 15–26)
+- A2 + B1 content, all remaining exercise types
+- Back-translation and AI cross-review checks (5–6)
+- Grammar reference, pronunciation guide, shadowing, phrasebook
+- Accounts and sync (Supabase)
+- Dictionary reaches 40,000+ headwords
 
-### Phase 4: Advanced + community (later)
-- B2 and C1 content
-- Speaking exercises with speech recognition
-- Community slang suggestions with moderation
-- Optional AI conversation practice (with clear "may contain errors" labelling)
-- Native mobile wrappers (Capacitor) if needed for app stores
+### Phase 4: Launch prep (weeks 27–32)
+- Street Afrikaans module + 18+ gate
+- Report-a-mistake + correction queue
+- Privacy policy, terms of use, licence credits page
+- Public **beta**: invite learners and Afrikaans speakers; fix what they report
+- App store builds (Capacitor) and store listings
+- 🚀 **Launch**
 
----
-
-## 8. Content creation workflow
-1. Write a lesson in JSON (or in a spreadsheet that a script converts to JSON)
-2. Run `npm run validate-content` (checks schema, that every vocab word exists in the dictionary, and that audio files exist)
-3. **Native-speaker review:** grammar, naturalness, register labels
-4. Record audio
-5. Merge
+### Phase 5: After launch
+- B2, C1, C2 content and specialist packs
+- Dictionary reaches 80,000+ headwords
+- Trusted community reviewers
+- Speaking checks with speech recognition
+- Optional: AI conversation partner, paid voice-actor recordings
 
 ---
 
-## 9. Risks and open questions
+## 9. Publishing checklist
 
+| Area | What's needed |
+|---|---|
+| **Licences** | Credit page for all sources; dictionary data released under CC BY-SA if Wiktionary data is used; no non-commercial sources; TTS plan must allow commercial use. Get advice if unsure |
+| **Privacy** | Privacy policy covering the laws where users live: Australia (Privacy Act), South Africa (POPIA), EU/UK (GDPR), USA (COPPA if under-13s can sign up). Collect as little personal data as possible |
+| **Age rating** | App stores rate apps by the content they *can* show. Profanity will raise the rating. Options: (a) accept a higher rating, or (b) keep Street Afrikaans on the web version only and ship a cleaner store app. **Decide before store submission** |
+| **Age gate** | 18+ confirmation for severity 2–4 content; parental setting to lock it off |
+| **Name & branding** | Check the app name isn't trademarked or already taken in the app stores |
+| **Money** | Audio generation and hosting cost money. Options: free with a paid "Pro" tier (offline packs, advanced levels), one-off purchase, or donations |
+| **Accessibility** | Captions/transcripts for all audio, screen-reader support, adjustable text size, colour contrast |
+
+---
+
+## 10. Risks
 | Risk | Mitigation |
 |---|---|
-| **Content volume is huge.** Writing A1–C1 is the biggest job, bigger than the code | Start narrow (A1), use templates, reuse the dictionary's example sentences |
-| **Accuracy of slang and register** | Native-speaker review is required; cite sources |
-| **Dictionary licensing** | Record the source and licence for every entry; follow CC BY-SA attribution |
-| **Afrikaans voices for TTS and speech recognition** are less common than for big languages | Prefer recorded audio; test which browsers/services support af-ZA before building speaking features |
-| **Sensitive/vulgar words** | Vulgar filter on by default; clear labels; consider the audience (e.g. school students) |
-| **Motivation and retention** | Streaks, short daily sessions, visible progress |
-
-### Questions to decide
-1. **Who is it for first?** School students, travellers, people moving to South Africa, or people with Afrikaans family? This changes the topics and tone.
-2. **Who checks the Afrikaans?** Do we have a fluent speaker or teacher to review content?
-3. **Web app first (recommended), or native mobile from day one?**
-4. **Free/personal project, or something to publish?** This affects licensing choices and whether accounts are needed early.
-5. **Should vulgar slang be included at all,** or only mild slang?
+| **Content volume is huge.** A1–C2 is the biggest job, bigger than the code | Pipeline-generated drafts + automatic verification; launch at B1 and keep adding |
+| **Errors without a fluent reviewer** | Multi-source verification, confidence badges, report button, community reviewers (§5) |
+| **TTS mispronounces or refuses words** | Bake-off, pronunciation overrides, speech-recognition QA, second engine as backup |
+| **Licensing mistakes** | Licence register from day one; avoid NC sources |
+| **Vulgar content and age ratings** | Severity labels, 18+ gate, off by default; decide the store strategy early |
+| **Slurs misused** | Recognition-only entries, warnings, never in exercises |
+| **Costs** | Generate audio once; free hosting tiers; Pro tier later |
 
 ---
 
-## 10. Next steps
-1. Answer the questions in §9
-2. Set up the project skeleton (Phase 0)
-3. Write the content schemas and 1 complete sample lesson to test the format
-4. Build the dictionary import script and search page
-5. Build the lesson player with the first 5 exercise types
+## 11. Next steps
+1. Set up the project skeleton and content schemas (Phase 0)
+2. Build the Wiktionary + Tatoeba importers and see how many entries pass verification
+3. Run the voice bake-off (ElevenLabs vs Azure) on 50 test items and pick the voices
+4. Write one complete sample lesson (A1 Unit 9, double *nie*) end to end: content → verification → audio → lesson player
