@@ -320,11 +320,13 @@ export function AboutPage() {
       <Card className="p-6">
         <h2 className="font-bold text-lg mb-2">Audio</h2>
         <p className="text-stone-600">
-          {recorded > 0 ? `${recorded.toLocaleString()} words and sentences have natural recorded audio.` : "Recorded audio is being prepared."}
-          {" "}{voices.length > 0
-            ? `Everything else plays with your device's natural Afrikaans voice (${voices[0].name.replace(/ - .*/, "")}).`
-            : recorded === 0 ? " Until then, open the app in Microsoft Edge to hear its natural Afrikaans voice. Robotic voices are never used, so the speaker button only appears when good audio is available." : ""}
+          {recorded > 0 ? `${recorded.toLocaleString()} words and sentences have recorded audio, each checked automatically with speech recognition.` : "Recorded audio is being prepared."}
+          {voices.length > 0 && ` Everything else plays with your device's natural Afrikaans voice (${voices[0].name.replace(/ - .*/, "")}).`}
+          {" "}Robotic voices are never used, so the speaker button only appears when good audio is available.
         </p>
+        {data.audio.voices.some((v) => v.id === "mms") && (
+          <p className="text-sm text-stone-400 mt-3">Voice: <a className="underline" href="https://huggingface.co/facebook/mms-tts-afr" target="_blank" rel="noreferrer">Meta MMS-TTS Afrikaans</a> · CC BY-NC 4.0</p>
+        )}
       </Card>
       {s.dictionary && (
         <Card className="p-6">

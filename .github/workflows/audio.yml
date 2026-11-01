@@ -1,7 +1,9 @@
 name: Generate audio
 
 # Run from the Actions tab: "Generate audio" -> "Run workflow".
-# Needs repository secrets (Settings -> Secrets and variables -> Actions):
+# mode "free": Meta MMS-TTS neural Afrikaans voice + Whisper quality check. No keys needed.
+#              Licence CC BY-NC 4.0, fine for a free app; replace before charging money.
+# modes "all" / "bakeoff" need repository secrets (Settings -> Secrets and variables -> Actions):
 #   AZURE_SPEECH_KEY + AZURE_SPEECH_REGION          (Microsoft Azure AI Speech, af-ZA neural voices)
 #   and/or ELEVENLABS_API_KEY + ELEVENLABS_VOICE_FEMALE + ELEVENLABS_VOICE_MALE
 #   optional: OPENAI_API_KEY (speech-recognition quality check of every clip)
@@ -9,10 +11,13 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "all = everything, bakeoff = 22 test clips in every voice to compare"
+        description: "free = no keys (Meta MMS-TTS); all = Azure/ElevenLabs with your secrets; bakeoff = compare paid voices"
         type: choice
-        options: [all, bakeoff]
-        default: all
+        options: [free, all, bakeoff]
+        default: free
+      limit:
+        description: "Only the first N texts (0 = all). Handy for a quick test."
+        default: "0"
 
 permissions:
   contents: write
@@ -39,18 +44,34 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
       - run: npm ci
       - run: npm run content
-      - name: Generate clips
+      - name: Free neural voice (Meta MMS-TTS) with Whisper quality check
+        if: inputs.mode == 'free'
+        env:
+          AUDIO_LIMIT: ${{ inputs.limit }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          python -m pip install -q --upgrade pip
+          python -m pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -q "transformers>=4.40" faster-whisper numpy
+          node pipeline/audio/export-texts.mjs
+          python pipeline/audio/mms_tts.py
+      - name: Generate clips (Azure / ElevenLabs)
+        if: inputs.mode != 'free'
         run: |
           if [ "${{ inputs.mode }}" = "bakeoff" ]; then npm run audio:bakeoff; else npm run audio; fi
       - name: Quality check (speech recognition)
-        if: env.OPENAI_API_KEY != ''
+        if: inputs.mode != 'free' && env.OPENAI_API_KEY != ''
         run: npm run audio:qa -- --prune
       - name: Commit audio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin "${{ github.ref_name }}" || true
           git add public/audio
           if git diff --cached --quiet; then echo "No new audio"; exit 0; fi
           git commit -m "Add generated audio (${{ inputs.mode }})"
