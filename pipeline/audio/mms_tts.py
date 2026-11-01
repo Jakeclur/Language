@@ -1,11 +1,9 @@
-"""Free, keyless neural Afrikaans audio with Meta's MMS-TTS model (facebook/mms-tts-afr).
+"""Free, keyless neural Afrikaans audio with an open VITS model (UBC-NLP/Simba-TTS-afr, CC BY 4.0).
 
 Runs on GitHub Actions (see .github/workflows/audio.yml, mode "free"). For every text it makes a
 normal and a slow clip, checks the normal clip with Whisper speech recognition, and adds only the
 clips that pass to public/audio/manifest.json, so the app never plays a garbled recording.
 
-Licence: the MMS-TTS model is CC BY-NC 4.0, so this audio may be used in a free, non-commercial app
-with attribution. Switch to Azure/ElevenLabs (paid, commercial use allowed) before charging money.
 """
 import io
 import json
@@ -24,7 +22,9 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 OUT = os.path.join(ROOT, "public", "audio")
 LIST = os.path.join(ROOT, "pipeline", ".cache", "audio-texts.json")
 MANIFEST = os.path.join(OUT, "manifest.json")
-VOICE = {"id": "mms", "name": "Meta MMS Afrikaans (neural)", "engine": "mms-tts", "gender": "male"}
+VOICE = {"id": "simba", "name": "Simba-TTS Afrikaans (neural)", "engine": "vits", "gender": "male"}
+NORMAL_RATE = float(os.environ.get("TTS_RATE", "0.9"))  # a touch slower than native speed, for learners
+SLOW_RATE = 0.7
 QA = os.environ.get("AUDIO_QA", "1") == "1"
 LIMIT = int(os.environ.get("AUDIO_LIMIT", "0") or 0)
 
@@ -42,7 +42,8 @@ def to_mp3(wave: np.ndarray, rate: int, path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     subprocess.run(
         ["ffmpeg", "-loglevel", "error", "-y", "-f", "s16le", "-ar", str(rate), "-ac", "1", "-i", "pipe:0",
-         "-af", "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,loudnorm=I=-18:TP=-2,apad=pad_dur=0.08",
+         # no silence trimming (it clipped soft sounds like v, s, f); add a short lead-in and tail
+         "-af", "adelay=150:all=1,loudnorm=I=-18:TP=-2,apad=pad_dur=0.3",
          "-codec:a", "libmp3lame", "-b:a", "40k", path],
         input=pcm, check=True)
 
@@ -152,7 +153,7 @@ def main():
                 inputs = tok(clean_for_tts(it["text"]), return_tensors="pt")
                 if inputs["input_ids"].shape[-1] == 0:
                     raise ValueError("text has no speakable characters")
-                for target, rate_factor in ((path, 1.0), (slow_path, 0.75)):
+                for target, rate_factor in ((path, NORMAL_RATE), (slow_path, SLOW_RATE)):
                     model.speaking_rate = rate_factor
                     with torch.no_grad():
                         wave = model(**inputs).waveform[0].numpy()
@@ -171,10 +172,10 @@ def main():
                 ok = score >= (0.55 if " " not in it["key"] else 0.7)
             if ok:
                 stats["passed"] += 1
-                manifest["items"].setdefault(it["key"], {})["mms"] = it["file"]
+                manifest["items"].setdefault(it["key"], {})[VOICE["id"]] = it["file"]
             else:
                 stats["failed"] += 1
-                manifest["items"].get(it["key"], {}).pop("mms", None)
+                manifest["items"].get(it["key"], {}).pop(VOICE["id"], None)
                 failures.append({"text": it["text"], "heard": heard, "score": round(score, 2)})
         except Exception as e:  # keep going; report at the end
             stats["errors"] += 1
@@ -182,13 +183,15 @@ def main():
         if n % 100 == 0:
             print(f"  {n}/{len(items)} {stats} ({time.time() - t0:.0f}s)", flush=True)
 
+    # drop clips from the first (clipped) test run
+    for v in manifest["items"].values():
+        v.pop("mms", None)
     manifest["items"] = {k: v for k, v in manifest["items"].items() if v}
-    if not any(v["id"] == "mms" for v in manifest["voices"]):
-        manifest["voices"].append(VOICE)
+    manifest["voices"] = [v for v in manifest["voices"] if v["id"] not in ("mms", VOICE["id"])] + [VOICE]
     json.dump(manifest, open(MANIFEST, "w"), ensure_ascii=False, indent=1)
     json.dump({"stats": stats, "failures": failures}, open(os.path.join(ROOT, "pipeline", ".cache", "mms-report.json"), "w"), ensure_ascii=False, indent=1)
     print("Done:", stats)
-    passed_examples = [k for k, v in manifest["items"].items() if "mms" in v][:20]
+    passed_examples = [k for k, v in manifest["items"].items() if VOICE["id"] in v][:20]
     print("Passed examples:", passed_examples)
     for f in failures[:60]:
         print("  ✗", f)

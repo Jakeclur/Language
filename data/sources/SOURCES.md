@@ -11,7 +11,7 @@ Every dictionary entry records which of these sources it came from. Only sources
 | `hunspell-af_ZA.dic` / `.aff` | [LibreOffice Afrikaans spellchecker](https://github.com/LibreOffice/dictionaries/tree/master/af_ZA) (Translate.org.za, Nieuwoudt & Viljoen word lists, Kris van der Merwe) | LGPL-2.1-or-later | Spell-checking every Afrikaans word |
 | `apertium-eng-afr.dix` | [Apertium English–Afrikaans](https://github.com/apertium/apertium-eng-afr) bilingual dictionary | GPL-2.0 | Translations with part of speech (independent second source) |
 | `nwu-afr-pronundict.txt` (+ phoneme map, COPYRIGHT) | [NWU MuST za_lex](https://github.com/NWU-MuST/za_lex), based on the RCRL Afrikaans Pronunciation Dictionary (CTexT, North-West University) for the Department of Arts and Culture | CC BY-SA 2.5 ZA | IPA pronunciations |
-| `public/audio/mms/*` (generated) | Audio made with [Meta MMS-TTS Afrikaans](https://huggingface.co/facebook/mms-tts-afr) | CC BY-NC 4.0 | Recorded audio. **Non-commercial only**: replace with Azure/ElevenLabs audio before charging money |
+| `public/audio/simba/*` (generated) | Audio made with [Simba-TTS Afrikaans](https://huggingface.co/UBC-NLP/Simba-TTS-afr) (UBC-NLP) | CC BY 4.0 | Recorded audio, checked with Whisper speech recognition |
 | `content/curated/*.txt` | Leer Afrikaans editorial team (AI-drafted, machine-verified) | CC BY-SA 4.0 | Core vocabulary, slang, register and severity labels, examples |
 
 Both FreeDict files come from the same original database (Ergane), so the verification pipeline

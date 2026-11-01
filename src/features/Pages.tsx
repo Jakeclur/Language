@@ -324,8 +324,8 @@ export function AboutPage() {
           {voices.length > 0 && ` Everything else plays with your device's natural Afrikaans voice (${voices[0].name.replace(/ - .*/, "")}).`}
           {" "}Robotic voices are never used, so the speaker button only appears when good audio is available.
         </p>
-        {data.audio.voices.some((v) => v.id === "mms") && (
-          <p className="text-sm text-stone-400 mt-3">Voice: <a className="underline" href="https://huggingface.co/facebook/mms-tts-afr" target="_blank" rel="noreferrer">Meta MMS-TTS Afrikaans</a> · CC BY-NC 4.0</p>
+        {data.audio.voices.some((v) => v.id === "simba") && (
+          <p className="text-sm text-stone-400 mt-3">Voice: <a className="underline" href="https://huggingface.co/UBC-NLP/Simba-TTS-afr" target="_blank" rel="noreferrer">Simba-TTS Afrikaans</a> by UBC-NLP · CC BY 4.0</p>
         )}
       </Card>
       {s.dictionary && (

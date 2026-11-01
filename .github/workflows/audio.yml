@@ -1,8 +1,8 @@
 name: Generate audio
 
 # Run from the Actions tab: "Generate audio" -> "Run workflow".
-# mode "free": Meta MMS-TTS neural Afrikaans voice + Whisper quality check. No keys needed.
-#              Licence CC BY-NC 4.0, fine for a free app; replace before charging money.
+# mode "free": open neural Afrikaans voice (UBC-NLP Simba-TTS, CC BY 4.0) + Whisper quality check.
+#              No keys needed.
 # modes "all" / "bakeoff" need repository secrets (Settings -> Secrets and variables -> Actions):
 #   AZURE_SPEECH_KEY + AZURE_SPEECH_REGION          (Microsoft Azure AI Speech, af-ZA neural voices)
 #   and/or ELEVENLABS_API_KEY + ELEVENLABS_VOICE_FEMALE + ELEVENLABS_VOICE_MALE
@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "free = no keys (Meta MMS-TTS); all = Azure/ElevenLabs with your secrets; bakeoff = compare paid voices"
+        description: "free = no keys (Simba-TTS); all = Azure/ElevenLabs with your secrets; bakeoff = compare paid voices"
         type: choice
         options: [free, all, bakeoff]
         default: free
@@ -54,7 +54,7 @@ jobs:
           python-version: "3.11"
       - run: npm ci
       - run: npm run content
-      - name: Free neural voice (Meta MMS-TTS) with Whisper quality check
+      - name: Free neural voice (Simba-TTS) with Whisper quality check
         if: inputs.mode == 'free'
         env:
           AUDIO_LIMIT: ${{ inputs.limit }}

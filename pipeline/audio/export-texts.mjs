@@ -12,7 +12,7 @@ const maxDictionary = Number(args.includes("--max-dictionary") ? args[args.index
 let dict = 0;
 const items = collectTexts(root)
   .filter((i) => i.scope !== "dictionary" || ++dict <= maxDictionary)
-  .map((i) => ({ text: i.text, key: audioKey(i.text), file: `mms/${fileId(i.text)}.mp3`, kind: i.kind, scope: i.scope }));
+  .map((i) => ({ text: i.text, key: audioKey(i.text), file: `simba/${fileId(i.text)}.mp3`, kind: i.kind, scope: i.scope }));
 const out = join(root, "pipeline", ".cache", "audio-texts.json");
 mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, JSON.stringify(items));
