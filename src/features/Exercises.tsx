@@ -5,7 +5,8 @@ import { checkAnswer, normalise, shuffle, tiles } from "../lib/text";
 import { AudioButton } from "../components/Audio";
 import { Inline } from "../components/Md";
 import { SEVERITY_LABEL } from "../lib/register";
-import { BottomBar, bigButton } from "../components/BottomBar";
+import { BottomBar, bigButton, btnColor } from "../components/BottomBar";
+import { Mascot } from "../components/Mascot";
 
 export interface Result { correct: boolean; note?: string; hint?: string; expected?: string }
 type Props<T> = { ex: T; onResult: (r: Result) => void; locked: boolean };
@@ -15,8 +16,8 @@ const SPECIAL = ["ê", "ë", "ô", "û", "î", "ï", "é", "'n"];
 function Prompt({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="mb-8">
-      <div className="text-sm font-medium text-stone-400 mb-3">{label}</div>
-      <div className="text-2xl sm:text-3xl font-bold leading-snug">{children}</div>
+      <div className="flex items-center gap-2 text-lg font-extrabold text-stone-700 mb-4"><Mascot size={44} mood="think" />{label}</div>
+      <div className="text-2xl sm:text-3xl font-black leading-snug text-stone-800">{children}</div>
     </div>
   );
 }
@@ -36,18 +37,18 @@ function TextAnswer({ lang, onSubmit, locked, placeholder }: { lang: "af" | "en"
         autoCapitalize="off"
         spellCheck={false}
         placeholder={placeholder}
-        className="w-full rounded-2xl border-2 border-stone-200 focus:border-emerald-500 outline-none p-4 text-xl bg-white resize-none"
+        className="w-full rounded-2xl border-2 border-stone-200 focus:border-sky-400 outline-none p-4 text-xl font-semibold bg-stone-50 focus:bg-white resize-none"
       />
       {lang === "af" && (
         <div className="flex gap-1.5 flex-wrap mt-2">
           {SPECIAL.map((c) => (
-            <button key={c} type="button" disabled={locked} onClick={() => setV(v + c)} className="min-w-10 px-2.5 py-1.5 rounded-xl bg-white shadow-sm hover:bg-stone-50 font-medium">{c}</button>
+            <button key={c} type="button" disabled={locked} onClick={() => setV(v + c)} className="btn-3d min-w-10 px-2.5 py-1.5 rounded-xl bg-white border-2 border-stone-200 shadow-[0_2px_0_#e7e5e4] font-bold">{c}</button>
           ))}
         </div>
       )}
       {!locked && (
         <BottomBar>
-          <button type="submit" disabled={!v.trim()} className={`${bigButton} bg-emerald-600 text-white`}>Check</button>
+          <button type="submit" disabled={!v.trim()} className={`${bigButton} ${btnColor.green}`}>Check</button>
         </BottomBar>
       )}
     </form>
@@ -58,11 +59,16 @@ function Options({ options, answer, onResult, locked, lang }: { options: string[
   const [picked, setPicked] = useState<string>();
   return (
     <div className="grid gap-3">
-      {options.map((o) => {
-        const state = !picked ? "border-stone-200 bg-white hover:border-emerald-400" : o === answer ? "border-emerald-500 bg-emerald-50" : o === picked ? "border-rose-400 bg-rose-50" : "border-stone-200 bg-white opacity-50";
+      {options.map((o, idx) => {
+        const state = !picked
+          ? "border-stone-200 bg-white hover:bg-stone-50 shadow-[0_4px_0_#e7e5e4]"
+          : o === answer ? "border-emerald-400 bg-emerald-50 text-emerald-800 shadow-[0_4px_0_#6ee7b7]"
+          : o === picked ? "border-rose-300 bg-rose-50 text-rose-700 shadow-[0_4px_0_#fda4af]"
+          : "border-stone-200 bg-white opacity-50";
         return (
           <button key={o} disabled={locked} onClick={() => { setPicked(o); onResult({ correct: o === answer, expected: answer }); }}
-            className={`text-left rounded-2xl border-2 px-5 py-4 text-lg font-medium transition flex items-center justify-between gap-2 ${state}`}>
+            className={`btn-3d text-left rounded-2xl border-2 px-4 py-4 text-lg font-bold flex items-center gap-4 ${state}`}>
+            <span className="w-8 h-8 shrink-0 rounded-lg border-2 border-stone-200 text-stone-400 text-sm font-extrabold flex items-center justify-center">{idx + 1}</span>
             <span lang={lang}><Inline text={o} /></span>
           </button>
         );
@@ -139,7 +145,7 @@ export function FillEx({ ex, onResult, locked }: Props<Extract<Exercise, { type:
         <div className="flex gap-3 flex-wrap">
           {opts.map((o) => (
             <button key={o} disabled={locked} onClick={() => { setPicked(o); onResult({ correct: ex.answers.some((a) => normalise(a) === normalise(o)), expected: ex.af.replace("___", ex.answers[0]) }); }}
-              className={`rounded-2xl border-2 px-5 py-3 text-lg font-medium bg-white ${picked === o ? "border-emerald-500" : "border-stone-200 hover:border-emerald-400"}`} lang="af">{o}</button>
+              className={`btn-3d rounded-2xl border-2 px-5 py-3 text-lg font-bold bg-white ${picked === o ? (ex.answers.some((a) => normalise(a) === normalise(o)) ? "border-emerald-400 bg-emerald-50 shadow-[0_4px_0_#6ee7b7]" : "border-rose-300 bg-rose-50 shadow-[0_4px_0_#fda4af]") : "border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-stone-50"}`} lang="af">{o}</button>
           ))}
         </div>
       ) : (
@@ -163,7 +169,7 @@ export function OrderEx({ ex, onResult, locked }: Props<Extract<Exercise, { type
       <Prompt label="Put the words in order">{ex.en}</Prompt>
       <div className="min-h-20 border-b-2 border-stone-200 pb-3 flex flex-wrap content-start gap-2 mb-6" lang="af">
         {chosen.map((i) => (
-          <button key={i} disabled={locked} onClick={() => setChosen(chosen.filter((c) => c !== i))} className="rounded-xl bg-white border-2 border-stone-200 border-b-4 px-4 py-2 text-lg font-medium">
+          <button key={i} disabled={locked} onClick={() => setChosen(chosen.filter((c) => c !== i))} className="btn-3d rounded-xl bg-white border-2 border-stone-200 shadow-[0_3px_0_#e7e5e4] px-4 py-2 text-lg font-bold">
             {bank.find((b) => b.i === i)!.t}
           </button>
         ))}
@@ -171,7 +177,7 @@ export function OrderEx({ ex, onResult, locked }: Props<Extract<Exercise, { type
       <div className="flex flex-wrap gap-2" lang="af">
         {bank.map((b) => (
           <button key={b.i} disabled={locked || chosen.includes(b.i)} onClick={() => setChosen([...chosen, b.i])}
-            className="rounded-xl bg-white border-2 border-stone-200 border-b-4 px-4 py-2 text-lg font-medium disabled:opacity-20 disabled:border-b-2">{b.t}</button>
+            className="btn-3d rounded-xl bg-white border-2 border-stone-200 shadow-[0_3px_0_#e7e5e4] px-4 py-2 text-lg font-bold disabled:bg-stone-100 disabled:text-transparent disabled:shadow-none">{b.t}</button>
         ))}
       </div>
       {!locked && (
@@ -179,7 +185,7 @@ export function OrderEx({ ex, onResult, locked }: Props<Extract<Exercise, { type
           <button disabled={chosen.length === 0} onClick={() => {
             const ok = normalise(answer.join(" ")) === normalise(correct.join(" "));
             onResult({ correct: ok, expected: ex.af, hint: ok ? undefined : "Remember: the verb is usually the **second** item, and negatives end with **nie**." });
-          }} className={`${bigButton} bg-emerald-600 text-white`}>Check</button>
+          }} className={`${bigButton} ${btnColor.green}`}>Check</button>
         </BottomBar>
       )}
     </>
@@ -197,7 +203,7 @@ export function RudeEx({ ex, onResult, locked }: Props<Extract<Exercise, { type:
       <div className="grid grid-cols-5 gap-2">
         {[0, 1, 2, 3, 4].map((n) => (
           <button key={n} disabled={locked} onClick={() => { setPicked(n); onResult({ correct: n === ex.answer, expected: `${ex.answer}/4: ${SEVERITY_LABEL[ex.answer]}` }); }}
-            className={`rounded-2xl border-2 py-3 font-bold text-xl bg-white ${picked === n ? (n === ex.answer ? "border-emerald-500 bg-emerald-50" : "border-rose-400 bg-rose-50") : "border-stone-200"}`}>
+            className={`btn-3d rounded-2xl border-2 py-3 font-black text-xl bg-white ${picked === n ? (n === ex.answer ? "border-emerald-400 bg-emerald-50" : "border-rose-300 bg-rose-50") : "border-stone-200 shadow-[0_4px_0_#e7e5e4]"}`}>
             {n}
             <div className="text-[10px] font-normal leading-tight">{SEVERITY_LABEL[n]}</div>
           </button>
@@ -236,13 +242,13 @@ export function MatchEx({ ex, onResult, locked }: Props<Extract<Generated, { typ
         <div className="grid gap-2">
           {left.map((l) => (
             <button key={l} lang="af" disabled={done.includes(l)} onClick={() => setSel(l)}
-              className={`rounded-2xl border-2 px-3 py-4 font-semibold bg-white ${done.includes(l) ? "opacity-20 border-stone-200" : sel === l ? "border-emerald-500 bg-emerald-50" : "border-stone-200"}`}>{l}</button>
+              className={`btn-3d rounded-2xl border-2 px-3 py-4 font-bold bg-white ${done.includes(l) ? "opacity-25 border-stone-200" : sel === l ? "border-sky-400 bg-sky-50 shadow-[0_4px_0_#7dd3fc]" : "border-stone-200 shadow-[0_4px_0_#e7e5e4]"}`}>{l}</button>
           ))}
         </div>
         <div className="grid gap-2">
           {right.map((r) => (
             <button key={r} disabled={matchedRight(r)} onClick={() => pick(r)}
-              className={`rounded-2xl border-2 px-3 py-4 text-sm bg-white ${matchedRight(r) ? "opacity-20 border-stone-200" : flash === r ? "border-rose-400 bg-rose-50" : "border-stone-200"}`}>{r}</button>
+              className={`btn-3d rounded-2xl border-2 px-3 py-4 text-sm font-semibold bg-white ${matchedRight(r) ? "opacity-25 border-stone-200" : flash === r ? "border-rose-400 bg-rose-50" : "border-stone-200 shadow-[0_4px_0_#e7e5e4]"}`}>{r}</button>
           ))}
         </div>
       </div>

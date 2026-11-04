@@ -49,11 +49,11 @@ export function DictionaryPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold tracking-tight mb-5">Dictionary</h1>
+      <h1 className="text-3xl font-black tracking-tight mb-5 text-stone-800">Woordeboek <span className="text-stone-400 font-extrabold text-xl">· Dictionary</span></h1>
       <div className="relative">
         <svg viewBox="0 0 24 24" className="w-5 h-5 absolute left-5 top-1/2 -translate-y-1/2 stroke-stone-400" fill="none" strokeWidth={2} strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Afrikaans or English word" aria-label="Search the dictionary"
-          className="w-full rounded-2xl bg-white shadow-sm pl-13 pr-24 py-4 text-lg outline-none focus:ring-2 focus:ring-emerald-400" />
+          className="w-full rounded-2xl bg-white border-2 border-stone-200 pl-13 pr-24 py-4 text-lg font-semibold outline-none focus:border-sky-400" />
         <button onClick={() => setShowFilters(!showFilters)} className={`absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium rounded-xl px-3 py-1.5 ${register || topic ? "bg-emerald-50 text-emerald-700" : "text-stone-500 hover:bg-stone-100"}`}>
           Filters{register || topic ? " •" : ""}
         </button>
@@ -94,7 +94,7 @@ export function DictionaryPage() {
             <div className="text-sm text-stone-400 mb-3">Try</div>
             <div className="flex flex-wrap gap-2">
               {["lekker", "kuier", "house", "ja-nee", "geëet", "kombuistafel"].map((w) => (
-                <button key={w} onClick={() => setQ(w)} className="rounded-full bg-white shadow-sm px-4 py-2 font-medium hover:bg-emerald-50" lang="af">{w}</button>
+                <button key={w} onClick={() => setQ(w)} className="btn-3d rounded-2xl bg-white border-2 border-stone-200 shadow-[0_3px_0_#e7e5e4] px-4 py-2 font-bold hover:bg-sky-50" lang="af">{w}</button>
               ))}
             </div>
             <p className="text-sm text-stone-400 mt-6">{data.dictionary.entries.length.toLocaleString()} words. Plurals, past tenses and compound words are worked out automatically.</p>

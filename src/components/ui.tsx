@@ -3,7 +3,7 @@ import type { Confidence, Register } from "../types";
 import { REGISTER_LABEL, REGISTER_STYLE, SEVERITY_LABEL } from "../lib/register";
 
 export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`bg-white rounded-3xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] ${className}`}>{children}</div>;
+  return <div className={`bg-white rounded-3xl border-2 border-stone-100 ${className}`}>{children}</div>;
 }
 
 export function Button({
@@ -12,13 +12,13 @@ export function Button({
   children: ReactNode; onClick?: () => void; variant?: "primary" | "secondary" | "ghost" | "danger"; disabled?: boolean; className?: string; type?: "button" | "submit";
 }) {
   const styles = {
-    primary: "bg-emerald-600 text-white hover:bg-emerald-700 disabled:bg-stone-200 disabled:text-stone-400",
-    secondary: "bg-stone-100 text-stone-800 hover:bg-stone-200 disabled:opacity-50",
+    primary: "bg-emerald-500 text-white shadow-[0_4px_0_#047857] hover:bg-emerald-400 disabled:bg-stone-200 disabled:text-stone-400 disabled:shadow-none",
+    secondary: "bg-white text-stone-700 border-2 border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-stone-50 disabled:opacity-50",
     ghost: "text-emerald-700 hover:bg-emerald-50 disabled:opacity-50",
-    danger: "bg-rose-600 text-white hover:bg-rose-700",
+    danger: "bg-rose-500 text-white shadow-[0_4px_0_#be123c] hover:bg-rose-400",
   }[variant];
   return (
-    <button type={type} onClick={onClick} disabled={disabled} className={`rounded-2xl px-5 py-3 font-semibold transition active:scale-[0.98] ${styles} ${className}`}>
+    <button type={type} onClick={onClick} disabled={disabled} className={`btn-3d rounded-2xl px-5 py-3 font-extrabold ${styles} ${className}`}>
       {children}
     </button>
   );
@@ -53,8 +53,10 @@ export function RegisterTag({ r, severity }: { r: Register; severity?: number })
 
 export function ProgressBar({ value, className = "" }: { value: number; className?: string }) {
   return (
-    <div className={`h-3 rounded-full bg-stone-200 overflow-hidden ${className}`}>
-      <div className="h-full rounded-full bg-emerald-500 transition-all duration-500" style={{ width: `${Math.round(Math.min(1, Math.max(0, value)) * 100)}%` }} />
+    <div className={`h-4 rounded-full bg-stone-200 overflow-hidden ${className}`}>
+      <div className="h-full rounded-full bg-emerald-500 transition-all duration-500 relative" style={{ width: `${Math.round(Math.min(1, Math.max(0, value)) * 100)}%` }}>
+        <div className="absolute inset-x-2 top-1 h-1 rounded-full bg-white/35" />
+      </div>
     </div>
   );
 }
@@ -74,7 +76,7 @@ export function Dialog({ open, title, children, onClose }: { open: boolean; titl
 export function PageTitle({ children, sub }: { children: ReactNode; sub?: ReactNode }) {
   return (
     <div className="mb-6">
-      <h1 className="text-3xl font-bold tracking-tight text-stone-900">{children}</h1>
+      <h1 className="text-3xl font-black tracking-tight text-stone-800">{children}</h1>
       {sub && <p className="text-stone-500 mt-1">{sub}</p>}
     </div>
   );

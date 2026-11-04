@@ -10,6 +10,7 @@ import { REPO_URL } from "../lib/report";
 import { storageAvailable } from "../lib/storage";
 import { go } from "../lib/router";
 import { useDeviceVoices } from "../lib/audio";
+import { Mascot, Speech } from "../components/Mascot";
 
 export const GOALS: { id: Goal; icon: string; label: string; desc: string }[] = [
   { id: "school", icon: "🎒", label: "School", desc: "Classroom language, essays, exams" },
@@ -29,27 +30,28 @@ export function Onboarding() {
       <div className="max-w-lg w-full">
         {step === 0 ? (
           <>
-            <h1 className="text-4xl font-bold tracking-tight">Welkom! 👋</h1>
-            <p className="text-stone-500 mt-2 text-lg">Why are you learning Afrikaans? Pick any.</p>
+            <Mascot mood="cheer" size={130} className="mx-auto animate-bob" />
+            <h1 className="text-4xl font-black tracking-tight text-center mt-2">Welkom!</h1>
+            <p className="text-stone-500 mt-2 text-lg font-semibold text-center">I'm Bokkie, and I'll help you learn Afrikaans. Why are you learning? Pick any.</p>
             <div className="grid gap-3 mt-8">
               {GOALS.map((g) => (
-                <button key={g.id} onClick={() => toggle(g.id)} className={`text-left rounded-2xl border-2 bg-white px-5 py-4 flex items-center gap-4 transition ${goals.includes(g.id) ? "border-emerald-500" : "border-transparent shadow-sm"}`}>
+                <button key={g.id} onClick={() => toggle(g.id)} className={`btn-3d text-left rounded-2xl border-2 bg-white px-5 py-4 flex items-center gap-4 ${goals.includes(g.id) ? "border-sky-400 bg-sky-50 shadow-[0_4px_0_#7dd3fc]" : "border-stone-200 shadow-[0_4px_0_#e7e5e4]"}`}>
                   <span className="text-2xl">{g.icon}</span>
                   <span><b>{g.label}</b><span className="block text-sm text-stone-500">{g.desc}</span></span>
-                  <span className={`ml-auto w-6 h-6 rounded-full flex items-center justify-center text-sm ${goals.includes(g.id) ? "bg-emerald-500 text-white" : "border-2 border-stone-200"}`}>{goals.includes(g.id) ? "✓" : ""}</span>
+                  <span className={`ml-auto w-7 h-7 rounded-full flex items-center justify-center text-sm font-black ${goals.includes(g.id) ? "bg-sky-500 text-white" : "border-2 border-stone-200"}`}>{goals.includes(g.id) ? "✓" : ""}</span>
                 </button>
               ))}
             </div>
-            <Button className="w-full mt-8 py-4 text-lg" onClick={() => setStep(1)}>Continue</Button>
+            <Button className="w-full mt-8 py-4 text-lg uppercase tracking-wide" onClick={() => setStep(1)}>Continue</Button>
           </>
         ) : (
           <>
-            <h1 className="text-3xl font-bold tracking-tight">How much do you know already?</h1>
+            <Speech mood="think">How much Afrikaans do you know already?</Speech>
             <div className="grid gap-3 mt-8">
-              <button onClick={() => { updateSettings({ goals, onboarded: true, unlockAll: false }); go(""); }} className="text-left rounded-2xl bg-white shadow-sm border-2 border-transparent hover:border-emerald-500 px-5 py-5">
+              <button onClick={() => { updateSettings({ goals, onboarded: true, unlockAll: false }); go(""); }} className="btn-3d text-left rounded-2xl bg-white border-2 border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-sky-50 px-5 py-5">
                 <b className="text-lg">🌱 I'm new to Afrikaans</b><span className="block text-stone-500">Start from the very beginning</span>
               </button>
-              <button onClick={() => { updateSettings({ goals, onboarded: true, unlockAll: true }); go(""); }} className="text-left rounded-2xl bg-white shadow-sm border-2 border-transparent hover:border-emerald-500 px-5 py-5">
+              <button onClick={() => { updateSettings({ goals, onboarded: true, unlockAll: true }); go(""); }} className="btn-3d text-left rounded-2xl bg-white border-2 border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-sky-50 px-5 py-5">
                 <b className="text-lg">🌿 I know some already</b><span className="block text-stone-500">Unlock every lesson and jump in anywhere</span>
               </button>
             </div>
@@ -62,23 +64,23 @@ export function Onboarding() {
 }
 
 const MORE_LINKS = [
-  { route: "phrasebook", icon: "💬", label: "Phrasebook", desc: "Ready-made phrases for real situations" },
-  { route: "grammar", icon: "📐", label: "Grammar", desc: "Every rule from the course in one place" },
-  { route: "sounds", icon: "👄", label: "Pronunciation", desc: "How each letter and sound is said" },
-  { route: "progress", icon: "📊", label: "Progress", desc: "Streak, words learned, accuracy" },
-  { route: "settings", icon: "⚙️", label: "Settings", desc: "Goals, daily target, mature content" },
-  { route: "about", icon: "ℹ️", label: "About", desc: "Sources, quality checks, audio" },
+  { route: "phrasebook", icon: "💬", label: "Phrasebook", desc: "Ready-made phrases for real situations", bg: "bg-sky-100" },
+  { route: "grammar", icon: "📐", label: "Grammar", desc: "Every rule from the course in one place", bg: "bg-violet-100" },
+  { route: "sounds", icon: "👄", label: "Pronunciation", desc: "How each letter and sound is said", bg: "bg-rose-100" },
+  { route: "progress", icon: "📊", label: "Progress", desc: "Streak, words learned, accuracy", bg: "bg-emerald-100" },
+  { route: "settings", icon: "⚙️", label: "Settings", desc: "Goals, daily target, mature content", bg: "bg-stone-100" },
+  { route: "about", icon: "ℹ️", label: "About", desc: "Sources, quality checks, audio", bg: "bg-amber-100" },
 ];
 
 export function MorePage() {
   return (
     <div>
-      <PageTitle>More</PageTitle>
+      <div className="flex items-center gap-3 mb-6"><Mascot size={56} /><h1 className="text-3xl font-black tracking-tight text-stone-800">More</h1></div>
       <Card className="divide-y divide-stone-100 overflow-hidden">
         {MORE_LINKS.map((l) => (
           <a key={l.route} href={`#${l.route}`} className="flex items-center gap-4 px-5 py-4 hover:bg-stone-50">
-            <span className="w-11 h-11 rounded-2xl bg-stone-100 flex items-center justify-center text-xl">{l.icon}</span>
-            <span className="flex-1"><b className="block">{l.label}</b><span className="text-sm text-stone-400">{l.desc}</span></span>
+            <span className={`w-12 h-12 rounded-2xl ${l.bg} flex items-center justify-center text-2xl`}>{l.icon}</span>
+            <span className="flex-1"><b className="block font-extrabold text-stone-800">{l.label}</b><span className="text-sm font-semibold text-stone-400">{l.desc}</span></span>
             <span className="text-stone-300 text-xl">›</span>
           </a>
         ))}

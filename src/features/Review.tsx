@@ -7,6 +7,7 @@ import { meaning, overlaps } from "./course";
 import { Button, Card, ProgressBar } from "../components/ui";
 import { AudioButton } from "../components/Audio";
 import { Inline } from "../components/Md";
+import { Mascot } from "../components/Mascot";
 import type { Grade } from "ts-fsrs";
 
 export function Review() {
@@ -25,8 +26,8 @@ export function Review() {
   if (!Object.keys(store.progress.cards).length)
     return (
       <Card className="p-10 text-center max-w-xl mx-auto">
-        <div className="text-5xl mb-3">🧠</div>
-        <h1 className="text-2xl font-bold">Your deck is empty</h1>
+        <Mascot mood="think" size={110} className="mx-auto mb-2" />
+        <h1 className="text-2xl font-black">Your deck is empty</h1>
         <p className="text-stone-600 mt-2">Finish a lesson, or tap “Add to my deck” on any dictionary word.</p>
         <a href="#" className="inline-block mt-6 rounded-2xl bg-emerald-600 text-white px-6 py-3 font-semibold">Start a lesson</a>
       </Card>
@@ -35,8 +36,8 @@ export function Review() {
     const nextDue = Object.values(store.progress.cards).map((c) => new Date(c.due).getTime()).sort((a, b) => a - b)[0];
     return (
       <Card className="p-8 text-center max-w-xl mx-auto">
-        <div className="text-5xl mb-3">✨</div>
-        <h1 className="text-2xl font-bold">{queue.length ? "Review done. Mooi so!" : "Nothing due right now"}</h1>
+        <Mascot mood="cheer" size={110} className="mx-auto mb-2" />
+        <h1 className="text-2xl font-black">{queue.length ? "Review done. Mooi so!" : "Nothing due right now"}</h1>
         {nextDue && <p className="text-stone-600 mt-2">Next card due {new Date(nextDue).toLocaleString()}</p>}
         <a href="#" className="inline-block mt-6 rounded-2xl bg-emerald-600 text-white px-6 py-3 font-semibold">Learn something new</a>
       </Card>
@@ -68,7 +69,7 @@ export function Review() {
   return (
     <div className="max-w-xl mx-auto">
       <div className="flex items-center gap-4 mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Review</h1>
+        <h1 className="text-3xl font-black tracking-tight">Review</h1>
         <ProgressBar value={i / queue.length} className="flex-1" />
         <span className="text-sm text-stone-400">{i + 1}/{queue.length}</span>
       </div>
@@ -95,7 +96,7 @@ export function Review() {
             <div className="text-sm text-stone-400 mt-8 mb-2">How well did you know it?</div>
             <div className="grid grid-cols-4 gap-2">
               {([[Rating.Again, "Forgot", "bg-rose-50 text-rose-700"], [Rating.Hard, "Hard", "bg-amber-50 text-amber-700"], [Rating.Good, "Good", "bg-emerald-50 text-emerald-700"], [Rating.Easy, "Easy", "bg-sky-50 text-sky-700"]] as const).map(([g, label, cls]) => (
-                <button key={label} onClick={() => grade(g as Grade)} className={`rounded-2xl py-3 font-semibold ${cls}`}>
+                <button key={label} onClick={() => grade(g as Grade)} className={`btn-3d rounded-2xl py-3 font-extrabold border-2 border-current/20 shadow-[0_4px_0_rgba(0,0,0,0.08)] ${cls}`}>
                   {label}<div className="text-xs font-normal">{times[g]}</div>
                 </button>
               ))}
