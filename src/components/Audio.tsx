@@ -2,19 +2,22 @@ import { useEffect, useRef, useState } from "react";
 import { useData } from "../lib/dataContext";
 import { audioFor, playClip, speak, useDeviceVoices } from "../lib/audio";
 
+// Words that can't be said naturally on their own are spoken in a short phrase instead.
+// 'n (a/an) is taught in the same lesson as man and vrou.
+const SPOKEN_AS: Record<string, string> = { "'n": "'n Man en 'n vrou." };
+
 /** Hook: can this text be played, and how? Recorded clips first, then a natural device voice. */
 export function useAudio(text: string) {
   const data = useData();
   const clips = audioFor(data.audio, text);
   const voices = useDeviceVoices();
   const [n, setN] = useState(0);
-  // the bare article 'n can't be pronounced well on its own; its example sentences have audio
-  const available = text.trim() !== "'n" && (clips.length > 0 || voices.length > 0);
+  const available = clips.length > 0 || voices.length > 0;
   const play = (slow = false) => {
     if (clips.length) {
       const c = clips[n % clips.length];
       playClip(slow ? c.url.replace(/\.(\w+)$/, ".slow.$1") : c.url);
-    } else if (voices.length) speak(text, voices[n % voices.length], slow);
+    } else if (voices.length) speak(SPOKEN_AS[text.trim()] ?? text, voices[n % voices.length], slow);
     setN(n + 1); // alternate voices on each press
   };
   return { available, play };
@@ -24,14 +27,17 @@ export function useAudio(text: string) {
  *  `autoPlay` speaks once when it appears (used for new words and listening prompts). */
 export function AudioButton({ text, size = "md", slow = false, autoPlay = false }: { text: string; size?: "sm" | "md" | "lg"; slow?: boolean; autoPlay?: boolean }) {
   const { available, play } = useAudio(text);
-  const played = useRef(false);
+  // remember WHICH text was auto-played, so the next word on the same screen plays too
+  const played = useRef<string | null>(null);
   useEffect(() => {
-    if (autoPlay && available && !played.current) {
-      played.current = true;
-      const t = setTimeout(() => play(), 250);
+    if (autoPlay && available && played.current !== text) {
+      const t = setTimeout(() => {
+        played.current = text;
+        play();
+      }, 250);
       return () => clearTimeout(t);
     }
-  }, [autoPlay, available]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [autoPlay, available, text]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!available) return null;
   const cls = { sm: "w-8 h-8 text-base", md: "w-11 h-11 text-xl", lg: "w-14 h-14 text-2xl" }[size];
   return (

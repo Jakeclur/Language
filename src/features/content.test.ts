@@ -97,6 +97,17 @@ describe("quizzes only use words already taught", () => {
     });
 });
 
+describe("every new word is introduced before it is tested", () => {
+  for (const { l } of lessons)
+    it(`${l.id}`, () => {
+      const steps = buildSession(l, data, settings, progress, true);
+      const intros = steps.filter((s) => s.kind === "intro").map((s) => (s.kind === "intro" ? s.entry.headword : ""));
+      for (const v of l.vocab) expect(intros, `"${v}" has no introduction`).toContain(byHeadword.get(v.toLowerCase())!.headword);
+      const firstExercise = steps.findIndex((s) => s.kind === "exercise");
+      expect(steps.slice(firstExercise).every((s) => s.kind === "exercise")).toBe(true);
+    });
+});
+
 describe("speech text", () => {
   it("adds sentence punctuation and capitals for natural intonation", () => {
     expect(speakable("goed")).toBe("Goed.");

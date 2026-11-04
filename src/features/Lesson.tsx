@@ -113,9 +113,12 @@ function LearnView({ lesson, unitNumber }: { lesson: Lesson; unitNumber: number 
           <h2 className="text-sm font-extrabold uppercase tracking-wider text-stone-400 mb-3">New words ({vocab.length})</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {vocab.map((v) => (
-              <div key={v.id} className="rounded-2xl border-2 border-stone-100 bg-white px-3 py-2.5">
-                <div lang="af" className="font-black text-stone-800">{v.headword}</div>
-                <div className="text-sm font-semibold text-stone-500 leading-tight">{meaning(v, settings).split(";")[0]}</div>
+              <div key={v.id} className="rounded-2xl border-2 border-stone-100 bg-white px-3 py-2.5 flex items-center gap-2.5">
+                <AudioButton text={v.headword} size="sm" />
+                <div className="min-w-0">
+                  <div lang="af" className="font-black text-stone-800">{v.headword}</div>
+                  <div className="text-sm font-semibold text-stone-500 leading-tight">{meaning(v, settings).split(";")[0]}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -197,7 +200,7 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { sc
         {step.kind === "intro" ? (
           <>
             <Speech mood="cheer">New word!</Speech>
-            <div className="mt-6 rounded-3xl border-2 border-stone-100 bg-white p-6"><WordCard entry={step.entry} /></div>
+            <div className="mt-6 rounded-3xl border-2 border-stone-100 bg-white p-6"><WordCard key={step.entry.id} entry={step.entry} /></div>
           </>
         ) : (
           <>

@@ -89,7 +89,8 @@ export function buildSession(lesson: Lesson, data: AppData, settings: Settings, 
   const vocab = vocabEntries(lesson, data);
   const steps: Step[] = [];
   const fresh = vocab.filter((e) => !progress.cards[e.id]);
-  for (const e of fresh.slice(0, 8)) steps.push({ kind: "intro", entry: e });
+  // every new word is introduced (with its pronunciation) before it is tested
+  for (const e of fresh) steps.push({ kind: "intro", entry: e });
 
   // wrong options come only from words already taught (this lesson first, then earlier ones)
   const pool = taughtUpTo(lesson, data).filter((e) => e.headword !== "'n" && e.senses.every((s) => (s.severity ?? 0) < 2 || lesson.vocab.includes(e.headword)));
