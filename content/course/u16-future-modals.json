@@ -1,0 +1,165 @@
+{
+  "id": "u16",
+  "level": "A2",
+  "number": 16,
+  "title": "Future & modal verbs",
+  "titleAf": "Toekoms en modale werkwoorde",
+  "icon": "🔮",
+  "lessons": [
+    {
+      "id": "u16-1",
+      "title": "Will and going to",
+      "explanation": [
+        "Future: **sal** (will) or **gaan** (going to), with the main verb **at the end**.",
+        "**Ek sal jou help.** = I will help you. **Ons gaan vanaand swem.** = We're going to swim tonight.",
+        "New words: **bel** (call / phone), **swem** (swim), **help** (help), **vanaand** (tonight)."
+      ],
+      "examples": [
+        {
+          "af": "Ek sal jou môre bel.",
+          "en": "I will call you tomorrow."
+        },
+        {
+          "af": "Ons gaan vanaand braai.",
+          "en": "We're going to braai tonight."
+        },
+        {
+          "af": "Sy gaan Saterdag swem.",
+          "en": "She's going to swim on Saturday."
+        }
+      ],
+      "vocab": [
+        "sal",
+        "bel",
+        "swem",
+        "help",
+        "vanaand"
+      ],
+      "exercises": [
+        {
+          "type": "order",
+          "en": "I will call you tomorrow.",
+          "af": "Ek sal jou môre bel."
+        },
+        {
+          "type": "transform",
+          "instruction": "Put it in the future with **sal**",
+          "from": "Ek help jou.",
+          "answers": [
+            "Ek sal jou help."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "We are going to swim tonight.",
+          "answers": [
+            "Ons gaan vanaand swem.",
+            "Vanaand gaan ons swem."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Hy sal môre bel.",
+          "answers": [
+            "He will call tomorrow.",
+            "He'll call tomorrow."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u16-2",
+      "title": "Can, must, want, may",
+      "explanation": [
+        "**kan** (can), **moet** (must, have to), **wil** (want to), **mag** (may). The main verb goes to the **end**.",
+        "**Ek kan swem.** **Jy moet nou gaan.** **Ek wil huis toe gaan.**",
+        "Past forms: **kon, moes, wou, mog**. **Ek kon nie kom nie.** (I couldn't come.)",
+        "Polite requests: **Ek wil graag…** (I'd like to…). New words: **doen** (do), **kom** (come), **kry** (get), **huiswerk** (homework)."
+      ],
+      "examples": [
+        {
+          "af": "Kan jy my help?",
+          "en": "Can you help me?"
+        },
+        {
+          "af": "Ek moet huiswerk doen.",
+          "en": "I have to do homework."
+        },
+        {
+          "af": "Ek wil graag 'n koffie hê.",
+          "en": "I'd like a coffee."
+        },
+        {
+          "af": "Ek kon nie kom nie.",
+          "en": "I couldn't come."
+        }
+      ],
+      "vocab": [
+        "kan",
+        "moet",
+        "wil",
+        "mag",
+        "graag",
+        "doen",
+        "kom",
+        "huiswerk",
+        "kry"
+      ],
+      "exercises": [
+        {
+          "type": "order",
+          "en": "Can you help me?",
+          "af": "Kan jy my help?"
+        },
+        {
+          "type": "order",
+          "en": "I have to do homework.",
+          "af": "Ek moet huiswerk doen."
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I want to go home.",
+          "answers": [
+            "Ek wil huis toe gaan."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I'd like a coffee, please.",
+          "answers": [
+            "Ek wil graag 'n koffie hê, asseblief.",
+            "Ek wil graag koffie hê, asseblief."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Ek ___ nie kom nie. (couldn't)",
+          "en": "I couldn't come.",
+          "answers": [
+            "kon"
+          ],
+          "options": [
+            "kon",
+            "kan",
+            "kom"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Mag ek water kry?",
+          "answers": [
+            "May I have water?",
+            "May I have some water?",
+            "Can I have water?",
+            "Can I get water?"
+          ]
+        }
+      ]
+    }
+  ]
+}

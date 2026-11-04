@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useData } from "../lib/dataContext";
 import { useStore } from "../lib/store";
 import { go } from "../lib/router";
@@ -108,6 +108,9 @@ function LearnView({ lesson }: { lesson: Lesson }) {
             ))}
           </div>
         </div>
+      )}
+      {lesson.names && lesson.names.length > 0 && (
+        <p className="mt-4 text-sm text-stone-500">Names in this lesson: {lesson.names.map((n) => <b key={n} lang="af">{n}</b>).reduce<React.ReactNode[]>((a, b, i) => (i ? [...a, ", ", b] : [b]), [])}</p>
       )}
       <a className="block mt-10 text-sm text-stone-400 hover:text-stone-600" target="_blank" rel="noreferrer"
         href={reportUrl(`lesson ${lesson.id}`, `Lesson: **${lesson.title}** (\`${lesson.id}\`)`)}>Report a problem with this lesson</a>

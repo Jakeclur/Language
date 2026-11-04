@@ -1,19 +1,18 @@
 {
-  "id": "a2-14",
+  "id": "u17",
   "level": "A2",
-  "number": 14,
+  "number": 17,
   "title": "Little words & describing things",
   "titleAf": "Verkleinwoorde en byvoeglike naamwoorde",
   "icon": "🐣",
   "lessons": [
     {
-      "id": "a2-14-1",
-      "title": "Diminutives: -tjie, -ie, -jie",
+      "id": "u17-1",
+      "title": "Diminutives: -tjie, -ie, -jie, -pie",
       "explanation": [
         "Afrikaans speakers love making words \"little\": for size, cuteness, or friendliness. The ending depends on how the word ends:",
-        "| ending of the word | add | examples |\n|---|---|---|\n| -d, -t | **-jie** | hond → **hondjie**, kat → **katjie** |\n| -m | **-pie** | boom → **boompie**, arm → **armpie** |\n| -k, -g, -p, -f, -s | **-ie** | boek → **boekie**, dag → **daggie**, kop → **koppie** |\n| a vowel, or -l, -n, -r, -w | **-tjie** | tafel → **tafeltjie**, deur → **deurtjie**, vrou → **vroutjie** |\n| short vowel + -l, -m, -n, -r | double + **-etjie** | man → **mannetjie**, bal → **balletjie** |",
-        "After a short vowel the consonant often doubles: kop → **koppie**, vis → **vissie**.",
-        "Plurals of diminutives just add **-s**: hondjie → **hondjies**."
+        "| word ends in | add | examples |\n|---|---|---|\n| -d, -t | **-jie** | hond → **hondjie**, kat → **katjie** |\n| -m | **-pie** | boom → **boompie** |\n| -k, -p, -s, -g | **-ie** | boek → **boekie**, kop → **koppie**, vis → **vissie** |\n| -l, -n, -r, a vowel | **-tjie** | tafel → **tafeltjie**, deur → **deurtjie**, vrou → **vroutjie** |\n| short vowel + -n, -l | double + **-etjie** | man → **mannetjie** |",
+        "New words: **kyk** (look), **boom** (tree), **kop** (head), **vis** (fish). **Koppie** also means *cup*!"
       ],
       "examples": [
         {
@@ -21,21 +20,19 @@
           "en": "Look at the little dog!"
         },
         {
-          "af": "Ek het 'n boompie geplant.",
-          "en": "I planted a little tree."
+          "af": "Die kinders speel met die katjie.",
+          "en": "The children are playing with the kitten."
         },
         {
-          "af": "Die kinders speel met die katjies.",
-          "en": "The children are playing with the kittens."
+          "af": "Ek het 'n boompie.",
+          "en": "I have a little tree."
         }
       ],
       "vocab": [
-        "hond",
-        "kat",
-        "boek",
+        "kyk",
         "boom",
-        "tafel",
-        "huis"
+        "kop",
+        "vis"
       ],
       "exercises": [
         {
@@ -87,7 +84,7 @@
           "options": [
             "koppie",
             "koptjie",
-            "kopie"
+            "kopjie"
           ]
         },
         {
@@ -102,18 +99,26 @@
             "mantjie",
             "mannie"
           ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Kyk die klein vissie!",
+          "answers": [
+            "Look at the little fish!"
+          ]
         }
       ]
     },
     {
-      "id": "a2-14-2",
-      "title": "Adjectives before nouns",
+      "id": "u17-2",
+      "title": "Describing things",
       "explanation": [
-        "When an adjective comes **after** the noun (\"the man is friendly\"), it never changes: **Die man is vriendelik.**",
-        "When it comes **before** the noun, longer adjectives usually add **-e**: **'n vriendelike man**, **'n lelike hond**, **'n gelukkige kind**.",
-        "Short, common adjectives often stay the same: **'n groot huis**, **'n mooi meisie**, **'n klein kind**, **'n rooi kar**.",
-        "Some change shape before a noun: **oud → ou** (die ou man), **nuut → nuwe** (die nuwe kar), **goed → goeie** (goeie môre!), **jonk → jong**, **lank → lang**.",
-        "Comparing: **groot → groter → grootste**, **mooi → mooier → mooiste**, and the irregular **goed → beter → beste**."
+        "After the noun, an adjective never changes: **Die man is vriendelik.**",
+        "Before the noun, longer adjectives usually add **-e**: **'n vriendelike man**, **'n lelike hond**.",
+        "Short, common ones often stay the same: **'n groot huis**, **'n mooi kar**, **'n klein kind**.",
+        "Some change shape: **oud → ou** (die ou man), **nuut → nuwe** (die nuwe kar), **goed → goeie** (goeie môre!).",
+        "Comparing: **groot → groter → grootste**, **mooi → mooier → mooiste**, **goed → beter → beste**. **as** = than. **vriend** = friend."
       ],
       "examples": [
         {
@@ -127,16 +132,20 @@
         {
           "af": "My broer is groter as ek.",
           "en": "My brother is bigger than me."
+        },
+        {
+          "af": "Hy is my beste vriend.",
+          "en": "He is my best friend."
         }
       ],
       "vocab": [
         "oud",
         "nuut",
-        "groot",
-        "mooi",
         "vriendelik",
-        "goed",
-        "lelik"
+        "lelik",
+        "mooi",
+        "as",
+        "vriend"
       ],
       "exercises": [
         {
@@ -175,13 +184,13 @@
           "options": [
             "groter",
             "grootste",
-            "meer groot"
+            "groot"
           ]
         },
         {
           "type": "fill",
-          "af": "Sy is my ___ vriendin. (best)",
-          "en": "She is my best friend.",
+          "af": "Hy is my ___ vriend. (best)",
+          "en": "He is my best friend.",
           "answers": [
             "beste"
           ],
@@ -189,14 +198,6 @@
             "beste",
             "goedste",
             "beter"
-          ]
-        },
-        {
-          "type": "translate",
-          "from": "en",
-          "prompt": "a friendly man",
-          "answers": [
-            "'n vriendelike man"
           ]
         },
         {
@@ -210,6 +211,14 @@
             "Goeie",
             "Goed",
             "Goede"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "a friendly man",
+          "answers": [
+            "'n vriendelike man"
           ]
         }
       ]

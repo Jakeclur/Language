@@ -1,0 +1,293 @@
+{
+  "id": "u06",
+  "level": "A1",
+  "number": 6,
+  "title": "Doing things: verbs",
+  "titleAf": "Werkwoorde",
+  "icon": "🍞",
+  "lessons": [
+    {
+      "id": "u06-1",
+      "title": "Eat, drink, have",
+      "explanation": [
+        "Afrikaans verbs **never change** for the person: **ek eet, jy eet, hulle eet**. Much easier than English!",
+        "**Ek eet** means both *I eat* and *I am eating*.",
+        "**het** = have / has: **Ek het 'n hond.**"
+      ],
+      "examples": [
+        {
+          "af": "Ek eet brood.",
+          "en": "I'm eating bread."
+        },
+        {
+          "af": "Sy drink koffie.",
+          "en": "She drinks coffee."
+        },
+        {
+          "af": "Ons drink water.",
+          "en": "We drink water."
+        },
+        {
+          "af": "Hulle het twee katte.",
+          "en": "They have two cats."
+        }
+      ],
+      "vocab": [
+        "het",
+        "eet",
+        "drink",
+        "water",
+        "koffie",
+        "brood",
+        "melk"
+      ],
+      "exercises": [
+        {
+          "type": "fill",
+          "af": "Hy ___ koffie. (drinks)",
+          "en": "He drinks coffee.",
+          "answers": [
+            "drink"
+          ],
+          "options": [
+            "drink",
+            "drinks",
+            "drinking"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I am eating bread.",
+          "answers": [
+            "Ek eet brood."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "We have a dog.",
+          "answers": [
+            "Ons het 'n hond."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "She drinks milk.",
+          "af": "Sy drink melk."
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Hulle het drie katte.",
+          "answers": [
+            "They have three cats."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**Ek eet** can mean…",
+          "options": [
+            "both \"I eat\" and \"I am eating\"",
+            "only \"I eat\"",
+            "only \"I ate\""
+          ],
+          "answer": "both \"I eat\" and \"I am eating\""
+        },
+        {
+          "type": "fill",
+          "af": "Ons ___ twee honde. (have)",
+          "en": "We have two dogs.",
+          "answers": [
+            "het"
+          ],
+          "options": [
+            "het",
+            "is",
+            "eet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u06-2",
+      "title": "Speak, learn, read, write",
+      "explanation": [
+        "**praat** = speak / talk, **leer** = learn, **lees** = read, **skryf** = write.",
+        "To ask a question, put the verb first: **Jy praat Engels.** → **Praat jy Engels?**"
+      ],
+      "examples": [
+        {
+          "af": "Ek leer Afrikaans.",
+          "en": "I'm learning Afrikaans."
+        },
+        {
+          "af": "Praat jy Engels?",
+          "en": "Do you speak English?"
+        },
+        {
+          "af": "Sy lees 'n boek.",
+          "en": "She is reading a book."
+        },
+        {
+          "af": "Hy skryf baie.",
+          "en": "He writes a lot."
+        }
+      ],
+      "vocab": [
+        "praat",
+        "leer",
+        "lees",
+        "skryf",
+        "Afrikaans",
+        "Engels"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I am learning Afrikaans.",
+          "answers": [
+            "Ek leer Afrikaans."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Do you speak English?",
+          "answers": [
+            "Praat jy Engels?",
+            "Praat u Engels?"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "She is reading a book.",
+          "af": "Sy lees 'n boek."
+        },
+        {
+          "type": "transform",
+          "instruction": "Turn it into a question",
+          "from": "Jy praat Afrikaans.",
+          "answers": [
+            "Praat jy Afrikaans?"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ons leer Engels.",
+          "answers": [
+            "We are learning English.",
+            "We learn English."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Hulle ___ 'n boek. (are writing)",
+          "en": "They are writing a book.",
+          "answers": [
+            "skryf"
+          ],
+          "options": [
+            "skryf",
+            "lees",
+            "praat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u06-3",
+      "title": "Play, work, live, sleep",
+      "explanation": [
+        "**speel** = play, **werk** = work, **woon** = live (in a place), **slaap** = sleep.",
+        "**in** = in. **sokker** = soccer. **Kaapstad** = Cape Town."
+      ],
+      "examples": [
+        {
+          "af": "Hulle speel sokker.",
+          "en": "They play soccer."
+        },
+        {
+          "af": "Ek woon in Kaapstad.",
+          "en": "I live in Cape Town."
+        },
+        {
+          "af": "Sy werk baie.",
+          "en": "She works a lot."
+        },
+        {
+          "af": "Die kat slaap.",
+          "en": "The cat is sleeping."
+        }
+      ],
+      "vocab": [
+        "speel",
+        "werk",
+        "woon",
+        "slaap",
+        "in",
+        "sokker"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "They play soccer.",
+          "answers": [
+            "Hulle speel sokker."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "I live in Cape Town.",
+          "af": "Ek woon in Kaapstad."
+        },
+        {
+          "type": "fill",
+          "af": "Die hond ___. (is sleeping)",
+          "en": "The dog is sleeping.",
+          "answers": [
+            "slaap"
+          ],
+          "options": [
+            "slaap",
+            "speel",
+            "werk"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Hy werk in Kaapstad.",
+          "answers": [
+            "He works in Cape Town.",
+            "He is working in Cape Town."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "The children are playing.",
+          "answers": [
+            "Die kinders speel."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**woon** means…",
+          "options": [
+            "live (in a place)",
+            "work",
+            "sleep"
+          ],
+          "answer": "live (in a place)"
+        }
+      ],
+      "names": [
+        "Kaapstad"
+      ]
+    }
+  ]
+}

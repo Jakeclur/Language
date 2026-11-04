@@ -1,0 +1,113 @@
+{
+  "id": "u09",
+  "level": "A1",
+  "number": 9,
+  "title": "Asking questions",
+  "titleAf": "Vrae vra",
+  "icon": "❓",
+  "lessons": [
+    {
+      "id": "u09-1",
+      "title": "Who, where, when, why, how much",
+      "explanation": [
+        "You already know **wat** (what) and **hoe** (how).",
+        "**wie** = who, **waar** = where, **wanneer** = when, **hoekom** = why, **hoeveel** = how much / how many.",
+        "The question word comes first, then the verb: **Waar is die badkamer?**",
+        "**kos** = to cost (it also means *food*). **begin** = start."
+      ],
+      "examples": [
+        {
+          "af": "Waar is die badkamer?",
+          "en": "Where is the bathroom?"
+        },
+        {
+          "af": "Wanneer begin die skool?",
+          "en": "When does school start?"
+        },
+        {
+          "af": "Hoekom is jy moeg?",
+          "en": "Why are you tired?"
+        },
+        {
+          "af": "Hoeveel kos dit?",
+          "en": "How much does it cost?"
+        }
+      ],
+      "vocab": [
+        "wie",
+        "waar",
+        "wanneer",
+        "hoekom",
+        "hoeveel",
+        "badkamer",
+        "begin",
+        "kos"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Where is the bathroom?",
+          "answers": [
+            "Waar is die badkamer?"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "___ is jou naam?",
+          "en": "What is your name?",
+          "answers": [
+            "Wat"
+          ],
+          "options": [
+            "Wat",
+            "Wie",
+            "Waar"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "___ is jy moeg?",
+          "en": "Why are you tired?",
+          "answers": [
+            "Hoekom"
+          ],
+          "options": [
+            "Hoekom",
+            "Hoeveel",
+            "Wanneer"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "When does school start?",
+          "af": "Wanneer begin die skool?"
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "How much does it cost?",
+          "answers": [
+            "Hoeveel kos dit?"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Who is that?",
+          "answers": [
+            "Wie is dit?"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Waar woon jy?",
+          "answers": [
+            "Where do you live?"
+          ]
+        }
+      ]
+    }
+  ]
+}

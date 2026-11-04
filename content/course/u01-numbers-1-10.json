@@ -1,0 +1,220 @@
+{
+  "id": "u01",
+  "level": "A1",
+  "number": 1,
+  "title": "Numbers 1 to 10",
+  "titleAf": "Getalle 1 tot 10",
+  "icon": "🔢",
+  "lessons": [
+    {
+      "id": "u01-1",
+      "title": "One to five",
+      "explanation": [
+        "We start with numbers: short, useful words that also teach you most Afrikaans sounds.",
+        "**een** (1): the **ee** glides, like \"ee-uh\".",
+        "**twee** (2): after a consonant, **w** sounds like English *w*.",
+        "**drie** (3): **ie** sounds like *ee* in *see*, and the **r** is rolled.",
+        "**vier** (4): **v** usually sounds like English *f*.",
+        "**vyf** (5): **y** sounds like *ay* in *say*."
+      ],
+      "examples": [
+        {
+          "af": "een, twee, drie",
+          "en": "one, two, three"
+        },
+        {
+          "af": "vier, vyf",
+          "en": "four, five"
+        }
+      ],
+      "vocab": [
+        "een",
+        "twee",
+        "drie",
+        "vier",
+        "vyf"
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "question": "What is **drie**?",
+          "options": [
+            "3",
+            "2",
+            "5"
+          ],
+          "answer": "3"
+        },
+        {
+          "type": "choice",
+          "question": "How do you say 5?",
+          "options": [
+            "vyf",
+            "vier",
+            "twee"
+          ],
+          "answer": "vyf"
+        },
+        {
+          "type": "fill",
+          "af": "een, twee, ___, vier",
+          "en": "one, two, …, four",
+          "answers": [
+            "drie"
+          ],
+          "options": [
+            "drie",
+            "vyf",
+            "een"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "four",
+          "answers": [
+            "vier"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "twee",
+          "answers": [
+            "two",
+            "2"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "twee + twee = ___",
+          "en": "2 + 2 = ?",
+          "answers": [
+            "vier"
+          ],
+          "options": [
+            "vier",
+            "vyf",
+            "drie"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "The **v** in **vyf** sounds like English…",
+          "options": [
+            "f",
+            "v",
+            "w"
+          ],
+          "answer": "f"
+        }
+      ]
+    },
+    {
+      "id": "u01-2",
+      "title": "Six to ten",
+      "explanation": [
+        "**ses** (6).",
+        "**sewe** (7): a **w** between vowels sounds like a soft *v*.",
+        "**agt** (8): **g** is a throaty sound, like *ch* in Scottish *loch*. Afrikaans **g** almost always sounds like this.",
+        "**nege** (9): two syllables, *nee-uh-khuh*.",
+        "**tien** (10): like English *teen*."
+      ],
+      "examples": [
+        {
+          "af": "ses, sewe, agt",
+          "en": "six, seven, eight"
+        },
+        {
+          "af": "nege, tien",
+          "en": "nine, ten"
+        }
+      ],
+      "vocab": [
+        "ses",
+        "sewe",
+        "agt",
+        "nege",
+        "tien"
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "question": "What is **agt**?",
+          "options": [
+            "8",
+            "6",
+            "7"
+          ],
+          "answer": "8"
+        },
+        {
+          "type": "fill",
+          "af": "vyf + vyf = ___",
+          "en": "5 + 5 = ?",
+          "answers": [
+            "tien"
+          ],
+          "options": [
+            "tien",
+            "nege",
+            "agt"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "ses, sewe, ___, nege",
+          "en": "six, seven, …, nine",
+          "answers": [
+            "agt"
+          ],
+          "options": [
+            "agt",
+            "tien",
+            "ses"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "seven",
+          "answers": [
+            "sewe"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "nege",
+          "answers": [
+            "nine",
+            "9"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "tien - een = ___",
+          "en": "10 - 1 = ?",
+          "answers": [
+            "nege"
+          ],
+          "options": [
+            "nege",
+            "sewe",
+            "ses"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "The **g** in **agt** sounds like…",
+          "options": [
+            "the ch in Scottish \"loch\"",
+            "the g in \"go\"",
+            "the j in \"jam\""
+          ],
+          "answer": "the ch in Scottish \"loch\""
+        }
+      ]
+    }
+  ]
+}

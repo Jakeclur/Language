@@ -2,7 +2,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import type { DictionaryData, Unit, Entry } from "../types";
-import { buildSession, meaning, overlaps, type Generated } from "./course";
+import { buildSession, meaning, overlaps, taughtUpTo, type Generated } from "./course";
 import { checkAnswer, normalise, tiles } from "../lib/text";
 import { speakable } from "../lib/audio";
 import type { AppData } from "../lib/data";
@@ -76,6 +76,24 @@ describe("generated quizzes never have two right answers", () => {
           if (ex.type === "listen") expect(new Set(ex.options).size).toBe(ex.options.length);
         }
       }
+    });
+});
+
+describe("quizzes only use words already taught", () => {
+  for (const { l } of lessons)
+    it(`${l.id}`, () => {
+      const taught = taughtUpTo(l, data);
+      const heads = new Set(taught.map((e) => e.headword));
+      const means = new Set(taught.map((e) => meaning(e, settings)));
+      for (let run = 0; run < 15; run++)
+        for (const step of buildSession(l, data, settings, progress, true)) {
+          if (step.kind === "intro") expect(l.vocab).toContain(step.entry.headword);
+          if (step.kind !== "exercise") continue;
+          const ex = step.ex as Generated;
+          if (ex.type === "mc") for (const o of ex.options) expect(ex.promptLang === "af" ? means.has(o) : heads.has(o), `"${o}" not taught yet`).toBe(true);
+          if (ex.type === "listen") for (const o of ex.options) expect(means.has(o), `"${o}" not taught yet`).toBe(true);
+          if (ex.type === "match") for (const [a] of ex.pairs) expect(l.vocab).toContain(a);
+        }
     });
 });
 

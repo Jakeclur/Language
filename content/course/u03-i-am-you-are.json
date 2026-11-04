@@ -1,0 +1,305 @@
+{
+  "id": "u03",
+  "level": "A1",
+  "number": 3,
+  "title": "I am, you are",
+  "titleAf": "Ek is, jy is",
+  "icon": "🙋",
+  "lessons": [
+    {
+      "id": "u03-1",
+      "title": "I and you",
+      "explanation": [
+        "**ek** = I. **jy** = you, used with a friend, family member or child.",
+        "**is** = am / are / is. Good news: Afrikaans uses **is** for everyone, so there's no *am / are / is* to choose. **Ek is moeg.** = I am tired.",
+        "To ask a yes/no question, swap the order: **Jy is moeg.** → **Is jy moeg?**",
+        "**ja** = yes, **nee** = no."
+      ],
+      "examples": [
+        {
+          "af": "Ek is moeg.",
+          "en": "I am tired."
+        },
+        {
+          "af": "Is jy honger?",
+          "en": "Are you hungry?"
+        },
+        {
+          "af": "Ja, ek is honger.",
+          "en": "Yes, I am hungry."
+        },
+        {
+          "af": "Nee, ek is moeg.",
+          "en": "No, I'm tired."
+        }
+      ],
+      "vocab": [
+        "ek",
+        "jy",
+        "is",
+        "ja",
+        "nee",
+        "moeg",
+        "honger"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I am tired.",
+          "answers": [
+            "Ek is moeg."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Are you hungry?",
+          "answers": [
+            "Is jy honger?"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "Yes, I am hungry.",
+          "af": "Ja, ek is honger."
+        },
+        {
+          "type": "fill",
+          "af": "Ek ___ moeg.",
+          "en": "I am tired.",
+          "answers": [
+            "is"
+          ],
+          "options": [
+            "is",
+            "ek",
+            "jy"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Jy is honger.",
+          "answers": [
+            "You are hungry.",
+            "You're hungry."
+          ]
+        },
+        {
+          "type": "transform",
+          "instruction": "Turn it into a question",
+          "from": "Jy is moeg.",
+          "answers": [
+            "Is jy moeg?"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "How many words does Afrikaans have for *am / are / is*?",
+          "options": [
+            "One: is",
+            "Three",
+            "Two"
+          ],
+          "answer": "One: is"
+        }
+      ]
+    },
+    {
+      "id": "u03-2",
+      "title": "He, she, we, they",
+      "explanation": [
+        "| | one person | more than one |\n|---|---|---|\n| I / we | **ek** | **ons** |\n| you | **jy** | **julle** |\n| he / she / they | **hy**, **sy** | **hulle** |",
+        "Still just **is** for everyone: **Hulle is siek.** = They are sick."
+      ],
+      "examples": [
+        {
+          "af": "Hy is siek.",
+          "en": "He is sick."
+        },
+        {
+          "af": "Sy is gelukkig.",
+          "en": "She is happy."
+        },
+        {
+          "af": "Ons is moeg.",
+          "en": "We are tired."
+        },
+        {
+          "af": "Is julle honger?",
+          "en": "Are you (all) hungry?"
+        },
+        {
+          "af": "Hulle is gelukkig.",
+          "en": "They are happy."
+        }
+      ],
+      "vocab": [
+        "hy",
+        "sy",
+        "ons",
+        "julle",
+        "hulle",
+        "gelukkig",
+        "siek"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "She is happy.",
+          "answers": [
+            "Sy is gelukkig."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "We are sick.",
+          "answers": [
+            "Ons is siek."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "They are hungry.",
+          "af": "Hulle is honger."
+        },
+        {
+          "type": "fill",
+          "af": "___ is siek. (he)",
+          "en": "He is sick.",
+          "answers": [
+            "Hy"
+          ],
+          "options": [
+            "Hy",
+            "Sy",
+            "Ons"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Is julle moeg?",
+          "answers": [
+            "Are you tired?",
+            "Are you all tired?",
+            "Are you guys tired?"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**julle** means…",
+          "options": [
+            "you (more than one person)",
+            "they",
+            "we"
+          ],
+          "answer": "you (more than one person)"
+        },
+        {
+          "type": "transform",
+          "instruction": "Turn it into a question",
+          "from": "Hulle is siek.",
+          "answers": [
+            "Is hulle siek?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u03-3",
+      "title": "Very, and, but, also",
+      "explanation": [
+        "**baie** = very.",
+        "**en** = and (you know it from the numbers!).",
+        "**maar** = but.",
+        "**ook** = also / too.",
+        "**dors** = thirsty, **bang** = scared."
+      ],
+      "examples": [
+        {
+          "af": "Ek is baie moeg.",
+          "en": "I am very tired."
+        },
+        {
+          "af": "Hy is honger en dors.",
+          "en": "He is hungry and thirsty."
+        },
+        {
+          "af": "Sy is moeg, maar gelukkig.",
+          "en": "She is tired, but happy."
+        },
+        {
+          "af": "Ons is ook dors.",
+          "en": "We are thirsty too."
+        }
+      ],
+      "vocab": [
+        "baie",
+        "maar",
+        "ook",
+        "dors",
+        "bang"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I am very hungry.",
+          "answers": [
+            "Ek is baie honger."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "He is hungry and thirsty.",
+          "af": "Hy is honger en dors."
+        },
+        {
+          "type": "fill",
+          "af": "Ons is ___ dors. (also)",
+          "en": "We are also thirsty.",
+          "answers": [
+            "ook"
+          ],
+          "options": [
+            "ook",
+            "maar",
+            "baie"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Sy is bang, maar gelukkig.",
+          "answers": [
+            "She is scared, but happy.",
+            "She is afraid, but happy.",
+            "She's scared but happy."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "They are also tired.",
+          "answers": [
+            "Hulle is ook moeg."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**maar** means…",
+          "options": [
+            "but",
+            "and",
+            "very"
+          ],
+          "answer": "but"
+        }
+      ]
+    }
+  ]
+}

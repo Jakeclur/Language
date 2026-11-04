@@ -10,7 +10,7 @@ The full plan is in [PLAN.md](PLAN.md).
 
 | Feature | Status |
 |---|---|
-| Course | 16 units, 30 lessons, 146 hand-written exercises (A1 → A2, plus B1 slang & culture and an 18+ B2 Street Afrikaans unit) |
+| Course | 19 units, 36 lessons, built gradually: numbers → I am / you are → greetings → nouns → verbs → time → word order → questions → negation → possession → family, food, home → past, future, modals → describing → slang (B1) → 18+ street Afrikaans (B2). **Every word is taught before it is used**: the build fails if any lesson sentence or quiz uses a word from a later lesson |
 | Exercise types | Multiple choice, typed translation (with typo/accent tolerance and targeted feedback), word-order tiles, fill in the blank, sentence transformation, matching pairs, "type the word", "How rude is this?", plus listening and dictation when natural audio is available. A test (`src/features/content.test.ts`) checks every exercise is answerable and that no quiz has two correct options |
 | Spaced repetition | FSRS scheduling (`ts-fsrs`); lesson words are added to your deck automatically |
 | Dictionary | 8,684 headwords in both directions, IPA for most words, plurals, diminutives and past forms; inflected-form lookup (`geëet` → `eet`) and a compound splitter (`kombuisdeur` = kitchen + door) |

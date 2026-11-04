@@ -1,0 +1,99 @@
+{
+  "id": "u08",
+  "level": "A1",
+  "number": 8,
+  "title": "Word order: verb second",
+  "titleAf": "Woordorde",
+  "icon": "🔀",
+  "lessons": [
+    {
+      "id": "u08-1",
+      "title": "The verb is always second",
+      "explanation": [
+        "In a normal sentence the verb is the **second** item.",
+        "**Ek gaan vandag skool toe.** If you start with *vandag*, the verb still comes second, so *ek* moves after it: **Vandag gaan ek skool toe.**",
+        "❌ *Vandag ek gaan skool toe.* ✅ **Vandag gaan ek skool toe.**",
+        "**gaan** = go. Going **to** a place: put **toe** after the place: **skool toe** (to school), **strand toe** (to the beach), **huis toe** (home)."
+      ],
+      "examples": [
+        {
+          "af": "Ek gaan vandag skool toe.",
+          "en": "I'm going to school today."
+        },
+        {
+          "af": "Vandag gaan ek skool toe.",
+          "en": "Today I'm going to school."
+        },
+        {
+          "af": "Môre gaan ons strand toe.",
+          "en": "Tomorrow we're going to the beach."
+        },
+        {
+          "af": "Ek gaan huis toe.",
+          "en": "I'm going home."
+        }
+      ],
+      "vocab": [
+        "gaan",
+        "skool",
+        "toe",
+        "strand"
+      ],
+      "exercises": [
+        {
+          "type": "order",
+          "en": "Today I'm going to school.",
+          "af": "Vandag gaan ek skool toe."
+        },
+        {
+          "type": "order",
+          "en": "Tomorrow we're going to the beach.",
+          "af": "Môre gaan ons strand toe."
+        },
+        {
+          "type": "choice",
+          "question": "Which sentence is correct?",
+          "options": [
+            "Vandag werk ek.",
+            "Vandag ek werk.",
+            "Werk vandag ek."
+          ],
+          "answer": "Vandag werk ek."
+        },
+        {
+          "type": "transform",
+          "instruction": "Start the sentence with **Môre**",
+          "from": "Ek gaan môre skool toe.",
+          "answers": [
+            "Môre gaan ek skool toe."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I'm going home.",
+          "answers": [
+            "Ek gaan huis toe."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Now they are eating.",
+          "answers": [
+            "Nou eet hulle.",
+            "Hulle eet nou."
+          ]
+        },
+        {
+          "type": "transform",
+          "instruction": "Start the sentence with **Saterdag**",
+          "from": "Ons speel Saterdag sokker.",
+          "answers": [
+            "Saterdag speel ons sokker."
+          ]
+        }
+      ]
+    }
+  ]
+}

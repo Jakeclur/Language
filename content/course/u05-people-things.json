@@ -1,0 +1,206 @@
+{
+  "id": "u05",
+  "level": "A1",
+  "number": 5,
+  "title": "People, animals & things",
+  "titleAf": "Mense, diere en goed",
+  "icon": "🐕",
+  "lessons": [
+    {
+      "id": "u05-1",
+      "title": "The and a",
+      "explanation": [
+        "**die** = the. There's just one word for *the*, with no masculine or feminine.",
+        "**'n** = a / an. It's always written with an apostrophe and said like a quick *uh*.",
+        "At the start of a sentence, **'n** stays lower case and the next word gets the capital: **'n Man en 'n vrou.**"
+      ],
+      "examples": [
+        {
+          "af": "Die hond is groot.",
+          "en": "The dog is big."
+        },
+        {
+          "af": "Die kat is klein.",
+          "en": "The cat is small."
+        },
+        {
+          "af": "'n Man en 'n vrou.",
+          "en": "A man and a woman."
+        },
+        {
+          "af": "Die kind is moeg.",
+          "en": "The child is tired."
+        }
+      ],
+      "vocab": [
+        "die",
+        "'n",
+        "man",
+        "vrou",
+        "kind",
+        "hond",
+        "kat",
+        "groot",
+        "klein"
+      ],
+      "exercises": [
+        {
+          "type": "fill",
+          "af": "___ hond is groot.",
+          "en": "The dog is big.",
+          "answers": [
+            "Die"
+          ],
+          "options": [
+            "Die",
+            "'n",
+            "Dit"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "The cat is small.",
+          "answers": [
+            "Die kat is klein."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "A man and a woman.",
+          "af": "'n Man en 'n vrou."
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Die kind is baie honger.",
+          "answers": [
+            "The child is very hungry.",
+            "The kid is very hungry."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "How many words for *the* does Afrikaans have?",
+          "options": [
+            "One: die",
+            "Two",
+            "Three"
+          ],
+          "answer": "One: die"
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "The dog is very big.",
+          "answers": [
+            "Die hond is baie groot."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u05-2",
+      "title": "Two dogs: plurals",
+      "explanation": [
+        "Most nouns add **-e** or **-s** for the plural: hond → **honde**, boek → **boeke**, huis → **huise**, vrou → **vroue**; tafel → **tafels**, man → **mans**.",
+        "Some double a letter: kat → **katte**.",
+        "And some are irregular: kind → **kinders**.",
+        "New words: **huis** (house), **boek** (book), **tafel** (table). The dictionary shows every plural."
+      ],
+      "examples": [
+        {
+          "af": "Die honde is groot.",
+          "en": "The dogs are big."
+        },
+        {
+          "af": "Twee boeke.",
+          "en": "Two books."
+        },
+        {
+          "af": "Die kinders is moeg.",
+          "en": "The children are tired."
+        },
+        {
+          "af": "Drie katte en twee honde.",
+          "en": "Three cats and two dogs."
+        }
+      ],
+      "vocab": [
+        "huis",
+        "boek",
+        "tafel"
+      ],
+      "exercises": [
+        {
+          "type": "fill",
+          "af": "Twee ___. (dogs)",
+          "en": "Two dogs.",
+          "answers": [
+            "honde"
+          ],
+          "options": [
+            "honde",
+            "hondes",
+            "honds"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Die ___ is honger. (children)",
+          "en": "The children are hungry.",
+          "answers": [
+            "kinders"
+          ],
+          "options": [
+            "kinders",
+            "kinde",
+            "kinds"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Vier ___. (tables)",
+          "en": "Four tables.",
+          "answers": [
+            "tafels"
+          ],
+          "options": [
+            "tafels",
+            "tafele",
+            "tafel"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Die ___ is klein. (cats)",
+          "en": "The cats are small.",
+          "answers": [
+            "katte"
+          ],
+          "options": [
+            "katte",
+            "kate",
+            "kats"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Three books.",
+          "answers": [
+            "Drie boeke."
+          ]
+        },
+        {
+          "type": "transform",
+          "instruction": "Make it plural",
+          "from": "Die huis is groot.",
+          "answers": [
+            "Die huise is groot."
+          ]
+        }
+      ]
+    }
+  ]
+}

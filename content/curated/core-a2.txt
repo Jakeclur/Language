@@ -26,7 +26,7 @@ vervelig | adj | boring | neutral | | A2 | adjectives | | Die fliek is vervelig.
 snaaks | adj | funny; strange | neutral | | A2 | adjectives,emotions | | | |
 slim | adj | clever; smart | neutral | | A2 | adjectives,personality | | | |
 dom | adj | stupid; dumb | informal | 1 | A2 | adjectives,personality | | | | Can be rude when said about a person.
-vriendelik | adj | friendly | neutral | | A2 | adjectives,personality | | | |
+vriendelik | adj | friendly | neutral | | A2 | adjectives,personality | attr=vriendelike | | |
 gaaf | adj | nice; kind; pleasant | neutral | | A2 | adjectives,personality | attr=gawe | Hy is 'n gawe ou. | He's a nice guy. |
 skaam | adj | shy; ashamed | neutral | | A2 | adjectives,emotions | | | |
 trots | adj | proud | neutral | | A2 | adjectives,emotions | | | |

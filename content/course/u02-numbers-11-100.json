@@ -1,0 +1,217 @@
+{
+  "id": "u02",
+  "level": "A1",
+  "number": 2,
+  "title": "Numbers 11 to 100",
+  "titleAf": "Getalle 11 tot 100",
+  "icon": "💯",
+  "lessons": [
+    {
+      "id": "u02-1",
+      "title": "Eleven to twenty",
+      "explanation": [
+        "**elf** (11) and **twaalf** (12) are special words.",
+        "From 13 to 19, add **-tien** (\"teen\"): **dertien, veertien, vyftien, sestien, sewentien, agtien, negentien**.",
+        "Watch the small changes: drie → **der**tien, vier → **veer**tien.",
+        "**twintig** = 20."
+      ],
+      "examples": [
+        {
+          "af": "elf, twaalf, dertien",
+          "en": "eleven, twelve, thirteen"
+        },
+        {
+          "af": "agtien, negentien, twintig",
+          "en": "eighteen, nineteen, twenty"
+        }
+      ],
+      "vocab": [
+        "elf",
+        "twaalf",
+        "dertien",
+        "veertien",
+        "vyftien",
+        "sestien",
+        "sewentien",
+        "agtien",
+        "negentien",
+        "twintig"
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "question": "What is **vyftien**?",
+          "options": [
+            "15",
+            "50",
+            "5"
+          ],
+          "answer": "15"
+        },
+        {
+          "type": "fill",
+          "af": "tien + twee = ___",
+          "en": "10 + 2 = ?",
+          "answers": [
+            "twaalf"
+          ],
+          "options": [
+            "twaalf",
+            "elf",
+            "twintig"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "tien + agt = ___",
+          "en": "10 + 8 = ?",
+          "answers": [
+            "agtien"
+          ],
+          "options": [
+            "agtien",
+            "sewentien",
+            "negentien"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "eleven",
+          "answers": [
+            "elf"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "dertien",
+          "answers": [
+            "thirteen",
+            "13"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "tien + tien = ___",
+          "en": "10 + 10 = ?",
+          "answers": [
+            "twintig"
+          ],
+          "options": [
+            "twintig",
+            "twaalf",
+            "tien"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "How do you say 14?",
+          "options": [
+            "veertien",
+            "viertien",
+            "vyftien"
+          ],
+          "answer": "veertien"
+        }
+      ]
+    },
+    {
+      "id": "u02-2",
+      "title": "Twenty-one and up",
+      "explanation": [
+        "**en** = and.",
+        "From 21, Afrikaans says the units first: **een-en-twintig** = one-and-twenty = 21. **vyf-en-dertig** = 35.",
+        "Tens: **twintig** (20), **dertig** (30), **veertig** (40), **vyftig** (50), **sestig** (60).",
+        "**honderd** = 100."
+      ],
+      "examples": [
+        {
+          "af": "een-en-twintig",
+          "en": "twenty-one"
+        },
+        {
+          "af": "vyf-en-dertig",
+          "en": "thirty-five"
+        },
+        {
+          "af": "honderd",
+          "en": "a hundred"
+        }
+      ],
+      "vocab": [
+        "en",
+        "dertig",
+        "veertig",
+        "vyftig",
+        "sestig",
+        "honderd"
+      ],
+      "exercises": [
+        {
+          "type": "choice",
+          "question": "What is **vyf-en-twintig**?",
+          "options": [
+            "25",
+            "52",
+            "15"
+          ],
+          "answer": "25"
+        },
+        {
+          "type": "choice",
+          "question": "How do you say 31?",
+          "options": [
+            "een-en-dertig",
+            "dertig-en-een",
+            "drie-en-een"
+          ],
+          "answer": "een-en-dertig"
+        },
+        {
+          "type": "fill",
+          "af": "twintig + twintig = ___",
+          "en": "20 + 20 = ?",
+          "answers": [
+            "veertig"
+          ],
+          "options": [
+            "veertig",
+            "vyftig",
+            "dertig"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "twenty-two",
+          "answers": [
+            "twee-en-twintig"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "sestig",
+          "answers": [
+            "sixty",
+            "60"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "vyftig + vyftig = ___",
+          "en": "50 + 50 = ?",
+          "answers": [
+            "honderd"
+          ],
+          "options": [
+            "honderd",
+            "sestig",
+            "tien"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "u11",
+  "level": "A1",
+  "number": 11,
+  "title": "My, your & Jan se kar",
+  "titleAf": "Besit",
+  "icon": "🔑",
+  "lessons": [
+    {
+      "id": "u11-1",
+      "title": "Whose is it?",
+      "explanation": [
+        "You know **my** and **jou**. Also: **sy** (his, the same word as *she*), **haar** (her), **ons** (our), **hulle** (their).",
+        "For names and people, use **se**: **Jan se kar** = Jan's car. **my ma se huis** = my mom's house.",
+        "New words: **kar** (car), **sleutel** (key), **ma** (mom), **pa** (dad), **rooi** (red)."
+      ],
+      "examples": [
+        {
+          "af": "Dit is my boek.",
+          "en": "It is my book."
+        },
+        {
+          "af": "Jan se kar is rooi.",
+          "en": "Jan's car is red."
+        },
+        {
+          "af": "Waar is jou sleutels?",
+          "en": "Where are your keys?"
+        },
+        {
+          "af": "My ma se huis is groot.",
+          "en": "My mom's house is big."
+        }
+      ],
+      "vocab": [
+        "haar",
+        "se",
+        "kar",
+        "sleutel",
+        "ma",
+        "pa",
+        "rooi"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Jan's car is red.",
+          "answers": [
+            "Jan se kar is rooi."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "It is my book.",
+          "answers": [
+            "Dit is my boek."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Dit is ___ kar. (his)",
+          "en": "It is his car.",
+          "answers": [
+            "sy"
+          ],
+          "options": [
+            "sy",
+            "hy",
+            "haar"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "My mom's house is big.",
+          "af": "My ma se huis is groot."
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Waar is jou sleutels?",
+          "answers": [
+            "Where are your keys?"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Haar pa is siek.",
+          "answers": [
+            "Her dad is sick.",
+            "Her father is sick.",
+            "Her dad is ill."
+          ]
+        }
+      ],
+      "names": [
+        "Jan"
+      ]
+    }
+  ]
+}

@@ -46,6 +46,18 @@ export function vocabEntries(lesson: Lesson, data: AppData): Entry[] {
   return lesson.vocab.map((v) => data.byHeadword.get(v.toLowerCase())).filter((e): e is Entry => !!e);
 }
 
+/** Every word taught up to and including this lesson, in course order. Quizzes only ever use these,
+ *  so a learner never meets a word they haven't been taught. */
+export function taughtUpTo(lesson: Lesson, data: AppData): Entry[] {
+  const out = new Map<string, Entry>();
+  for (const u of [...data.units].sort((a, b) => a.number - b.number))
+    for (const l of u.lessons) {
+      for (const e of vocabEntries(l, data)) out.set(e.id, e);
+      if (l.id === lesson.id) return [...out.values()];
+    }
+  return [...out.values()];
+}
+
 /** Normalised English glosses of an entry's main meaning, for spotting synonyms. */
 export function glossSet(e: Entry, settings: Settings): Set<string> {
   const s = visibleSenses(e, settings)[0] ?? e.senses[0];
@@ -79,8 +91,8 @@ export function buildSession(lesson: Lesson, data: AppData, settings: Settings, 
   const fresh = vocab.filter((e) => !progress.cards[e.id]);
   for (const e of fresh.slice(0, 8)) steps.push({ kind: "intro", entry: e });
 
-  const extraPool = data.dictionary.entries.filter((e) => e.cefr === "A1" && e.verification.confidence !== "unverified" && e.senses.every((s) => (s.severity ?? 0) < 2));
-  const pool = [...vocab, ...shuffle(extraPool).slice(0, 20)];
+  // wrong options come only from words already taught (this lesson first, then earlier ones)
+  const pool = taughtUpTo(lesson, data).filter((e) => e.headword !== "'n" && e.senses.every((s) => (s.severity ?? 0) < 2 || lesson.vocab.includes(e.headword)));
   const gen: Step[] = [];
   for (const e of shuffle(vocab).slice(0, 5)) {
     const afToEn = Math.random() < 0.6;

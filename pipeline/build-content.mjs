@@ -355,6 +355,57 @@ for (const unit of units) {
   }
 }
 
+// ------------------------------------------------------- "taught before used"
+// Every Afrikaans word a learner sees in a lesson's examples and exercises must have been taught
+// in that lesson's vocabulary or an earlier lesson (or be a listed form, e.g. a plural, of a
+// taught word). Nothing should have to be guessed.
+{
+  const formToLemma = new Map();
+  for (const d of dictionary)
+    for (const f of Object.values(d.forms ?? {}))
+      for (const w of tokenize(f)) formToLemma.set(w, keyOf(d.headword));
+  const taught = new Set();
+  const teach = (v) => {
+    taught.add(keyOf(v));
+    for (const w of tokenize(v)) for (const part of w.split("-")) taught.add(part);
+  };
+  const known = (w) => taught.has(w) || (formToLemma.has(w) && taught.has(formToLemma.get(w)));
+  const afTexts = (lesson) => {
+    const out = (lesson.examples ?? []).map((e) => e.af);
+    for (const ex of lesson.exercises ?? []) {
+      if (ex.type === "translate") out.push(...(ex.from === "en" ? ex.answers : [ex.prompt]));
+      if (ex.type === "order") out.push(ex.af, ...(ex.extra ?? []));
+      if (ex.type === "fill") {
+        out.push(...ex.answers.map((a) => ex.af.replace("___", a)));
+        for (const o of ex.options ?? []) if (byHeadword.has(keyOf(o))) out.push(o);
+      }
+      if (ex.type === "transform") out.push(ex.from, ...ex.answers);
+      if (ex.type === "rude") out.push(ex.af);
+    }
+    return out;
+  };
+  const ordered = [...units].sort((a, b) => a.number - b.number);
+  const names = new Set(); // people and places introduced by a lesson (e.g. Anna, Kaapstad)
+  for (const unit of ordered)
+    for (const lesson of unit.lessons ?? []) {
+      const where = `${unit.id}/${lesson.id}`;
+      for (const n of lesson.names ?? []) names.add(keyOf(n));
+      const fresh = (lesson.vocab ?? []).filter((v) => !taught.has(keyOf(v)));
+      if (fresh.length > 10) issue("warning", "pacing", where, `${fresh.length} new words in one lesson (aim for 10 or fewer)`);
+      (lesson.vocab ?? []).forEach(teach);
+      for (const text of afTexts(lesson)) {
+        const raw = text.replace(/\([^)]*\)/g, " ").match(/'n|[\p{L}\p{M}'-]+/gu) ?? [];
+        raw.forEach((tok, i) => {
+          if (i > 0 && /^\p{Lu}/u.test(tok) && !byHeadword.has(keyOf(tok))) return; // a name, e.g. Anna, Kaapstad
+          for (const w of tok.toLowerCase().split("-").filter(Boolean)) {
+            if (/^\d/.test(w) || known(w) || names.has(w)) continue;
+            issue("error", "untaught", where, `"${w}" is used before it is taught — in "${text}"`);
+          }
+        });
+      }
+    }
+}
+
 // ------------------------------------------------------- extras
 const extras = JSON.parse(read("content/extras.json"));
 for (const group of extras.phrasebook)

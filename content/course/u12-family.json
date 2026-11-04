@@ -1,0 +1,96 @@
+{
+  "id": "u12",
+  "level": "A1",
+  "number": 12,
+  "title": "Family",
+  "titleAf": "Familie",
+  "icon": "👪",
+  "lessons": [
+    {
+      "id": "u12-1",
+      "title": "My family",
+      "explanation": [
+        "**familie** = family / relatives, **ouers** = parents.",
+        "**broer** = brother, **suster** = sister, **ouma** = granny, **oupa** = grandpa. South Africans say *ouma* and *oupa* even in English!",
+        "**plaas** = farm, **op** = on, **tuis** = at home."
+      ],
+      "examples": [
+        {
+          "af": "Ek het twee broers.",
+          "en": "I have two brothers."
+        },
+        {
+          "af": "My ouma woon op 'n plaas.",
+          "en": "My granny lives on a farm."
+        },
+        {
+          "af": "My ouers is tuis.",
+          "en": "My parents are at home."
+        },
+        {
+          "af": "Haar suster is baie gelukkig.",
+          "en": "Her sister is very happy."
+        }
+      ],
+      "vocab": [
+        "familie",
+        "ouers",
+        "broer",
+        "suster",
+        "ouma",
+        "oupa",
+        "plaas",
+        "op",
+        "tuis"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I have two brothers.",
+          "answers": [
+            "Ek het twee broers."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "My ouma woon op 'n plaas.",
+          "answers": [
+            "My granny lives on a farm.",
+            "My grandmother lives on a farm.",
+            "My gran lives on a farm."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "My parents are at home.",
+          "af": "My ouers is tuis."
+        },
+        {
+          "type": "fill",
+          "af": "My ___ is tien. (sister)",
+          "en": "My sister is ten.",
+          "answers": [
+            "suster"
+          ],
+          "options": [
+            "suster",
+            "broer",
+            "ouma"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Is jou oupa tuis?",
+          "answers": [
+            "Is your grandpa home?",
+            "Is your grandfather at home?",
+            "Is your grandpa at home?"
+          ]
+        }
+      ]
+    }
+  ]
+}

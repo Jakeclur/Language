@@ -1,0 +1,263 @@
+{
+  "id": "u07",
+  "level": "A1",
+  "number": 7,
+  "title": "Days & time",
+  "titleAf": "Dae en tyd",
+  "icon": "📅",
+  "lessons": [
+    {
+      "id": "u07-1",
+      "title": "Today, tomorrow, yesterday",
+      "explanation": [
+        "**vandag** = today, **gister** = yesterday.",
+        "**môre** = tomorrow. You already know it from **goeie môre**: it also means *morning*.",
+        "**dag** = day (plural **dae**), **week** = week."
+      ],
+      "examples": [
+        {
+          "af": "Ek is vandag moeg.",
+          "en": "I am tired today."
+        },
+        {
+          "af": "Ek werk môre.",
+          "en": "I'm working tomorrow."
+        },
+        {
+          "af": "Ons speel vandag sokker.",
+          "en": "We're playing soccer today."
+        },
+        {
+          "af": "'n Week het sewe dae.",
+          "en": "A week has seven days."
+        }
+      ],
+      "vocab": [
+        "vandag",
+        "môre",
+        "gister",
+        "dag",
+        "week"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I am tired today.",
+          "answers": [
+            "Ek is vandag moeg.",
+            "Vandag is ek moeg."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**gister** means…",
+          "options": [
+            "yesterday",
+            "tomorrow",
+            "today"
+          ],
+          "answer": "yesterday"
+        },
+        {
+          "type": "fill",
+          "af": "'n Week het sewe ___. (days)",
+          "en": "A week has seven days.",
+          "answers": [
+            "dae"
+          ],
+          "options": [
+            "dae",
+            "dags",
+            "daë"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek werk môre.",
+          "answers": [
+            "I am working tomorrow.",
+            "I work tomorrow.",
+            "I'll work tomorrow.",
+            "I will work tomorrow."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "We are playing soccer today.",
+          "af": "Ons speel vandag sokker."
+        },
+        {
+          "type": "choice",
+          "question": "**môre** can mean…",
+          "options": [
+            "tomorrow and morning",
+            "yesterday",
+            "evening"
+          ],
+          "answer": "tomorrow and morning"
+        }
+      ]
+    },
+    {
+      "id": "u07-2",
+      "title": "Days of the week",
+      "explanation": [
+        "**Maandag, Dinsdag, Woensdag, Donderdag, Vrydag, Saterdag, Sondag**",
+        "Days are written with a capital letter, just like in English."
+      ],
+      "examples": [
+        {
+          "af": "Vandag is Maandag.",
+          "en": "Today is Monday."
+        },
+        {
+          "af": "Môre is Dinsdag.",
+          "en": "Tomorrow is Tuesday."
+        },
+        {
+          "af": "Ons speel Saterdag sokker.",
+          "en": "We're playing soccer on Saturday."
+        }
+      ],
+      "vocab": [
+        "Maandag",
+        "Dinsdag",
+        "Woensdag",
+        "Donderdag",
+        "Vrydag",
+        "Saterdag",
+        "Sondag"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Today is Friday.",
+          "answers": [
+            "Vandag is Vrydag."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Maandag, Dinsdag, ___, Donderdag",
+          "en": "Monday, Tuesday, …, Thursday",
+          "answers": [
+            "Woensdag"
+          ],
+          "options": [
+            "Woensdag",
+            "Vrydag",
+            "Sondag"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "Which day comes after **Vrydag**?",
+          "options": [
+            "Saterdag",
+            "Donderdag",
+            "Sondag"
+          ],
+          "answer": "Saterdag"
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Môre is Sondag.",
+          "answers": [
+            "Tomorrow is Sunday."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "Today is Thursday.",
+          "af": "Vandag is Donderdag."
+        }
+      ]
+    },
+    {
+      "id": "u07-3",
+      "title": "What time is it?",
+      "explanation": [
+        "**Hoe laat is dit?** = What time is it? (literally *how late is it?*)",
+        "**Dit is drie-uur.** = It's three o'clock. (**uur** = hour, o'clock)",
+        "Careful: **half vier** means *half past three*, because it's half-way to four!",
+        "**nou** = now."
+      ],
+      "examples": [
+        {
+          "af": "Hoe laat is dit?",
+          "en": "What time is it?"
+        },
+        {
+          "af": "Dit is drie-uur.",
+          "en": "It's three o'clock."
+        },
+        {
+          "af": "Dit is half vier.",
+          "en": "It's half past three."
+        },
+        {
+          "af": "Dit is nou tien-uur.",
+          "en": "It's ten o'clock now."
+        }
+      ],
+      "vocab": [
+        "laat",
+        "uur",
+        "half",
+        "nou"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "What time is it?",
+          "answers": [
+            "Hoe laat is dit?"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**half drie** means…",
+          "options": [
+            "2:30",
+            "3:30",
+            "3:15"
+          ],
+          "answer": "2:30"
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Dit is nou vyf-uur.",
+          "answers": [
+            "It is five o'clock now.",
+            "It's five o'clock now.",
+            "It is now five o'clock."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Dit is twaalf-___.",
+          "en": "It's twelve o'clock.",
+          "answers": [
+            "uur"
+          ],
+          "options": [
+            "uur",
+            "nou",
+            "laat"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "It is half past six.",
+          "af": "Dit is half sewe."
+        }
+      ]
+    }
+  ]
+}

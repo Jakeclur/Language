@@ -254,8 +254,8 @@ oom | noun | uncle; (polite) older man | neutral | | A1 | family | pl=ooms | Goe
 tannie | noun | aunt; (polite) older woman | neutral | | A1 | family | pl=tannies | Dankie, Tannie. | Thank you, ma'am. | Used respectfully for any older woman.
 neef | noun | cousin (male); nephew | neutral | | A2 | family | pl=neefs | | |
 niggie | noun | cousin (female); niece | neutral | | A2 | family | pl=niggies | | |
-man | noun | man; husband | neutral | | A1 | family,people | pl=mans | | |
-vrou | noun | woman; wife | neutral | | A1 | family,people | pl=vroue | | |
+man | noun | man; husband | neutral | | A1 | family,people | pl=mans;dim=mannetjie | | |
+vrou | noun | woman; wife | neutral | | A1 | family,people | pl=vroue;dim=vroutjie | | |
 mens | noun | person; human; one (you) | neutral | | A1 | people | pl=mense | | |
 vriend | noun | friend (male) | neutral | | A1 | people | pl=vriende | | |
 vriendin | noun | friend (female); girlfriend | neutral | | A1 | people | pl=vriendinne | | |
@@ -268,9 +268,9 @@ badkamer | noun | bathroom | neutral | | A1 | home | pl=badkamers | | |
 kombuis | noun | kitchen | neutral | | A1 | home | pl=kombuise | | |
 sitkamer | noun | lounge; living room | neutral | | A1 | home | pl=sitkamers | | |
 tuin | noun | garden; yard | neutral | | A1 | home | pl=tuine | | |
-deur | noun | door; through; by | neutral | | A1 | home | pl=deure | | |
+deur | noun | door; through; by | neutral | | A1 | home | pl=deure;dim=deurtjie | | |
 venster | noun | window | neutral | | A1 | home | pl=vensters | | |
-tafel | noun | table | neutral | | A1 | home | pl=tafels | | |
+tafel | noun | table | neutral | | A1 | home | pl=tafels;dim=tafeltjie | | |
 stoel | noun | chair | neutral | | A1 | home | pl=stoele | | |
 bed | noun | bed | neutral | | A1 | home | pl=beddens | | |
 yskas | noun | fridge | neutral | | A1 | home,food | pl=yskaste | | |
@@ -290,7 +290,7 @@ kaas | noun | cheese | neutral | | A1 | food | | | |
 eier | noun | egg | neutral | | A1 | food | pl=eiers | | |
 vleis | noun | meat | neutral | | A1 | food | | | |
 hoender | noun | chicken | neutral | | A1 | food,animals | pl=hoenders | | |
-vis | noun | fish | neutral | | A1 | food,animals | pl=visse | | |
+vis | noun | fish | neutral | | A1 | food,animals | pl=visse;dim=vissie | | |
 groente | noun | vegetables | neutral | | A1 | food | | | |
 vrugte | noun | fruit | neutral | | A1 | food | | | |
 appel | noun | apple | neutral | | A1 | food | pl=appels | | |
@@ -363,7 +363,7 @@ wolk | noun | cloud | neutral | | A1 | weather | pl=wolke | | |
 see | noun | sea | neutral | | A1 | nature | pl=seë | | |
 strand | noun | beach | neutral | | A1 | nature,travel | pl=strande | | |
 berg | noun | mountain | neutral | | A1 | nature | pl=berge | | |
-boom | noun | tree | neutral | | A1 | nature | pl=bome | | |
+boom | noun | tree | neutral | | A1 | nature | pl=bome;dim=boompie | | |
 blom | noun | flower | neutral | | A1 | nature | pl=blomme | | |
 # ===== Animals =====
 dier | noun | animal | neutral | | A1 | animals | pl=diere | | |
@@ -376,7 +376,7 @@ voël | noun | bird | neutral | | A1 | animals | pl=voëls | | |
 leeu | noun | lion | neutral | | A1 | animals | pl=leeus | | |
 olifant | noun | elephant | neutral | | A1 | animals | pl=olifante | | |
 # ===== Body & health =====
-kop | noun | head | neutral | | A1 | body | pl=koppe | My kop is seer. | My head hurts. |
+kop | noun | head | neutral | | A1 | body | pl=koppe;dim=koppie | My kop is seer. | My head hurts. |
 oog | noun | eye | neutral | | A1 | body | pl=oë | | |
 oor | noun | ear; over; about | neutral | | A1 | body | pl=ore | | |
 neus | noun | nose | neutral | | A1 | body | pl=neuse | | |
@@ -442,3 +442,7 @@ rugby | noun | rugby | neutral | | A1 | sport | | | |
 krieket | noun | cricket | neutral | | A1 | sport | | | |
 musiek | noun | music | neutral | | A1 | music | | | |
 liedjie | noun | song | neutral | | A1 | music | pl=liedjies | | |
+# ===== Added for the gradual course =====
+moenie | particle | don't (telling someone not to) | neutral | | A1 | grammar,negation | | Moenie huil nie! | Don't cry! | Always paired with "nie" at the end of the sentence.
+aangename kennis | phrase | pleased to meet you | neutral | | A1 | greetings | | Aangename kennis! | Pleased to meet you! |
+half | adj | half; half past (in times: "half vier" = 3:30) | neutral | | A1 | time | | Dit is half vier. | It is half past three. | "half vier" means half-way to four, so 3:30.

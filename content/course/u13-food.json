@@ -1,0 +1,88 @@
+{
+  "id": "u13",
+  "level": "A1",
+  "number": 13,
+  "title": "Food & the braai",
+  "titleAf": "Kos en die braai",
+  "icon": "🔥",
+  "lessons": [
+    {
+      "id": "u13-1",
+      "title": "Lekker food",
+      "explanation": [
+        "**lekker** is the most useful word in Afrikaans: tasty, nice, great. **Die kos is lekker!** (**kos** also means food.)",
+        "A **braai** is a South African barbecue, a big part of social life. You'll eat **vleis** (meat) and **boerewors** (spiced farm sausage).",
+        "**hou** = hold: **Ons hou 'n braai.** = We're having a braai."
+      ],
+      "examples": [
+        {
+          "af": "Die kos is baie lekker!",
+          "en": "The food is very tasty!"
+        },
+        {
+          "af": "Ons hou Saterdag 'n braai.",
+          "en": "We're having a braai on Saturday."
+        },
+        {
+          "af": "Ek eet vleis en boerewors.",
+          "en": "I'm eating meat and boerewors."
+        }
+      ],
+      "vocab": [
+        "lekker",
+        "braai",
+        "vleis",
+        "boerewors",
+        "hou"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "The food is tasty!",
+          "answers": [
+            "Die kos is lekker!"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "We're having a braai on Saturday.",
+          "af": "Ons hou Saterdag 'n braai."
+        },
+        {
+          "type": "fill",
+          "af": "Die vleis is ___! (tasty)",
+          "en": "The meat is tasty!",
+          "answers": [
+            "lekker"
+          ],
+          "options": [
+            "lekker",
+            "groot",
+            "moeg"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek is honger. Die boerewors is lekker!",
+          "answers": [
+            "I am hungry. The boerewors is tasty!",
+            "I'm hungry. The boerewors is tasty!",
+            "I'm hungry. The boerewors is nice!"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "A **braai** is…",
+          "options": [
+            "a South African barbecue",
+            "a kind of bread",
+            "a farm"
+          ],
+          "answer": "a South African barbecue"
+        }
+      ]
+    }
+  ]
+}

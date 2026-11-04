@@ -44,6 +44,8 @@ export interface Lesson {
   explanation: string[];
   examples: { af: string; en: string }[];
   vocab: string[];
+  /** people and places used in this lesson's sentences (e.g. Anna, Kaapstad) */
+  names?: string[];
   exercises: Exercise[];
 }
 

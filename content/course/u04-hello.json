@@ -1,0 +1,292 @@
+{
+  "id": "u04",
+  "level": "A1",
+  "number": 4,
+  "title": "Hello! Introductions",
+  "titleAf": "Hallo! Kennismaking",
+  "icon": "👋",
+  "lessons": [
+    {
+      "id": "u04-1",
+      "title": "Greetings",
+      "explanation": [
+        "**hallo** = hello, any time of day.",
+        "More polite: **goeie môre** (good morning), **goeie middag** (good afternoon), **goeie naand** (good evening).",
+        "**totsiens** = goodbye.",
+        "**dankie** = thank you, **asseblief** = please."
+      ],
+      "examples": [
+        {
+          "af": "Hallo!",
+          "en": "Hello!"
+        },
+        {
+          "af": "Goeie môre!",
+          "en": "Good morning!"
+        },
+        {
+          "af": "Twee, asseblief.",
+          "en": "Two, please."
+        },
+        {
+          "af": "Dankie! Totsiens!",
+          "en": "Thank you! Goodbye!"
+        }
+      ],
+      "vocab": [
+        "hallo",
+        "goeie môre",
+        "goeie middag",
+        "goeie naand",
+        "totsiens",
+        "dankie",
+        "asseblief"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Good morning!",
+          "answers": [
+            "Goeie môre!"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "It's 7 pm. How do you greet someone politely?",
+          "options": [
+            "Goeie naand",
+            "Goeie môre",
+            "Goeie middag"
+          ],
+          "answer": "Goeie naand"
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Totsiens!",
+          "answers": [
+            "Goodbye!",
+            "Bye!"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Drie, ___. (please)",
+          "en": "Three, please.",
+          "answers": [
+            "asseblief"
+          ],
+          "options": [
+            "asseblief",
+            "dankie",
+            "hallo"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Thank you!",
+          "answers": [
+            "Dankie!"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "Good afternoon!",
+          "af": "Goeie middag!"
+        }
+      ]
+    },
+    {
+      "id": "u04-2",
+      "title": "How are you?",
+      "explanation": [
+        "**Hoe gaan dit?** = How are you? (literally *how goes it?*)",
+        "Answer: **Dit gaan goed, dankie.** = I'm fine, thanks.",
+        "Ask back: **En met jou?** = And you? (**met** = with, **jou** = you, after a word like *met*)."
+      ],
+      "examples": [
+        {
+          "af": "Hoe gaan dit?",
+          "en": "How are you?"
+        },
+        {
+          "af": "Dit gaan goed, dankie.",
+          "en": "I'm fine, thanks."
+        },
+        {
+          "af": "En met jou?",
+          "en": "And you?"
+        },
+        {
+          "af": "Hallo! Hoe gaan dit met jou?",
+          "en": "Hello! How are you?"
+        }
+      ],
+      "vocab": [
+        "hoe gaan dit",
+        "goed",
+        "met",
+        "jou"
+      ],
+      "exercises": [
+        {
+          "type": "order",
+          "en": "I'm fine, thanks.",
+          "af": "Dit gaan goed, dankie."
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Hoe gaan dit?",
+          "answers": [
+            "How are you?",
+            "How is it going?",
+            "How's it going?"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Dit gaan ___, dankie.",
+          "en": "I'm fine, thanks.",
+          "answers": [
+            "goed"
+          ],
+          "options": [
+            "goed",
+            "moeg",
+            "baie"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "And you?",
+          "answers": [
+            "En met jou?",
+            "En jy?"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Hello! How are you?",
+          "answers": [
+            "Hallo! Hoe gaan dit?",
+            "Hallo! Hoe gaan dit met jou?"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "Your friend asks **Hoe gaan dit?** A good reply is…",
+          "options": [
+            "Dit gaan goed, dankie.",
+            "Totsiens!",
+            "Goeie naand."
+          ],
+          "answer": "Dit gaan goed, dankie."
+        }
+      ]
+    },
+    {
+      "id": "u04-3",
+      "title": "My name is…",
+      "explanation": [
+        "**My naam is …** = My name is … .",
+        "**Wat is jou naam?** = What is your name? (**wat** = what)",
+        "**u** is the polite *you*. Use it with older people and strangers: **Wat is u naam?**",
+        "Older people are often called **Oom** (uncle) and **Tannie** (auntie), even if they aren't family. It's a sign of respect.",
+        "**Aangename kennis!** = Pleased to meet you!"
+      ],
+      "examples": [
+        {
+          "af": "My naam is Anna.",
+          "en": "My name is Anna."
+        },
+        {
+          "af": "Wat is jou naam?",
+          "en": "What is your name?"
+        },
+        {
+          "af": "Goeie môre, Oom. Hoe gaan dit met u?",
+          "en": "Good morning, sir. How are you?"
+        },
+        {
+          "af": "Aangename kennis!",
+          "en": "Pleased to meet you!"
+        }
+      ],
+      "vocab": [
+        "my",
+        "naam",
+        "wat",
+        "u",
+        "oom",
+        "tannie",
+        "aangename kennis"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "My name is Anna.",
+          "answers": [
+            "My naam is Anna.",
+            "Ek is Anna."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "What is your name?",
+          "af": "Wat is jou naam?"
+        },
+        {
+          "type": "choice",
+          "question": "You're greeting your friend's grandmother. Which *you* is polite?",
+          "options": [
+            "u",
+            "jy",
+            "julle"
+          ],
+          "answer": "u"
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Aangename kennis!",
+          "answers": [
+            "Pleased to meet you!",
+            "Nice to meet you!"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Hoe gaan dit met ___, Oom?",
+          "en": "How are you, sir? (polite)",
+          "answers": [
+            "u"
+          ],
+          "options": [
+            "u",
+            "jy",
+            "hy"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**Oom** and **Tannie** are used for…",
+          "options": [
+            "any older man or woman, to show respect",
+            "only your real uncle and aunt",
+            "children"
+          ],
+          "answer": "any older man or woman, to show respect"
+        }
+      ],
+      "names": [
+        "Anna"
+      ]
+    }
+  ]
+}

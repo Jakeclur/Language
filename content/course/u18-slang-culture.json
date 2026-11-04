@@ -1,22 +1,19 @@
 {
-  "id": "b1-15",
+  "id": "u18",
   "level": "B1",
-  "number": 15,
+  "number": 18,
   "title": "Slang & culture: talk like a local",
   "titleAf": "Sleng en kultuur",
   "icon": "😎",
   "lessons": [
     {
-      "id": "b1-15-1",
+      "id": "u18-1",
       "title": "Everyday slang",
       "explanation": [
-        "These words are everywhere in casual South African speech — and many are used in South African English too.",
-        "**lekker** — great, nice. **Dit was lekker!**",
-        "**kuier** — to visit/hang out (a core cultural word: relaxed time together). **Kom kuier by ons!**",
-        "**ou** — guy (**die ouens** = the guys). **'n Goeie ou** = a good guy.",
-        "**howzit** — hi, how's it going.",
-        "**babbelas** — hangover. **dop** — a drink, or to fail a test.",
-        "**bakkie** — pickup truck. **robot** — traffic light!"
+        "These words are everywhere in casual South African speech, and many are used in South African English too.",
+        "**kuier** = visit / hang out: relaxed time together, a core part of the culture. **Kom kuier by ons!** (**by** = at / with)",
+        "**ou** = guy (**'n goeie ou** = a good guy). **babbelas** = hangover. **dop** = a drink, or to fail a test (**toets**).",
+        "**bakkie** = pickup truck. **robot** = traffic light! **lus vir** = in the mood for (**vir** = for)."
       ],
       "examples": [
         {
@@ -32,24 +29,26 @@
           "en": "I've got a hangover."
         },
         {
-          "af": "Draai links by die robot.",
-          "en": "Turn left at the traffic light."
+          "af": "Die robot is rooi.",
+          "en": "The traffic light is red."
         }
       ],
       "vocab": [
-        "lekker",
         "kuier",
         "ou",
         "babbelas",
         "dop",
         "bakkie",
         "robot",
-        "lus"
+        "lus",
+        "by",
+        "vir",
+        "toets"
       ],
       "exercises": [
         {
           "type": "choice",
-          "question": "In South Africa, a \"robot\" on the road is…",
+          "question": "In South Africa, a **robot** on the road is…",
           "options": [
             "a traffic light",
             "a speed camera",
@@ -59,10 +58,10 @@
         },
         {
           "type": "choice",
-          "question": "\"Hy het die toets gedop\" means…",
+          "question": "**Hy het die toets gedop** means…",
           "options": [
-            "He passed the test",
             "He failed the test",
+            "He passed the test",
             "He drank at the test"
           ],
           "answer": "He failed the test"
@@ -72,8 +71,7 @@
           "from": "en",
           "prompt": "Come visit us!",
           "answers": [
-            "Kom kuier by ons!",
-            "Kom kuier!"
+            "Kom kuier by ons!"
           ]
         },
         {
@@ -88,7 +86,7 @@
         },
         {
           "type": "fill",
-          "af": "Ek het 'n ___ (hangover).",
+          "af": "Ek het 'n ___. (hangover)",
           "en": "I've got a hangover.",
           "answers": [
             "babbelas"
@@ -98,20 +96,27 @@
             "bakkie",
             "braai"
           ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Hy is 'n goeie ou.",
+          "answers": [
+            "He is a good guy.",
+            "He's a good guy."
+          ]
         }
       ]
     },
     {
-      "id": "b1-15-2",
+      "id": "u18-2",
       "title": "Little words with big flavour",
       "explanation": [
-        "These small words are hard to translate but make you sound natural:",
-        "**nou-nou** — in a moment (NOT \"right now\"!). **Ek kom nou-nou.**",
-        "**sommer** — just, for no particular reason. **Ek het sommer gekom.**",
-        "**mos** — you know, after all. **Ek het mos gesê!** (I told you so!)",
-        "**darem** — at least, really. **Dit is darem mooi!**",
-        "**ja-nee** — yes indeed (literally yes-no!).",
-        "**foeitog** — aww, shame (sympathy). **eina** — ouch. **ag** — oh."
+        "These small words make you sound natural:",
+        "**nou-nou** = in a moment (NOT \"right now\"!). **Ek kom nou-nou.**",
+        "**sommer** = just, for no particular reason. **mos** = you know, after all: **Ek het mos gesê!** (I told you so! **sê** = say)",
+        "**darem** = at least, really. **ja-nee** = yes indeed (literally yes-no!).",
+        "**eina** = ouch. **ag** = oh. **warm** = warm, hot."
       ],
       "examples": [
         {
@@ -127,8 +132,8 @@
           "en": "Yes indeed, it's hot today."
         },
         {
-          "af": "Foeitog, die arme hondjie!",
-          "en": "Aww, the poor little dog!"
+          "af": "Ag nee!",
+          "en": "Oh no!"
         }
       ],
       "vocab": [
@@ -138,15 +143,17 @@
         "darem",
         "ja-nee",
         "eina",
-        "ag"
+        "ag",
+        "sê",
+        "warm"
       ],
       "exercises": [
         {
           "type": "choice",
-          "question": "Your friend says \"Ek kom nou-nou.\" When will they arrive?",
+          "question": "Your friend says **Ek kom nou-nou.** When will they arrive?",
           "options": [
-            "Immediately",
             "In a little while",
+            "Immediately",
             "Never"
           ],
           "answer": "In a little while"
@@ -156,17 +163,17 @@
           "question": "You stub your toe. You say…",
           "options": [
             "Eina!",
-            "Foeitog!",
-            "Ja-nee!"
+            "Ja-nee!",
+            "Mos!"
           ],
           "answer": "Eina!"
         },
         {
           "type": "choice",
-          "question": "\"Ja-nee\" means…",
+          "question": "**ja-nee** means…",
           "options": [
-            "maybe",
             "yes indeed",
+            "maybe",
             "no"
           ],
           "answer": "yes indeed"
@@ -180,16 +187,26 @@
             "I did tell you!",
             "I said so!"
           ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Dit is darem warm vandag.",
+          "answers": [
+            "It really is hot today.",
+            "It is really warm today.",
+            "It's really hot today."
+          ]
         }
       ]
     },
     {
-      "id": "b1-15-3",
+      "id": "u18-3",
       "title": "Terms of endearment & respect",
       "explanation": [
-        "**skat**, **liefie**, **bokkie** — darling, sweetheart (partners, children).",
-        "**Oom** and **Tannie** — respectful for any older man/woman. Using **jy** with an older stranger can sound rude; use **u** or Oom/Tannie.",
-        "**boer maak 'n plan** — \"a farmer makes a plan\": the famous South African can-do attitude."
+        "**skat**, **liefie**, **bokkie** = darling, sweetheart (for partners and children).",
+        "**Oom** and **Tannie** show respect for any older man or woman. Using **jy** with an older stranger can sound rude: use **u**, or Oom / Tannie.",
+        "**Boer maak 'n plan** = \"a farmer makes a plan\": the famous South African can-do attitude, meaning *we'll find a way*. **bekommer** = worry."
       ],
       "examples": [
         {
@@ -205,30 +222,37 @@
         "skat",
         "liefie",
         "bokkie",
-        "oom",
-        "tannie",
-        "boer maak 'n plan"
+        "boer maak 'n plan",
+        "bekommer"
       ],
       "exercises": [
         {
           "type": "choice",
           "question": "You're thanking an older woman at a shop. Most respectful:",
           "options": [
-            "Dankie, bokkie!",
             "Dankie, Tannie!",
-            "Dankie, bru!"
+            "Dankie, bokkie!",
+            "Dankie, ou!"
           ],
           "answer": "Dankie, Tannie!"
         },
         {
           "type": "choice",
-          "question": "\"Boer maak 'n plan\" means…",
+          "question": "**Boer maak 'n plan** means…",
           "options": [
-            "Farmers plan their crops",
             "We'll find a way",
+            "Farmers plan their crops",
             "Make a farm plan"
           ],
           "answer": "We'll find a way"
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Don't worry!",
+          "answers": [
+            "Moenie jou bekommer nie!"
+          ]
         }
       ]
     }

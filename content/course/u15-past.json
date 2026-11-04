@@ -1,0 +1,164 @@
+{
+  "id": "u15",
+  "level": "A2",
+  "number": 15,
+  "title": "Past tense: het + ge-",
+  "titleAf": "Die verlede tyd",
+  "icon": "⏪",
+  "lessons": [
+    {
+      "id": "u15-1",
+      "title": "One past tense",
+      "explanation": [
+        "Afrikaans has just **one** everyday past tense: **het** + the verb with **ge-** in front, placed at the end.",
+        "**Ek eet.** (I eat) → **Ek het geëet.** (I ate / I have eaten)",
+        "**Ek speel sokker.** → **Ek het sokker gespeel.** The **ge-** word goes to the end.",
+        "Verbs that already start with **be-, ge-, her-, ont-, ver-** don't get an extra ge-: **Ek het verstaan.** **Ek het betaal.**",
+        "New words: **sien** (see), **koop** (buy), **betaal** (pay), **see** (sea), **rekening** (bill)."
+      ],
+      "examples": [
+        {
+          "af": "Ek het geëet.",
+          "en": "I ate."
+        },
+        {
+          "af": "Ons het sokker gespeel.",
+          "en": "We played soccer."
+        },
+        {
+          "af": "Sy het gister 'n boek gelees.",
+          "en": "She read a book yesterday."
+        },
+        {
+          "af": "Ek het nie verstaan nie.",
+          "en": "I didn't understand."
+        }
+      ],
+      "vocab": [
+        "sien",
+        "koop",
+        "betaal",
+        "see",
+        "rekening"
+      ],
+      "exercises": [
+        {
+          "type": "transform",
+          "instruction": "Put it in the past",
+          "from": "Ek eet brood.",
+          "answers": [
+            "Ek het brood geëet."
+          ]
+        },
+        {
+          "type": "transform",
+          "instruction": "Put it in the past",
+          "from": "Hulle speel sokker.",
+          "answers": [
+            "Hulle het sokker gespeel."
+          ]
+        },
+        {
+          "type": "transform",
+          "instruction": "Put it in the past",
+          "from": "Ons betaal die rekening.",
+          "answers": [
+            "Ons het die rekening betaal."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "She read a book yesterday.",
+          "af": "Sy het gister 'n boek gelees."
+        },
+        {
+          "type": "fill",
+          "af": "Ek het 'n kar ___. (bought)",
+          "en": "I bought a car.",
+          "answers": [
+            "gekoop"
+          ],
+          "options": [
+            "gekoop",
+            "koop",
+            "gekoopt"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "We saw the sea.",
+          "answers": [
+            "Ons het die see gesien."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I didn't understand.",
+          "answers": [
+            "Ek het nie verstaan nie."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u15-2",
+      "title": "Was and had",
+      "explanation": [
+        "**is** → **was** (was / were): **Ek was moeg.**",
+        "**hê** = to have. In the present it's **het**; in the past it's **het gehad** (had): **Ons het 'n lekker tyd gehad.** (We had a great time.) **tyd** = time."
+      ],
+      "examples": [
+        {
+          "af": "Ek was gister siek.",
+          "en": "I was sick yesterday."
+        },
+        {
+          "af": "Ons het 'n lekker tyd gehad.",
+          "en": "We had a great time."
+        }
+      ],
+      "vocab": [
+        "was",
+        "tyd",
+        "hê"
+      ],
+      "exercises": [
+        {
+          "type": "transform",
+          "instruction": "Put it in the past",
+          "from": "Hy is moeg.",
+          "answers": [
+            "Hy was moeg."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "We had a great time.",
+          "answers": [
+            "Ons het 'n lekker tyd gehad."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I was sick yesterday.",
+          "answers": [
+            "Ek was gister siek.",
+            "Gister was ek siek."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Hulle was baie gelukkig.",
+          "answers": [
+            "They were very happy."
+          ]
+        }
+      ]
+    }
+  ]
+}

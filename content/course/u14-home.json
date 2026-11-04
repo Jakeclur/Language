@@ -1,0 +1,84 @@
+{
+  "id": "u14",
+  "level": "A1",
+  "number": 14,
+  "title": "At home",
+  "titleAf": "By die huis",
+  "icon": "🏡",
+  "lessons": [
+    {
+      "id": "u14-1",
+      "title": "Rooms and things",
+      "explanation": [
+        "**kamer** = room, **kombuis** = kitchen, **tuin** = garden, **deur** = door, **venster** = window, **bed** = bed.",
+        "**in die kombuis** = in the kitchen."
+      ],
+      "examples": [
+        {
+          "af": "Ma is in die kombuis.",
+          "en": "Mom is in the kitchen."
+        },
+        {
+          "af": "My kamer is klein.",
+          "en": "My room is small."
+        },
+        {
+          "af": "Die hond is in die tuin.",
+          "en": "The dog is in the garden."
+        }
+      ],
+      "vocab": [
+        "kamer",
+        "kombuis",
+        "tuin",
+        "deur",
+        "venster",
+        "bed"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Mom is in the kitchen.",
+          "answers": [
+            "Ma is in die kombuis."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "My kamer is klein.",
+          "answers": [
+            "My room is small."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "The dog is in the garden.",
+          "af": "Die hond is in die tuin."
+        },
+        {
+          "type": "fill",
+          "af": "Die kat slaap op die ___. (bed)",
+          "en": "The cat is sleeping on the bed.",
+          "answers": [
+            "bed"
+          ],
+          "options": [
+            "bed",
+            "deur",
+            "tuin"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Where is the kitchen?",
+          "answers": [
+            "Waar is die kombuis?"
+          ]
+        }
+      ]
+    }
+  ]
+}

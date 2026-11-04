@@ -39,7 +39,8 @@ function Shell() {
   const due = Object.values(progress.cards).filter((c) => isDue(c)).length;
   if (!settings.onboarded) return <Onboarding />;
   // Lessons are full-screen and distraction-free: no navigation bars.
-  if (route.startsWith("lesson-")) return <LessonPage id={route.slice(7)} />;
+  // key = route: moving to the next lesson starts a fresh lesson screen (fixes "Next lesson")
+  if (route.startsWith("lesson-")) return <LessonPage key={route} id={route.slice(7)} />;
   return (
     <div className="min-h-screen pb-24 sm:pb-0">
       <header className="hidden sm:block bg-white/90 backdrop-blur sticky top-0 z-40 border-b border-stone-100">
