@@ -10,6 +10,7 @@ import { DictionaryPage, WordPage } from "./features/Dictionary";
 import { AboutPage, GrammarPage, MorePage, Onboarding, PhrasebookPage, ProgressPage, SettingsPage, SoundsPage } from "./features/Pages";
 import { isDue } from "./lib/srs";
 import { Mascot } from "./components/Mascot";
+import { NoVoiceDialog } from "./components/NoVoiceDialog";
 
 const TABS = [
   { route: "", label: "Learn", icon: LearnIcon, match: (r: string) => r === "" || r === "learn" },
@@ -109,6 +110,7 @@ export default function App() {
     <DataCtx.Provider value={data}>
       <StoreProvider>
         <Shell />
+        <NoVoiceDialog />
       </StoreProvider>
     </DataCtx.Provider>
   );

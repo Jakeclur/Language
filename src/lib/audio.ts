@@ -12,36 +12,48 @@ export function audioFor(manifest: AudioManifest, text: string): { voice: string
 }
 
 // ---------------------------------------------------------------------------------------------
-// Device voices. Only NATURAL (neural/online) Afrikaans voices are allowed, e.g. Microsoft Edge's
-// "Microsoft Adri Online (Natural) - Afrikaans (South Africa)". Classic robotic system voices are
-// never used (PLAN.md §6).
+// Device voices, best first:
+//   1. natural (neural/online) Afrikaans voices, e.g. Edge's "Microsoft Adri Online (Natural)"
+//   2. any other Afrikaans voice on the device (e.g. Android's Google Afrikaans voice)
+//   3. only if the learner turns it on: a Dutch voice (Afrikaans grew from Dutch: close, not exact)
 const NATURAL = /natural|neural|online|premium|enhanced/i;
 
-let cached: SpeechSynthesisVoice[] | null = null;
-function naturalAfrikaansVoices(): SpeechSynthesisVoice[] {
+function voicesWhere(test: (v: SpeechSynthesisVoice) => boolean): SpeechSynthesisVoice[] {
   try {
     if (!("speechSynthesis" in window)) return [];
-    const all = window.speechSynthesis.getVoices();
-    if (!all.length) return cached ?? [];
-    cached = all.filter((v) => v.lang.toLowerCase().startsWith("af") && NATURAL.test(v.name));
-    return cached;
+    return window.speechSynthesis.getVoices().filter(test);
   } catch {
     return [];
   }
 }
+const isAf = (v: SpeechSynthesisVoice) => v.lang.toLowerCase().replace("_", "-").startsWith("af");
+const isNl = (v: SpeechSynthesisVoice) => v.lang.toLowerCase().replace("_", "-").startsWith("nl");
+const naturalFirst = (a: SpeechSynthesisVoice, b: SpeechSynthesisVoice) => Number(NATURAL.test(b.name)) - Number(NATURAL.test(a.name));
 
-/** React hook: the natural Afrikaans device voices (voices load asynchronously in most browsers). */
-export function useDeviceVoices(): SpeechSynthesisVoice[] {
-  const [voices, setVoices] = useState(naturalAfrikaansVoices);
+function useVoices(test: (v: SpeechSynthesisVoice) => boolean): SpeechSynthesisVoice[] {
+  const [voices, setVoices] = useState(() => voicesWhere(test).sort(naturalFirst));
   useEffect(() => {
     if (!("speechSynthesis" in window)) return;
-    const on = () => setVoices(naturalAfrikaansVoices());
+    const on = () => setVoices(voicesWhere(test).sort(naturalFirst));
     window.speechSynthesis.addEventListener?.("voiceschanged", on);
     on();
-    return () => window.speechSynthesis.removeEventListener?.("voiceschanged", on);
-  }, []);
+    const t = setTimeout(on, 800); // some browsers load voices late without firing the event
+    return () => {
+      clearTimeout(t);
+      window.speechSynthesis.removeEventListener?.("voiceschanged", on);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return voices;
 }
+
+/** Afrikaans voices on this device, natural ones first. */
+export const useDeviceVoices = () => useVoices(isAf);
+/** Dutch voices: an optional, clearly-labelled fallback when there's no Afrikaans voice. */
+export const useDutchVoices = () => useVoices(isNl);
+export const isNaturalVoice = (v: SpeechSynthesisVoice) => NATURAL.test(v.name);
+
+/** Ask the app to explain how to get audio (shown when a speaker is tapped with no voice). */
+export const NO_VOICE_EVENT = "leer-afrikaans:no-voice";
 
 const QUESTION_WORDS = /^(wie|wat|waar|wanneer|hoekom|waarom|hoe|hoeveel|watter|waarheen|praat|is|het|kan|mag|wil|moet|sal)\b/i;
 

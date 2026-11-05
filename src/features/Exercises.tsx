@@ -40,8 +40,8 @@ function BoldAudio({ text }: { text: string }) {
 
 /** A button that also says its Afrikaans word when tapped. */
 function SpeakingButton({ text, onClick, ...rest }: { text: string; onClick: () => void } & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick">) {
-  const { available, play } = useAudio(text);
-  return <button {...rest} onClick={() => { onClick(); if (available) play(); }} />;
+  const { hasAudio, play } = useAudio(text);
+  return <button {...rest} onClick={() => { onClick(); if (hasAudio) play(false, false); }} />;
 }
 
 const SPECIAL = ["ê", "ë", "ô", "û", "î", "ï", "é", "'n"];

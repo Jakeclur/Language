@@ -9,7 +9,7 @@ import { visibleUnits } from "./course";
 import { REPO_URL } from "../lib/report";
 import { storageAvailable } from "../lib/storage";
 import { go } from "../lib/router";
-import { useDeviceVoices } from "../lib/audio";
+import { isNaturalVoice, useDeviceVoices, useDutchVoices } from "../lib/audio";
 import { Mascot, Speech } from "../components/Mascot";
 
 export const GOALS: { id: Goal; icon: string; label: string; desc: string }[] = [
@@ -242,6 +242,26 @@ function Toggle({ on, onChange, label, desc }: { on: boolean; onChange: () => vo
   );
 }
 
+function SoundSettings() {
+  const { settings, updateSettings } = useStore();
+  const af = useDeviceVoices();
+  const nl = useDutchVoices();
+  const status = af.length
+    ? `✓ Using ${af[0].name.replace(/ - .*/, "")}${isNaturalVoice(af[0]) ? " (natural voice)" : ""}`
+    : settings.dutchFallback && nl.length ? `Using a Dutch voice (${nl[0].name.replace(/ - .*/, "")}): close to Afrikaans, not exact` : "No Afrikaans voice on this device. Open the site in Microsoft Edge on a computer to hear a natural Afrikaans voice.";
+  return (
+    <section>
+      <h2 className="text-sm font-medium text-stone-400 mb-2 px-1">Sound</h2>
+      <Card className="overflow-hidden divide-y divide-stone-100">
+        <div className="px-5 py-4 text-sm font-semibold text-stone-600">{status}</div>
+        {!af.length && nl.length > 0 && (
+          <Toggle on={settings.dutchFallback} onChange={() => updateSettings({ dutchFallback: !settings.dutchFallback })} label="Use a Dutch voice" desc="Only used because this device has no Afrikaans voice. Afrikaans grew out of Dutch, so it's close, but some sounds differ." />
+        )}
+      </Card>
+    </section>
+  );
+}
+
 export function SettingsPage() {
   const { settings, updateSettings, resetProgress } = useStore();
   const [gate, setGate] = useState<keyof Settings | null>(null);
@@ -271,6 +291,7 @@ export function SettingsPage() {
           </label>
         </Card>
       </section>
+      <SoundSettings />
       <section>
         <h2 className="text-sm font-medium text-stone-400 mb-2 px-1">Course</h2>
         <Card className="overflow-hidden">

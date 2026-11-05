@@ -1,43 +1,49 @@
 import { useEffect, useRef, useState } from "react";
 import { useData } from "../lib/dataContext";
-import { audioFor, playClip, speak, useDeviceVoices } from "../lib/audio";
+import { audioFor, NO_VOICE_EVENT, playClip, speak, useDeviceVoices, useDutchVoices } from "../lib/audio";
+import { useStore } from "../lib/store";
 
 // Words that can't be said naturally on their own are spoken in a short phrase instead.
 // 'n (a/an) is taught in the same lesson as man and vrou.
 const SPOKEN_AS: Record<string, string> = { "'n": "'n Man en 'n vrou." };
 
-/** Hook: can this text be played, and how? Recorded clips first, then a natural device voice. */
+/** Hook: play this text with the best audio available: recorded clip, then an Afrikaans device
+ *  voice, then (if the learner chose it) a Dutch voice. With none, a tap explains how to get audio. */
 export function useAudio(text: string) {
   const data = useData();
+  const { settings } = useStore();
   const clips = audioFor(data.audio, text);
-  const voices = useDeviceVoices();
+  const af = useDeviceVoices();
+  const nl = useDutchVoices();
+  const voices = af.length ? af : settings.dutchFallback ? nl : [];
   const [n, setN] = useState(0);
-  const available = clips.length > 0 || voices.length > 0;
-  const play = (slow = false) => {
+  const hasAudio = clips.length > 0 || voices.length > 0;
+  const play = (slow = false, fromTap = true) => {
     if (clips.length) {
       const c = clips[n % clips.length];
       playClip(slow ? c.url.replace(/\.(\w+)$/, ".slow.$1") : c.url);
     } else if (voices.length) speak(SPOKEN_AS[text.trim()] ?? text, voices[n % voices.length], slow);
+    else if (fromTap) window.dispatchEvent(new CustomEvent(NO_VOICE_EVENT, { detail: { dutchAvailable: nl.length > 0 } }));
     setN(n + 1); // alternate voices on each press
   };
-  return { available, play };
+  return { available: text.trim().length > 0, hasAudio, play };
 }
 
-/** Speaker button. Renders nothing when no natural audio exists, so there are no dead buttons.
+/** Speaker button. Always shown; plays the best audio available (see useAudio).
  *  `autoPlay` speaks once when it appears (used for new words and listening prompts). */
 export function AudioButton({ text, size = "md", slow = false, autoPlay = false }: { text: string; size?: "sm" | "md" | "lg"; slow?: boolean; autoPlay?: boolean }) {
-  const { available, play } = useAudio(text);
+  const { available, hasAudio, play } = useAudio(text);
   // remember WHICH text was auto-played, so the next word on the same screen plays too
   const played = useRef<string | null>(null);
   useEffect(() => {
-    if (autoPlay && available && played.current !== text) {
+    if (autoPlay && hasAudio && played.current !== text) {
       const t = setTimeout(() => {
         played.current = text;
-        play();
+        play(false, false);
       }, 250);
       return () => clearTimeout(t);
     }
-  }, [autoPlay, available, text]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [autoPlay, hasAudio, text]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!available) return null;
   const cls = { sm: "w-8 h-8 text-base", md: "w-11 h-11 text-xl", lg: "w-14 h-14 text-2xl" }[size];
   return (
