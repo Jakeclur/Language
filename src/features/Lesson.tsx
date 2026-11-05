@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useData } from "../lib/dataContext";
 import { useStore } from "../lib/store";
 import { go } from "../lib/router";
-import { buildSession, lessonList, meaning, vocabEntries, type Step } from "./course";
-import { ExerciseView, type Result } from "./Exercises";
+import { buildSession, lessonList, meaning, taughtUpTo, vocabEntries, type Step } from "./course";
+import { ExerciseView, TaughtWords, type Result } from "./Exercises";
 import { WordCard } from "./WordCard";
 import { ProgressBar } from "../components/ui";
 import { Inline, Md } from "../components/Md";
-import { AudioButton } from "../components/Audio";
+import { AudioButton, SayWords } from "../components/Audio";
 import { BottomBar, bigButton, btnColor } from "../components/BottomBar";
 import { Mascot, Speech } from "../components/Mascot";
 import { praise, unitTheme } from "../lib/theme";
@@ -170,6 +170,15 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { sc
   const [i, setI] = useState(0);
   const [result, setResult] = useState<Result>();
   const [cheer, setCheer] = useState("");
+  // every Afrikaans word taught so far (and its forms), to put speakers on Afrikaans text
+  const taughtWords = useMemo(() => {
+    const set = new Set<string>(["'n"]);
+    for (const e of taughtUpTo(ref.lesson, data)) {
+      for (const w of e.headword.toLowerCase().split(/[\s-]+/)) set.add(w);
+      for (const f of Object.values(e.forms ?? {})) for (const w of String(f).toLowerCase().split(/[\s-]+/)) set.add(w);
+    }
+    return set;
+  }, [lessonId]); // eslint-disable-line react-hooks/exhaustive-deps
   const [score, setScore] = useState({ right: 0, total: 0 });
   const step = steps[i];
 
@@ -205,7 +214,9 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { sc
         ) : (
           <>
             {step.retry && <div className="text-sm font-extrabold uppercase tracking-wide text-amber-500 mb-3">↻ Let's try this one again</div>}
-            <ExerciseView key={i} ex={step.ex} onResult={onResult} locked={!!result} />
+            <TaughtWords.Provider value={taughtWords}>
+              <ExerciseView key={i} ex={step.ex} onResult={onResult} locked={!!result} />
+            </TaughtWords.Provider>
           </>
         )}
       </div>
@@ -222,7 +233,13 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { sc
               <div className="font-black text-2xl">{result.correct ? cheer : "Not quite"}</div>
               {result.note && <div className="mt-1 font-semibold"><Inline text={result.note} /></div>}
               {result.hint && <div className="mt-1 font-semibold"><Inline text={result.hint} /></div>}
-              {!result.correct && result.expected && <div className="mt-1 font-semibold">Correct answer: <b lang="af">{result.expected}</b></div>}
+              {!result.correct && result.expected && result.expected !== result.say && <div className="mt-1 font-semibold">Correct answer: <b>{result.expected}</b></div>}
+              {result.say && (
+                <div className="mt-2 flex items-center gap-2.5 font-semibold">
+                  <AudioButton key={`${i}-${result.say}`} text={result.say} size="sm" autoPlay />
+                  <span>{!result.correct && result.expected === result.say ? "Correct answer: " : ""}<b><SayWords text={result.say} /></b></span>
+                </div>
+              )}
             </div>
           </div>
           <button onClick={next} autoFocus className={`${bigButton} ${result.correct ? btnColor.green : btnColor.red}`}>Continue</button>

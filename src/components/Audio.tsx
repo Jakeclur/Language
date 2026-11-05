@@ -62,6 +62,28 @@ function SpeakerIcon() {
   );
 }
 
+/** One tappable word that says itself. */
+function SayWord({ word }: { word: string }) {
+  const { available, play } = useAudio(word);
+  if (!available) return <span>{word}</span>;
+  return (
+    <button type="button" onClick={(e) => { e.stopPropagation(); play(); }} title={`Hear "${word}"`}
+      className="rounded-md underline decoration-dotted decoration-2 decoration-sky-300 underline-offset-[6px] hover:bg-sky-50 hover:decoration-sky-500">
+      {word}
+    </button>
+  );
+}
+
+/** An Afrikaans sentence where every word can be tapped to hear it on its own. */
+export function SayWords({ text }: { text: string }) {
+  const parts = text.split(/('n|[\p{L}\p{M}'-]+)/u);
+  return (
+    <span lang="af">
+      {parts.map((part, i) => (i % 2 === 1 && part !== "'n" ? <SayWord key={i} word={part} /> : <span key={i}>{part}</span>))}
+    </span>
+  );
+}
+
 /** Shadowing: record yourself and play it back. */
 export function Recorder() {
   const [state, setState] = useState<"idle" | "recording" | "done" | "unavailable">("idle");

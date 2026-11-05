@@ -1,15 +1,48 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 import type { Exercise } from "../types";
 import type { Generated } from "./course";
 import { checkAnswer, normalise, shuffle, tiles } from "../lib/text";
-import { AudioButton } from "../components/Audio";
+import { AudioButton, SayWords, useAudio } from "../components/Audio";
 import { Inline } from "../components/Md";
 import { SEVERITY_LABEL } from "../lib/register";
 import { BottomBar, bigButton, btnColor } from "../components/BottomBar";
 import { Mascot } from "../components/Mascot";
 
-export interface Result { correct: boolean; note?: string; hint?: string; expected?: string }
+/** `say`: Afrikaans text to pronounce in the feedback bar after answering. */
+export interface Result { correct: boolean; note?: string; hint?: string; expected?: string; say?: string }
 type Props<T> = { ex: T; onResult: (r: Result) => void; locked: boolean };
+
+/** Words the learner has been taught so far (lower case), so we know which text is Afrikaans. */
+export const TaughtWords = createContext<Set<string>>(new Set());
+function useIsAfrikaans() {
+  const taught = useContext(TaughtWords);
+  return (text: string) => {
+    const words = (text.replace(/\*\*/g, "").toLowerCase().match(/'n|[\p{L}\p{M}'-]+/gu) ?? []).flatMap((w) => w.split("-")).filter(Boolean);
+    return words.length > 0 && !/\d/.test(text) && words.every((w) => taught.has(w));
+  };
+}
+
+/** Speaker buttons for the Afrikaans words in **bold** inside an English question. */
+function BoldAudio({ text }: { text: string }) {
+  const isAf = useIsAfrikaans();
+  const words = [...new Set([...text.matchAll(/\*\*([^*]+)\*\*/g)].map((m) => m[1]))].filter(isAf);
+  if (!words.length) return null;
+  return (
+    <span className="mt-3 flex flex-wrap gap-2">
+      {words.map((w) => (
+        <span key={w} className="inline-flex items-center gap-2 rounded-2xl bg-sky-50 pl-1.5 pr-3 py-1 text-base font-bold text-sky-800">
+          <AudioButton text={w} size="sm" /> <span lang="af">{w}</span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
+/** A button that also says its Afrikaans word when tapped. */
+function SpeakingButton({ text, onClick, ...rest }: { text: string; onClick: () => void } & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick">) {
+  const { available, play } = useAudio(text);
+  return <button {...rest} onClick={() => { onClick(); if (available) play(); }} />;
+}
 
 const SPECIAL = ["ê", "ë", "ô", "û", "î", "ï", "é", "'n"];
 
@@ -55,8 +88,9 @@ function TextAnswer({ lang, onSubmit, locked, placeholder }: { lang: "af" | "en"
   );
 }
 
-function Options({ options, answer, onResult, locked, lang }: { options: string[]; answer: string; onResult: (r: Result) => void; locked: boolean; lang?: "af" | "en" }) {
+function Options({ options, answer, onResult, locked, lang, say }: { options: string[]; answer: string; onResult: (r: Result) => void; locked: boolean; lang?: "af" | "en"; say?: string }) {
   const [picked, setPicked] = useState<string>();
+  const isAf = useIsAfrikaans();
   return (
     <div className="grid gap-3">
       {options.map((o, idx) => {
@@ -65,12 +99,16 @@ function Options({ options, answer, onResult, locked, lang }: { options: string[
           : o === answer ? "border-emerald-400 bg-emerald-50 text-emerald-800 shadow-[0_4px_0_#6ee7b7]"
           : o === picked ? "border-rose-300 bg-rose-50 text-rose-700 shadow-[0_4px_0_#fda4af]"
           : "border-stone-200 bg-white opacity-50";
+        const af = lang === "af" || (lang === undefined && isAf(o));
         return (
-          <button key={o} disabled={locked} onClick={() => { setPicked(o); onResult({ correct: o === answer, expected: answer }); }}
-            className={`btn-3d text-left rounded-2xl border-2 px-4 py-4 text-lg font-bold flex items-center gap-4 ${state}`}>
-            <span className="w-8 h-8 shrink-0 rounded-lg border-2 border-stone-200 text-stone-400 text-sm font-extrabold flex items-center justify-center">{idx + 1}</span>
-            <span lang={lang}><Inline text={o} /></span>
-          </button>
+          <div key={o} className="flex items-center gap-2">
+            <button disabled={locked} onClick={() => { setPicked(o); onResult({ correct: o === answer, expected: answer, say: say ?? (af || isAf(answer) ? answer : undefined) }); }}
+              className={`btn-3d flex-1 text-left rounded-2xl border-2 px-4 py-4 text-lg font-bold flex items-center gap-4 ${state}`}>
+              <span className="w-8 h-8 shrink-0 rounded-lg border-2 border-stone-200 text-stone-400 text-sm font-extrabold flex items-center justify-center">{idx + 1}</span>
+              <span lang={af ? "af" : lang}><Inline text={o} /></span>
+            </button>
+            {af && <AudioButton text={o} size="sm" />}
+          </div>
         );
       })}
     </div>
@@ -79,10 +117,14 @@ function Options({ options, answer, onResult, locked, lang }: { options: string[
 
 export function ChoiceEx({ ex, onResult, locked }: Props<Extract<Exercise, { type: "choice" }>>) {
   const opts = useMemo(() => shuffle(ex.options), [ex]);
+  const isAf = useIsAfrikaans();
+  // after answering, say the Afrikaans answer, or else the Afrikaans word the question was about
+  const boldAf = [...ex.question.matchAll(/\*\*([^*]+)\*\*/g)].map((m) => m[1]).find(isAf);
+  const say = isAf(ex.answer) ? ex.answer : boldAf;
   return (
     <>
-      <Prompt label="Choose the right answer"><Inline text={ex.question} /></Prompt>
-      <Options options={opts} answer={ex.answer} onResult={onResult} locked={locked} />
+      <Prompt label="Choose the right answer"><Inline text={ex.question} /><BoldAudio text={ex.question} /></Prompt>
+      <Options options={opts} answer={ex.answer} onResult={onResult} locked={locked} say={say} />
     </>
   );
 }
@@ -91,9 +133,9 @@ export function McEx({ ex, onResult, locked }: Props<Extract<Generated, { type: 
   return (
     <>
       <Prompt label={ex.promptLang === "af" ? "What does this mean?" : "How do you say this in Afrikaans?"}>
-        <span className="flex items-center gap-3" lang={ex.promptLang}>{ex.prompt}{ex.promptLang === "af" && <AudioButton text={ex.prompt} autoPlay />}</span>
+        <span className="flex items-center gap-3" lang={ex.promptLang}>{ex.promptLang === "af" ? <><SayWords text={ex.prompt} /><AudioButton text={ex.prompt} autoPlay /></> : ex.prompt}</span>
       </Prompt>
-      <Options options={ex.options} answer={ex.answer} onResult={onResult} locked={locked} lang={ex.promptLang === "af" ? "en" : "af"} />
+      <Options options={ex.options} answer={ex.answer} onResult={onResult} locked={locked} lang={ex.promptLang === "af" ? "en" : "af"} say={ex.promptLang === "af" ? ex.prompt : ex.answer} />
     </>
   );
 }
@@ -103,10 +145,14 @@ export function TranslateEx({ ex, onResult, locked }: Props<Extract<Exercise, { 
   return (
     <>
       <Prompt label={ex.from === "en" ? "Translate into Afrikaans" : "Translate into English"}>
-        <span className="flex items-center gap-3" lang={ex.from}>{ex.prompt}{ex.from === "af" && <AudioButton text={ex.prompt} autoPlay />}</span>
+        <span className="flex items-center gap-3 flex-wrap" lang={ex.from}>{ex.from === "af" ? <><SayWords text={ex.prompt} /><AudioButton text={ex.prompt} autoPlay /></> : ex.prompt}</span>
       </Prompt>
       <TextAnswer lang={target} locked={locked} placeholder={target === "af" ? "Tik in Afrikaans…" : "Type in English…"}
-        onSubmit={(v) => { const r = checkAnswer(v, ex.answers, target); onResult(r.status === "correct" ? { correct: true, note: r.note, expected: r.matched } : { correct: false, hint: r.hint, expected: r.expected }); }} />
+        onSubmit={(v) => {
+          const r = checkAnswer(v, ex.answers, target);
+          const say = ex.from === "af" ? ex.prompt : r.status === "correct" ? r.matched : r.expected;
+          onResult(r.status === "correct" ? { correct: true, note: r.note, expected: r.matched, say } : { correct: false, hint: r.hint, expected: r.expected, say });
+        }} />
     </>
   );
 }
@@ -116,7 +162,7 @@ export function TypeWordEx({ ex, onResult, locked }: Props<Extract<Generated, { 
     <>
       <Prompt label="Type the Afrikaans word">{ex.en}</Prompt>
       <TextAnswer lang="af" locked={locked} placeholder="Tik die woord…"
-        onSubmit={(v) => { const r = checkAnswer(v, ex.answers, "af"); onResult(r.status === "correct" ? { correct: true, note: r.note, expected: r.matched } : { correct: false, hint: r.hint, expected: r.expected }); }} />
+        onSubmit={(v) => { const r = checkAnswer(v, ex.answers, "af"); onResult(r.status === "correct" ? { correct: true, note: r.note, expected: r.matched, say: r.matched } : { correct: false, hint: r.hint, expected: r.expected, say: r.expected }); }} />
     </>
   );
 }
@@ -124,9 +170,9 @@ export function TypeWordEx({ ex, onResult, locked }: Props<Extract<Generated, { 
 export function TransformEx({ ex, onResult, locked }: Props<Extract<Exercise, { type: "transform" }>>) {
   return (
     <>
-      <Prompt label={ex.instruction}><span lang="af" className="flex items-center gap-3">{ex.from}<AudioButton text={ex.from} /></span></Prompt>
+      <Prompt label={ex.instruction}><span lang="af" className="flex items-center gap-3 flex-wrap"><SayWords text={ex.from} /><AudioButton text={ex.from} /></span></Prompt>
       <TextAnswer lang="af" locked={locked} placeholder="Skryf die nuwe sin…"
-        onSubmit={(v) => { const r = checkAnswer(v, ex.answers, "af"); onResult(r.status === "correct" ? { correct: true, note: r.note, expected: r.matched } : { correct: false, hint: r.hint, expected: r.expected }); }} />
+        onSubmit={(v) => { const r = checkAnswer(v, ex.answers, "af"); onResult(r.status === "correct" ? { correct: true, note: r.note, expected: r.matched, say: r.matched } : { correct: false, hint: r.hint, expected: r.expected, say: r.expected }); }} />
     </>
   );
 }
@@ -138,18 +184,18 @@ export function FillEx({ ex, onResult, locked }: Props<Extract<Exercise, { type:
   return (
     <>
       <Prompt label="Fill in the blank">
-        <span lang="af">{before}<span className="inline-block min-w-20 border-b-4 border-emerald-400 text-emerald-700 text-center mx-1">{picked ?? " "}</span>{after}</span>
+        <span lang="af"><SayWords text={before} /><span className="inline-block min-w-20 border-b-4 border-emerald-400 text-emerald-700 text-center mx-1">{picked ?? " "}</span><SayWords text={after} /></span>
         <div className="text-lg font-normal text-stone-500 mt-3">{ex.en}</div>
       </Prompt>
       {opts ? (
         <div className="flex gap-3 flex-wrap">
           {opts.map((o) => (
-            <button key={o} disabled={locked} onClick={() => { setPicked(o); onResult({ correct: ex.answers.some((a) => normalise(a) === normalise(o)), expected: ex.af.replace("___", ex.answers[0]) }); }}
+            <button key={o} disabled={locked} onClick={() => { setPicked(o); onResult({ correct: ex.answers.some((a) => normalise(a) === normalise(o)), expected: ex.af.replace("___", ex.answers[0]), say: ex.af.replace("___", ex.answers[0]) }); }}
               className={`btn-3d rounded-2xl border-2 px-5 py-3 text-lg font-bold bg-white ${picked === o ? (ex.answers.some((a) => normalise(a) === normalise(o)) ? "border-emerald-400 bg-emerald-50 shadow-[0_4px_0_#6ee7b7]" : "border-rose-300 bg-rose-50 shadow-[0_4px_0_#fda4af]") : "border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-stone-50"}`} lang="af">{o}</button>
           ))}
         </div>
       ) : (
-        <TextAnswer lang="af" locked={locked} placeholder="…" onSubmit={(v) => { const r = checkAnswer(v, ex.answers, "af"); onResult({ correct: r.status === "correct", expected: ex.af.replace("___", ex.answers[0]) }); }} />
+        <TextAnswer lang="af" locked={locked} placeholder="…" onSubmit={(v) => { const r = checkAnswer(v, ex.answers, "af"); onResult({ correct: r.status === "correct", expected: ex.af.replace("___", ex.answers[0]), say: ex.af.replace("___", ex.answers[0]) }); }} />
       )}
     </>
   );
@@ -166,7 +212,7 @@ export function OrderEx({ ex, onResult, locked }: Props<Extract<Exercise, { type
   const answer = chosen.map((i) => bank.find((b) => b.i === i)!.t);
   return (
     <>
-      <Prompt label="Put the words in order">{ex.en}</Prompt>
+      <Prompt label="Put the words in order">{ex.en}<div className="text-sm font-semibold text-stone-400 mt-2">Tap a word to hear it</div></Prompt>
       <div className="min-h-20 border-b-2 border-stone-200 pb-3 flex flex-wrap content-start gap-2 mb-6" lang="af">
         {chosen.map((i) => (
           <button key={i} disabled={locked} onClick={() => setChosen(chosen.filter((c) => c !== i))} className="btn-3d rounded-xl bg-white border-2 border-stone-200 shadow-[0_3px_0_#e7e5e4] px-4 py-2 text-lg font-bold">
@@ -176,15 +222,15 @@ export function OrderEx({ ex, onResult, locked }: Props<Extract<Exercise, { type
       </div>
       <div className="flex flex-wrap gap-2" lang="af">
         {bank.map((b) => (
-          <button key={b.i} disabled={locked || chosen.includes(b.i)} onClick={() => setChosen([...chosen, b.i])}
-            className="btn-3d rounded-xl bg-white border-2 border-stone-200 shadow-[0_3px_0_#e7e5e4] px-4 py-2 text-lg font-bold disabled:bg-stone-100 disabled:text-transparent disabled:shadow-none">{b.t}</button>
+          <SpeakingButton key={b.i} text={b.t} disabled={locked || chosen.includes(b.i)} onClick={() => setChosen([...chosen, b.i])}
+            className="btn-3d rounded-xl bg-white border-2 border-stone-200 shadow-[0_3px_0_#e7e5e4] px-4 py-2 text-lg font-bold disabled:bg-stone-100 disabled:text-transparent disabled:shadow-none">{b.t}</SpeakingButton>
         ))}
       </div>
       {!locked && (
         <BottomBar>
           <button disabled={chosen.length === 0} onClick={() => {
             const ok = normalise(answer.join(" ")) === normalise(correct.join(" "));
-            onResult({ correct: ok, expected: ex.af, hint: ok ? undefined : "Remember: the verb is usually the **second** item, and negatives end with **nie**." });
+            onResult({ correct: ok, expected: ex.af, say: ex.af, hint: ok ? undefined : "Remember: the verb is usually the **second** item, and negatives end with **nie**." });
           }} className={`${bigButton} ${btnColor.green}`}>Check</button>
         </BottomBar>
       )}
@@ -197,7 +243,7 @@ export function RudeEx({ ex, onResult, locked }: Props<Extract<Exercise, { type:
   return (
     <>
       <Prompt label="How rude is this? (0–4)">
-        <span lang="af">{ex.af}</span>
+        <span lang="af" className="flex items-center gap-3 flex-wrap"><SayWords text={ex.af} /><AudioButton text={ex.af} /></span>
         <div className="text-lg font-normal text-stone-500 mt-3">{ex.en}</div>
       </Prompt>
       <div className="grid grid-cols-5 gap-2">
@@ -237,12 +283,12 @@ export function MatchEx({ ex, onResult, locked }: Props<Extract<Generated, { typ
   const matchedRight = (r: string) => ex.pairs.some(([a, b]) => b === r && done.includes(a));
   return (
     <>
-      <Prompt label="Match the pairs">Tap a word, then its meaning</Prompt>
+      <Prompt label="Match the pairs">Tap a word (you'll hear it), then its meaning</Prompt>
       <div className="grid grid-cols-2 gap-3">
         <div className="grid gap-2">
           {left.map((l) => (
-            <button key={l} lang="af" disabled={done.includes(l)} onClick={() => setSel(l)}
-              className={`btn-3d rounded-2xl border-2 px-3 py-4 font-bold bg-white ${done.includes(l) ? "opacity-25 border-stone-200" : sel === l ? "border-sky-400 bg-sky-50 shadow-[0_4px_0_#7dd3fc]" : "border-stone-200 shadow-[0_4px_0_#e7e5e4]"}`}>{l}</button>
+            <SpeakingButton key={l} text={l} lang="af" disabled={done.includes(l)} onClick={() => setSel(l)}
+              className={`btn-3d rounded-2xl border-2 px-3 py-4 font-bold bg-white ${done.includes(l) ? "opacity-25 border-stone-200" : sel === l ? "border-sky-400 bg-sky-50 shadow-[0_4px_0_#7dd3fc]" : "border-stone-200 shadow-[0_4px_0_#e7e5e4]"}`}>{l}</SpeakingButton>
           ))}
         </div>
         <div className="grid gap-2">
@@ -262,7 +308,7 @@ export function ListenEx({ ex, onResult, locked }: Props<Extract<Generated, { ty
       <Prompt label="Listen. What does it mean?">
         <div className="flex items-center gap-4"><AudioButton text={ex.text} size="lg" slow autoPlay /></div>
       </Prompt>
-      <Options options={ex.options} answer={ex.answer} onResult={(r) => onResult({ ...r, note: `You heard: **${ex.text}**` })} locked={locked} />
+      <Options options={ex.options} answer={ex.answer} onResult={(r) => onResult({ ...r, note: `You heard: **${ex.text}**`, say: ex.text })} locked={locked} lang="en" />
     </>
   );
 }
@@ -274,7 +320,7 @@ export function DictationEx({ ex, onResult, locked }: Props<Extract<Generated, {
         <div className="flex items-center gap-4"><AudioButton text={ex.text} size="lg" slow autoPlay /></div>
       </Prompt>
       <TextAnswer lang="af" locked={locked} placeholder="Tik wat jy hoor…"
-        onSubmit={(v) => { const r = checkAnswer(v, [ex.text], "af"); onResult(r.status === "correct" ? { correct: true, note: r.note ?? `It means: ${ex.en}` } : { correct: false, hint: r.hint, expected: `${ex.text} (${ex.en})` }); }} />
+        onSubmit={(v) => { const r = checkAnswer(v, [ex.text], "af"); onResult(r.status === "correct" ? { correct: true, note: r.note ?? `It means: ${ex.en}`, say: ex.text } : { correct: false, hint: r.hint, expected: `${ex.text} (${ex.en})`, say: ex.text }); }} />
     </>
   );
 }
