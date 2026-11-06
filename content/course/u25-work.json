@@ -1,0 +1,89 @@
+{
+  "id": "u25",
+  "level": "A2",
+  "number": 23,
+  "title": "Work & jobs",
+  "titleAf": "Werk",
+  "icon": "💼",
+  "lessons": [
+    {
+      "id": "u25-1",
+      "title": "What's your job?",
+      "explanation": [
+        "**werk** is also a noun: work / job. **Wat is jou werk?** = What is your job?",
+        "Jobs take **'n**: **Ek is 'n dokter.** = I am a doctor.",
+        "New words: **kantoor** (office), **baas** (boss), **dokter** (doctor), **boer** (farmer)."
+      ],
+      "examples": [
+        {
+          "af": "Wat is jou werk?",
+          "en": "What is your job?"
+        },
+        {
+          "af": "Ek is 'n dokter.",
+          "en": "I am a doctor."
+        },
+        {
+          "af": "My pa werk in 'n kantoor.",
+          "en": "My dad works in an office."
+        },
+        {
+          "af": "Die baas is vriendelik.",
+          "en": "The boss is friendly."
+        }
+      ],
+      "vocab": [
+        "kantoor",
+        "baas",
+        "dokter",
+        "boer"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "What is your job?",
+          "answers": [
+            "Wat is jou werk?"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I am a doctor.",
+          "answers": [
+            "Ek is 'n dokter."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "My dad works in an office.",
+          "af": "My pa werk in 'n kantoor."
+        },
+        {
+          "type": "fill",
+          "af": "Die ___ is baie vriendelik. (boss)",
+          "en": "The boss is very friendly.",
+          "answers": [
+            "baas"
+          ],
+          "options": [
+            "baas",
+            "boer",
+            "dokter"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "My ma is 'n boer.",
+          "answers": [
+            "My mom is a farmer.",
+            "My mother is a farmer.",
+            "My mum is a farmer."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -17,7 +17,7 @@ export function Home() {
   const data = useData();
   const { progress, settings, streak } = useStore();
   const all = lessonList(data.units, settings);
-  const next = nextLesson(all, progress);
+  const next = nextLesson(all, progress, settings.placedAtUnit);
   const due = Object.values(progress.cards).filter((c) => isDue(c)).length;
   const todayXp = progress.days[today()] ?? 0;
   const goalPct = Math.min(1, todayXp / settings.dailyGoal);
@@ -141,7 +141,7 @@ function GoalRing({ value }: { value: number }) {
   const c = 2 * Math.PI * 18;
   return (
     <svg viewBox="0 0 44 44" className="w-12 h-12 -rotate-90 shrink-0" aria-hidden="true">
-      <circle cx="22" cy="22" r="18" fill="none" stroke="#e7e5e4" strokeWidth="6" />
+      <circle cx="22" cy="22" r="18" fill="none" stroke="currentColor" className="text-stone-200" strokeWidth="6" />
       <circle cx="22" cy="22" r="18" fill="none" stroke={value >= 1 ? "#f59e0b" : "#10b981"} strokeWidth="6" strokeDasharray={c} strokeDashoffset={c * (1 - value)} strokeLinecap="round" />
     </svg>
   );

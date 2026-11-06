@@ -14,6 +14,8 @@ export interface Settings {
   dailyGoal: number; // XP per day
   useDutchVoice: boolean; // when the device has no Afrikaans voice, read Afrikaans with a Dutch voice (respelled)
   onlineTranslate: boolean; // translator may call MyMemory for full sentences
+  placedAtUnit: number; // placement test result: units before this one are unlocked (0 = none)
+  theme: "system" | "light" | "dark";
 }
 
 export interface Progress {
@@ -26,7 +28,7 @@ export interface Progress {
 }
 
 const DEFAULT_SETTINGS: Settings = {
-  onboarded: false, goals: [], adultConfirmed: false, showStreet: false, showSlurs: false, unlockAll: false, dailyGoal: 30, useDutchVoice: true, onlineTranslate: true,
+  onboarded: false, goals: [], adultConfirmed: false, showStreet: false, showSlurs: false, unlockAll: false, dailyGoal: 30, useDutchVoice: true, onlineTranslate: true, placedAtUnit: 0, theme: "system",
 };
 const DEFAULT_PROGRESS: Progress = { xp: 0, days: {}, lessons: {}, cards: {}, answered: 0, correct: 0 };
 
@@ -52,6 +54,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [settings, setSettings] = useState<Settings>(() => load("settings", DEFAULT_SETTINGS));
   const [progress, setProgress] = useState<Progress>(() => load("progress", DEFAULT_PROGRESS));
   useEffect(() => save("settings", settings), [settings]);
+  useEffect(() => {
+    const root = document.documentElement;
+    if (settings.theme === "system") delete root.dataset.theme;
+    else root.dataset.theme = settings.theme;
+  }, [settings.theme]);
   useEffect(() => save("progress", progress), [progress]);
 
   const updateSettings = useCallback((patch: Partial<Settings>) => setSettings((s) => ({ ...s, ...patch })), []);

@@ -10,9 +10,10 @@ The full plan is in [PLAN.md](PLAN.md).
 
 | Feature | Status |
 |---|---|
-| Course | 22 units, 42 lessons, built gradually: numbers → I am / you are → greetings → nouns → verbs → time → word order → questions → negation → possession → family, food, home → past, future, modals → describing → shopping → getting around → *omdat/dat* word order (B1) → slang (B1) → 18+ street Afrikaans (B2). **Every word is taught before it is used**: the build fails if any lesson sentence or quiz uses a word from a later lesson |
+| Course | 26 units, 48 lessons, built gradually: numbers → I am / you are → greetings → nouns → verbs → time → word order → questions → negation → possession → family, food, home → past, future, modals → describing → shopping → getting around → *omdat/dat* word order (B1) → feelings & opinions → school → work → the past with *omdat* (B1) → slang (B1) → 18+ street Afrikaans (B2). **Every word is taught before it is used**: the build fails if any lesson sentence or quiz uses a word from a later lesson |
 | Exercise types | Multiple choice, typed translation (with typo/accent tolerance and targeted feedback), word-order tiles, fill in the blank, sentence transformation, matching pairs, "type the word", "How rude is this?", plus listening and dictation when natural audio is available. A test (`src/features/content.test.ts`) checks every exercise is answerable and that no quiz has two correct options |
 | Translator | Afrikaans ↔ English: exact matches from the phrasebook and lessons, an offline word-by-word translator (inflected forms, phrases, English verb agreement) and optional online sentence translation (MyMemory, free, opt-out). Speak buttons for both languages; every word links to the dictionary |
+| Placement & themes | 12-question placement test (onboarding and Settings) that picks your starting unit; light, dark or automatic theme |
 | Spaced repetition | FSRS scheduling (`ts-fsrs`); lesson words are added to your deck automatically |
 | Dictionary | 8,684 headwords in both directions, IPA for most words, plurals, diminutives and past forms; inflected-form lookup (`geëet` → `eet`) and a compound splitter (`kombuisdeur` = kitchen + door) |
 | Registers | formal · neutral · informal · slang · rude · vulgar · offensive slur · dated · literary, plus a 0–4 severity scale |

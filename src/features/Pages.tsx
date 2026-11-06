@@ -51,8 +51,8 @@ export function Onboarding() {
               <button onClick={() => { updateSettings({ goals, onboarded: true, unlockAll: false }); go(""); }} className="btn-3d text-left rounded-2xl bg-white border-2 border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-sky-50 px-5 py-5">
                 <b className="text-lg">🌱 I'm new to Afrikaans</b><span className="block text-stone-500">Start from the very beginning</span>
               </button>
-              <button onClick={() => { updateSettings({ goals, onboarded: true, unlockAll: true }); go(""); }} className="btn-3d text-left rounded-2xl bg-white border-2 border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-sky-50 px-5 py-5">
-                <b className="text-lg">🌿 I know some already</b><span className="block text-stone-500">Unlock every lesson and jump in anywhere</span>
+              <button onClick={() => { updateSettings({ goals }); go("placement"); }} className="btn-3d text-left rounded-2xl bg-white border-2 border-stone-200 shadow-[0_4px_0_#e7e5e4] hover:bg-sky-50 px-5 py-5">
+                <b className="text-lg">🌿 I know some already</b><span className="block text-stone-500">Take a 2-minute placement test to find your level</span>
               </button>
             </div>
             {!storageAvailable() && <p className="text-sm text-amber-700 mt-4">Heads up: this browser isn't letting the app save, so progress will last only for this visit.</p>}
@@ -291,11 +291,26 @@ export function SettingsPage() {
           </label>
         </Card>
       </section>
+      <section>
+        <h2 className="text-sm font-medium text-stone-400 mb-2 px-1">Appearance</h2>
+        <Card className="p-2">
+          <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label="Theme">
+            {([["system", "📱 Auto"], ["light", "☀️ Light"], ["dark", "🌙 Dark"]] as const).map(([v, label]) => (
+              <button key={v} role="radio" aria-checked={settings.theme === v} onClick={() => updateSettings({ theme: v })}
+                className={`rounded-2xl py-3 font-extrabold border-2 ${settings.theme === v ? "bg-sky-50 border-sky-300 text-sky-700" : "border-transparent text-stone-500 hover:bg-stone-100"}`}>{label}</button>
+            ))}
+          </div>
+        </Card>
+      </section>
       <SoundSettings />
       <section>
         <h2 className="text-sm font-medium text-stone-400 mb-2 px-1">Course</h2>
         <Card className="overflow-hidden">
           <Toggle on={settings.unlockAll} onChange={() => updateSettings({ unlockAll: !settings.unlockAll })} label="Unlock all lessons" desc="Skip ahead if you already know some Afrikaans" />
+          <a href="#placement" className="flex items-center gap-4 px-5 py-4 hover:bg-stone-50 border-t border-stone-100">
+            <span className="flex-1"><b className="block">Take the placement test</b><span className="text-sm text-stone-400">12 quick questions to find the right starting unit{settings.placedAtUnit ? ` (now: Unit ${settings.placedAtUnit})` : ""}</span></span>
+            <span className="text-stone-300 text-xl">›</span>
+          </a>
         </Card>
       </section>
       <section>

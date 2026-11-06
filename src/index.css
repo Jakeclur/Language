@@ -36,3 +36,179 @@ textarea, input, select { font-family: inherit; }
   .animate-bob, .animate-pop, .confetti, .animate-slide-up { animation: none !important; }
   .confetti { display: none; }
 }
+
+/* ---------- Dark mode: follows the device, or Settings > Appearance ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  color: oklch(92% 0.004 48);
+  background: oklch(16.5% 0.005 50);
+  --color-stone-50: oklch(14.7% 0.004 49.25);
+  --color-stone-100: oklch(19% 0.005 52);
+  --color-stone-200: oklch(27% 0.007 40);
+  --color-stone-300: oklch(35% 0.009 60);
+  --color-stone-400: oklch(52% 0.012 58);
+  --color-stone-500: oklch(62% 0.012 58);
+  --color-stone-600: oklch(74% 0.01 56);
+  --color-stone-700: oklch(84% 0.006 56);
+  --color-stone-800: oklch(92% 0.004 48);
+  --color-stone-900: oklch(96% 0.002 100);
+  --color-stone-950: oklch(98.5% 0.001 106);
+  --color-emerald-50: color-mix(in oklab, var(--color-emerald-500) 16%, oklch(23% 0.007 56));
+  --color-emerald-100: color-mix(in oklab, var(--color-emerald-500) 26%, oklch(23% 0.007 56));
+  --color-emerald-200: color-mix(in oklab, var(--color-emerald-500) 40%, oklch(23% 0.007 56));
+  --color-emerald-700: var(--color-emerald-300);
+  --color-emerald-800: color-mix(in oklab, var(--color-emerald-300) 70%, white);
+  --color-emerald-900: color-mix(in oklab, var(--color-emerald-300) 60%, white);
+  --color-sky-50: color-mix(in oklab, var(--color-sky-500) 16%, oklch(23% 0.007 56));
+  --color-sky-100: color-mix(in oklab, var(--color-sky-500) 26%, oklch(23% 0.007 56));
+  --color-sky-200: color-mix(in oklab, var(--color-sky-500) 40%, oklch(23% 0.007 56));
+  --color-sky-700: var(--color-sky-300);
+  --color-sky-800: color-mix(in oklab, var(--color-sky-300) 70%, white);
+  --color-sky-900: color-mix(in oklab, var(--color-sky-300) 60%, white);
+  --color-amber-50: color-mix(in oklab, var(--color-amber-500) 16%, oklch(23% 0.007 56));
+  --color-amber-100: color-mix(in oklab, var(--color-amber-500) 26%, oklch(23% 0.007 56));
+  --color-amber-200: color-mix(in oklab, var(--color-amber-500) 40%, oklch(23% 0.007 56));
+  --color-amber-700: var(--color-amber-300);
+  --color-amber-800: color-mix(in oklab, var(--color-amber-300) 70%, white);
+  --color-amber-900: color-mix(in oklab, var(--color-amber-300) 60%, white);
+  --color-rose-50: color-mix(in oklab, var(--color-rose-500) 16%, oklch(23% 0.007 56));
+  --color-rose-100: color-mix(in oklab, var(--color-rose-500) 26%, oklch(23% 0.007 56));
+  --color-rose-200: color-mix(in oklab, var(--color-rose-500) 40%, oklch(23% 0.007 56));
+  --color-rose-700: var(--color-rose-300);
+  --color-rose-800: color-mix(in oklab, var(--color-rose-300) 70%, white);
+  --color-rose-900: color-mix(in oklab, var(--color-rose-300) 60%, white);
+  --color-violet-50: color-mix(in oklab, var(--color-violet-500) 16%, oklch(23% 0.007 56));
+  --color-violet-100: color-mix(in oklab, var(--color-violet-500) 26%, oklch(23% 0.007 56));
+  --color-violet-200: color-mix(in oklab, var(--color-violet-500) 40%, oklch(23% 0.007 56));
+  --color-violet-700: var(--color-violet-300);
+  --color-violet-800: color-mix(in oklab, var(--color-violet-300) 70%, white);
+  --color-violet-900: color-mix(in oklab, var(--color-violet-300) 60%, white);
+  --color-teal-50: color-mix(in oklab, var(--color-teal-500) 16%, oklch(23% 0.007 56));
+  --color-teal-100: color-mix(in oklab, var(--color-teal-500) 26%, oklch(23% 0.007 56));
+  --color-teal-200: color-mix(in oklab, var(--color-teal-500) 40%, oklch(23% 0.007 56));
+  --color-teal-700: var(--color-teal-300);
+  --color-teal-800: color-mix(in oklab, var(--color-teal-300) 70%, white);
+  --color-teal-900: color-mix(in oklab, var(--color-teal-300) 60%, white);
+  --color-orange-50: color-mix(in oklab, var(--color-orange-500) 16%, oklch(23% 0.007 56));
+  --color-orange-100: color-mix(in oklab, var(--color-orange-500) 26%, oklch(23% 0.007 56));
+  --color-orange-200: color-mix(in oklab, var(--color-orange-500) 40%, oklch(23% 0.007 56));
+  --color-orange-700: var(--color-orange-300);
+  --color-orange-800: color-mix(in oklab, var(--color-orange-300) 70%, white);
+  --color-orange-900: color-mix(in oklab, var(--color-orange-300) 60%, white);
+  --color-red-50: color-mix(in oklab, var(--color-red-500) 16%, oklch(23% 0.007 56));
+  --color-red-100: color-mix(in oklab, var(--color-red-500) 26%, oklch(23% 0.007 56));
+  --color-red-200: color-mix(in oklab, var(--color-red-500) 40%, oklch(23% 0.007 56));
+  --color-red-700: var(--color-red-300);
+  --color-red-800: color-mix(in oklab, var(--color-red-300) 70%, white);
+  --color-red-900: color-mix(in oklab, var(--color-red-300) 60%, white);
+  --color-fuchsia-50: color-mix(in oklab, var(--color-fuchsia-500) 16%, oklch(23% 0.007 56));
+  --color-fuchsia-100: color-mix(in oklab, var(--color-fuchsia-500) 26%, oklch(23% 0.007 56));
+  --color-fuchsia-200: color-mix(in oklab, var(--color-fuchsia-500) 40%, oklch(23% 0.007 56));
+  --color-fuchsia-700: var(--color-fuchsia-300);
+  --color-fuchsia-800: color-mix(in oklab, var(--color-fuchsia-300) 70%, white);
+  --color-fuchsia-900: color-mix(in oklab, var(--color-fuchsia-300) 60%, white);
+  --color-indigo-50: color-mix(in oklab, var(--color-indigo-500) 16%, oklch(23% 0.007 56));
+  --color-indigo-100: color-mix(in oklab, var(--color-indigo-500) 26%, oklch(23% 0.007 56));
+  --color-indigo-200: color-mix(in oklab, var(--color-indigo-500) 40%, oklch(23% 0.007 56));
+  --color-indigo-700: var(--color-indigo-300);
+  --color-indigo-800: color-mix(in oklab, var(--color-indigo-300) 70%, white);
+  --color-indigo-900: color-mix(in oklab, var(--color-indigo-300) 60%, white);
+  --color-yellow-50: color-mix(in oklab, var(--color-yellow-500) 16%, oklch(23% 0.007 56));
+  --color-yellow-100: color-mix(in oklab, var(--color-yellow-500) 26%, oklch(23% 0.007 56));
+  --color-yellow-200: color-mix(in oklab, var(--color-yellow-500) 40%, oklch(23% 0.007 56));
+  --color-yellow-700: var(--color-yellow-300);
+  --color-yellow-800: color-mix(in oklab, var(--color-yellow-300) 70%, white);
+  --color-yellow-900: color-mix(in oklab, var(--color-yellow-300) 60%, white);
+  }
+  :root:not([data-theme="light"]) [class*="#e7e5e4"] { box-shadow: 0 4px 0 oklch(30% 0.008 50) !important; }
+  :root:not([data-theme="light"]) [class*="#d6d3d1"] { box-shadow: 0 6px 0 oklch(30% 0.008 50) !important; }
+  :root:not([data-theme="light"]) .bg-white { background-color: oklch(23% 0.007 56) !important; }
+  :root:not([data-theme="light"]) .bg-white\/95 { background-color: color-mix(in oklab, oklch(23% 0.007 56) 95%, transparent) !important; }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: oklch(92% 0.004 48);
+  background: oklch(16.5% 0.005 50);
+  --color-stone-50: oklch(14.7% 0.004 49.25);
+  --color-stone-100: oklch(19% 0.005 52);
+  --color-stone-200: oklch(27% 0.007 40);
+  --color-stone-300: oklch(35% 0.009 60);
+  --color-stone-400: oklch(52% 0.012 58);
+  --color-stone-500: oklch(62% 0.012 58);
+  --color-stone-600: oklch(74% 0.01 56);
+  --color-stone-700: oklch(84% 0.006 56);
+  --color-stone-800: oklch(92% 0.004 48);
+  --color-stone-900: oklch(96% 0.002 100);
+  --color-stone-950: oklch(98.5% 0.001 106);
+  --color-emerald-50: color-mix(in oklab, var(--color-emerald-500) 16%, oklch(23% 0.007 56));
+  --color-emerald-100: color-mix(in oklab, var(--color-emerald-500) 26%, oklch(23% 0.007 56));
+  --color-emerald-200: color-mix(in oklab, var(--color-emerald-500) 40%, oklch(23% 0.007 56));
+  --color-emerald-700: var(--color-emerald-300);
+  --color-emerald-800: color-mix(in oklab, var(--color-emerald-300) 70%, white);
+  --color-emerald-900: color-mix(in oklab, var(--color-emerald-300) 60%, white);
+  --color-sky-50: color-mix(in oklab, var(--color-sky-500) 16%, oklch(23% 0.007 56));
+  --color-sky-100: color-mix(in oklab, var(--color-sky-500) 26%, oklch(23% 0.007 56));
+  --color-sky-200: color-mix(in oklab, var(--color-sky-500) 40%, oklch(23% 0.007 56));
+  --color-sky-700: var(--color-sky-300);
+  --color-sky-800: color-mix(in oklab, var(--color-sky-300) 70%, white);
+  --color-sky-900: color-mix(in oklab, var(--color-sky-300) 60%, white);
+  --color-amber-50: color-mix(in oklab, var(--color-amber-500) 16%, oklch(23% 0.007 56));
+  --color-amber-100: color-mix(in oklab, var(--color-amber-500) 26%, oklch(23% 0.007 56));
+  --color-amber-200: color-mix(in oklab, var(--color-amber-500) 40%, oklch(23% 0.007 56));
+  --color-amber-700: var(--color-amber-300);
+  --color-amber-800: color-mix(in oklab, var(--color-amber-300) 70%, white);
+  --color-amber-900: color-mix(in oklab, var(--color-amber-300) 60%, white);
+  --color-rose-50: color-mix(in oklab, var(--color-rose-500) 16%, oklch(23% 0.007 56));
+  --color-rose-100: color-mix(in oklab, var(--color-rose-500) 26%, oklch(23% 0.007 56));
+  --color-rose-200: color-mix(in oklab, var(--color-rose-500) 40%, oklch(23% 0.007 56));
+  --color-rose-700: var(--color-rose-300);
+  --color-rose-800: color-mix(in oklab, var(--color-rose-300) 70%, white);
+  --color-rose-900: color-mix(in oklab, var(--color-rose-300) 60%, white);
+  --color-violet-50: color-mix(in oklab, var(--color-violet-500) 16%, oklch(23% 0.007 56));
+  --color-violet-100: color-mix(in oklab, var(--color-violet-500) 26%, oklch(23% 0.007 56));
+  --color-violet-200: color-mix(in oklab, var(--color-violet-500) 40%, oklch(23% 0.007 56));
+  --color-violet-700: var(--color-violet-300);
+  --color-violet-800: color-mix(in oklab, var(--color-violet-300) 70%, white);
+  --color-violet-900: color-mix(in oklab, var(--color-violet-300) 60%, white);
+  --color-teal-50: color-mix(in oklab, var(--color-teal-500) 16%, oklch(23% 0.007 56));
+  --color-teal-100: color-mix(in oklab, var(--color-teal-500) 26%, oklch(23% 0.007 56));
+  --color-teal-200: color-mix(in oklab, var(--color-teal-500) 40%, oklch(23% 0.007 56));
+  --color-teal-700: var(--color-teal-300);
+  --color-teal-800: color-mix(in oklab, var(--color-teal-300) 70%, white);
+  --color-teal-900: color-mix(in oklab, var(--color-teal-300) 60%, white);
+  --color-orange-50: color-mix(in oklab, var(--color-orange-500) 16%, oklch(23% 0.007 56));
+  --color-orange-100: color-mix(in oklab, var(--color-orange-500) 26%, oklch(23% 0.007 56));
+  --color-orange-200: color-mix(in oklab, var(--color-orange-500) 40%, oklch(23% 0.007 56));
+  --color-orange-700: var(--color-orange-300);
+  --color-orange-800: color-mix(in oklab, var(--color-orange-300) 70%, white);
+  --color-orange-900: color-mix(in oklab, var(--color-orange-300) 60%, white);
+  --color-red-50: color-mix(in oklab, var(--color-red-500) 16%, oklch(23% 0.007 56));
+  --color-red-100: color-mix(in oklab, var(--color-red-500) 26%, oklch(23% 0.007 56));
+  --color-red-200: color-mix(in oklab, var(--color-red-500) 40%, oklch(23% 0.007 56));
+  --color-red-700: var(--color-red-300);
+  --color-red-800: color-mix(in oklab, var(--color-red-300) 70%, white);
+  --color-red-900: color-mix(in oklab, var(--color-red-300) 60%, white);
+  --color-fuchsia-50: color-mix(in oklab, var(--color-fuchsia-500) 16%, oklch(23% 0.007 56));
+  --color-fuchsia-100: color-mix(in oklab, var(--color-fuchsia-500) 26%, oklch(23% 0.007 56));
+  --color-fuchsia-200: color-mix(in oklab, var(--color-fuchsia-500) 40%, oklch(23% 0.007 56));
+  --color-fuchsia-700: var(--color-fuchsia-300);
+  --color-fuchsia-800: color-mix(in oklab, var(--color-fuchsia-300) 70%, white);
+  --color-fuchsia-900: color-mix(in oklab, var(--color-fuchsia-300) 60%, white);
+  --color-indigo-50: color-mix(in oklab, var(--color-indigo-500) 16%, oklch(23% 0.007 56));
+  --color-indigo-100: color-mix(in oklab, var(--color-indigo-500) 26%, oklch(23% 0.007 56));
+  --color-indigo-200: color-mix(in oklab, var(--color-indigo-500) 40%, oklch(23% 0.007 56));
+  --color-indigo-700: var(--color-indigo-300);
+  --color-indigo-800: color-mix(in oklab, var(--color-indigo-300) 70%, white);
+  --color-indigo-900: color-mix(in oklab, var(--color-indigo-300) 60%, white);
+  --color-yellow-50: color-mix(in oklab, var(--color-yellow-500) 16%, oklch(23% 0.007 56));
+  --color-yellow-100: color-mix(in oklab, var(--color-yellow-500) 26%, oklch(23% 0.007 56));
+  --color-yellow-200: color-mix(in oklab, var(--color-yellow-500) 40%, oklch(23% 0.007 56));
+  --color-yellow-700: var(--color-yellow-300);
+  --color-yellow-800: color-mix(in oklab, var(--color-yellow-300) 70%, white);
+  --color-yellow-900: color-mix(in oklab, var(--color-yellow-300) 60%, white);
+}
+:root[data-theme="dark"] [class*="#e7e5e4"] { box-shadow: 0 4px 0 oklch(30% 0.008 50) !important; }
+:root[data-theme="dark"] [class*="#d6d3d1"] { box-shadow: 0 6px 0 oklch(30% 0.008 50) !important; }
+:root[data-theme="dark"] .bg-white { background-color: oklch(23% 0.007 56) !important; }
+:root[data-theme="dark"] .bg-white\/95 { background-color: color-mix(in oklab, oklch(23% 0.007 56) 95%, transparent) !important; }

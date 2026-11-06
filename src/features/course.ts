@@ -27,13 +27,19 @@ export function lessonList(units: Unit[], settings: Settings): LessonRef[] {
 
 export function isUnlocked(ref: LessonRef, all: LessonRef[], settings: Settings, progress: Progress): boolean {
   if (settings.unlockAll || ref.index === 0 || ref.unit.street) return true;
+  if (settings.placedAtUnit && ref.unit.number <= settings.placedAtUnit) {
+    // placement: earlier units are open; the placed unit opens lesson by lesson from its start
+    if (ref.unit.number < settings.placedAtUnit) return true;
+    const first = all.find((r) => r.unit.number === settings.placedAtUnit);
+    if (first && ref.index === first.index) return true;
+  }
   if (progress.lessons[ref.lesson.id]) return true;
   const prev = all[ref.index - 1];
   return !!prev && !!progress.lessons[prev.lesson.id];
 }
 
-export function nextLesson(all: LessonRef[], progress: Progress): LessonRef | undefined {
-  return all.find((r) => !progress.lessons[r.lesson.id] && !r.unit.street) ?? all[0];
+export function nextLesson(all: LessonRef[], progress: Progress, placedAtUnit = 0): LessonRef | undefined {
+  return all.find((r) => !progress.lessons[r.lesson.id] && !r.unit.street && r.unit.number >= placedAtUnit) ?? all.find((r) => !progress.lessons[r.lesson.id] && !r.unit.street) ?? all[0];
 }
 
 /** Main English meaning of an entry, respecting the age gate. */

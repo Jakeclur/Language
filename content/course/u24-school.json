@@ -1,0 +1,171 @@
+{
+  "id": "u24",
+  "level": "A2",
+  "number": 22,
+  "title": "At school",
+  "titleAf": "By die skool",
+  "icon": "🎒",
+  "lessons": [
+    {
+      "id": "u24-1",
+      "title": "In the classroom",
+      "explanation": [
+        "**klas** = class, **onderwyser** = teacher, **leerder** = learner / pupil.",
+        "**vraag** = question, **antwoord** = answer.",
+        "**pen** = pen, **potlood** = pencil."
+      ],
+      "examples": [
+        {
+          "af": "Die onderwyser is in die klas.",
+          "en": "The teacher is in the class."
+        },
+        {
+          "af": "Ek het 'n vraag.",
+          "en": "I have a question."
+        },
+        {
+          "af": "Wat is die antwoord?",
+          "en": "What is the answer?"
+        },
+        {
+          "af": "Ek skryf met 'n pen.",
+          "en": "I'm writing with a pen."
+        }
+      ],
+      "vocab": [
+        "klas",
+        "onderwyser",
+        "leerder",
+        "vraag",
+        "antwoord",
+        "pen",
+        "potlood"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I have a question.",
+          "answers": [
+            "Ek het 'n vraag."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Wat is die ___? (answer)",
+          "en": "What is the answer?",
+          "answers": [
+            "antwoord"
+          ],
+          "options": [
+            "antwoord",
+            "vraag",
+            "klas"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "The teacher is in the class.",
+          "af": "Die onderwyser is in die klas."
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Die leerders lees 'n boek.",
+          "answers": [
+            "The learners are reading a book.",
+            "The pupils are reading a book.",
+            "The learners read a book.",
+            "The students are reading a book."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**potlood** means…",
+          "options": [
+            "pencil",
+            "pen",
+            "book"
+          ],
+          "answer": "pencil"
+        }
+      ]
+    },
+    {
+      "id": "u24-2",
+      "title": "Homework and tests",
+      "explanation": [
+        "**toets** = test. **maklik** = easy, **moeilik** = difficult.",
+        "Pupils call a female teacher **Juffrou** (Miss) and a male teacher **Meneer** (Sir)."
+      ],
+      "examples": [
+        {
+          "af": "Die toets is moeilik.",
+          "en": "The test is difficult."
+        },
+        {
+          "af": "Ons huiswerk is maklik.",
+          "en": "Our homework is easy."
+        },
+        {
+          "af": "Juffrou, ek verstaan nie.",
+          "en": "Miss, I don't understand."
+        }
+      ],
+      "vocab": [
+        "toets",
+        "maklik",
+        "moeilik",
+        "juffrou",
+        "meneer"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "The test is difficult.",
+          "answers": [
+            "Die toets is moeilik."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Die huiswerk is ___. (easy)",
+          "en": "The homework is easy.",
+          "answers": [
+            "maklik"
+          ],
+          "options": [
+            "maklik",
+            "moeilik",
+            "duur"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Juffrou, ek verstaan nie.",
+          "answers": [
+            "Miss, I don't understand.",
+            "Teacher, I don't understand."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "The test is easy.",
+          "af": "Die toets is maklik."
+        },
+        {
+          "type": "choice",
+          "question": "What does a pupil call a male teacher?",
+          "options": [
+            "Meneer",
+            "Juffrou",
+            "Oom"
+          ],
+          "answer": "Meneer"
+        }
+      ]
+    }
+  ]
+}

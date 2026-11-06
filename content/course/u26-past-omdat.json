@@ -1,0 +1,96 @@
+{
+  "id": "u26",
+  "level": "B1",
+  "number": 24,
+  "title": "Telling stories: the past with omdat",
+  "titleAf": "Die verlede met omdat",
+  "icon": "⏮️",
+  "lessons": [
+    {
+      "id": "u26-1",
+      "title": "Because it happened",
+      "explanation": [
+        "After **omdat** and **dat**, *all* the verbs go to the end. In the past that means the **ge-** word, then **het**:",
+        "**Ek het baie gewerk.** → **…omdat ek baie gewerk het.**",
+        "With **was**: **Ek was siek.** → **…omdat ek siek was.**",
+        "❌ *omdat ek het gewerk* ✅ **omdat ek gewerk het**"
+      ],
+      "examples": [
+        {
+          "af": "Ek was moeg, omdat ek baie gewerk het.",
+          "en": "I was tired because I had worked a lot."
+        },
+        {
+          "af": "Hy het gehuil, omdat hy hartseer was.",
+          "en": "He cried because he was sad."
+        },
+        {
+          "af": "Ek het nie gekom nie, omdat ek siek was.",
+          "en": "I didn't come because I was sick."
+        }
+      ],
+      "vocab": [
+        "omdat",
+        "was",
+        "werk",
+        "huil"
+      ],
+      "exercises": [
+        {
+          "type": "order",
+          "en": "I was tired because I worked a lot.",
+          "af": "Ek was moeg, omdat ek baie gewerk het."
+        },
+        {
+          "type": "transform",
+          "instruction": "Join them with **omdat**",
+          "from": "Ek het nie gekom nie. Ek was siek.",
+          "answers": [
+            "Ek het nie gekom nie, omdat ek siek was."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "Which is correct?",
+          "options": [
+            "Ek was moeg, omdat ek baie gewerk het.",
+            "Ek was moeg, omdat ek het baie gewerk.",
+            "Ek was moeg, omdat ek gewerk baie het."
+          ],
+          "answer": "Ek was moeg, omdat ek baie gewerk het."
+        },
+        {
+          "type": "fill",
+          "af": "Hy het gehuil, omdat hy hartseer ___.",
+          "en": "He cried because he was sad.",
+          "answers": [
+            "was"
+          ],
+          "options": [
+            "was",
+            "is",
+            "het"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "She is happy because she ate.",
+          "answers": [
+            "Sy is gelukkig, omdat sy geëet het.",
+            "Sy is gelukkig omdat sy geëet het."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek dink dat hy gister gewerk het.",
+          "answers": [
+            "I think that he worked yesterday.",
+            "I think he worked yesterday."
+          ]
+        }
+      ]
+    }
+  ]
+}

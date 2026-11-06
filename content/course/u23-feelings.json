@@ -1,0 +1,176 @@
+{
+  "id": "u23",
+  "level": "A2",
+  "number": 21,
+  "title": "Feelings & opinions",
+  "titleAf": "Gevoelens en menings",
+  "icon": "😊",
+  "lessons": [
+    {
+      "id": "u23-1",
+      "title": "How do you feel?",
+      "explanation": [
+        "**voel** = feel. **Hoe voel jy?** = How do you feel?",
+        "**hartseer** = sad (literally *heart-sore*), **kwaad** = angry, **opgewonde** = excited, **bekommerd** = worried.",
+        "You already know **gelukkig** (happy), **moeg** (tired) and **bang** (scared)."
+      ],
+      "examples": [
+        {
+          "af": "Hoe voel jy?",
+          "en": "How do you feel?"
+        },
+        {
+          "af": "Ek voel hartseer.",
+          "en": "I feel sad."
+        },
+        {
+          "af": "Hy is kwaad, want hy is moeg.",
+          "en": "He's angry because he's tired."
+        },
+        {
+          "af": "Sy is baie opgewonde.",
+          "en": "She is very excited."
+        }
+      ],
+      "vocab": [
+        "voel",
+        "hartseer",
+        "kwaad",
+        "opgewonde",
+        "bekommerd"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "How do you feel?",
+          "answers": [
+            "Hoe voel jy?"
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Ek voel ___. (sad)",
+          "en": "I feel sad.",
+          "answers": [
+            "hartseer"
+          ],
+          "options": [
+            "hartseer",
+            "kwaad",
+            "lekker"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "He is angry because he is tired.",
+          "af": "Hy is kwaad, want hy is moeg."
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Is jy bekommerd?",
+          "answers": [
+            "Are you worried?"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**opgewonde** means…",
+          "options": [
+            "excited",
+            "angry",
+            "worried"
+          ],
+          "answer": "excited"
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "We are very excited.",
+          "answers": [
+            "Ons is baie opgewonde."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u23-2",
+      "title": "I like it! What do you think?",
+      "explanation": [
+        "**hou van** = like: **Ek hou van musiek.** = I like music.",
+        "Negative: **Ek hou nie van koffie nie.** (both **nie**'s!)",
+        "**Wat dink jy van …?** = What do you think of …?",
+        "New words: **musiek** (music), **sport** (sport)."
+      ],
+      "examples": [
+        {
+          "af": "Ek hou van musiek.",
+          "en": "I like music."
+        },
+        {
+          "af": "Ek hou nie van koffie nie.",
+          "en": "I don't like coffee."
+        },
+        {
+          "af": "Wat dink jy van die kar?",
+          "en": "What do you think of the car?"
+        },
+        {
+          "af": "Ek dink dit is mooi.",
+          "en": "I think it's beautiful."
+        }
+      ],
+      "vocab": [
+        "hou van",
+        "musiek",
+        "sport"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "I like music.",
+          "answers": [
+            "Ek hou van musiek."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "I don't like coffee.",
+          "af": "Ek hou nie van koffie nie."
+        },
+        {
+          "type": "fill",
+          "af": "Ek ___ van sport. (like)",
+          "en": "I like sport.",
+          "answers": [
+            "hou"
+          ],
+          "options": [
+            "hou",
+            "het",
+            "is"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Wat dink jy van die kar?",
+          "answers": [
+            "What do you think of the car?",
+            "What do you think about the car?"
+          ]
+        },
+        {
+          "type": "transform",
+          "instruction": "Make it negative",
+          "from": "Ek hou van sokker.",
+          "answers": [
+            "Ek hou nie van sokker nie."
+          ]
+        }
+      ]
+    }
+  ]
+}

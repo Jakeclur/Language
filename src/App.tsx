@@ -8,6 +8,7 @@ import { LessonPage } from "./features/Lesson";
 import { Review } from "./features/Review";
 import { DictionaryPage, WordPage } from "./features/Dictionary";
 import { TranslatePage } from "./features/Translate";
+import { PlacementPage } from "./features/Placement";
 import { AboutPage, GrammarPage, MorePage, Onboarding, PhrasebookPage, ProgressPage, SettingsPage, SoundsPage } from "./features/Pages";
 import { isDue } from "./lib/srs";
 import { Mascot } from "./components/Mascot";
@@ -27,6 +28,7 @@ function Page({ route }: { route: string }) {
     case "review": return <Review />;
     case "dictionary": return <DictionaryPage />;
     case "translate": return <TranslatePage />;
+    case "placement": return <PlacementPage />;
     case "more": return <MorePage />;
     case "phrasebook": return <PhrasebookPage />;
     case "grammar": return <GrammarPage />;
@@ -42,7 +44,8 @@ function Shell() {
   const route = useRoute();
   const { settings, progress } = useStore();
   const due = Object.values(progress.cards).filter((c) => isDue(c)).length;
-  if (!settings.onboarded) return <Onboarding />;
+  if (!settings.onboarded && route !== "placement") return <Onboarding />;
+  if (route === "placement") return <main className="max-w-3xl mx-auto px-5 sm:px-6 py-6"><PlacementPage /></main>;
   // Lessons are full-screen and distraction-free: no navigation bars.
   // key = route: moving to the next lesson starts a fresh lesson screen (fixes "Next lesson")
   if (route.startsWith("lesson-")) return <LessonPage key={route} id={route.slice(7)} />;
