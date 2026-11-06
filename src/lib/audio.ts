@@ -46,6 +46,14 @@ function useVoices(test: (v: SpeechSynthesisVoice) => boolean): SpeechSynthesisV
   return voices;
 }
 
+const isEn = (v: SpeechSynthesisVoice) => v.lang.toLowerCase().replace("_", "-").startsWith("en");
+/** English voices, natural ones first, preferring South African / British / US English. */
+export const useEnglishVoices = () => {
+  const vs = useVoices(isEn);
+  const pref = (v: SpeechSynthesisVoice) => (/en-za/i.test(v.lang) ? 0 : /en-gb/i.test(v.lang) ? 1 : /en-us/i.test(v.lang) ? 2 : 3) - (NATURAL.test(v.name) || /google/i.test(v.name) ? 10 : 0);
+  return [...vs].sort((a, b) => pref(a) - pref(b));
+};
+
 /** Afrikaans voices on this device, natural ones first. */
 export const useDeviceVoices = () => useVoices(isAf);
 /** Dutch voices: an optional, clearly-labelled fallback when there's no Afrikaans voice. */

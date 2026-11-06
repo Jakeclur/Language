@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import type { Confidence, Register } from "../types";
 import { REGISTER_LABEL, REGISTER_STYLE, SEVERITY_LABEL } from "../lib/register";
 
@@ -62,6 +62,12 @@ export function ProgressBar({ value, className = "" }: { value: number; classNam
 }
 
 export function Dialog({ open, title, children, onClose }: { open: boolean; title: string; children: ReactNode; onClose: () => void }) {
+  useEffect(() => {
+    if (!open) return;
+    const on = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", on);
+    return () => window.removeEventListener("keydown", on);
+  }, [open, onClose]);
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50 bg-black/40 flex items-end sm:items-center justify-center p-4" onClick={onClose}>

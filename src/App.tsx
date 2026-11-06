@@ -7,6 +7,7 @@ import { Home } from "./features/Learn";
 import { LessonPage } from "./features/Lesson";
 import { Review } from "./features/Review";
 import { DictionaryPage, WordPage } from "./features/Dictionary";
+import { TranslatePage } from "./features/Translate";
 import { AboutPage, GrammarPage, MorePage, Onboarding, PhrasebookPage, ProgressPage, SettingsPage, SoundsPage } from "./features/Pages";
 import { isDue } from "./lib/srs";
 import { Mascot } from "./components/Mascot";
@@ -15,7 +16,8 @@ import { NoVoiceDialog } from "./components/NoVoiceDialog";
 const TABS = [
   { route: "", label: "Learn", icon: LearnIcon, match: (r: string) => r === "" || r === "learn" },
   { route: "review", label: "Review", icon: ReviewIcon, match: (r: string) => r === "review" },
-  { route: "dictionary", label: "Dictionary", icon: BookIcon, match: (r: string) => r === "dictionary" || r.startsWith("word-") },
+  { route: "translate", label: "Translate", icon: TranslateIcon, match: (r: string) => r === "translate" },
+  { route: "dictionary", label: "Words", icon: BookIcon, match: (r: string) => r === "dictionary" || r.startsWith("word-") },
   { route: "more", label: "More", icon: MoreIcon, match: (r: string) => ["more", "phrasebook", "grammar", "sounds", "progress", "settings", "about"].includes(r) },
 ];
 
@@ -24,6 +26,7 @@ function Page({ route }: { route: string }) {
   switch (route) {
     case "review": return <Review />;
     case "dictionary": return <DictionaryPage />;
+    case "translate": return <TranslatePage />;
     case "more": return <MorePage />;
     case "phrasebook": return <PhrasebookPage />;
     case "grammar": return <GrammarPage />;
@@ -61,11 +64,11 @@ function Shell() {
       <main className="max-w-3xl mx-auto px-5 sm:px-6 py-6 sm:py-10">
         <Page route={route} />
       </main>
-      <nav className="sm:hidden fixed bottom-0 inset-x-0 bg-white border-t-2 border-stone-100 grid grid-cols-4 z-40 px-2" aria-label="Main" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
+      <nav className="sm:hidden fixed bottom-0 inset-x-0 bg-white border-t-2 border-stone-100 grid grid-cols-5 z-40 px-1" aria-label="Main" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
         {TABS.map((t) => {
           const on = t.match(route);
           return (
-            <a key={t.label} href={`#${t.route}`} className={`my-1.5 mx-1 rounded-2xl border-2 flex flex-col items-center gap-0.5 pt-1.5 pb-1 text-xs font-extrabold relative ${on ? "bg-sky-50 border-sky-200 text-sky-600" : "border-transparent text-stone-400"}`}>
+            <a key={t.label} href={`#${t.route}`} className={`my-1.5 mx-0.5 rounded-2xl border-2 flex flex-col items-center gap-0.5 pt-1.5 pb-1 text-xs font-extrabold relative ${on ? "bg-sky-50 border-sky-200 text-sky-600" : "border-transparent text-stone-400"}`}>
               <t.icon active={on} />
               {t.label}
               {t.route === "review" && due > 0 && <span className="absolute top-1.5 left-1/2 ml-2 bg-amber-400 text-stone-900 rounded-full min-w-4 h-4 px-1 text-[10px] font-bold flex items-center justify-center">{due}</span>}
@@ -87,6 +90,9 @@ function ReviewIcon({ active }: IconProps) {
 }
 function BookIcon({ active }: IconProps) {
   return <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={ic(active)}><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z" /><path d="M4 19a2 2 0 0 1 2-2h13" /></svg>;
+}
+function TranslateIcon({ active }: IconProps) {
+  return <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={ic(active)}><path d="M4 5h9M8.5 3v2M6 5c0 4 3 7 6 8M11 5c0 3-3 7-7 8" /><path d="M13 21l4-9 4 9M14.5 18h5" /></svg>;
 }
 function MoreIcon({ active }: IconProps) {
   return <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" className={ic(active)}><circle cx="5" cy="12" r="1.5" /><circle cx="12" cy="12" r="1.5" /><circle cx="19" cy="12" r="1.5" /></svg>;

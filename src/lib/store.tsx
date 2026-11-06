@@ -13,6 +13,7 @@ export interface Settings {
   unlockAll: boolean; // skip ahead: every lesson open
   dailyGoal: number; // XP per day
   dutchFallback: boolean; // use a Dutch voice when the device has no Afrikaans voice
+  onlineTranslate: boolean; // translator may call MyMemory for full sentences
 }
 
 export interface Progress {
@@ -25,7 +26,7 @@ export interface Progress {
 }
 
 const DEFAULT_SETTINGS: Settings = {
-  onboarded: false, goals: [], adultConfirmed: false, showStreet: false, showSlurs: false, unlockAll: false, dailyGoal: 30, dutchFallback: false,
+  onboarded: false, goals: [], adultConfirmed: false, showStreet: false, showSlurs: false, unlockAll: false, dailyGoal: 30, dutchFallback: false, onlineTranslate: true,
 };
 const DEFAULT_PROGRESS: Progress = { xp: 0, days: {}, lessons: {}, cards: {}, answered: 0, correct: 0 };
 
