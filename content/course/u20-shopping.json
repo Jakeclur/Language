@@ -1,0 +1,185 @@
+{
+  "id": "u20",
+  "level": "A2",
+  "number": 18,
+  "title": "Shopping & money",
+  "titleAf": "Inkopies en geld",
+  "icon": "🛒",
+  "lessons": [
+    {
+      "id": "u20-1",
+      "title": "At the shop",
+      "explanation": [
+        "**winkel** = shop, **geld** = money, **prys** = price.",
+        "**duur** = expensive, **goedkoop** = cheap (literally *good-buy*!).",
+        "**kaart** = card. **Kan ek met 'n kaart betaal?** = Can I pay by card?",
+        "You already know **Hoeveel kos dit?** (How much does it cost?)."
+      ],
+      "examples": [
+        {
+          "af": "Hoeveel kos die brood?",
+          "en": "How much does the bread cost?"
+        },
+        {
+          "af": "Die koffie is duur.",
+          "en": "The coffee is expensive."
+        },
+        {
+          "af": "Kan ek met 'n kaart betaal?",
+          "en": "Can I pay by card?"
+        },
+        {
+          "af": "Ek het nie geld nie.",
+          "en": "I don't have any money."
+        }
+      ],
+      "vocab": [
+        "winkel",
+        "geld",
+        "prys",
+        "duur",
+        "goedkoop",
+        "kaart"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "The bread is cheap.",
+          "answers": [
+            "Die brood is goedkoop."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Die kar is baie ___. (expensive)",
+          "en": "The car is very expensive.",
+          "answers": [
+            "duur"
+          ],
+          "options": [
+            "duur",
+            "goedkoop",
+            "klein"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "Can I pay by card?",
+          "af": "Kan ek met 'n kaart betaal?"
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek het nie geld nie.",
+          "answers": [
+            "I don't have money.",
+            "I have no money.",
+            "I don't have any money."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**goedkoop** means…",
+          "options": [
+            "cheap",
+            "expensive",
+            "money"
+          ],
+          "answer": "cheap"
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "How much does the coffee cost?",
+          "answers": [
+            "Hoeveel kos die koffie?"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Die winkel is groot.",
+          "answers": [
+            "The shop is big.",
+            "The store is big."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u20-2",
+      "title": "Prices in rand",
+      "explanation": [
+        "South Africa's money is the **rand** (R). **R50** = **vyftig rand**.",
+        "**duisend** = thousand: **twee duisend rand** = R2 000.",
+        "**Dit kos …** = It costs … ."
+      ],
+      "examples": [
+        {
+          "af": "Dit kos vyftig rand.",
+          "en": "It costs fifty rand."
+        },
+        {
+          "af": "Die boek kos dertig rand.",
+          "en": "The book costs thirty rand."
+        },
+        {
+          "af": "Die kar kos honderd duisend rand.",
+          "en": "The car costs a hundred thousand rand."
+        }
+      ],
+      "vocab": [
+        "rand",
+        "duisend"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "It costs twenty rand.",
+          "answers": [
+            "Dit kos twintig rand."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Dit kos ___ rand. (50)",
+          "en": "It costs fifty rand.",
+          "answers": [
+            "vyftig"
+          ],
+          "options": [
+            "vyftig",
+            "vyftien",
+            "vyf"
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**duisend** means…",
+          "options": [
+            "thousand",
+            "hundred",
+            "ten"
+          ],
+          "answer": "thousand"
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Die boek kos dertig rand.",
+          "answers": [
+            "The book costs thirty rand.",
+            "The book costs R30."
+          ]
+        },
+        {
+          "type": "order",
+          "en": "The coffee costs twenty rand.",
+          "af": "Die koffie kos twintig rand."
+        }
+      ]
+    }
+  ]
+}

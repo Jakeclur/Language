@@ -1,0 +1,180 @@
+{
+  "id": "u21",
+  "level": "A2",
+  "number": 19,
+  "title": "Getting around",
+  "titleAf": "Rondkom",
+  "icon": "🧭",
+  "lessons": [
+    {
+      "id": "u21-1",
+      "title": "Left, right, straight on",
+      "explanation": [
+        "**links** = left, **regs** = right, **reguit** = straight on. **draai** = turn.",
+        "**ver** = far, **naby** = near / nearby. **straat** = street.",
+        "**Is dit ver?** = Is it far?"
+      ],
+      "examples": [
+        {
+          "af": "Draai links.",
+          "en": "Turn left."
+        },
+        {
+          "af": "Gaan reguit.",
+          "en": "Go straight on."
+        },
+        {
+          "af": "Is dit ver?",
+          "en": "Is it far?"
+        },
+        {
+          "af": "Nee, dit is naby.",
+          "en": "No, it's nearby."
+        }
+      ],
+      "vocab": [
+        "links",
+        "regs",
+        "reguit",
+        "draai",
+        "ver",
+        "naby",
+        "straat"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Turn right.",
+          "answers": [
+            "Draai regs."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Is die strand ___? (far)",
+          "en": "Is the beach far?",
+          "answers": [
+            "ver"
+          ],
+          "options": [
+            "ver",
+            "naby",
+            "links"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "No, it is nearby.",
+          "af": "Nee, dit is naby."
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Gaan reguit en draai links.",
+          "answers": [
+            "Go straight and turn left.",
+            "Go straight on and turn left.",
+            "Go straight ahead and turn left."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**regs** means…",
+          "options": [
+            "right",
+            "left",
+            "straight on"
+          ],
+          "answer": "right"
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "The shop is in the street.",
+          "answers": [
+            "Die winkel is in die straat."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u21-2",
+      "title": "Bus, train and car",
+      "explanation": [
+        "**bus** = bus, **trein** = train, **stasie** = station.",
+        "**ry** = drive / ride / travel (in a vehicle). **met die bus** = by bus.",
+        "**Ek ry met die bus skool toe.** = I go to school by bus."
+      ],
+      "examples": [
+        {
+          "af": "Ek ry met die bus skool toe.",
+          "en": "I go to school by bus."
+        },
+        {
+          "af": "Waar is die stasie?",
+          "en": "Where is the station?"
+        },
+        {
+          "af": "Die trein is laat.",
+          "en": "The train is late."
+        }
+      ],
+      "vocab": [
+        "bus",
+        "trein",
+        "stasie",
+        "ry"
+      ],
+      "exercises": [
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "Where is the station?",
+          "answers": [
+            "Waar is die stasie?"
+          ]
+        },
+        {
+          "type": "order",
+          "en": "I go to school by bus.",
+          "af": "Ek ry met die bus skool toe."
+        },
+        {
+          "type": "fill",
+          "af": "Die ___ is laat. (train)",
+          "en": "The train is late.",
+          "answers": [
+            "trein"
+          ],
+          "options": [
+            "trein",
+            "bus",
+            "kar"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ons ry met die trein Kaapstad toe.",
+          "answers": [
+            "We are going to Cape Town by train.",
+            "We go to Cape Town by train.",
+            "We travel to Cape Town by train.",
+            "We're going to Cape Town by train."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "**ry** is used for…",
+          "options": [
+            "travelling in a vehicle",
+            "walking",
+            "swimming"
+          ],
+          "answer": "travelling in a vehicle"
+        }
+      ]
+    }
+  ]
+}

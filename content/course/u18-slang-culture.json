@@ -1,7 +1,7 @@
 {
   "id": "u18",
   "level": "B1",
-  "number": 18,
+  "number": 21,
   "title": "Slang & culture: talk like a local",
   "titleAf": "Sleng en kultuur",
   "icon": "😎",
@@ -114,7 +114,7 @@
       "explanation": [
         "These small words make you sound natural:",
         "**nou-nou** = in a moment (NOT \"right now\"!). **Ek kom nou-nou.**",
-        "**sommer** = just, for no particular reason. **mos** = you know, after all: **Ek het mos gesê!** (I told you so! **sê** = say)",
+        "**sommer** = just, for no particular reason. **mos** = you know, after all: **Ek het mos gesê!** (I told you so!)",
         "**darem** = at least, really. **ja-nee** = yes indeed (literally yes-no!).",
         "**eina** = ouch. **ag** = oh. **warm** = warm, hot."
       ],
@@ -144,7 +144,6 @@
         "ja-nee",
         "eina",
         "ag",
-        "sê",
         "warm"
       ],
       "exercises": [

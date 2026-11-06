@@ -1,0 +1,178 @@
+{
+  "id": "u22",
+  "level": "B1",
+  "number": 20,
+  "title": "Because & that: verb at the end",
+  "titleAf": "Omdat en dat",
+  "icon": "🔚",
+  "lessons": [
+    {
+      "id": "u22-1",
+      "title": "omdat and want (because)",
+      "explanation": [
+        "Afrikaans has two words for *because*, and they change the word order differently:",
+        "**want**: normal order. **Ek eet, want ek is honger.**",
+        "**omdat**: the verb jumps to the **end**. **Ek eet, omdat ek honger is.**",
+        "❌ *omdat ek is honger* ✅ **omdat ek honger is**"
+      ],
+      "examples": [
+        {
+          "af": "Ek eet, want ek is honger.",
+          "en": "I'm eating because I'm hungry."
+        },
+        {
+          "af": "Ek eet, omdat ek honger is.",
+          "en": "I'm eating because I'm hungry."
+        },
+        {
+          "af": "Sy slaap, omdat sy moeg is.",
+          "en": "She's sleeping because she's tired."
+        },
+        {
+          "af": "Hy huil, omdat hy siek is.",
+          "en": "He's crying because he's sick."
+        }
+      ],
+      "vocab": [
+        "omdat",
+        "want"
+      ],
+      "exercises": [
+        {
+          "type": "order",
+          "en": "I'm eating because I'm hungry. (omdat)",
+          "af": "Ek eet, omdat ek honger is."
+        },
+        {
+          "type": "transform",
+          "instruction": "Join them with **omdat**",
+          "from": "Ek slaap. Ek is moeg.",
+          "answers": [
+            "Ek slaap, omdat ek moeg is.",
+            "Ek slaap omdat ek moeg is."
+          ]
+        },
+        {
+          "type": "choice",
+          "question": "Which is correct?",
+          "options": [
+            "Ek eet, omdat ek honger is.",
+            "Ek eet, omdat ek is honger.",
+            "Ek eet, omdat is ek honger."
+          ],
+          "answer": "Ek eet, omdat ek honger is."
+        },
+        {
+          "type": "fill",
+          "af": "Sy huil, want sy ___ siek.",
+          "en": "She's crying because she is sick.",
+          "answers": [
+            "is"
+          ],
+          "options": [
+            "is",
+            "het",
+            "was"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "He is crying because he is sick.",
+          "answers": [
+            "Hy huil, omdat hy siek is.",
+            "Hy huil omdat hy siek is.",
+            "Hy huil, want hy is siek.",
+            "Hy huil want hy is siek."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek leer Afrikaans, want dit is lekker.",
+          "answers": [
+            "I'm learning Afrikaans because it is fun.",
+            "I am learning Afrikaans because it's fun.",
+            "I'm learning Afrikaans because it's nice.",
+            "I learn Afrikaans because it is fun."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u22-2",
+      "title": "dat (that) and dink (think)",
+      "explanation": [
+        "**dat** = that. Like **omdat**, it sends the verb to the end.",
+        "**dink** = think. **Ek dink dat hy moeg is.** = I think that he is tired.",
+        "This works after **sê** (say) and **weet** (know) too: **Sy sê dat die kos lekker is.**"
+      ],
+      "examples": [
+        {
+          "af": "Ek dink dat hy moeg is.",
+          "en": "I think that he is tired."
+        },
+        {
+          "af": "Sy sê dat die kos lekker is.",
+          "en": "She says that the food is tasty."
+        },
+        {
+          "af": "Ek weet dat jy Afrikaans leer.",
+          "en": "I know that you're learning Afrikaans."
+        }
+      ],
+      "vocab": [
+        "dat",
+        "dink",
+        "sê"
+      ],
+      "exercises": [
+        {
+          "type": "order",
+          "en": "I think that he is tired.",
+          "af": "Ek dink dat hy moeg is."
+        },
+        {
+          "type": "transform",
+          "instruction": "Start with **Ek dink dat**",
+          "from": "Die hond is groot.",
+          "answers": [
+            "Ek dink dat die hond groot is."
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "en",
+          "prompt": "She says that the food is tasty.",
+          "answers": [
+            "Sy sê dat die kos lekker is.",
+            "Sy sê die kos is lekker."
+          ]
+        },
+        {
+          "type": "fill",
+          "af": "Ek weet dat jy moeg ___.",
+          "en": "I know that you are tired.",
+          "answers": [
+            "is"
+          ],
+          "options": [
+            "is",
+            "het",
+            "dink"
+          ]
+        },
+        {
+          "type": "translate",
+          "from": "af",
+          "prompt": "Ek dink dat die winkel naby is.",
+          "answers": [
+            "I think that the shop is nearby.",
+            "I think the shop is nearby.",
+            "I think that the shop is near."
+          ]
+        }
+      ]
+    }
+  ]
+}
