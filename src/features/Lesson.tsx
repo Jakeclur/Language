@@ -12,6 +12,7 @@ import { BottomBar, bigButton, btnColor } from "../components/BottomBar";
 import { Mascot, Speech } from "../components/Mascot";
 import { praise, unitTheme } from "../lib/theme";
 import { reportUrl } from "../lib/report";
+import { Rating } from "../lib/srs";
 import { useDeviceVoices } from "../lib/audio";
 import type { Lesson } from "../types";
 
@@ -22,7 +23,7 @@ export function LessonPage({ id }: { id: string }) {
   const ref = all.find((r) => r.lesson.id === id);
   const [phase, setPhase] = useState<"learn" | "practice" | "done">("learn");
   const [run, setRun] = useState(0);
-  const [stats, setStats] = useState({ score: 0, xp: 0, words: 0 });
+  const [stats, setStats] = useState<{ score: number; xp: number; words: number; tricky: string[] }>({ score: 0, xp: 0, words: 0, tricky: [] });
   if (!ref)
     return (
       <div className="p-8 text-center">
@@ -55,6 +56,22 @@ export function LessonPage({ id }: { id: string }) {
             <StatTile label="Score" value={`${stats.score}%`} color="border-emerald-300 bg-emerald-50 text-emerald-600" icon="🎯" />
             <StatTile label="Words" value={`${stats.words}`} color="border-sky-300 bg-sky-50 text-sky-600" icon="📚" />
           </div>
+          {stats.tricky.length > 0 && (
+            <div className="mt-6 rounded-3xl border-2 border-amber-200 bg-amber-50 p-4 text-left">
+              <div className="font-extrabold text-amber-700">Tricky words: they're waiting for you in Review</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {stats.tricky.map((id) => {
+                  const e = data.byId.get(id);
+                  return e ? (
+                    <span key={id} className="inline-flex items-center gap-2 rounded-2xl bg-white border-2 border-amber-100 pl-1.5 pr-3 py-1">
+                      <AudioButton text={e.headword} size="sm" />
+                      <span className="flex flex-col leading-tight"><b lang="af">{e.headword}</b><span className="text-sm text-stone-500 font-semibold">{meaning(e, store.settings).split(";")[0]}</span></span>
+                    </span>
+                  ) : null;
+                })}
+              </div>
+            </div>
+          )}
           <BottomBar>
             <div className="flex gap-3">
               <button onClick={() => { setRun(run + 1); setPhase("practice"); }} className={`${bigButton} ${btnColor.grey}`}>Again</button>
@@ -157,7 +174,7 @@ function Confetti() {
   );
 }
 
-function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { score: number; xp: number; words: number }) => void }) {
+function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { score: number; xp: number; words: number; tricky: string[] }) => void }) {
   const data = useData();
   const store = useStore();
   const ref = lessonList(data.units, store.settings).find((r) => r.lesson.id === lessonId)!;
@@ -170,6 +187,7 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { sc
   const [i, setI] = useState(0);
   const [result, setResult] = useState<Result>();
   const [cheer, setCheer] = useState("");
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
   // every Afrikaans word taught so far (and its forms), to put speakers on Afrikaans text
   const taughtWords = useMemo(() => {
     const set = new Set<string>(["'n"]);
@@ -185,9 +203,13 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { sc
   const finish = () => {
     const pct = score.total ? Math.round((score.right / score.total) * 100) : 100;
     const words = vocabEntries(ref.lesson, data);
+    const fresh = words.filter((e) => !store.progress.cards[e.id]).map((e) => e.id);
     store.completeLesson(ref.lesson.id, pct, words.map((e) => e.id));
+    // New words you got right count as a first successful review (next review later);
+    // words you got wrong stay due now, so they're first in your Review.
+    for (const id of fresh) if (!wrongIds.includes(id)) store.gradeCard(id, Rating.Good);
     store.addXp(10 + score.right);
-    onDone({ score: pct, xp: 10 + score.right, words: words.length });
+    onDone({ score: pct, xp: 10 + score.right, words: words.length, tricky: wrongIds });
   };
   const next = () => {
     setResult(undefined);
@@ -200,6 +222,11 @@ function Practice({ lessonId, onDone }: { lessonId: string; onDone: (stats: { sc
     store.recordAnswer(r.correct);
     if (step.kind === "exercise" && !step.retry) setScore((s) => ({ right: s.right + (r.correct ? 1 : 0), total: s.total + 1 }));
     if (!r.correct && step.kind === "exercise" && !step.retry) setSteps((s) => [...s, { ...step, retry: true }]);
+    if (!r.correct && step.kind === "exercise") {
+      const ex = step.ex as { type: string; entryId?: string; text?: string };
+      const id = ex.entryId ?? (ex.type === "listen" && ex.text ? data.byHeadword.get(ex.text.toLowerCase())?.id : undefined);
+      if (id && vocabEntries(ref.lesson, data).some((e) => e.id === id)) setWrongIds((w) => (w.includes(id) ? w : [...w, id]));
+    }
   };
 
   return (
