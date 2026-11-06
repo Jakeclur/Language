@@ -22,7 +22,8 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 OUT = os.path.join(ROOT, "public", "audio")
 LIST = os.path.join(ROOT, "pipeline", ".cache", "audio-texts.json")
 MANIFEST = os.path.join(OUT, "manifest.json")
-VOICE = {"id": "simba", "name": "Simba-TTS Afrikaans (neural)", "engine": "vits", "gender": "male"}
+VOICE = {"id": os.environ.get("VOICE_ID", "simba"), "name": os.environ.get("VOICE_NAME", "Simba-TTS Afrikaans (neural)"), "engine": "vits", "gender": "male"}
+MIN_SENTENCE_PASS = float(os.environ.get("MIN_SENTENCE_PASS", "0.6"))  # quality gate: fail the run below this
 NORMAL_RATE = float(os.environ.get("TTS_RATE", "0.9"))  # a touch slower than native speed, for learners
 SLOW_RATE = 0.7
 QA = os.environ.get("AUDIO_QA", "1") == "1"
@@ -90,6 +91,7 @@ def find_model() -> str:
     """Find an Afrikaans VITS/MMS TTS model on Hugging Face with a licence that allows publishing."""
     from huggingface_hub import HfApi
     if os.environ.get("TTS_MODEL"):
+        VOICE["licence"] = os.environ.get("TTS_LICENCE", "unknown")
         return os.environ["TTS_MODEL"]
     api = HfApi()
     found = ["facebook/mms-tts-afr"]
@@ -129,8 +131,9 @@ def main():
     print(f"Loading {model_id} …", flush=True)
     tok = AutoTokenizer.from_pretrained(model_id)
     model = VitsModel.from_pretrained(model_id).eval()
-    VOICE["source"] = model_id
-    VOICE["name"] = f"{model_id.split('/')[-1]} (neural)"
+    VOICE["source"] = os.environ.get("TTS_SOURCE", model_id)
+    if "VOICE_NAME" not in os.environ:
+        VOICE["name"] = f"{model_id.split('/')[-1]} (neural)"
     print("Licence:", VOICE.get("licence"), flush=True)
     rate = model.config.sampling_rate
 
@@ -142,7 +145,7 @@ def main():
         print(f"Quality-check model: whisper {qa_model}", flush=True)
         whisper = WhisperModel(qa_model, device="cpu", compute_type="int8")
 
-    stats = {"made": 0, "skipped": 0, "passed": 0, "failed": 0, "errors": 0}
+    stats = {"made": 0, "skipped": 0, "passed": 0, "failed": 0, "errors": 0, "sentences": 0, "sentences_passed": 0}
     failures = []
     t0 = time.time()
     for n, it in enumerate(items, 1):
@@ -170,6 +173,9 @@ def main():
                 score = similarity(it["key"], heard)
                 # single words get a looser threshold: recognisers often mishear isolated words
                 ok = score >= (0.55 if " " not in it["key"] else 0.7)
+            if " " in it["key"]:
+                stats["sentences"] += 1
+                stats["sentences_passed"] += 1 if ok else 0
             if ok:
                 stats["passed"] += 1
                 manifest["items"].setdefault(it["key"], {})[VOICE["id"]] = it["file"]
@@ -183,6 +189,12 @@ def main():
         if n % 100 == 0:
             print(f"  {n}/{len(items)} {stats} ({time.time() - t0:.0f}s)", flush=True)
 
+    rate = stats["sentences_passed"] / max(1, stats["sentences"])
+    print(f"Sentence pass rate: {rate:.0%} (gate {MIN_SENTENCE_PASS:.0%})", flush=True)
+    if whisper is not None and rate < MIN_SENTENCE_PASS:
+        for f in failures[:30]:
+            print("  ✗", f)
+        sys.exit(f"Quality gate failed: only {rate:.0%} of sentences were understood. Nothing will be published.")
     # drop clips from the first (clipped) test run
     for v in manifest["items"].values():
         v.pop("mms", None)

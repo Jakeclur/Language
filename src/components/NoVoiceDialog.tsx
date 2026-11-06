@@ -29,7 +29,7 @@ export function NoVoiceDialog() {
       <div className="flex gap-3 mt-6">
         <Button variant="secondary" className="flex-1" onClick={() => setOpen(false)}>OK</Button>
         {dutch && (
-          <Button className="flex-1" onClick={() => { updateSettings({ dutchFallback: true }); setOpen(false); }}>Use Dutch voice</Button>
+          <Button className="flex-1" onClick={() => { updateSettings({ useDutchVoice: true }); setOpen(false); }}>Use Dutch voice</Button>
         )}
       </div>
     </Dialog>

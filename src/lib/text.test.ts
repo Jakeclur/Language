@@ -47,3 +47,13 @@ describe("tiles", () => {
     expect(tiles("'n Man en 'n vrou.")).toEqual(["'n", "Man", "en", "'n", "vrou"]);
   });
 });
+
+import { dutchSpelling } from "./audio";
+describe("dutchSpelling", () => {
+  it("respells Afrikaans for a Dutch voice", () => {
+    expect(dutchSpelling("Ek het 'n hondjie")).toBe("Ek het un hondjie");
+    expect(dutchSpelling("vyf baadjies")).toBe("fijf baadjies".replace("baadjies", "baadjies"));
+    expect(dutchSpelling("Wat sê jy?")).toBe("Wat sè jij?");
+    expect(dutchSpelling("katjie")).toBe("kakie");
+  });
+});

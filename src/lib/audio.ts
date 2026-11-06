@@ -57,7 +57,11 @@ export const useEnglishVoices = () => {
 /** Afrikaans voices on this device, natural ones first. */
 export const useDeviceVoices = () => useVoices(isAf);
 /** Dutch voices: an optional, clearly-labelled fallback when there's no Afrikaans voice. */
-export const useDutchVoices = () => useVoices(isNl);
+export const useDutchVoices = () => {
+  const vs = useVoices(isNl);
+  const pref = (v: SpeechSynthesisVoice) => (NATURAL.test(v.name) || /google|xander|claire|ellen|fenna|colette/i.test(v.name) ? 0 : 1) + (/nl-be/i.test(v.lang) ? 0.5 : 0);
+  return [...vs].sort((a, b) => pref(a) - pref(b));
+};
 export const isNaturalVoice = (v: SpeechSynthesisVoice) => NATURAL.test(v.name);
 
 /** Ask the app to explain how to get audio (shown when a speaker is tapped with no voice). */
@@ -76,10 +80,22 @@ export function speakable(text: string): string {
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
 
+/** Respell Afrikaans so a Dutch voice says it (nearly) right. Dutch already reads g, ui, oe, ie,
+ *  eu, ou, ei and -ig the Afrikaans way; these fix the main differences. */
+export function dutchSpelling(text: string): string {
+  return text
+    .replace(/'n\b/gi, "un")
+    .replace(/tjie/gi, (m) => (m[0] === "T" ? "Kie" : "kie"))
+    .replace(/y/g, "ij").replace(/Y/g, "IJ")
+    .replace(/ê/g, "è").replace(/ô/g, "o").replace(/û/g, "u").replace(/î/g, "i")
+    .replace(/\bv/g, "f").replace(/\bV/g, "F");
+}
+
 export function speak(text: string, voice: SpeechSynthesisVoice, slow = false) {
   try {
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(speakable(text));
+    const dutch = voice.lang.toLowerCase().startsWith("nl");
+    const u = new SpeechSynthesisUtterance(speakable(dutch ? dutchSpelling(text) : text));
     u.voice = voice;
     u.lang = voice.lang;
     // Natural neural voices sound best at their own pace; slow mode is clearly slower.

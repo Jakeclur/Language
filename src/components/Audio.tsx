@@ -15,7 +15,7 @@ export function useAudio(text: string) {
   const clips = audioFor(data.audio, text);
   const af = useDeviceVoices();
   const nl = useDutchVoices();
-  const voices = af.length ? af : settings.dutchFallback ? nl : [];
+  const voices = af.length ? af : settings.useDutchVoice ? nl : [];
   const [n, setN] = useState(0);
   const hasAudio = clips.length > 0 || voices.length > 0;
   const play = (slow = false, fromTap = true) => {

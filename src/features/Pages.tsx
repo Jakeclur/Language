@@ -248,14 +248,14 @@ function SoundSettings() {
   const nl = useDutchVoices();
   const status = af.length
     ? `✓ Using ${af[0].name.replace(/ - .*/, "")}${isNaturalVoice(af[0]) ? " (natural voice)" : ""}`
-    : settings.dutchFallback && nl.length ? `Using a Dutch voice (${nl[0].name.replace(/ - .*/, "")}): close to Afrikaans, not exact` : "No Afrikaans voice on this device. Open the site in Microsoft Edge on a computer to hear a natural Afrikaans voice.";
+    : settings.useDutchVoice && nl.length ? `Using a Dutch voice (${nl[0].name.replace(/ - .*/, "")}): close to Afrikaans, not exact` : "No Afrikaans voice on this device. Open the site in Microsoft Edge on a computer to hear a natural Afrikaans voice.";
   return (
     <section>
       <h2 className="text-sm font-medium text-stone-400 mb-2 px-1">Sound</h2>
       <Card className="overflow-hidden divide-y divide-stone-100">
         <div className="px-5 py-4 text-sm font-semibold text-stone-600">{status}</div>
         {!af.length && nl.length > 0 && (
-          <Toggle on={settings.dutchFallback} onChange={() => updateSettings({ dutchFallback: !settings.dutchFallback })} label="Use a Dutch voice" desc="Only used because this device has no Afrikaans voice. Afrikaans grew out of Dutch, so it's close, but some sounds differ." />
+          <Toggle on={settings.useDutchVoice} onChange={() => updateSettings({ useDutchVoice: !settings.useDutchVoice })} label="Use a Dutch voice" desc="Only used because this device has no Afrikaans voice. Afrikaans grew out of Dutch, so it's close, but some sounds differ." />
         )}
       </Card>
     </section>
@@ -347,9 +347,9 @@ export function AboutPage() {
           {voices.length > 0 && ` Everything else plays with your device's natural Afrikaans voice (${voices[0].name.replace(/ - .*/, "")}).`}
           {" "}Robotic voices are never used, so the speaker button only appears when good audio is available.
         </p>
-        {data.audio.voices.some((v) => v.id === "simba") && (
-          <p className="text-sm text-stone-400 mt-3">Voice: <a className="underline" href="https://huggingface.co/UBC-NLP/Simba-TTS-afr" target="_blank" rel="noreferrer">Simba-TTS Afrikaans</a> by UBC-NLP · CC BY 4.0</p>
-        )}
+        {data.audio.voices.map((v) => (
+          <p key={v.id} className="text-sm text-stone-400 mt-3">Recorded voice: {v.name}{(v as { licence?: string }).licence ? ` · ${(v as { licence?: string }).licence?.toUpperCase()}` : ""}</p>
+        ))}
       </Card>
       {s.dictionary && (
         <Card className="p-6">
